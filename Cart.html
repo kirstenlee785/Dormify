@@ -1,0 +1,323 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View List</title>
+</head>
+
+
+<style>
+    .cost-label {
+        font-size: 1rem;
+        font-weight: normal;
+        color: #666;
+        margin-left: 10px;
+    }
+    .list-container {
+        display: none; /* Initially hide the lists */
+    }
+    .h1{
+        text-align: center
+    }
+    .home-button{
+        background-color: black;
+        color: white;
+        border-radius: 10%;
+        padding: 12px 16px; /* Some padding */
+        cursor: pointer;
+        border: 2px solid black;
+    }
+    .container{
+        cursor: pointer;
+        width: 200px;
+        border-radius: 10%;
+        border: 2px solid black;
+    }
+    .words{
+
+        font-size: 12px;
+        color: black;
+        margin-top: 10px;
+    }
+</style>
+
+
+<body>
+<!--
+<script>
+    const totalCostRoom = JSON.parse(localStorage.getItem("totalCostRoom"));
+    console.log("room essentials cost " + totalCostRoom)
+
+
+    const totalCostMasc = JSON.parse(localStorage.getItem("totalCostMasc"))
+    console.log("masc cost " + totalCostMasc)
+
+
+    const totalCostMisc = JSON.parse(localStorage.getItem("totalCostMasc"))
+    console.log("misc cost" + totalCostMisc)
+
+
+    const totalCostBed = JSON.parse(localStorage.getItem("totalCostBed"))
+    console.log("bed cost" + totalCostBed)
+
+
+    const totalCostBath = JSON.parse(localStorage.getItem("totalCost"))
+    console.log("bath cost" + totalCostBath)
+
+    const totalCostFem = JSON.parse(localStorage.getItem("totalCostFem"))
+    console.log("fem cost" + totalCostFem)
+
+    const totalCost = totalCostRoom + totalCostMasc + totalCostMisc + totalCostBed + totalCostBath + totalCostFem
+    console.log(totalCost)
+
+
+
+    if (totalCostRoom.length === 0){
+        totalCostRoom == 0
+    }
+    if(totalCostMasc.length === 0){
+        totalCostMasc ==0
+    }
+    if(totalCostMisc.length === 0){
+        totalCostMisc == 0
+    }
+    if(totalCostBed.length === 0){
+        totalCostBed == 0
+    }
+    if(totalCostBath.length === 0){
+        totalCostBath == 0
+    }
+    if(totalCostFem.length === 0){
+        totalCostFem == 0
+    }
+</script>
+-->
+
+
+
+<div>
+    <button class ="home-button" id="homeButton"> <i class="fa-solid fa-house"></i> Home </button>
+    <script>
+        var button = document.getElementById("homeButton");
+        button.onclick = function(){
+            window.location.href= "homePage.html";
+        }
+    </script>
+</div>
+
+
+<h2 class="h1">Stored List</h2>
+
+
+<h1> BATHROOM <span id="totalCostBath" class="cost-label"></span></h1>
+<ul id="displayList1" class ="list-container"></ul>
+<h1> BEDDING <span id="totalCostBed" class="cost-label"></span> </h1>
+<ul id="displayList2" class ="list-container"></ul>
+<h1> FEM. DECOR <span id="totalCostFem" class="cost-label"></span></h1>
+<ul id="displayList3" class ="list-container"></ul>
+<h1> MASC. DECOR <span id="totalCostMasc" class="cost-label"></span></h1>
+<ul id="displayList4" class ="list-container"></ul>
+<h1> MISCELLANEOUS <span id="totalCostMisc" class="cost-label"></span></h1>
+<ul id="displayList5" class ="list-container"></ul>
+<h1> ROOM ESSENTIALS <span id="totalCostRoom" class="cost-label"></span></h1>
+<ul id="displayList6" class ="list-container"></ul>
+
+<ul id="totalCost" class = "words"></ul>
+<div id="listContainer">
+    <ul id="displayList"></ul>
+</div>
+
+
+<!--fix the cart-->
+<script>
+    /*const totalCostRoom = JSON.parse(sessionStorage.getItem("totalCostRoom"));
+    //console.log("room essentials cost " + totalCostRoom)
+    const totalCostMasc = JSON.parse(sessionStorage.getItem("totalCostMasc"))
+    //console.log("masc cost " + totalCostMasc)
+    const totalCostMisc = JSON.parse(sessionStorage.getItem("totalCostMasc"))
+    // console.log("misc cost" + totalCostMisc)
+    const totalCostBed = JSON.parse(sessionStorage.getItem("totalCostBed"))
+    // console.log("bed cost" + totalCostBed)
+    const totalCostBath = JSON.parse(sessionStorage.getItem("totalCostBath"))
+    //console.log("bath cost" + totalCostBath)
+    const totalCostFem = JSON.parse(sessionStorage.getItem("totalCostFem"))
+    //console.log("fem cost" + totalCostFem)
+    const totalCost = totalCostRoom + totalCostMasc + totalCostMisc + totalCostBed + totalCostBath + totalCostFem
+    //console.log(totalCost)
+
+*/
+    // Retrieve stored lists from localStorage
+
+
+    const storedList1 = JSON.parse(sessionStorage.getItem('displayList1'));
+    const storedList2 = JSON.parse(sessionStorage.getItem('displayList2'));
+    const storedList3 = JSON.parse(sessionStorage.getItem('displayList3'));
+    const storedList4 = JSON.parse(sessionStorage.getItem('displayList4'));
+    const storedList5 = JSON.parse(sessionStorage.getItem('displayList5'));
+    const storedList6 = JSON.parse(sessionStorage.getItem('displayList6'));
+    const storedList7 = JSON.parse(sessionStorage.getItem('displayList7'));
+
+
+
+        // Default lists if localStorage doesn't contain any data
+    if (!storedList1) {
+        const defaultList1 = [];
+        sessionStorage.setItem('displayList1', JSON.stringify(defaultList1));
+    }
+
+
+    if (!storedList2) {
+        const defaultList2 = [];
+        sessionStorage.setItem('displayList2', JSON.stringify(defaultList2));
+    }
+
+
+    if (!storedList3) {
+        const defaultList3 = [];
+        sessionStorage.setItem('displayList3', JSON.stringify(defaultList3));
+    }
+    if (!storedList4) {
+        const defaultList4 = [];
+        sessionStorage.setItem('displayList4', JSON.stringify(defaultList4));
+    }
+    if (!storedList5) {
+        const defaultList5 = [];
+        sessionStorage.setItem('displayList5', JSON.stringify(defaultList5));
+    }
+    if (!storedList6) {
+        const defaultList6 = [];
+        sessionStorage.setItem('displayList6', JSON.stringify(defaultList6));
+    }
+
+
+
+
+    // Display the stored lists once the window has loaded
+    window.onload = function () {
+        // Select all lists with the class 'list-container'
+        const lists = document.querySelectorAll('.list-container');
+
+
+        lists.forEach(function (list) {
+            list.innerHTML = '';  // Clear previous content
+
+
+            list.style.display = 'block';
+            // Loop through each list and display them
+
+
+            // Determine which list we are working with
+            if (list.id === 'displayList1' && storedList1) {
+                storedList1.forEach(item => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = item;
+                    list.appendChild(listItem);
+                });
+            }
+
+
+            if (list.id === 'displayList2' && storedList2) {
+                storedList2.forEach(item => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = item;
+                    list.appendChild(listItem);
+                });
+            }
+
+
+            if (list.id === 'displayList3' && storedList3) {
+                storedList3.forEach(item => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = item;
+                    list.appendChild(listItem);
+                });
+            }
+
+
+            if (list.id === 'displayList4' && storedList4) {
+                storedList4.forEach(item => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = item;
+                    list.appendChild(listItem);
+                });
+            }
+
+
+            if (list.id === 'displayList5' && storedList5) {
+                storedList5.forEach(item => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = item;
+                    list.appendChild(listItem);
+                });
+            }
+
+
+            if (list.id === 'displayList6' && storedList6) {
+                storedList6.forEach(item => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = item;
+                    list.appendChild(listItem);
+                });
+            }
+
+            if (list.id === 'displayList7' && storedList7) {
+                storedList7.forEach(item => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = item;
+                    list.appendChild(listItem);
+                });
+            }
+        });
+        displayCosts();
+    };
+
+    function getCost(key) {
+        return parseFloat(sessionStorage.getItem(key)) || 0;
+    }
+
+    function displayCost(id, cost) {
+        const el = document.getElementById(id);
+        if (el) {
+            el.textContent = ` - $${cost.toFixed(2)}`;
+        }
+    }
+
+    function displayCosts() {
+        const totalCostRoom = getCost("totalCostRoom");
+        const totalCostMasc = getCost("totalCostMasc");
+        const totalCostMisc = getCost("totalCostMisc");
+        const totalCostBed  = getCost("totalCostBed");
+        const totalCostBath = getCost("totalCostBath");
+        const totalCostFem  = getCost("totalCostFem");
+
+        const total = totalCostRoom + totalCostMasc + totalCostMisc + totalCostBed + totalCostBath + totalCostFem;
+
+        displayCost("totalCostRoom", totalCostRoom);
+        displayCost("totalCostMasc", totalCostMasc);
+        displayCost("totalCostMisc", totalCostMisc);
+        displayCost("totalCostBed",  totalCostBed);
+        displayCost("totalCostBath", totalCostBath);
+        displayCost("totalCostFem",  totalCostFem);
+
+        // Show total cost
+        const summary = document.createElement("div");
+        summary.className = "total-summary";
+        summary.textContent = `TOTAL COST: $${total.toFixed(2)}`;
+        document.body.appendChild(summary);
+
+        console.log("Total cost:", total);
+    }
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
+

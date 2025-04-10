@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Miscellaneous</title>
+    <script src="https://kit.fontawesome.com/193ae4002d.js" crossorigin="anonymous"></script>
+    <style>
+        .center-container{
+
+                display: flex;
+                justify-content: center; /* Horizontally center the row */
+                align-items: center;     /* Vertically center (optional) */
+                width: 100%;
+                margin-top: 30px;        /* Optional spacing from top */
+        }
+        .h1{
+            text-align: center;
+        }
+        .header-button{
+            background-color: black; /* Blue background */
+            /* Remove borders */
+            color: white; /* White text */
+            padding: 12px 16px; /* Some padding */
+            font-size: 16px; /* Set a font size */
+            cursor: pointer;
+            border-radius: 10%;
+            border: 2px solid black;
+            margin: 10px;
+        }
+        .home-button{
+            background-color: black;
+            color: white;
+            border-radius: 10%;
+            padding: 12px 16px; /* Some padding */
+            cursor: pointer;
+            border: 2px solid black;
+        }
+        .large-button{
+            background-color: black; /* Blue background */
+            /* Remove borders */
+            color: white; /* White text */
+            padding: 12px 16px; /* Some padding */
+            font-size: 16px; /* Set a font size */
+            cursor: pointer;
+            border-radius: 10%;
+            border: 2px solid black;
+            margin: 10px;
+        }
+        .column{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            /*float: left;
+            width: 15%;
+            padding: 2px;
+            text-align: center;*/
+        }
+        .column img,
+        .column .item{
+            display: block;
+            margin: 0 auto;
+        }
+        .item{
+            margin-top: 10px;
+        }
+        .one {
+            cursor: pointer;
+            width: 200px;
+            border-radius: 10%;
+            border: 5px solid black;
+            margin-bottom: 10px;
+        }
+        .words{
+            display: none; /* Initially hidden */
+            font-size: 12px;
+            color: #333;
+            margin-top: 10px;
+        }
+        .row{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;         /* Allows it to wrap on smaller screens */
+            gap: 40px;
+        }
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
+    <script src="data2.js"></script>
+</head>
+
+<p><strong>Total Cost: $<span id="totalCostMisc">0</span></strong></p>
+<ul id="miscList"></ul>
+<ul id="displayList5"></ul>
+<script>
+    // Declare an empty list (array)
+    let miscList = JSON.parse(sessionStorage.getItem("items")) || [];
+    function saveData(){
+        const cartList5 = JSON.stringify(miscList)
+        // Sctore the list in localStorage (convert it to a JSON string)
+        sessionStorage.setItem('displayList5', cartList5);
+    }
+</script>
+<body style = "background-image: url(https://img.freepik.com/premium-vector/seamless-pattern-with-chamomiles_656070-178.jpg?semt=ais_hybrid&w=740)">
+<div>
+    <button class ="home-button" id="homeButton"> <i class="fa-solid fa-house"></i> Home </button>
+    <script>
+        var button = document.getElementById("homeButton");
+        button.onclick = function(){
+            window.location.href= "homePage.html";
+        }
+    </script>
+
+    <button class ="home-button" id="cartButton"> <i class="fa-solid fa-cart-shopping"></i></button>
+    <script>
+        var cbutton = document.getElementById("cartButton");
+        cbutton.onclick = function(){
+            window.location.href= "Cart.html";
+        }
+    </script>
+
+    <button class ="home-button" id="checklistButton"> <i class="fa-solid fa-cart-shopping"></i></button>
+    <script>
+        var chbutton = document.getElementById("checklistButton");
+        chbutton.onclick = function(){
+            window.location.href= "Checklist.html";
+        }
+    </script>
+</div>
+
+<h1 class="h1"> <u> MISCELLANEOUS </u> ☂️</h1>
+<h2> Click on any of the boxes below to view our selection of miscellaneous items! Click on "Checklist" to return to your "Checklist" and "Home" to return to the main page.</h2>
+
+<button class="header-button" id="hangersHeader">Hangers</button>
+<div class="center-container">
+<div class="row" id="g1" style="display: none;">
+
+
+    <script>
+        var hbutton = document.getElementById("hangersHeader");
+        var hdiv = document.getElementById("g1");
+
+        hbutton.onclick = function(){
+            hdiv.style.display = "block";
+        };
+    </script>
+
+    <div class="column">
+        <div class = "c1">
+            <img class ="one" src="https://target.scene7.com/is/image/Target/GUEST_14c11551-f388-4996-8be8-a7cc3331af7f?wid=1200&hei=1200&qlt=80&fmt=webp"  alt="Click Me" id="hangersTarget">
+            <p id="text" class ="words"><a href="https://www.target.com/p/18pk-plastic-hangers-black-room-essentials-8482/-/A-17153482"> 18pk Plastic Hangers - Room Essentials/ $3.00 </a></p>
+            <script>
+                document.getElementById("hangersTarget").addEventListener("click", function() {
+                    var text = document.getElementById("text");
+                    text.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class = "item">
+            <button class = "large-button" id = "hangersTarget2" data-cost="3"> Add Target Hangers to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("hangersTarget2").addEventListener("click", function(){
+            miscList.push("Target Hangers")
+            saveData();
+        })
+        console.log(miscList)
+    </script>
+
+    <div class ="column">
+        <div class = "c2">
+            <img class ="one" src="https://i5.walmartimages.com/seo/Mainstays-Adult-Teen-Clothing-Hangers-18-Pack-Black-Durable-Plastic_45ea02eb-f88d-4419-bc70-77836354eb3a.df10eb5407c6cf9d76071480b6e91b0e.jpeg?odnHeight=640&odnWidth=640&odnBg=FFFFFF"  alt="Click Me" id="hangersWalmart">
+            <p id="text2" class ="words"><a href="https://www.walmart.com/ip/Mainstays-Clothing-Hangers-18-Pack-Black-Durable-PlasticM/1852333481"> Mainstays Clothing Hangers, 18 Pack, Durable Plastic/ $9.45 </a></p>
+            <script>
+                document.getElementById("hangersWalmart").addEventListener("click", function() {
+                    var text2 = document.getElementById("text2");
+                    text2.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class = "item">
+            <button class = "large-button" id = "hangersWalmart2" data-cost="9.45"> Add Walmart Hangers to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("hangersWalmart2").addEventListener("click", function(){
+            miscList.push("Walmart Hangers")
+            saveData();
+        })
+        console.log(miscList)
+    </script>
+
+    <div class="column">
+        <div class = "c3">
+            <img class ="one" src="https://m.media-amazon.com/images/I/71-z700tbrL._AC_SX679_.jpg"  alt="Click Me" id="hangersAmazon">
+            <p id="text3" class ="words"><a href="https://www.amazon.com/Clothes-Hangers-Plastic-Pack-Adults/dp/B0CFWGCW3K?th=1"> NEATERIZE Clothes Hangers Plastic 16 pack for Adults/ $9.96 </a></p>
+            <script>
+                document.getElementById("hangersAmazon").addEventListener("click", function() {
+                    var text3 = document.getElementById("text3");
+                    text3.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class = "item">
+            <button class = "large-button" id = "hangersAmazon2" data-cost="9.96"> Add Amazon Hangers to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("hangersAmazon2").addEventListener("click", function(){
+            miscList.push("Amazon Hangers")
+            saveData();
+        })
+        console.log(miscList)
+    </script>
+</div>
+</div>
+<!--row2-->
+<button class="header-button" id="umbrellaHeader">Umbrellas</button>
+<div class="row" id="g2" style="display: none;">
+
+
+    <script>
+        var ubutton = document.getElementById("umbrellaHeader");
+        var udiv = document.getElementById("g2");
+
+        ubutton.onclick = function(){
+            udiv.style.display = "block";
+        };
+    </script>
+
+    <div class = "column">
+        <div class = "c4">
+            <img class ="one" src="https://target.scene7.com/is/image/Target/GUEST_6204a7b4-a27d-4679-92a3-e009572dba00?wid=1200&hei=1200&qlt=80&fmt=webp"  alt="Click Me" id="umbrellaTarget">
+            <p id="text4" class ="words"><a href="https://www.target.com/p/totes-super-mini-manual-eco-compact-umbrella-black/-/A-53136783"> Totes Super Mini Manual ECO Compact Umbrella - Black/ $9.99 </a></p>
+            <script>
+                document.getElementById("umbrellaTarget").addEventListener("click", function() {
+                    var text4 = document.getElementById("text4");
+                    text4.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class = "item">
+            <button class = "large-button" id = "umbrellaTarget2" data-cost="9.99"> Add Target Umbrella to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("umbrellaTarget2").addEventListener("click", function(){
+            miscList.push("Target Umbrella")
+            saveData();
+        })
+        console.log(miscList)
+    </script>
+
+    <div class ="column">
+        <div class = "c5">
+            <img class ="one" src="https://i5.walmartimages.com/seo/Chakipee-Automatic-Folding-Umbrella-Auto-Reverse-Windproof-Compact-Umbrella-with-Teflon-Coated-47-10Ribs-Black_bfb87179-d02e-455b-95e7-24d807907fe7.4b056df238cdaaa7f9087695c114110f.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF"  alt="Click Me" id="umbrellaWalmart">
+            <p id="text5" class ="words"><a href="https://www.walmart.com/ip/Chakipee-Automatic-Folding-Umbrella-Auto-Reverse-Windproof-Compact-Umbrella-with-Teflon-Coated-47-10Ribs-Black/2731343246"> Chakipee Automatic Folding Umbrella, Auto Reverse Windproof / $12.99 (multiple colors available)  </a></p>
+            <script>
+                document.getElementById("umbrellaWalmart").addEventListener("click", function() {
+                    var text5 = document.getElementById("text5");
+                    text5.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class = "item">
+            <button class = "large-button" id = "umbrellaWalmart2" data-cost="12.99"> Add Walmart Umbrella to list </button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("umbrellaWalmart2").addEventListener("click", function(){
+            miscList.push("Walmart Umbrella")
+            saveData();
+        })
+        console.log(shoppingList)
+    </script>
+
+    <div class = "c6">
+        <img class ="one" src="https://m.media-amazon.com/images/I/71eFkF8OrpL._AC_SX679_.jpg"  alt="Click Me" id="umbrellaAmazon">
+        <p id="text6" class ="words"><a href="https://www.amazon.com/MRTLLOA-Inverted-Umbrellas-Windproof-Protection/dp/B07FR8XJ9M"> MRTLLOA 42/49 Inch Compact Windproof Travel Umbrella for Rain (available in multiple Colors) / $9.99  </a></p>
+        <script>
+            document.getElementById("umbrellaAmazon").addEventListener("click", function() {
+                var text6 = document.getElementById("text6");
+                text6.style.display = "block"; // Show the text
+            });
+        </script>
+    </div>
+    <div class = "item">
+        <button class = "large-button" id = "umbrellaAmazon2" data-cost="9.99"> Add Amazon Umbrella to list </button>
+    </div>
+    <script>
+        document.getElementById("umbrellaAmazon2").addEventListener("click", function(){
+            miscList.push("Amazon Umbrella")
+            saveData();
+        })
+        console.log(miscList)
+    </script>
+</div>
+
+<!--row3-->
+
+<button class="header-button" id="fanHeader">Fans</button>
+<div class="row" id="g3" style="display: none;">
+    <script>
+        var fbutton = document.getElementById("fanHeader");
+        var fdiv = document.getElementById("g3");
+
+        fbutton.onclick = function(){
+            fdiv.style.display = "block";
+        };
+    </script>
+    <div class = "column">
+        <div class = "c7">
+            <img class ="one" src="https://target.scene7.com/is/image/Target/GUEST_6f30c110-b8ed-492e-9e70-4eddad2070ea?wid=1200&hei=1200&qlt=80&fmt=webp"  alt="Click Me" id="fanTarget">
+            <p id="text7" class ="words"><a href="https://www.target.com/p/lasko-3733-box-fan-white/-/A-84195090"> Lasko 3733 Box Fan White: 20" Portable Floor Fan - Multi-purpose / $23.49  </a></p>
+            <script>
+                document.getElementById("fanTarget").addEventListener("click", function() {
+                    var text7 = document.getElementById("text7");
+                    text7.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div data-cost="">
+            <button class = "large-button" id = "fanTarget2" data-cost="23.49"> Add Target Fan to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("fanTarget2").addEventListener("click", function(){
+            miscList.push("Target Fan")
+            saveData();
+        })
+        console.log(miscList)
+    </script>
+    <div class = "column">
+        <div class = "c8">
+            <img class ="one" src="https://i5.walmartimages.com/seo/Lasko-20-Cool-Colors-3-Speed-Box-Fan-with-Weather-Resistant-Motor-Blue-22-5-High-B20310-New_fd3223d3-6325-4fb7-9040-76dbeff539e1.8ecb30a355a6cfb950951c4f8a0ca3c8.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF"  alt="Click Me" id="fanWalmart">
+            <p id="text8" class ="words"><a href="https://www.walmart.com/ip/Lasko-20-Cool-Colors-3-Speed-Box-Fan-with-Weather-Resistant-Motor-Blue-22-5-High-B20310-New/3782136206"> Lasko 20" Cool Colors 3-Speed Box Fan with Weather Resistant Motor (Available in multiple colors) / $25.97  </a></p>
+            <script>
+                document.getElementById("fanWalmart").addEventListener("click", function() {
+                    var text8 = document.getElementById("text8");
+                    text8.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class = "item">
+            <button class = "large-button" id = "fanWalmart2" data-cost="25.97"> Add Walmart Fan to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("fanWalmart2").addEventListener("click", function(){
+            miscList.push("Walmart Fan")
+            saveData();
+        })
+        console.log(miscList)
+    </script>
+    <div class = "column">
+        <div class = "c9">
+            <img class ="one" src="https://m.media-amazon.com/images/I/711bUTpkGvL._AC_SL1500_.jpg"  alt="Click Me" id="fanAmazon">
+            <p id="text9" class ="words"><a href="https://www.amazon.com/BEYOND-BREEZE-Portable-Tabletop-Bathroom/dp/B0CBMHYJG4?th=1"> Box Fan, 9", 2 Speeds Table Fan w/ Strong Airflow - Beyond Breeze/ $21.99  </a></p>
+            <script>
+                document.getElementById("fanAmazon").addEventListener("click", function() {
+                    var text9 = document.getElementById("text9");
+                    text9.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class = "item">
+            <button class = "large-button" id = "fanAmazon2" data-cost="21.99"> Add Amazon Fan to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("fanAmazon2").addEventListener("click", function(){
+            miscList.push("Amazon Fan")
+            saveData();
+        })
+        console.log(miscList)
+    </script>
+</div>
+
+<!--row4-->
+
+<button class="header-button" id="extHeader">Extension Cords</button>
+<div class="row" id="g4" style="display: none;">
+    <script>
+        var ebutton = document.getElementById("extHeader");
+        var ediv = document.getElementById("g4");
+
+        ebutton.onclick = function(){
+            ediv.style.display = "block";
+        };
+    </script>
+    <div class = "column">
+        <div class = "c10">
+            <img class ="one" src="https://target.scene7.com/is/image/Target/GUEST_c127ad1a-8213-47ea-b5c5-1c03c255e51e?wid=400&hei=400&qlt=80&fmt=webp"  alt="Click Me" id="ecTarget">
+            <p id="text10" class ="words"><a href="https://www.target.com/p/dealworthy-indoor-cord-2-12-39-white/-/A-89825662">12' 3 Outlet Indoor Extension Cord White - Dealworthy: 16 AWG, 13 Amps, 1 Yr. Warranty, 2 Conductors/ $6.99</a></p>
+            <script>
+                document.getElementById("ecTarget").addEventListener("click", function() {
+                    var text10 = document.getElementById("text10");
+                    text10.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class = "item">
+            <button class = "large-button" id = "ecTarget2" data-cost="6.99"> Add Target Extension Cable to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("ecTarget2").addEventListener("click", function(){
+            miscList.push("Target Extension Cable")
+            saveData();
+        })
+        console.log(miscList)
+    </script>
+    <div class = "column">
+        <div class = "c11">
+            <img class ="one" src="https://i5.walmartimages.com/seo/Hyper-Tough-12FT-16AWG-2-Prong-White-Indoor-Household-Extension-Cord-13-amps_957a09d0-627a-4d71-ab8a-931dad17e6b5.f388d0da94fbaa2a283ffb24d6e6efaf.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF"  alt="Click Me" id="ecWalmart">
+            <p id="text11" class ="words"><a href="https://www.walmart.com/ip/Hyper-Tough-12FT-16AWG-2-Prong-White-Indoor-Household-Extension-Cord-13-amps/694456393?athcpid=694456393&athpgid=AthenaItempage&athcgid=null&athznid=oos&athieid=v0&athstid=CS020&athguid=qG6vrjWOs4q9zbHgpt2Y2oLxDK9lpX_rMWFV&athancid=779668830&athena=true&athbdg=L1600"> Hyper Tough 12FT 16AWG 2 Prong White Indoor Household Extension Cord, 13 amps $13.99</a></p>
+            <script>
+                document.getElementById("ecWalmart").addEventListener("click", function() {
+                    var text11 = document.getElementById("text11");
+                    text11.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class = "item">
+            <button class = "large-button" id = "ecWalmart2" data-cost="13.99"> Add Walmart Extension Cable to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("ecWalmart2").addEventListener("click", function(){
+            miscList.push("Walmart Extension Cable")
+            saveData();
+        })
+        console.log(miscList)
+    </script>
+    <div class = "column">
+        <div class = "c12">
+            <img class ="one" src="https://m.media-amazon.com/images/I/61NGPmmMAIL._AC_SY355_.jpg"  alt="Click Me" id="ecAmazon">
+            <p id="text12" class ="words"><a href="https://www.amazon.com/Surge-Protector-Power-Strip-Extension/dp/B09PDLBFKY?th=1"> 6 Ft Surge Protector Power Strip - 8 Widely Outlets w/ 4 USB Ports...Wall Mount, Desk USB Charging Station (available in multiple colors/ lengths)/ $11.99 </a></p>
+            <script>
+                document.getElementById("ecAmazon").addEventListener("click", function() {
+                    var text12 = document.getElementById("text12");
+                    text12.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class = "item">
+            <button class = "large-button" id = "ecAmazon2" data-cost="11.99"> Add Amazon Extension Cable to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("ecAmazon2").addEventListener("click", function(){
+            miscList.push("Amazon Extension Cable")
+            saveData();
+        })
+        console.log(miscList)
+    </script>
+</div>
+
+<!--row5-->
+
+<button class="header-button" id="apHeader">Air Purifiers</button>
+<div class="row" id="g5" style="display: none;">
+    <script>
+        var apbutton = document.getElementById("apHeader");
+        var apdiv = document.getElementById("g5");
+
+        apbutton.onclick = function(){
+            apdiv.style.display = "block";
+        };
+    </script>
+
+    <div class = "column">
+        <div class = "c13">
+            <img class ="one" src="https://target.scene7.com/is/image/Target/GUEST_6fc4707b-dfbd-4d87-8268-c507549a5ee9?wid=1200&hei=1200&qlt=80&fmt=webp"  alt="Click Me" id="apTarget">
+            <p id="text13" class ="words"><a href="https://www.target.com/p/levoit-core-200s-smart-true-hepa-air-purifier-gray/-/A-82174242"> Levoit Core 200s Smart Air Purifier Gray: 1 yr. warranty, 4 settings...100-300 sq.ft. / $89.99 </a></p>
+            <script>
+                document.getElementById("apTarget").addEventListener("click", function() {
+                    var text13 = document.getElementById("text13");
+                    text13.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class = "item">
+            <button class = "large-button" id = "apTarget2" data-cost="89.99"> Add Target Air Purifier to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("apTarget2").addEventListener("click", function(){
+            miscList.push("Target Air Purifier")
+            saveData();
+        })
+        console.log(miscList)
+    </script>
+    <div class = "column">
+        <div class = "c14">
+            <img class ="one" src="https://i5.walmartimages.com/seo/ALROCKET-HEPA-Air-Purifier-with-Light-Extra-Large-Room-350-Sq-Ft-White_5fcb37a7-847b-422a-88ed-67740c4e369c.dda3f55ccaeb9e2069d62c7a65edb9f4.jpeg?odnHeight=640&odnWidth=640&odnBg=FFFFFF"  alt="Click Me" id="apurifierWalmart">
+            <p id="text14" class ="words"><a href="https://www.walmart.com/ip/ALROCKET-HEPA-Air-Purifier-with-Light-Extra-Large-Room-350-Sq-Ft-White/840726233"> ALROCKET HEPA Air Purifier w/ Light, Extra Large Room (350 Sq. Ft), White / $39.99  </a></p>
+            <script>
+                document.getElementById("apurifierWalmart").addEventListener("click", function() {
+                    var text14 = document.getElementById("text14");
+                    text14.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class = "item">
+            <button class = "large-button" id = "apWalmart2" data-cost="39.99"> Add Walmart Air Purifier to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("apWalmart2").addEventListener("click", function(){
+            miscList.push("Walmart Air Purifier")
+            saveData();
+        })
+        console.log(miscList)
+    </script>
+    <div class = "column">
+        <div class = "c15">
+            <img class ="one" src="https://m.media-amazon.com/images/I/71TgWPcvFbL._AC_SL1439_.jpg"  alt="Click Me" id="apAmazon">
+            <p id="text15" class ="words"><a href="https://www.amazon.com/Honeyuan-HEPA-Home-Large-white/dp/B0B9678Z4L?th=1"> Honeyuan Bedroom Air Purifier (Large Room, 600 sq.ft), 3-Stage Filtration / $38.99</a></p>
+            <script>
+                document.getElementById("apAmazon").addEventListener("click", function() {
+                    var text15 = document.getElementById("text15");
+                    text15.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class = "item">
+            <button class = "large-button" id = "apAmazon2" data-cost="38.99"> Add Target Amazon to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("apAmazon2").addEventListener("click", function(){
+            miscList.push("Amazon Air Purifier")
+            saveData();
+        })
+        console.log(miscList)
+    </script>
+</div>
+<!--row6-->
+
+<button class="header-button" id="csHeader">Command Strips</button>
+<div class="row" id="g6" style="display: none;">
+    <script>
+        var csbutton = document.getElementById("csHeader");
+        var csdiv = document.getElementById("g6");
+
+        csbutton.onclick = function(){
+            csdiv.style.display = "block";
+        };
+    </script>
+    <div class = "column">
+        <div class = "c16">
+            <img class ="one" src="https://target.scene7.com/is/image/Target/GUEST_058b8915-d300-4953-94ce-0ca162cda587?wid=1200&hei=1200&qlt=80&fmt=webp"  alt="Click Me" id="csTarget">
+            <p id="text16" class ="words"><a href=""> Command 4 Sets Large Sized Picture Hanging Strips, White, Adhesive / $3.89 </a></p>
+            <script>
+                document.getElementById("csTarget").addEventListener("click", function() {
+                    var text16 = document.getElementById("text16");
+                    text16.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class = "item">
+            <button class = "large-button" id = "csTarget2" data-cost="3.89"> Add Target Command Strips to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("csTarget2").addEventListener("click", function(){
+            miscList.push("Target Command Strips")
+            saveData();
+        })
+        console.log(miscList)
+    </script>
+    <div class = "column">
+        <div class = "c17">
+            <img class ="one" src="https://i5.walmartimages.com/seo/Command-4-lb-White-Picture-Hanging-Strips-17202AO-6ESF-6-Pairs_4188bf27-2760-4832-a633-cbc1109480f3.b65d9b9679afa4db8fb3402bc583abed.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF"  alt="Click Me" id="apWalmart">
+            <p id="text17" class ="words"><a href="https://www.walmart.com/ip/Command-4-lb-White-Picture-Hanging-Strips-17202AO-6ESF-6-Pairs/5373842326?wmlspartner=wlpa&selectedSellerId=1219"> Command 4 lb White Picture Hanging Strips, 6 pairs/ $11.97 </a></p>
+            <script>
+                document.getElementById("apWalmart").addEventListener("click", function() {
+                    var text17 = document.getElementById("text17");
+                    text17.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class = "item">
+            <button class = "large-button" id = "csWalmart2" data-cost="11.97"> Add Walmart Command Strips to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("csWalmart2").addEventListener("click", function(){
+            miscList.push("Walmart Command Strips")
+            saveData();
+        })
+        console.log(miscList)
+    </script>
+    <div class = "column">
+        <div class = "c18">
+            <img class ="one" src="https://m.media-amazon.com/images/I/51RI3ZL9IXL._SY445_SX342_QL70_FMwebp_.jpg"  alt="Click Me" id="csAmazon">
+            <p id="text18" class ="words"><a href="https://www.amazon.com/Command-Picture-Decorate-Damage-Free-PH206-14NA/dp/B073XR4X72?th=1"> Command 15 lb Large Picture Hanging Strips 14 Pairs...Damage Free/ $12.83 </a></p>
+            <script>
+                document.getElementById("csAmazon").addEventListener("click", function() {
+                    var text18 = document.getElementById("text18");
+                    text18.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class = "item">
+            <button class = "large-button" id = "csAmazon2" data-cost="12.83"> Add Amazon Command Strips to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("csAmazon2").addEventListener("click", function(){
+            miscList.push("Amazon Command Strips")
+            saveData();
+        })
+        console.log(miscList)
+    </script>
+</div>
+<script>
+    // Temporary variable to hold the total cost
+    let totalCostMisc = 0;
+
+    // Function to update the total cost when a button is clicked
+    function updateTotalCost(event) {
+        // Get the cost from the clicked button's data-cost attribute
+        const itemCost = parseFloat(event.target.getAttribute('data-cost'));
+
+        // Add the cost to the total
+        totalCostMisc += itemCost;
+        totalCostMisc.toFixed(2);
+        // Update the displayed total cost
+        document.getElementById('totalCostMisc').innerText = totalCostMisc;
+
+        sessionStorage.setItem('totalCostMisc', totalCostMisc);
+    }
+
+    // Add event listeners to the buttons
+    const buttons = document.querySelectorAll('.item button');
+    buttons.forEach(button => {
+        button.addEventListener('click', updateTotalCost);
+    });
+</script>
+
+<script>
+    // Wait until the page is fully loaded
+    document.addEventListener("DOMContentLoaded", () => {
+        const buttons = document.querySelectorAll(".large-button");
+
+        buttons.forEach(button => {
+            button.addEventListener("click", () => {
+                button.textContent = "Added!";
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

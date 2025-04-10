@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <style>
+        .header{
+
+            font-family: 'Brush Script MT', cursive;
+            align-content: center;
+            font-size: 50px;
+            padding: 1px;
+        }
+        img {
+            width: 150px;
+            border-radius: 50px;
+            float: right;
+            border: 2px solid black;
+        }
+        .large-button{
+            background-color: grey; /* Blue background */
+            border: black; /* Remove borders */
+            color: white; /* White text */
+            margin-bottom: 20px; /* Some padding */
+            padding-bottom: 10px;
+            padding-top: 5px;
+            font-size: 16px; /* Set a font size */
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        .words{
+
+            font-size: 12px;
+            color: black;
+            margin-top: 10px;
+        }
+
+
+    </style>
+    <link rel= "stylesheet" href="style.css">
+    <!--fix the button-->
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <script >
+        const {createClient} = supabase; //initialize supabase
+        const supabaseURL = "https://ghzfpwdivvezmbsfaonn.supabase.co";
+        const supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdoemZwd2RpdnZlem1ic2Zhb25uIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjQwNzEzMzcsImV4cCI6MjAzOTY0NzMzN30.B4drrT_iuBlP4X-V2s8CBUPEkhryRrOM9O51IVi3Uzg";
+        window.supabase = createClient(supabaseURL, supabaseAnonKey);
+
+       /* import { getUsername } from './supabase';
+
+        async function loadVar() {
+            const username = await getUsername();
+            console.log('myVar:', username);
+
+            // now you can use myVar as a const within this function
+        }
+
+        loadVar();*/
+
+    </script>
+
+</head>
+<body>
+
+<div class = "container" style="background-image: url('https://static.vecteezy.com/system/resources/thumbnails/000/539/715/small/grid_paper3-01.jpg')">
+    <img src="https://i.imgur.com/dIugFxk.png" alt="Dormify Logo">
+    <h1 class ="header">DORMIFY</h1>
+
+
+    <div class ="button">
+        <button class="large-button" id="Checklist" onclick="window.location.href ='Checklist.html'"> Checklist </button>
+    </div>
+    <div class =" button">
+        <button class="large-button" id="cart" onclick="window.location.href ='Cart.html'"> Cart </button>
+    </div>
+    <div >
+        <button class="large-button" id="pref-btn"> Preference </button>
+    </div>
+    <div >
+        <button class="large-button" id="out-btn"> Sign Out </button>
+    </div>
+
+</div>
+<script type="module" src="main.js"></script>
+<script src="auth2.js"></script>
+<script src="data2.js"></script>
+
+</body>
+</html>

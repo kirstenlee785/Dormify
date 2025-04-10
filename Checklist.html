@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checklist</title>
+    <script src="https://kit.fontawesome.com/193ae4002d.js" crossorigin="anonymous"></script>
+    <style>
+        h2{
+            font-family:"Times New Roman", Times, serif;
+            font-size: 40px;
+            padding: 1px;
+        }
+        .home-button{
+            background-color: black;
+            color: white;
+            border-radius: 10%;
+            padding: 12px 16px; /* Some padding */
+            cursor: pointer;
+            border: 2px solid black;
+        }
+        .categories{
+            font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+            font-size: 30px;
+            text-decoration-line: underline;
+        }
+        .box{
+            background-color: whitesmoke;
+            border-radius: 5px;
+            padding-top: 5px;
+            text-align: left;
+            margin-bottom: 5px;
+            font-family: Calibri;
+            border: black;
+            border-width: 1px;
+            border-style: solid;
+        }
+        .post-it{
+            padding-left: 15px;
+        }
+    </style>
+    <link rel= "stylesheet" href="style.css">
+</head>
+
+<div class = "container" style=" background-image:url('https://i.pinimg.com/474x/5b/ec/61/5bec61de4e7c92226a8842facd1f0bbf.jpg')">
+    <div>
+        <button class ="home-button" id="homeButton"> <i class="fa-solid fa-house"></i> Home </button>
+        <script>
+            var button = document.getElementById("homeButton");
+            button.onclick = function(){
+                window.location.href= "homePage.html";
+            }
+        </script>
+
+        <button class ="home-button" id="cartButton"> <i class="fa-solid fa-cart-shopping"></i></button>
+        <script>
+            var cbutton = document.getElementById("cartButton");
+            cbutton.onclick = function(){
+                window.location.href= "Cart.html";
+            }
+        </script>
+
+    </div>
+    <h2>CHECKLIST</h2>
+    <div class = "box">
+        <h4>This screen is your checklist, throughout your shopping anytime you add something you will see it appear here. You can access this screen at anytime!</h4>
+    </div>
+    <h4 class="categories"> Bedding </h4>
+    <a href = "Bedding.html">Click here to start shopping for Bedding</a>
+
+    <form action="">
+        <input type="checkbox" id="bedSheets" name="vehicle1">
+        <label for="bedSheets"> Bed Sheets</label><br>
+        <input type="checkbox" id="pillows" name="vehicle2">
+        <label for="pillows"> Pillows</label><br>
+        <input type="checkbox" id="blankets" name="vehicle3">
+        <label for="blankets"> Blankets</label><br><br>
+    </form>
+
+    <h4 class = "categories"> Bathroom Essentials </h4>
+    <a href = "Bathroom.html">Click here to start shopping for Bathroom Essentials</a>
+
+    <form action="">
+        <input type="checkbox" id="showerCaddy" name="vehicle1">
+        <label for="showerCaddy"> Shower Caddy</label><br>
+        <input type="checkbox" id="shampoo" name="vehicle2">
+        <label for="shampoo"> Shampoo/Conditioner </label><br>
+        <input type="checkbox" id="toiletries" name="vehicle4">
+        <label for="toiletries"> Toiletries </label><br>
+        <input type="checkbox" id="towels" name="vehicle3">
+        <label for="towels"> Towels </label><br>
+        <input type="checkbox" id="mop" name="vehicle5">
+        <label for="mop"> Mop</label><br>
+        <input type="checkbox" id="vacuum" name="vehicle6">
+        <label for="vacuum"> Vacuum</label><br><br>
+    </form>
+
+    <h4 class = "categories"> Room Essentials </h4>
+    <a href = "RoomEssentials.html">Click here to start shopping for Room Essentials</a>
+
+    <form action="">
+        <input type="checkbox" id="microwave" name="vehicle1">
+        <label for="microwave"> Microwave</label><br>
+        <input type="checkbox" id="minifridge" name="vehicle2">
+        <label for="minifridge"> Mini Fridge</label><br>
+        <input type="checkbox" id="trashCan" name="vehicle4">
+        <label for="trashCan"> Trash Can</label><br>
+        <input type="checkbox" id="deskLight" name="vehicle3">
+        <label for="deskLight"> Desk Light</label><br><br>
+        <input type="checkbox" id="potspans" name="vehicle5">
+        <label for="potspans"> Pots + Pans </label><br>
+        <input type="checkbox" id="cutlery" name="vehicle6">
+        <label for="cutlery"> Cutlery</label><br>
+        <input type="checkbox" id="plates" name="vehicle7">
+        <label for="plates"> Plates </label><br>
+        <input type="checkbox" id="bowls" name="vehicle8">
+        <label for="bowls"> Bowls </label><br>
+        <input type="checkbox" id="spoons" name="vehicle9">
+        <label for="spoons"> Cooking Spoons</label><br>
+        <input type="checkbox" id="cutboard" name="vehicle10">
+        <label for="cutboard"> Cutting Board</label><br>
+        <br>
+    </form>
+
+
+
+    <h4 class = "categories"> Miscellaneous </h4>
+    <a href = "Miscellaneous.html">Click here to start shopping for other Room Essentials</a>
+
+    <form action="">
+        <input type="checkbox" id="hangers" name="vehicle1">
+        <label for="hangers"> Hangers</label><br>
+        <input type="checkbox" id="umbrellas" name="vehicle2">
+        <label for="umbrellas"> Umbrella</label><br>
+        <input type="checkbox" id="fan" name="vehicle5">
+        <label for="fan"> Fan/Heater</label><br>
+        <input type="checkbox" id="extensionCable" name="vehicle5">
+        <label for="extensionCable"> Extension Cable</label><br>
+        <input type="checkbox" id="airPurifier" name="vehicle3">
+        <label for="airPurifier"> Air Purifier</label><br><br>
+    </form>
+
+
+
+    <h4>Click the Button to Add Something Else!</h4>
+    <input type="text" id="itemInput" placeholder="Enter item">
+    <button onclick="addItem()">Add Item</button>
+
+    <ul id="checklist">
+    </ul>
+
+    <script>
+        function addItem() {
+            // Get the input value
+            let input = document.getElementById("itemInput");
+            let itemText = input.value.trim();
+
+            // Check if input is not empty
+            if (itemText !== "") {
+                // Create a new list item
+                let li = document.createElement("li");
+                li.textContent = itemText;
+
+                // Append to the list
+                document.getElementById("checklist").appendChild(li);
+
+                // Clear input field
+                input.value = "";
+            } else {
+                alert("Please enter an item!");
+            }
+        }
+    </script>
+
+
+
+
+
+</div>
+
+
+</body>
+</html>

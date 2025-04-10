@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <style>
+        .header{
+            font-family: 'Brush Script MT', cursive;
+            justify-content: right;
+            font-size: 48px;
+            margin: 15px;
+        }
+        h4{
+
+            background-color: lightgrey;
+            color:black;
+            border: black;
+            border-width: 10px;
+            padding: 5px;
+
+        }
+        .home-button{
+            background-color: black;
+            color: white;
+            border-radius: 10%;
+            margin-top: 10px;
+            margin-left: 10px;
+            padding: 12px 16px; /* Some padding */
+            cursor: pointer;
+            border: 2px solid black;
+        }
+        img {
+            width: 150px;
+            border-radius: 50px;
+            float: left;
+            border: 2px solid black;
+            margin: 10px;
+        }
+        .inputs{
+            margin: 5px;
+        }
+        .states{
+            padding-top: 20px;
+            height: 100px;
+            margin-bottom: 5px;
+        }
+
+    </style>
+    <link rel= "stylesheet" href="style.css">
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <script >
+        const {createClient} = supabase; //initialize supabase
+        const supabaseURL = "https://ghzfpwdivvezmbsfaonn.supabase.co";
+        const supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdoemZwd2RpdnZlem1ic2Zhb25uIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjQwNzEzMzcsImV4cCI6MjAzOTY0NzMzN30.B4drrT_iuBlP4X-V2s8CBUPEkhryRrOM9O51IVi3Uzg";
+         window.supabase = createClient(supabaseURL, supabaseAnonKey);
+    </script>
+
+    <script src="data2.js"></script>
+</head>
+<body>
+<div class = "container" style=" background-image: url('https://images.unsplash.com/photo-1558346648-9757f2fa4474?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWFyYmxlJTIwd2FsbHBhcGVyfGVufDB8fDB8fHww')">
+    <img src="https://i.imgur.com/dIugFxk.png" alt="Dormify Logo">
+    <h2 class ="header">Welcome to Dormify</h2>
+
+    <h4>Please enter your information below.</h4>
+        <input class ="inputs" type = "text" id = "username" placeholder = "Username" required>
+        <input class = "inputs" type = "email" id = "email" placeholder = "Email" required>
+        <input class = "inputs" type = "password" id = "password" placeholder = "Password" required>
+
+
+    <h4>How many weeks until you move in?</h4>
+
+    <!-- Dropdown Menu -->
+    <label for= "weekChoice">Select how many weeks:</label>
+    <select id="weekChoice" name="weekChoice">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+
+    </select>
+
+    <h4> Were you looking for feminine or masculine decorations?</h4>
+    <label for= "decor"> Select your option: </label>
+    <select class="dec" id="decor" name="decor">
+        <option value="Feminine">Feminine</option>
+        <option value="Masculine">Masculine</option>
+    </select>
+
+   <!-- <div class="states">
+        <img src="https://www.epa.gov/sites/default/files/styles/medium/public/2015-05/nca-midwest.jpg?itok=fNKlPcFZ" alt="Midwest" width="500" height="100">
+        <img src="https://www.bls.gov/regions/northeast/images/18756.png" alt="Northeast" width="500" height="100">
+        <img src="https://www.nacdnet.org/wp-content/uploads/2021/08/southeast-region-2021.png" alt="South" width="500" height="auto">
+        <img src="https://www.bls.gov/regions/west/images/18810.png"alt="West" width="500" height="auto">
+    </div>
+
+    /*<h4> What region of the US are you going to be in? </h4>
+    <label for= "places">Select your option:</label>
+    <select id="places" name="places">
+        <option value="Midwest">Midwest</option>
+        <option value="Northeast">Northeast</option>
+        <option value="The South">The South</option>
+        <option value="The West">The West</option>
+        <option value="US Virgin Islands">US Virgin Islands</option>
+        <option value="international">International</option>
+
+    </select>
+-->
+    <div>
+    <button id = "signup-btn" class="home-button">Sign up</button>
+    <p id = "error-msg"></p>
+    <a href = "login.html">Already have an account? Login</a>
+    </div>
+</div>
+
+
+
+
+
+
+<script src="auth2.js"></script>
+
+
+
+</body>
+</html>

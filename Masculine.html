@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Masculine </title>
+    <script src="https://kit.fontawesome.com/193ae4002d.js" crossorigin="anonymous"></script>
+    <style>
+
+        .home-button{
+            background-color: black;
+            color: white;
+            border-radius: 10%;
+            padding: 12px 16px; /* Some padding */
+            cursor: pointer;
+            border: 2px solid black;
+        }
+        .header-button{
+            background-color: black; /* Blue background */
+            /* Remove borders */
+            color: white; /* White text */
+            padding: 12px 16px; /* Some padding */
+            font-size: 16px; /* Set a font size */
+            cursor: pointer;
+            border-radius: 10%;
+            border: 2px solid black;
+            margin: 10px;
+        }
+        .large-button{
+            background-color: black; /* Blue background */
+            /* Remove borders */
+            color: white; /* White text */
+            padding: 12px 16px; /* Some padding */
+            font-size: 16px; /* Set a font size */
+            cursor: pointer;
+            border-radius: 10%;
+            border: 2px solid black;
+            margin: 10px;
+        }
+        .one {
+            cursor: pointer;
+            width: 200px;
+            border-radius: 10%;
+            border: 5px solid black;
+        }
+        .h1{
+            text-align: center
+        }
+        .words{
+            display: none; /* Initially hidden */
+            font-size: 12px;
+            color: #333;
+            margin-top: 10px;
+        }
+        .column{
+            float: left;
+            width: 15%;
+            padding: 2px;
+        }
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+            visibility: hidden;
+        }
+        .row{
+            display: none;
+        }
+    </style>
+
+    <ul id="displayList4"></ul>
+
+    <p><strong>Total Cost: $<span id="totalCostMasc">0</span></strong></p>
+
+    <script>
+        // Declare an empty list (array)
+        let shoppingList= JSON.parse(sessionStorage.getItem("items")) || [];
+        function saveData(){
+            const cartList4 = JSON.stringify(shoppingList)
+            // Sctore the list in localStorage (convert it to a JSON string)
+            sessionStorage.setItem('displayList4', cartList4);
+        }
+    </script>
+
+</head>
+<body style="background-color: lightgray">
+<div>
+    <button class ="home-button" id="homeButton"> <i class="fa-solid fa-house"></i> Home </button>
+    <script>
+        var button = document.getElementById("homeButton");
+        button.onclick = function(){
+            window.location.href= "homePage.html";
+        }
+    </script>
+
+    <button class ="home-button" id="cartButton"> <i class="fa-solid fa-cart-shopping"></i></button>
+    <script>
+        var cbutton = document.getElementById("cartButton");
+        cbutton.onclick = function(){
+            window.location.href= "Cart.html";
+        }
+    </script>
+
+    <button class ="home-button" id="checklistButton"> <i class="fa-solid fa-list-check"></i> </button>
+    <script>
+        var chbutton = document.getElementById("checklistButton");
+        chbutton.onclick = function(){
+            window.location.href= "Checklist.html";
+        }
+    </script>
+</div>
+<div class="box">
+<h1 class="h1"> <u> MASCULINE DECOR </u> 🕺</h1>
+<h2> Click on any of the boxes below to view our selection of Masculine Decor items! Click on "Checklist" to return to your "Checklist" and "Home" to return to the main page.</h2>
+</div>
+
+<button class="header-button" id="rugHeader">Rugs</button>
+<div class="row" id="i1" style="display: none;">
+
+
+    <script>
+        var rbutton = document.getElementById("rugHeader");
+        var rdiv = document.getElementById("i1");
+
+        rbutton.onclick = function(){
+            rdiv.style.display = "block";
+        };
+    </script>
+
+    <div class ="column">
+        <div class = "c1">
+            <img class = "one" src="https://target.scene7.com/is/image/Target/GUEST_2c65b26f-e465-4a60-91fa-3c7ae5d809ce?wid=600&hei=600&qlt=80&fmt=webp" alt="Click Me" id="mrugTarget">
+            <p id="text1" class ="words"><a href="https://www.target.com/p/4-39-x5-39-5-34-washable-small-checker-accent-rug-charcoal-and-ivory-room-essentials-8482/-/A-84642017#lnk=sametab"> 4'x5'5" Washable Small Checker Accent Rug/ $35.00 </a></p>
+            <script>
+                document.getElementById("mrugTarget").addEventListener("click", function() {
+                    var text1 = document.getElementById("text1");
+                    text1.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class = 'item'>
+            <button class = "large-button" id = "mrugTarget2" data-cost="35"> Add Target Rug to List </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("mrugTarget2").addEventListener("click", function(){
+            shoppingList.push("Target Rug (Masculine)")
+            saveData();
+        })
+
+        console.log(shoppingList)
+    </script>
+
+    <div class ="column">
+        <div class = "c2">
+            <img class = "one" src="https://i5.walmartimages.com/seo/Rug-for-Living-Room-Fluffy-Area-Rugs-for-Bedroom-Plush-Decorative-Rug-Indoor-Home-Carpet-with-Anti-Skid-Backing-4x6-Feet-Grey_0bd68cc1-9a4a-49d4-832f-31da79fd8b5f.0f318c21b8c8edcfb06a5150dc8b5d03.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Click Me" id="mrugWalmart">
+            <p id="text2" class ="words"><a href="https://www.walmart.com/ip/Rug-for-Living-Room-Fluffy-Area-Rugs-for-Bedroom-Plush-Decorative-Rug-Indoor-Home-Carpet-with-Anti-Skid-Backing-4x6-Feet-Grey/2275669037"> Rugs for Living Room, 4' x 6' Softy Fluffy Area Rug/ $26.99</a></p>
+            <script>
+                document.getElementById("mrugWalmart").addEventListener("click", function() {
+                    var text2 = document.getElementById("text2");
+                    text2.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class = 'item'>
+            <button class = "large-button" id = "mrugWalmart2" data-cost="26.99"> Add Walmart Rug to List </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("mrugWalmart2").addEventListener("click", function(){
+            shoppingList.push("Walmart Rug (Masculine)")
+            saveData();
+        })
+
+        console.log(shoppingList)
+    </script>
+
+    <div class ="column">
+        <div class = "c3">
+            <img class = "one" src="https://m.media-amazon.com/images/I/81iQs1ELCkL._AC_SX425_.jpg" alt="Click Me" id="mrugAmazon">
+            <p id="text3" class ="words"><a href="https://www.amazon.com/Unique-Loom-Collection-Traditional-Vintage/dp/B01M1D4WOO/ref=sxin_16_pa_sp_search_thematic_sspa?content-id=amzn1.sym.b4ac65ae-0048-4fbb-a310-b5c6291ff88b%3Aamzn1.sym.b4ac65ae-0048-4fbb-a310-b5c6291ff88b&crid=2QSXCHNCFLGDO&cv_ct_cx=neutral%2Brugs%2Bdorm%2Broom&keywords=neutral%2Brugs%2Bdorm%2Broom&pd_rd_i=B01DVDB7Z4&pd_rd_r=07846104-cee8-469a-bf04-92222e8a5de5&pd_rd_w=oLmZq&pd_rd_wg=5lUjc&pf_rd_p=b4ac65ae-0048-4fbb-a310-b5c6291ff88b&pf_rd_r=4WE7W2R4BMJNE065TW8B&qid=1740404627&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sprefix=neutral%2Brugs%2Bdorm%2Broom%2Caps%2C93&sr=1-2-2c727eeb-987f-452f-86bd-c2978cc9d8b9-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM&th=1"> Unique Loom Sofia Collection Area Rug - Casino (4'1" x 6'1"), available in multiple colors/ $30.87 </a></p>
+            <script>
+                document.getElementById("mrugAmazon").addEventListener("click", function() {
+                    var text3 = document.getElementById("text3");
+                    text3.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class = 'item'>
+            <button class = "large-button" id = "mrugAmazon2" data-cost="30.87"> Add Amazon Rug to List </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("mrugAmazon2").addEventListener("click", function(){
+            shoppingList.push("Amazon Rug (Masculine)")
+            saveData();
+        })
+        console.log(shoppingList)
+    </script>
+</div>
+<!--row2-->
+<button class="header-button" id="mirrorHeader">Full-Length Mirrors</button>
+<div class="row" id="i2" style="display: none;">
+
+    <script>
+        var mbutton = document.getElementById("mirrorHeader");
+        var mdiv = document.getElementById("i2");
+
+        mbutton.onclick = function(){
+            mdiv.style.display = "block";
+        };
+    </script>
+    <div class = "column">
+        <div class = "c4">
+            <img class = "one" src="https://target.scene7.com/is/image/Target/GUEST_e072eadd-3127-4341-9f36-44c9e050e583?wid=400&hei=400&qlt=80&fmt=webp" alt="Click Me" id="flmirrorTarget">
+            <p id="text4" class ="words"><a href="https://www.target.com/p/13-5-x-49-5-framed-door-mirror-room-essentials/-/A-87294433?preselect=13568567#lnk=sametab">13.5" x 49.5" Framed Door Mirror - Room Essentials / $7.00</a></p>
+            <script>
+                document.getElementById("flmirrorTarget").addEventListener("click", function() {
+                    var text4 = document.getElementById("text4");
+                    text4.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class = 'item'>
+            <button class = "large-button" id = "mirrorTarget2" data-cost="7"> Add Target Mirror to List </button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("mirrorTarget2").addEventListener("click", function(){
+            shoppingList.push("Target Mirror (Masculine)")
+            saveData();
+        })
+        console.log(shoppingList)
+    </script>
+    <div class = "column">
+        <div class = "c5">
+            <img class = "one" src="https://i5.walmartimages.com/seo/AnyRose-Full-Length-Mirror-14-x-48-Over-The-Door-Mirror-Aluminum-Alloy-Large-Hanging-Mirrors-Wall-Mounted-Body-Black_256dccf0-806b-43c4-b9b6-a32d499c0640.25e6103d078d6dd9c4bbc46d6ddd088b.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Click Me" id="flmirrorWalmart">
+            <p id="text5" class ="words"><a href="https://www.walmart.com/ip/AnyRose-Full-Length-Mirror-14-x-48-Over-The-Door-Mirror-Aluminum-Alloy-Large-Hanging-Mirrors-Wall-Mounted-Body-Black/15212871496?classType=VARIANT&adsRedirect=true"> AnyRose Full Length Mirror 14" x 48"/ $29.99</a></p>
+            <script>
+                document.getElementById("flmirrorWalmart").addEventListener("click", function() {
+                    var text5 = document.getElementById("text5");
+                    text5.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class = 'item'>
+            <button class = "large-button" id = "mirrorWalmart2" data-cost="29.99"> Add Walmart Mirror to List </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("mirrorWalmart2").addEventListener("click", function(){
+            shoppingList.push("Walmart Mirror (Masculine)")
+            saveData();
+        })
+        console.log(shoppingList)
+    </script>
+
+    <div class = "column">
+        <div class = "c6">
+            <img class = "one" src="https://m.media-amazon.com/images/I/61q5aV8jLUL._AC_SL1500_.jpg" alt="Click Me" id="flmirrorAmazon">
+            <p id="text6" class ="words"><a href="https://www.amazon.com/Length-Mirror-Frameless-Bedroom-Mounted/dp/B092746858/ref=sr_1_11?crid=2NGJMUUXX4MV8&dib=eyJ2IjoiMSJ9.lEO24cuiYsiJ-3khk5V69ugQkJER8BFYIyhbsJq-9soUz300wEdqsm8vidcd6LCDUcPze7Daia4OiRxXDnzJfxfJ3IL4FPfRe-icavn5gb-eB8j9gmgj4z10oHHr4xbLPQRK4CKKkpHHeXebGO4ItZ9qM_fNnRC82jbrGGifjClrW671ChDTrF-kQRLzAeTjs32het1c7EmBv006OzOgh2rjDTxsLH0yfpDZZhZifZfjVH2ZLYjO-G9poQ_SB1_WlI2HNuOs3IUuRAiRQLS8MtIOm9y7dOCsJpFwQ0kDOPpTkPFsQ1euz6VTMtjy2YlUGs-sTmXVC-q3iQregZsutxZoa1Y-fa_YuCWaV1dtX-s.yxeqFhvHbw8PYHG4PdNWNpAwxM2L7IDXBLKYTq9FlbQ&dib_tag=se&keywords=full%2Blength%2Bmirror%2Bdorm&qid=1740405376&s=home-garden&sprefix=full%2Blength%2Bmirror%2Bdorm%2Cgarden%2C99&sr=1-11&th=1"> Glass Full Length Wall Mirror Tiles, 14" x 12" x 4PCS / $16.99</a></p>
+            <script>
+                document.getElementById("flmirrorAmazon").addEventListener("click", function() {
+                    var text6 = document.getElementById("text6");
+                    text6.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class = 'item'>
+            <button class = "large-button" id = "mirrorAmazon2" data-cost="16.99"> Add Amazon Mirror to List </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("mirrorAmazon2").addEventListener("click", function(){
+            shoppingList.push("Amazon Mirror (Masculine)")
+            saveData();
+        })
+        console.log(shoppingList)
+    </script>
+</div>
+
+<!--row3-->
+<button class="header-button" id="pillowHeader">Throw Pillows</button>
+<div class="row" id="i3" style="display: none;">
+
+
+    <script>
+        var pbutton = document.getElementById("pillowHeader");
+        var pdiv = document.getElementById("i3");
+
+        pbutton.onclick = function(){
+            pdiv.style.display = "block";
+        };
+    </script>
+    <div class = "column">
+        <div class = "c7">
+            <img class = "one" src="https://target.scene7.com/is/image/Target/GUEST_4b22a6c4-33ce-4569-bed8-288db8ecde8f?wid=400&hei=400&qlt=80&fmt=webp" alt="Click Me" id="mtpTarget">
+            <p id="text7" class ="words"><a href="https://www.target.com/p/windowpane-woven-decorative-pillow-oblong-threshold/-/A-91235229?preselect=89213828#lnk=sametab"> Windowpane Woven Decorative Pillow Oblong - Threshold / $20.00</a></p>
+            <script>
+                document.getElementById("mtpTarget").addEventListener("click", function() {
+                    var text7 = document.getElementById("text7");
+                    text7.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class = 'item'>
+            <button class = "large-button" id = "mtpTarget2" data-cost="20"> Add Target Throw Pillow to List </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("mtpTarget2").addEventListener("click", function(){
+            shoppingList.push("Target Throw Pillow (Masculine)")
+            saveData();
+        })
+        console.log(shoppingList)
+    </script>
+    <div class = "column">
+        <div class = "c8">
+            <img class = "one" src="https://i5.walmartimages.com/seo/Phantoscope-Soft-Corduroy-Corn-Striped-Velvet-Series-Decorative-Throw-Pillow-18-x-18-Gray-2-Pack_7fc78306-1dab-4f53-bb68-7bb6b12c8259.a8c91b44124bb80f36a065abfd7e15b6.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Click Me" id="mtpWalmart">
+            <p id="text8" class ="words"><a href="https://www.walmart.com/ip/Soft-Corduroy-Corn-Striped-Velvet-Series-Decorative-Throw-Pillow-18-x-18-Yellow-Green-2-Pack/503409754"> Phantoscope Soft Corduroy Corn Striped Velvet Series Decorative Throw Pillow, 18" x 12", Gray, 2 Pack/ $23.99</a></p>
+            <script>
+                document.getElementById("mtpWalmart").addEventListener("click", function() {
+                    var text8 = document.getElementById("text8");
+                    text8.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class = 'item'>
+            <button class = "large-button" id = "mtpWalmart2" data-cost="23.99"> Add Walmart Mirror to List </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("mtpWalmart2").addEventListener("click", function(){
+            shoppingList.push("Walmart Throw Pillow (Masculine)")
+            saveData();
+        })
+        console.log(shoppingList)
+    </script>
+
+    <div class = "column">
+        <div class = "c9">
+            <img class = "one" src="https://m.media-amazon.com/images/I/812xErotFbL._AC_SY450_.jpg" alt="Click Me" id="mtpAmazon">
+            <p id="text9" class ="words"><a href="https://www.amazon.com/MIULEE-Corduroy-Decorative-Pillowcases-Farmhouse/dp/B0BR5DWBVM/ref=sr_1_52_sspa?crid=ME9797HJN1FX&dib=eyJ2IjoiMSJ9.3G3Pk4au31lNBP060p3XGnn33QNwmXSMgT3cTjZBDbLcM1UV83NnU_OcYE43F-jlrbMZYWc8vfaW-cE6IbT08Utfh8jPc_WLXeJ_EzQrz4mD4zm2xiE0QNHcAlMJig479V9GUb5XI3-PvxeopCzPv3-rK-OqJVczKYqYHT_UgjgYDoRX6VSl20to3iFmd_4ch-K8AAgYwMpPDnmtozpy2hW5NxWzm7C3_cuxLtu0DXUuhwm7_bjfub3NgzLmitOJjZCUqofPHlp4_erQ-NmZlgfuaQqKwY31FVmdk7CR5uY.zOXg10gDovUOejgvaW6WXOO089iSpYFuq9SWIz1-9Jo&dib_tag=se&keywords=throw%2Bpillows%2Bfor%2Bdorms&qid=1740406275&sprefix=throw%2Bpillows%2Bfor%2Bdorms%2Caps%2C111&sr=8-52-spons&xpid=UddVLatvXry7O&sp_csd=d2lkZ2V0TmFtZT1zcF9tdGY&th=1"> MULEE Throw Pillow Covers Soft Corduroy Decorative Set of 2/ $14.99 </a></p>
+            <script>
+                document.getElementById("mtpAmazon").addEventListener("click", function() {
+                    var text9 = document.getElementById("text9");
+                    text9.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+
+        <div class = 'item'>
+            <button class = "large-button" id = "mtpAmazon2" data-cost="14.99"> Add Amazon Throw Pillow to List </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("mtpAmazon2").addEventListener("click", function(){
+            shoppingList.push("Amazon Throw Pillow (Masculine)")
+            saveData();
+        })
+        console.log(shoppingList)
+    </script>
+</div>
+
+<!--row4-->
+
+
+<button class="header-button" id="artHeader">Posters/Wall Art</button>
+<div class="row" id="i4" style="display: none;">
+    <script>
+        var abutton = document.getElementById("artHeader");
+        var adiv = document.getElementById("i4");
+
+        abutton.onclick = function(){
+            adiv.style.display = "block";
+        };
+    </script>
+
+    <div class = "column">
+        <div class = "c10">
+            <img class = "one" src="https://target.scene7.com/is/image/Target/GUEST_19481e69-47db-4d2b-91ff-d847515625d4?wid=400&hei=400&qlt=80&fmt=webp" alt="Click Me" id="mposterTarget">
+            <p id="text10" class ="words"><a href="https://www.target.com/p/notoriart-light-up-neon-sneaker-wall-art-unframed/-/A-1001523509?preselect=1001523515#lnk=sametab"> Notoriart Light Up Neon Sneaker Wall Art Unframed (12" x 12")/ $52.79</a></p>
+            <script>
+                document.getElementById("mposterTarget").addEventListener("click", function() {
+                    var text10 = document.getElementById("text10");
+                    text10.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class = 'item'>
+            <button class = "large-button" id = "mposterTarget2" data-cost="52.79"> Add Target Poster to List </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("mposterTarget2").addEventListener("click", function(){
+            shoppingList.push("Target Poster (Masculine)")
+            saveData();
+        })
+        console.log(shoppingList)
+    </script>
+
+    <div class = "column">
+        <div class = "c11">
+            <img class = "one" src="https://i5.walmartimages.com/seo/AXXPosters-Graffiti-Guitar-Wall-Art-Colorful-Watercolor-Picture-Room-Decor-Aesthetic-Music-Posters-Banksy-Street-Canvas-Teen-Boys-Paintinginch_978b6dd0-a0e8-4065-b85c-19741503c2ec.f02596c271f85e4e10896d5b016241e7.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Click Me" id="mposterWalmart">
+            <p id="text11" class ="words"><a href="https://www.walmart.com/ip/AXXPosters-Graffiti-Guitar-Wall-Art-Colorful-Watercolor-Picture-Room-Decor-Aesthetic-Music-Posters-Banksy-Street-Canvas-Teen-Boys-Paintinginch/14837006775?classType=VARIANT&from=/search"> AXXPosters Graffiti Guitar Wall Art/ $16.99</a></p>
+            <script>
+                document.getElementById("mposterWalmart").addEventListener("click", function() {
+                    var text11 = document.getElementById("text11");
+                    text11.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class = 'item'>
+            <button class = "large-button" id = "mposterWalmart2" data-cost="16.99"> Add Walmart Poster to List </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("mposterWalmart2").addEventListener("click", function(){
+            shoppingList.push("Walmart Poster (Masculine)")
+            saveData();
+        })
+        console.log(shoppingList)
+    </script>
+
+    <div class = "column">
+        <div class = "c12">
+            <img class = "one" src="https://m.media-amazon.com/images/I/81aCudVw1FL._AC_SX450_.jpg" alt="Click Me" id="mposterAmazon">
+            <p id="text12" class ="words"><a href="https://www.amazon.com/watercolor-Pictures-Colorful-Painting-Decoration/dp/B0CP7W91H7/ref=sr_1_1_sspa?crid=1VN9FD73UMR8R&dib=eyJ2IjoiMSJ9.XhD2I-XS6NhPqYvFscqSRXcInGjpd7L1J86EuWyZ1AtfBq5STL00Mxo429PlAIkJJ3RZ5eS0A70tNdSl8W7TJooxO74LZk8as_6t7i7fvcZLmXgcTx14SvUueXyAvLYYPRcQu0iPBZh8NRDi7D3dnwn7O2ncBQ1awXa85U4o90Ep0-gPPdynHT1_UcZ57ewogd9BAF6PVRhDtIYNrTBqw61AWxZpLZUBX8kVJJxPsTz_uQiJhBnLR1YwBvYAJC9UXDdiVVOOf0r5xdE6mVsaNx_fwGwYyVA9pixwQH7WKqY.3m4HKEvQ_TY2N7eamNwZr18vxNvHAcFnXPIlCmgHqJI&dib_tag=se&keywords=gamer%2Bposters&qid=1740406423&sprefix=gamer%2Bposter%2Caps%2C106&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1"> 3 Pcs Cool Gaming Wall Art Retro Video Game/ 12' x 16' Unframed/ $8.99 </a></p>
+            <script>
+                document.getElementById("mposterAmazon").addEventListener("click", function() {
+                    var text12 = document.getElementById("text12");
+                    text12.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+
+        <div class = 'item'>
+            <button class = "large-button" id = "mposterAmazon2" data-cost="8.99"> Add Amazon Poster to List </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("mposterAmazon2").addEventListener("click", function(){
+            shoppingList.push("Amazon Poster (Masculine)")
+            saveData();
+        })
+        console.log(shoppingList)
+    </script>
+</div>
+
+<!--row5-->
+
+<button class="header-button" id="otHeader">Ottomans</button>
+<div class="row" id="i5" style="display: none;">
+
+    <script>
+        var obutton = document.getElementById("otHeader");
+        var odiv = document.getElementById("i5");
+
+        obutton.onclick = function(){
+            odiv.style.display = "block";
+        };
+    </script>
+
+    <div class = "column">
+        <div class = "c13">
+            <img class = "one" src="https://target.scene7.com/is/image/Target/GUEST_26188936-053b-4259-aaf0-40ea220a2c07?wid=400&hei=400&qlt=80&fmt=webp" alt="Click Me" id="mottomanTarget">
+            <p id="text13" class ="words"><a href="https://www.target.com/p/collapsible-single-ottoman-room-essentials-8482/-/A-92279762?preselect=89719058#lnk=sametab"> Collapsible Dorm Single Storage Ottoman - Room Essentials/ $10.00 </a></p>
+            <script>
+                document.getElementById("mottomanTarget").addEventListener("click", function() {
+                    var text13 = document.getElementById("text13");
+                    text13.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class = 'item'>
+            <button class = "large-button" id = "mottomanTarget2" data-cost="10"> Add Target Ottoman to List </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("mottomanTarget2").addEventListener("click", function(){
+            shoppingList.push("Target Ottoman (Masculine)")
+            saveData();
+        })
+        console.log(shoppingList)
+    </script>
+
+    <div class = "column">
+        <div class = "c14">
+            <img class = "one" src="https://i5.walmartimages.com/seo/Mainstays-Collapsible-Storage-Ottoman-Gray_333cc8e0-3bbe-424f-9c60-ae212121c9af.de948d5cf4629b269c9f2d154ac7c441.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Click Me" id="mottomanWalmart">
+            <p id="text14" class ="words"><a href="https://www.walmart.com/ip/Mainstays-Collapsible-Storage-Ottoman-Gray/1559100018?classType=VARIANT&athbdg=L1600&from=/search"> Mainstays Collapsible Storage Ottoman (available in multiple colors)/ $17.88 </a></p>
+            <script>
+                document.getElementById("mottomanWalmart").addEventListener("click", function() {
+                    var text14 = document.getElementById("text14");
+                    text14.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class = 'item'>
+            <button class = "large-button" id = "mottomanWalmart2" data-cost="17.88"> Add Walmart Ottoman to List </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("mottomanWalmart2").addEventListener("click", function(){
+            shoppingList.push("Walmart Ottoman (Masculine)")
+            saveData();
+        })
+        console.log(shoppingList)
+    </script>
+
+    <div class = "column">
+        <div class = "c15">
+            <img class = "one" src="https://m.media-amazon.com/images/I/A1uvJZS-fVL._AC_SL1500_.jpg" alt="Click Me" id="mottomanAmazon">
+            <p id="text15" class ="words"><a href="https://www.amazon.com/SONGMICS-Folding-Storage-Ottoman-ULSF028G01/dp/B09ZY77T8D?th=1"> SONGMICS 11.8" Small Folding Storage Ottoman Cube (available in multiple colors)/ $15.91 </a></p>
+            <script>
+                document.getElementById("mottomanAmazon").addEventListener("click", function() {
+                    var text15 = document.getElementById("text15");
+                    text15.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class = 'item'>
+            <button class = "large-button" id = "mottomanAmazon2" data-cost="15.91"> Add Amazon Ottoman to List </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("mottomanAmazon2").addEventListener("click", function(){
+            shoppingList.push("Amazon Ottoman (Masculine)")
+            saveData();
+        })
+        console.log(shoppingList)
+    </script>
+</div>
+
+
+<script>
+    // Temporary variable to hold the total cost
+    let totalCostMasc = 0;
+
+    // Function to update the total cost when a button is clicked
+    function updateTotalCost(event) {
+        // Get the cost from the clicked button's data-cost attribute
+        const itemCost = parseFloat(event.target.getAttribute('data-cost'));
+
+        // Add the cost to the total
+        totalCostMasc += itemCost;
+        totalCostMasc.toFixed(2);
+        // Update the displayed total cost
+        document.getElementById('totalCostMasc').innerText = totalCostMasc;
+
+        sessionStorage.setItem('totalCostMasc', totalCostMasc);
+    }
+
+    // Add event listeners to the buttons
+    const buttons = document.querySelectorAll('.item button');
+    buttons.forEach(button => {
+        button.addEventListener('click', updateTotalCost);
+    });
+</script>
+
+<script>
+    // Wait until the page is fully loaded
+    document.addEventListener("DOMContentLoaded", () => {
+        const buttons = document.querySelectorAll(".large-button");
+
+        buttons.forEach(button => {
+            button.addEventListener("click", () => {
+                button.textContent = "Added!";
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

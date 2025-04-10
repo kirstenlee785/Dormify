@@ -1,0 +1,25 @@
+
+body{
+
+}
+
+.container{
+    max-width: 450px;
+    margin: 50px auto;
+    padding: 50px;
+    background-color: white;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.home{
+    max-width: fit-content;
+    background-color: darkgrey;
+    border-radius: 5px;
+}
+
+
+button:hover{}
+
+#error-msg{
+    color: red;
+}

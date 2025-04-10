@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feminine</title>
+    <script src="https://kit.fontawesome.com/193ae4002d.js" crossorigin="anonymous"></script>
+    <style>
+
+
+        .home-button{
+            background-color: black;
+            color: white;
+            border-radius: 10%;
+            padding: 12px 16px; /* Some padding */
+            cursor: pointer;
+            border: 2px solid black;
+        }
+        .header-button{
+            background-color: black; /* Blue background */
+            /* Remove borders */
+            color: white; /* White text */
+            padding: 12px 16px; /* Some padding */
+            font-size: 16px; /* Set a font size */
+            cursor: pointer;
+            border-radius: 10%;
+            border: 2px solid black;
+        }
+        .large-button{
+            background-color: black; /* Blue background */
+            /* Remove borders */
+            color: white; /* White text */
+            padding: 12px 16px; /* Some padding */
+            font-size: 16px; /* Set a font size */
+            cursor: pointer;
+            border-radius: 10%;
+            border: 2px solid black;
+        }
+        #text {
+            display: none; /* Initially hidden */
+            font-size: 12px;
+            color: #333;
+            margin-top: 10px;
+        }
+        .one {
+            cursor: pointer;
+            width: 200px;
+            border-radius: 10%;
+            border: 5px solid black;
+        }
+        .h1{
+            text-align: center
+        }
+        .words{
+            display: none; /* Initially hidden */
+            font-size: 12px;
+            color: #333;
+            margin-top: 10px;
+        }
+        .column{
+            float: left;
+            width: 15%;
+            padding: 2px;
+        }
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+            visibility: hidden;
+        }
+        .row{
+            display: none;
+        }
+    </style>
+</head>
+
+<ul id="femList"></ul>
+<ul id="displayList3"></ul>
+<p><strong>Total Cost: $<span id="totalCostFem">0</span></strong></p>
+<script>
+    // Declare an empty list (array)
+    let femList= JSON.parse(sessionStorage.getItem("items")) || [];
+    function saveData(){
+        const cartList3 = JSON.stringify(femList)
+        // Sctore the list in localStorage (convert it to a JSON string)
+        sessionStorage.setItem('displayList3', cartList3);
+    }
+</script>
+
+<body style="background-color: lavender">
+<div>
+    <button class ="home-button" id="homeButton"> <i class="fa-solid fa-house"></i> Home </button>
+    <script>
+        var button = document.getElementById("homeButton");
+        button.onclick = function(){
+            window.location.href= "homePage.html";
+        }
+    </script>
+
+    <button class ="home-button" id="cartButton"> <i class="fa-solid fa-cart-shopping"></i></button>
+    <script>
+        var cbutton = document.getElementById("cartButton");
+        cbutton.onclick = function(){
+            window.location.href= "Cart.html";
+        }
+    </script>
+
+    <button class ="home-button" id="checklistButton"> <i class="fa-solid fa-list-check"></i></button>
+    <script>
+        var chbutton = document.getElementById("checklistButton");
+        chbutton.onclick = function(){
+            window.location.href= "Checklist.html";
+        }
+    </script>
+</div>
+<div class="center-wrapper">
+    <h1 class="h1"> <u> FEMININE DECOR </u> 💃 </h1>
+<h2> Click on any of the boxes below to view our selection of 'Feminine Decor' items! Click on "Checklist" to return to your "Checklist" and "Home" to return to the main page.</h2>
+<div class = "button-row">
+<button class="header-button" id="ledHeader">LED Lights</button>
+<div class="row" id="j1" style="display: none;">
+    <script>
+        var lbutton = document.getElementById("ledHeader");
+        var ldiv = document.getElementById("j1");
+
+        lbutton.onclick = function(){
+            ldiv.style.display = "block";
+        };
+    </script>
+
+    <div class = "column">
+        <div class = "container">
+            <img class = "one" src="https://target.scene7.com/is/image/Target/GUEST_58083360-f6a4-4dce-9f33-dd2f1ae4c312?wid=1200&hei=1200&qlt=80&fmt=webp" alt="Click Me" id="LEDTarget">
+            <p id="text" class ="words"><a href="https://www.target.com/p/ge-cync-smart-color-changing-light-strip-power-supply/-/A-76513670#lnk=sametab"> Target GE GE CYNC Smart LED Full Color Light Strip + Power Supply 16' $19.99</a></p>
+            <script>
+                document.getElementById("LEDTarget").addEventListener("click", function() {
+                    var text = document.getElementById("text");
+                    text.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class = "item">
+            <button class = "large-button" id = "LEDTarget2" data-cost="19.99"> Add Target LED Lights to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("LEDTarget2").addEventListener("click", function(){
+            shoppingList.push("Target LED Lights")
+            saveData();
+        })
+        console.log(femList)
+    </script>
+    <div class = "column">
+        <div class = "containerTwo">
+            <img class = "one" src="https://i5.walmartimages.com/seo/DAYBETTER-Led-Strip-Lights-100ft-Light-Strips-App-Control-Remote-5050-RGB-Lights-Bedroom-Music-Sync-Color-Changing-Room-Party_fd6a71ff-80d2-4f06-b5fe-b9d590c271f6.31e6954ca633df4afbd30027ecd758cd.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Click Me" id="LEDWalmart">
+            <p id="text2" class = "words"><a href="https://www.walmart.com/ip/DAYBETTER-Led-Strip-Lights-100ft-Light-Strips-App-Control-Remote-5050-RGB-Lights-Bedroom-Music-Sync-Color-Changing-Room-Party/789645906?classType=VARIANT&athbdg=L1200&adsRedirect=true"> Walmart DAYBETTER Led Strip Lights, 100ft Light Strips with App Control Remote,RGB Led Lights for Bedroom, Music Sync Color Changing Lights for Room Party $9.98</a></p>
+            <script>
+                document.getElementById("LEDWalmart").addEventListener("click", function() {
+                    var text2 = document.getElementById("text2");
+                    text2.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class = "item">
+            <button class = "large-button" id = "LEDWalmart2" data-cost="9.98"> Add Walmart LED Lights to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("LEDWamart2").addEventListener("click", function(){
+            femList.push("Walmart LED Lights")
+            saveData();
+        })
+        console.log(femList)
+    </script>
+
+    <div class = "column">
+        <div class = "containerThree">
+            <img class = "one" src="https://m.media-amazon.com/images/I/71lntIT6FfL._AC_SL1500_.jpg" alt="Click Me" id="LEDAmazon">
+            <p id="text3" class="words"><a href="https://www.amazon.com/Changing-Control-Lighting-Flexible-Decoration/dp/B09V366BDY/ref=sr_1_1_sspa?crid=2CUPX979PXEIB&dib=eyJ2IjoiMSJ9.0-uX9fPg99wPKoH2iecJ_zwVTbgujTVyGXMGUOhocjAmCa8NwZgaMEYySQJ_esMmQ_bPo2YfEQ8oZkULQVCmqWvoKPZsOOyh7l1-G-7Na0X3ZAsKpNQwxWH164Q_62YbxsFzI524rvzX2DLu1jauSoXwzmgCUdPNsCoY2YLvotusSdGc9hIi1YIp7XCIWxbMDS4k8Jc05ejQxvpZwCWZicPyJ9tQb5-h-KSUhLz1gk9ziCzMbW0fniiG_FuKH7jo3zftGDCxazgsuP_5HRPGaEyVIXiwLRObLtlkpdPCaHw.l6Viw6RCS19cHZtYofUW460NEQSoPupAnipiBK3-UC4&dib_tag=se&keywords=led%2Blights&qid=1739198286&sprefix=led%2Blights%2Caps%2C111&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1">Amazon Comfee EM720CPL-PMB Countertop Microwave Oven with Sound On/Off, ECO Mode and Easy One-Touch Buttons, 0.7 Cu Ft, Black $80.00</a></p>
+            <script>
+                document.getElementById("LEDAmazon").addEventListener("click", function() {
+                    var text3 = document.getElementById("text3");
+                    text3.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class = "item">
+            <button class = "large-button" id = "LEDAmazon2" data-cost="80"> Add Amazon LED Lights to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("LEDAmazon2").addEventListener("click", function(){
+            femList.push("Amazon LED Lights")
+            saveData();
+        })
+        console.log(femList)
+    </script>
+</div>
+<!--row2-->
+
+<button class="header-button" id="rug2Header">Rugs</button>
+<div class="row" id="j2" style="display: none;">
+
+
+    <script>
+        var r2button = document.getElementById("rug2Header");
+        var r2div = document.getElementById("j2");
+
+        r2button.onclick = function(){
+            r2div.style.display = "block";
+        };
+    </script>
+    <div class = "column">
+        <div class = "containerFour">
+            <img class = "one" src="https://target.scene7.com/is/image/Target/GUEST_e7620535-7899-423d-a8e6-b3c31e3ba40e?wid=1200&hei=1200&qlt=80&fmt=webp" alt="Click Me" id="targetRug">
+            <p id="text4" class="words"><a href="https://www.target.com/p/2-39-6-34-x3-39-10-34-washable-plush-shag-accent-rug-pink-room-essentials-8482/-/A-51816786?preselect=51816786#lnk=sametab" >2'6"x3'10" Washable Plush Shag Accent Rug Pink - Room Essentials/ $30.00</a></p>
+            <script>
+                document.getElementById("targetRug").addEventListener("click", function() {
+                    var text4 = document.getElementById("text4");
+                    text4.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class = "item">
+            <button class = "large-button" id = "rugTarget2" data-cost="30"> Add Target Rug to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("rugTarget2").addEventListener("click", function(){
+            femList.push("Target Rug (Feminine)")
+            saveData();
+        })
+        console.log(femList)
+    </script>
+    <div class = "column">
+        <div class = "containerFive">
+            <img class = "one" src="https://i5.walmartimages.com/seo/Pink-Rug-Bedside-Preppy-Dorm-Area-College-Essentials-Non-Slip-Small-Carpets-Bedroom-Anti-Fluffy-Living-Room-Rugs-Home-Decor-Aesthetic-Nursery-Purple_599c07c9-3d12-4b17-8ec2-77aed3f3e59f.03571690800cbdbc861064b88fbf7bc7.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Click Me" id="WalmartRug">
+            <p id="text5" class="words"><a href="https://www.walmart.com/ip/Pink-Rug-Bedside-Preppy-Dorm-Area-College-Essentials-Non-Slip-Small-Carpets-Bedroom-Anti-Fluffy-Living-Room-Rugs-Home-Decor-Aesthetic-Nursery-Purple/14866113563?classType=VARIANT&from=/search">Bedside Preppy Dorm Area Rug, College Essentials, Non Slip (available in multiple colors) / $4.13 </a></p>
+            <script>
+                document.getElementById("WalmartRug").addEventListener("click", function() {
+                    var text5 = document.getElementById("text5");
+                    text5.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class = "item">
+            <button class = "large-button" id = "rugWalmart2" data-cost="4.13"> Add Walmart Rug to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("rugWalmart2").addEventListener("click", function(){
+            femList.push("Walmart Rug (Feminine)")
+            saveData();
+        })
+        console.log(femList)
+    </script>
+    <div class = "column">
+        <div class = "containerSix">
+            <img class = "one" src="https://m.media-amazon.com/images/I/91Hr6Blv60L._AC_SL1500_.jpg" alt="Click Me" id="amazonRug">
+            <p id="text6" class="words"><a href="https://www.amazon.com/Safavieh-Adirondack-Collection-Oriental-Distressed/dp/B01B9A2AR0/ref=sr_1_5?crid=5G63ANW14KP1&dib=eyJ2IjoiMSJ9.IUFKJzxPu4oy-T6y1wcA17EIUP1UDx8_NwdV798__4mJR8N3wmCmVW-Msl57UYJBjvjWoJTPjJaLVe4ycFZMdlshrKX5xUhFwjSGagj6fP9cweCzzJtMafgN5_0lNx7fu-S_YVG-FOriMLFMQlQGx3sxi2-P0gSQaWb203FAYoDvOxX2V_sXSd4txso4-tDOqKb2bSBy6axztBMbb_38YLcxbDDg8pk6-j-yynvy_AfWNkAeYa-6LX6IA2pRdILvh1Faoi-9CDv7sS_bsvr53VqS8MzZazC3o6eRWJH0wrBB0G3s4cckU-QcdcqigRG7F7Jq7W4kH3s7v4_VWOYQaGVN6o4VF9IxSYmYSVME0dU6hGZXiSpJuG24C2Jxgtvp93xABnZFLubh9JDttWLRbxTSLszldErsE3_SIJynx8xZFp_oHHiUVti66Ky3FVIc.qbYDXomYK6VyTMjardGcpc7InAk2RpE2Fxs8SGhudZo&dib_tag=se&keywords=dorm%2Brugs%2Bfor%2Bcollege%2Bstudents%2Bgirls&qid=1739412941&sprefix=rugs%2Bfor%2Bcollege%2B%2Caps%2C167&sr=8-5&th=1">SAFAVIEH Adirondack Collection Accent Rug - 3' x 5'</a></p>
+            <script>
+                document.getElementById("amazonRug").addEventListener("click", function() {
+                    var text6 = document.getElementById("text6");
+                    text6.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class="item">
+            <button class = "large-button" id = "rugAmazon2" data-cost="13"> Add Amazon Rug to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("rugAmazon2").addEventListener("click", function(){
+            femList.push("Amazon Rug (Feminine)")
+            saveData();
+        })
+        console.log(femList)
+    </script>
+</div>
+
+<!--row3-->
+<button class="header-button" id="vmHeader">Vanity Mirrors</button>
+<div class="row" id="j3" style="display: none;">
+
+    <script>
+        var vmbutton = document.getElementById("vmHeader");
+        var vmdiv = document.getElementById("j3");
+
+        vmbutton.onclick = function(){
+            vmdiv.style.display = "block";
+        };
+    </script>
+
+    <div class = "column">
+        <div class = "c7">
+            <img class = "one" src="https://target.scene7.com/is/image/Target/GUEST_e24ed070-8ba2-4823-8e2a-9cac03ae9932?wid=1200&hei=1200&qlt=80&fmt=webp" alt="Click Me" id="targetMirror">
+            <p id="text7" class="words"><a href="https://www.target.com/p/bathroom-vanity-mirrors-gold-home-details/-/A-54534316#lnk=sametab">Bathroom Vanity Mirrors Gold/ $12.49</a></p>
+            <script>
+                document.getElementById("targetMirror").addEventListener("click", function() {
+                    var text7 = document.getElementById("text7");
+                    text7.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class = "item">
+            <button class = "large-button" id = "mirrorTarget2" data-cost="12.49"> Add Target Mirror to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("mirrorTarget2").addEventListener("click", function(){
+            femList.push("Target Mirror (Feminine)")
+            saveData();
+        })
+        console.log(femList)
+    </script>
+    <div class = "column">
+        <div class = "c8">
+            <img class = "one" src="https://i5.walmartimages.com/seo/10x-Magnifying-Lighted-Makeup-Mirror-360-Rotation-Touch-Sensor-Control-Natural-Daylight-LED-Light-Powerful-Locking-Suction-Cup-Cosmetic-Home-Bathroom_a4ff9a4e-ebb2-493c-9275-1a9b0f8a78ba.412cf251bd80c29b48f3285c1cde4384.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Click Me" id="walmartMirror">
+            <p id="text8" class="words"><a href="https://www.walmart.com/ip/10x-Magnifying-Lighted-Makeup-Mirror-360-Rotation-Touch-Sensor-Control-Natural-Daylight-LED-Light-Powerful-Locking-Suction-Cup-Cosmetic-Home-Bathroom/544546860?classType=REGULAR&athbdg=L1900&from=/search">10x Magnifying Lighted Makeup Mirror w/ 360 rotation, Touch Sensor Control...LED Light/ $16.68 </a></p>
+            <script>
+                document.getElementById("walmartMirror").addEventListener("click", function() {
+                    var text8 = document.getElementById("text8");
+                    text8.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class = "item">
+            <button class = "large-button" id = "mirrorWalmart2" data-cost="16.68"> Add Target Walmart to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("mirrorWalmart2").addEventListener("click", function(){
+            femList.push("Walmart Mirror (Feminine)")
+            saveData();
+        })
+        console.log(femList)
+    </script>
+    <div class = "column">
+        <div class = "c9">
+            <img class = "one" src="https://m.media-amazon.com/images/I/51g-9-6swNL._SL1000_.jpg" alt="Click Me" id="amazonMirror">
+            <p id="text9" class="words"><a href="https://www.amazon.com/YEAKE-Magnification-Magnifying-Portable-Countertop/dp/B0831DLT6J/ref=sr_1_18?crid=3PD6FWBGAVO8T&dib=eyJ2IjoiMSJ9.-lEbliLhS7-JgSNUMpRTox7nhZfgldDS0WJgr7oZDx8BAdykq1liVus9NvVKml78RtGIsE_mvULNvnD409ygTJIoT5Zl4DhCaXVsB0ipCeuMEnZQJeBQC440F_35PZNF6n57x_FVT7RYeEsha7HZI7w64RF-cWllKImnCi4V06kK4A-2IowWYDHUybKvTaeN2ooby2CAv8zZJAuwfhml7I7gxXy-gnFCTmA9dpJbWY1AxlpLyfbCUf_i_d11o0uy0J6u6GwnQ2stU5vf9eM0fuaRzjDI4irnsT3ZtsIUVF3rQXlHxJahmdxm3v_Bzpa5CwYINYSCM3fWA_9-ffHWOxDyNHCkDlOtsVywSJnSYvoWE1rvODEgeEKMM-Xg3aJPlVOKr92KFKP7osdDS_c4XzSqbesdFR07B2z9Tp64Kf-RTzRS9rmbcnNcVmRTFwi0.lRDlc1Jc2iz6VNGAeYLpGdiAcLqqG130e0s4f9T1iU8&dib_tag=se&keywords=vanity%2Bmirror%2Bdesk&qid=1739413207&sprefix=vanity%2Bmirr%2Caps%2C251&sr=8-18&th=1"> YEAKE Vanity Makeup Mirror w/ Natural Bamboo Stand, 360 degree swivel/ $11.69 </a></p>
+            <script>
+                document.getElementById("amazonMirror").addEventListener("click", function() {
+                    var text9 = document.getElementById("text9");
+                    text9.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class = "item">
+            <button class = "large-button" id = "mirrorAmazon2" data-cost="11.69"> Add Amazon Mirror to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("mirrorAmazon2").addEventListener("click", function(){
+            femList.push("Amazon Mirror (Feminine)")
+            saveData();
+        })
+        console.log(femList)
+    </script>
+</div>
+<!--row4-->
+<button class="header-button" id="trHeader">Throw Pillows</button>
+<div class="row" id="j4" style="display: none;">
+
+    <script>
+        var trbutton = document.getElementById("trHeader");
+        var trdiv = document.getElementById("j4");
+
+        trbutton.onclick = function(){
+            trdiv.style.display = "block";
+        };
+    </script>
+
+    <div class = "column">
+        <div class = "c10">
+            <img class = "one" src="https://target.scene7.com/is/image/Target/GUEST_28c7c865-73f9-490a-ae04-ea5e5d301d0c?wid=1200&hei=1200&qlt=80&fmt=webp" alt="Click Me" id="tpTarget">
+            <p id="text10" class="words"><a href="https://www.target.com/p/channeled-faux-fur-lumbar-throw-pillow-room-essentials/-/A-89220719?preselect=89156509#lnk=sametab"> Channeled Faux Fur Lumbar Throw Pillow (available in multiple colors)/ $10.00 </a></p>
+            <script>
+                document.getElementById("tpTarget").addEventListener("click", function() {
+                    var text10 = document.getElementById("text10");
+                    text10.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class ="item">
+            <button class = "large-button" id = "throwTarget2" data-cost="10"> Add Target Throw Pillows to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("throwTarget2").addEventListener("click", function(){
+            femList.push("Target Throw Pillow (Feminine)")
+            saveData();
+        })
+        console.log(femList)
+    </script>
+    <div class = "column">
+        <div class = "c11">
+            <img class = "one" src="https://i5.walmartimages.com/seo/Fiaya-Women-Plush-Flower-Shaped-Pillow-1pc-Valentine-s-Soft-Cushion-11-81inch-Fluffy-Cute-Throw-Pillow-Decorative-Back-Cushions-Bed-Sofa-Day-Gifts-Bl_1954d8cd-a718-424a-b85b-fa87589ad051.934cfdffefff0127348a48e0c01632da.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Click Me" id="tpWalmart">
+            <p id="text11" class="words"><a href="https://www.walmart.com/ip/Fiaya-Women-Plush-Flower-Shaped-Pillow-1pc-Valentine-s-Soft-Cushion-11-81inch-Fluffy-Cute-Throw-Pillow-Decorative-Back-Cushions-Bed-Sofa-Day-Gifts-Bl/14596704448?classType=VARIANT&from=/search"> Fiaya Women Plush Flower Shaped Pillow (available in multiple colors)/ $8.89 </a></p>
+            <script>
+                document.getElementById("tpWalmart").addEventListener("click", function() {
+                    var text11 = document.getElementById("text11");
+                    text11.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class = "item">
+            <button class = "large-button" id = "throwWalmart2" data-cost="8.89"> Add Walmart Throw Pillows to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("throwWalmartt2").addEventListener("click", function(){
+            femList.push("Walmart Throw Pillow (Feminine)")
+            saveData();
+        })
+        console.log(femList)
+    </script>
+    <div class = "column">
+        <div class = "c12">
+            <img class = "one" src="https://m.media-amazon.com/images/I/71ZsKoRn9kL._AC_SY450_.jpg" alt="Click Me" id="tpAmazon">
+            <p id="text12" class="words"><a href="https://www.amazon.com/Watercolor-Decorative-Romantic-Pillowcase-WF-Floral/dp/B07ZJCMJVN/ref=sr_1_17?dib=eyJ2IjoiMSJ9.5VI0UiQEVzGQbJOOGC-VHJtqtrgcIJxooQEChGxTjCTfykZuOLExDxdqDifHZGiUCMtq34iXHyLOB6mChdPw-VKc6qRJ0DDJQVmGN-XDEa9Kbg5N3tapnnRDaIjhyUEbOH1waf7C1_okk0cUdrdXOZq3poYhDS8xn_wguFEjHF6oZ5aSIO-pOoZTUpEUHr02yoP1BUgBQT_XGhAyv3lnpoe8ktLQZ1ojj6V35OHpOfGFiEK-hWXdFGTDyYiXx20XyKqnQJpylVIHqUC6SuxRuYU3R-eCbj8VhXKH40xTFdsTdglOlWulkGpnuTZrLoF5Yy--LAJC2C4_nCEj4GxXrCKm4yKFmpCFHyK7txwAKvdkLGEyGFIQKqCYXaGVGxU04ykzTmHywpZJhpQtAdmZ_Hc51cr4cVoGDUiAwf64UTN-o8Y8b3irdNL30h0D6R4f.ClvUWTKBvETEvk6Abd_PeZefoVl_ONgSTc2YRG3MgVg&dib_tag=se&keywords=feminine%2Bthrow%2Bpillows&qid=1740145357&sr=8-17&th=1"> Tlovudori Watercolor Floral Pink Roses Bloom Throw Pillow/ $7.29 </a></p>
+            <script>
+                document.getElementById("tpAmazon").addEventListener("click", function() {
+                    var text12 = document.getElementById("text12");
+                    text12.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class = "item">
+            <button class = "large-button" id = "throwAmazon2" data-cost="7.29"> Add Amazon Throw Pillows to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("throwAmazon2").addEventListener("click", function(){
+            femList.push("Amazon Throw Pillow (Feminine)")
+            saveData();
+        })
+        console.log(femList)
+    </script>
+</div>
+
+<button class="header-button" id="poster2Header">Posters</button>
+<div class="row" id="j5" style="display: none;">
+
+    <script>
+        var p2button = document.getElementById("poster2Header");
+        var p2div = document.getElementById("j5");
+
+        p2button.onclick = function(){
+            p2div.style.display = "block";
+        };
+    </script>
+    <div class = "column">
+        <div class = "c13">
+            <img class = "one" src="https://target.scene7.com/is/image/Target/GUEST_cbd69eea-bb41-4d07-be89-97f8b6ac3a50?wid=1200&hei=1200&qlt=80&fmt=webp" alt="Click Me" id="pTarget">
+            <p id="text13" class="words"><a href="https://www.target.com/p/8-x10-marta-barragan-camarasa-abstract-geometrical-flowers-art-print-unframed-wall-poster-pink-deny-designs/-/A-53884860#lnk=sametab"> Deny Designs 8"x10" Marta Barragan Camarasa Abstract Geometrical Flowers...Unframed Wall Poster / $16.00 </a></p>
+            <script>
+                document.getElementById("pTarget").addEventListener("click", function() {
+                    var text13 = document.getElementById("text13");
+                    text13.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class = "item">
+            <button class = "large-button" id = "posterTarget2" data-cost="16"> Add Target Poster to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("posterTarget2").addEventListener("click", function(){
+            femList.push("Target Poster (Feminine)")
+            saveData();
+        })
+        console.log(femList)
+    </script>
+    <div class = "column">
+        <div class = "c14">
+            <img class = "one" src="https://i5.walmartimages.com/seo/Blue-Bow-Canvas-Wall-Art-Watercolor-Light-Prints-Painting-Balletcore-Girl-Posters-Preppy-Aesthetic-Decor-For-Bedroom-Living-Room-Poster-Unframed_95fb5a25-3abd-45e5-b907-6b1e3bbe2ecf.56a209c3c4d69d4a8c49ffe207b5c677.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Click Me" id="pWalmart">
+            <p id="text14" class="words"><a href="https://www.walmart.com/ip/Blue-Bow-Canvas-Wall-Art-Watercolor-Light-Prints-Painting-Balletcore-Girl-Posters-Preppy-Aesthetic-Decor-For-Bedroom-Living-Room-Poster-Unframed/9094119358?classType=VARIANT&from=/search"> Blue Bow Canvas Wall Art, Watercolor, Unframed / $19.99 </a></p>
+            <script>
+                document.getElementById("pWalmart").addEventListener("click", function() {
+                    var text14 = document.getElementById("text14");
+                    text14.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class = "item">
+            <button class = "large-button" id = "posterWalmart2" data-cost="19.99"> Add Walmart Poster to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("posterWalmart2").addEventListener("click", function(){
+            femList.push("Walmart Poster (Feminine)")
+            saveData();
+        })
+        console.log(femList)
+    </script>
+    <div class = "column">
+        <div class = "c15">
+            <img class = "one" src="https://m.media-amazon.com/images/I/811HudFz34L._AC_SL1500_.jpg" alt="Click Me" id="pAmazon">
+            <p id="text15" class="words"><a href="https://www.amazon.com/Outus-Inspirational-Pineapple-Motivational-Decorations/dp/B08GLCTSZV/ref=sr_1_5?crid=24MK6TXZ4D8VX&dib=eyJ2IjoiMSJ9.n0NLnoHkEgHAHWmtOzdSwv5v5vQNZM7qVfpPtGsYxIyUC92WnUX-ZkLPhObN7OxtbeufWE96J1oaNGhEaVgygfUGBTR0FQC-_YCoq-QHyzdKJySBEodzC7vMFE_7mq-6LB6gwWbhqtYXPqS6hx5w2L5zRohST_0X0UbFMuxcuuJHgJRQ0DriJj-TNCdLWPWei-sXQUhiu-PxbO6rP7jxYcLSRlzY5AFnhaGEPuvkPsaRWbFqOGa3wROTVNKZ0z80xHZjmTV3DVNUN6-fO8PIFOpRy1Kq1-QvD6npuaDiBhWofDaJKyVyxZFBNdSLGFFfMZ86YBA3ljhgxGAq950gmeMk4P-uYroCMW8m5jcpoHDmmpD72dOlGT9km4BfPaeJMhhlPlrvYVXADz2YxsKP7SD84OOAbqkYJbaAuDk3vxyQ7R5Hy68hXZ-tJC0TZDhE.LAEWGoS82zw0AHapqUNRZ7BttbcdI_Su6OG18JvahNU&dib_tag=se&keywords=posters+for+girls+room&qid=1739414152&sprefix=posters+f%2Caps%2C163&sr=8-5"> Set of 9 Inspirational Prints, Motivational Phrases, Unframed Posters/ $7.99  </a></p>
+            <script>
+                document.getElementById("pAmazon").addEventListener("click", function() {
+                    var text15 = document.getElementById("text15");
+                    text15.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class="item">
+            <button class = "large-button" id = "posterAmazon2" data-cost="7.99"> Add Amazon Poster to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("posterAmazon2").addEventListener("click", function(){
+            femList.push("Amazon Poster (Feminine)")
+            saveData();
+        })
+        console.log(femList)
+    </script>
+</div>
+
+<button class="header-button" id="ot2Header">Ottomans</button>
+<div class="row" id="j6" style="display: none;">
+
+    <script>
+        var ot2button = document.getElementById("ot2Header");
+        var ot2div = document.getElementById("j6");
+
+        ot2button.onclick = function(){
+            ot2div.style.display = "block";
+        };
+    </script>
+    <div class = "column">
+        <div class = "c16">
+            <img class = "one" src="https://target.scene7.com/is/image/Target/GUEST_9345391d-84c8-4142-9790-c6b64cd30935?wid=400&hei=400&qlt=80&fmt=webp" alt="Click Me" id="otTarget">
+            <p id="text16" class ="words"><a href="https://www.target.com/p/sorbus-15-inch-teddy-fabric-foldable-storage-ottoman-multipurpose-cozy-ottoman-stool-for-living-room-bedroom-dorm-and-more/-/A-90296326?preselect=90296264#lnk=sametab"> Sorbus 15" Teddy Fabric Foldable Storage Ottoman/ $36.99  </a></p>
+            <script>
+                document.getElementById("otTarget").addEventListener("click", function() {
+                    var text16 = document.getElementById("text16");
+                    text16.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class ="item">
+            <button class = "large-button" id = "ottomanTarget2" data-cost="36.99"> Add Target Ottoman to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("ottomanTarget2").addEventListener("click", function(){
+            femList.push("Target Ottoman (Feminine)")
+            saveData();
+        })
+        console.log(femList)
+    </script>
+    <div class = "column">
+        <div class = "c17">
+            <img class = "one" src="https://i5.walmartimages.com/seo/MiaHltTia-Teddy-Fabric-Storage-Ottoman-15-Inch-Foldable-Cube-Multipurpose-Cozy-Ottoman-Foot-Rest-Sofa-Storage-Stool-Living-Room-Bedroom-Dorm-Small-Ot_6354aa7f-5df6-476b-9653-c1016add8480.ab41feb199a681e1e7330f98cdc512b1.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Click Me" id="otWalmart">
+            <p id="text17" class="words"><a href="https://www.walmart.com/ip/MiaHltTia-Teddy-Fabric-Storage-Ottoman-15-Inch-Foldable-Cube-Multipurpose-Cozy-Ottoman-Foot-Rest-Sofa-Storage-Stool-Living-Room-Bedroom-Dorm-Small-Ot/5832915056?classType=VARIANT&from=/search"> MiaHltTia Teddy Fabric Storage Ottoman - 15" / $36.34  </a></p>
+            <script>
+                document.getElementById("otWalmart").addEventListener("click", function() {
+                    var text17 = document.getElementById("text17");
+                    text17.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class="item">
+            <button class = "large-button" id = "ottomanWalmart2" data-cost="36.34"> Add Walmart Ottoman to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("ottomanWalmart2").addEventListener("click", function(){
+            femList.push("Walmart Ottoman (Feminine)")
+            saveData();
+        })
+        console.log(femList)
+    </script>
+    <div class = "column">
+        <div class = "c18">
+            <img class = "one" src="https://m.media-amazon.com/images/I/610zpXht1ZL._AC_SY450_.jpg" alt="Click Me" id="otAmazon">
+            <p id="text18" class="words"><a href="https://www.amazon.com/SONGMICS-Storage-Foldable-Capacity-ULSF200R01/dp/B0CD1HCQ8R/ref=sr_1_6?crid=JSJWPEV4IOIO&dib=eyJ2IjoiMSJ9.1OV8s6qvWuTUeTiWYyt4ypQoPa4_B_rQSSVSFuV8Ah5OB06-TM-_O7wxbE-uoNwDi3FNWjE3_li9wlOlHvXmIxDZHgyJ7YKzjHBFKeGnk7HxDyKNCQP35NLDbU5I6nqHkxf8OYEfBXFhT078iReuEKhaD6TKdMU_g6ZriHtG9Ti4sKTStSlAG39mLLRnBNBqrLnwXgWv_RLR30nnzatRbYSn8fOc4tmfb9TPAZnWhbvbsyuqSr78fTa0ixDtRlJEcSi-ETApK5zYCsFkt0yFts0mLRTEo3ER7hrT7bEfSran4QMSj09j0EfVHU8PkONWJAPaF4P15gr8SYBxuzsyS4bfcG_lIQiEJSaVJouVLstQcUzl-xku19jMLdRxgcgH5brIHf3ydHVICAhLf4PDM7liYXE7_mE8I4qe7QjbsfjT-kcvyxDmXx9WRknoxRFf.zMfxFGrfUyxVXMUlCyXMmLloqsK1nrK2MHLJrTEu0sg&dib_tag=se&keywords=cute%2Bottoman%2Bdorm&qid=1740146345&sprefix=cute%2Bottoman%2Bdorm%2Caps%2C99&sr=8-6&th=1"> SONGMICS Storage Ottoman, Foldable... 12.2 x 16.1 / $19.99 </a></p>
+            <script>
+                document.getElementById("otAmazon").addEventListener("click", function() {
+                    var text18 = document.getElementById("text18");
+                    text18.style.display = "block"; // Show the text
+                });
+            </script>
+        </div>
+        <div class="item">
+            <button class = "large-button" id = "ottomanAmazon2" data-cost="19.99"> Add Amazon Ottoman to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("ottomanAmazon2").addEventListener("click", function(){
+            femList.push("Amazon Ottoman (Feminine)")
+            saveData();
+        })
+        console.log(femList)
+
+    </script>
+</div>
+</div>
+</div>
+<script>
+    // Temporary variable to hold the total cost
+    let totalCostFem = 0;
+
+    // Function to update the total cost when a button is clicked
+    function updateTotalCost(event) {
+        // Get the cost from the clicked button's data-cost attribute
+        const itemCost = parseFloat(event.target.getAttribute('data-cost'));
+
+        // Add the cost to the total
+        totalCostFem += itemCost;
+        // Update the displayed total cost
+        document.getElementById('totalCostFem').innerText = totalCostFem;
+        sessionStorage.setItem('totalCostFem', totalCostFem);
+        console.log(totalCostFem)
+
+    }
+
+    // Add event listeners to the buttons
+    const buttons = document.querySelectorAll('.item button');
+    buttons.forEach(button => {
+        button.addEventListener('click', updateTotalCost);
+    });
+</script>
+
+<script>
+    // Wait until the page is fully loaded
+    document.addEventListener("DOMContentLoaded", () => {
+        const buttons = document.querySelectorAll(".large-button");
+
+        buttons.forEach(button => {
+            button.addEventListener("click", () => {
+                button.textContent = "Added!";
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
