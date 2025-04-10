@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Bathroom Essentials </title>
+    <script src="https://kit.fontawesome.com/193ae4002d.js" crossorigin="anonymous"></script>
+    <style>
+        h1{
+            text-align: center
+        }
+        h2{
+            text-wrap: wrap;
+        }
+        .header-button{
+            background-color: black; /* Blue background */
+            /* Remove borders */
+            color: white; /* White text */
+            padding: 12px 16px; /* Some padding */
+            font-size: 16px; /* Set a font size */
+            cursor: pointer;
+            border-radius: 10%;
+            border: 2px solid black;
+        }
+        .home-button{
+            background-color: black;
+            color: white;
+            border-radius: 10%;
+            padding: 12px 16px; /* Some padding */
+            cursor: pointer;
+            border: 2px solid black;
+        }
+        .large-button{
+            background-color: black; /* Blue background */
+            /* Remove borders */
+            color: white; /* White text */
+            padding: 12px 16px; /* Some padding */
+            font-size: 16px; /* Set a font size */
+            cursor: pointer;
+            border-radius: 10%;
+            border: 2px solid black;
+        }
+
+        .one {
+            cursor: pointer;
+            width: 200px;
+            border-radius: 10%;
+            border: 5px solid black;
+        }
+        .words{
+            display: none; /* Initially hidden */
+            font-size: 12px;
+            color: #333;
+            margin-top: 10px;
+        }
+        .column{
+            float: left;
+            width: 15%;
+            padding: 2px;
+        }
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+            visibility: hidden;
+        }
+        .row{
+            display: none;
+        }
+
+
+    </style>
+
+</head>
+
+<p><strong>Total Cost: $<span id="totalCost">0</span></strong></p>
+
+
+<ul id="bathList"></ul>
+<ul id="displayList2"></ul>
+<script>
+    // Declare an empty list (array)
+    let bathList = JSON.parse(sessionStorage.getItem("items")) || [];
+    function saveData(){
+        const cartList1 = JSON.stringify(bathList)
+        // Sctore the list in localStorage (convert it to a JSON string)
+        sessionStorage.setItem('displayList1', cartList1);
+    }
+</script>
+
+
+
+<body style="background-color: lightsteelblue">
+
+<script>
+    let bathC = 0;
+</script>
+
+
+<div>
+    <button class ="home-button" id="homeButton"> <i class="fa-solid fa-house"></i> Home </button>
+    <script>
+        var button = document.getElementById("homeButton");
+        button.onclick = function(){
+            window.location.href= "homePage.html";
+        }
+    </script>
+
+    <button class ="home-button" id="cartButton"> <i class="fa-solid fa-cart-shopping"></i></button>
+    <script>
+        var cbutton = document.getElementById("cartButton");
+        cbutton.onclick = function(){
+            window.location.href= "Cart.html";
+        }
+    </script>
+
+    <button class ="home-button" id="checklistButton"> <i class="fa-solid fa-list-check"></i> </button>
+    <script>
+        var chbutton = document.getElementById("checklistButton");
+        chbutton.onclick = function(){
+            window.location.href= "Checklist.html";
+        }
+    </script>
+</div>
+
+<h1> <u>BATHROOM </u>🚿</h1>
+<h2> Click on any of the boxes below to view our selection of bedding items! Click on "Checklist" to return to your "Checklist" and "Home" to return to the main page.</h2>
+<!---row1-->
+<button class="header-button" id="caddyHeader">Shower Caddies</button>
+<div class = "row" id="hide1" style="display: none;">
+    <script>
+        var Bbutton = document.getElementById("caddyHeader");
+        var Bdiv = document.getElementById("hide1");
+
+        Bbutton.onclick = function(){
+            Bdiv.style.display = "block";
+        };
+    </script>
+
+
+
+    <div class = "column">
+        <div class = "containerOne">
+            <img class ="one" src="https://target.scene7.com/is/image/Target/GUEST_1703e6be-af57-4332-93f0-7b2038b21cde?wid=400&hei=400&qlt=80&fmt=webp"  alt="Click Me" id="caddyTarget">
+            <p id="text" class ="words" ><a href="https://www.target.com/p/mesh-shower-caddy-room-essentials/-/A-84729157?preselect=79308591#lnk=sametab"> Mesh Shower Caddy - Room Essentials/ $8.00 </a></p>
+            <script>
+                document.getElementById("caddyTarget").addEventListener("click", function() {
+                    var text = document.getElementById("text");
+                    text.style.display = "block"; // Show the text
+                });
+            </script>
+            <div class="item">
+                <button class = "large-button" id="caddyTarget2" data-cost="8">Add Target Caddy to list</button>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        document.getElementById("caddyTarget2").addEventListener("click", function(){
+            bathList.push("Target Caddy")
+            saveData();
+            //console.log(bathC+= 8)
+            bathC+=8
+        })
+
+        console.log(bathList)
+        console.log(bathC)
+    </script>
+
+    <div class = "column">
+        <div class = "containerTwo">
+            <img class = "one" src="https://i5.walmartimages.com/seo/Siaomo-Natural-Mesh-Shower-Caddy-Portable-Tote-Bag-College-Dorm-Essentials-Bathroom-Gym-Camp-Travel-Hanging-Basket-Quick-Dry-Toiletry-8-Pockets-Black_ca7eb9dd-09d3-4543-aff8-7793bac9303d.df2e0cd965229583b33a9dfaae217ee3.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Click Me" id="caddyWalmart">
+            <p id="text2" class ="words"><a href="https://www.walmart.com/ip/Siaomo-Natural-Mesh-Shower-Caddy-Portable-Tote-Bag-College-Dorm-Essentials-Bathroom-Gym-Camp-Travel-Hanging-Basket-Quick-Dry-Toiletry-8-Pockets-Black/1642664245?classType=VARIANT&athbdg=L1600&adsRedirect=true"> Siaomo Natural Mesh Shower Caddy (8-pockets, multiple colors available)/ $5.98</a> </p>
+            <script>
+                document.getElementById("caddyWalmart").addEventListener("click", function() {
+                    var text2 = document.getElementById("text2");
+                    text2.style.display = "block"; // Show the text
+                });
+            </script>
+            <div class = "item">
+                <button class = "large-button" id = "caddyWalmart2" data-cost="5.98"> Add Walmart Caddy to list </button>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById("caddyWalmart2").addEventListener("click", function(){
+            bathList.push("Walmart Caddy")
+            saveData();
+            bathC+=5.98
+        })
+
+        console.log(bathList)
+    </script>
+    <div class = "column">
+        <div class = "containerThree">
+            <img class = "one" src="https://m.media-amazon.com/images/I/810iTm77M7L._AC_SX425_.jpg" alt="Click Me" id="caddyAmazon">
+            <p id="text3" class ="words"> <a href="https://www.amazon.com/sspa/click?ie=UTF8&spc=MToyNDM0NzI5MDE2MjcwMjM2OjE3MzgxNTkzMjU6c3BfYXRmOjMwMDAxMzU0NTEwNzEwMjo6MDo6&url=%2FPortable-Essentials-8-Pocket-Capacity-Swimming%2Fdp%2FB09SZ9T4MV%2Fref%3Dsr_1_1_sspa%3Fcrid%3D37SSKSTKHDE3C%26dib%3DeyJ2IjoiMSJ9.5L3q4tm8tqKLPNGuXur0y_Yk7QLo_3GRck-_o1nJ4q_EHlNwlc5ca76KnzlLRAnY8fU_UA8uqQ8-xRISwrFkssYhuenCvpAHilKivA0btq9p77jFn2YGk2ajOnozm4tdagVqzs7tn9rVC2_ftkWqkYyNfs5GUJj3NrJ0q4psK5OFXRWyYcEzIYFIQKTRdoSOmOxdn1_xzaTiifBKrf_lVXQpM2D1DSZI5YVJWDjGxuYWKSbRTJ30S2d03OWYUjCXPeSIo0dRr-Ztagz0jR1HUQ4hLwUao8dqN4Lau1dZKFA.um_hZ85GTnZOLaMD9IqkzY2-TyRi03XRCVKrV6lUOB0%26dib_tag%3Dse%26keywords%3Dshower%2Bcaddy%2Bdorm%26qid%3D1738159325%26sprefix%3Dshower%2Bcaddy%252Caps%252C111%26sr%3D8-1-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1"> Mesh Shower Caddy (portable, multipurpose, 8 pockets) - Eudele/ $9.99 </a> </p>
+            <script>
+                document.getElementById("caddyAmazon").addEventListener("click", function(){
+                    var text3 = document.getElementById("text3");
+                    text3.style.display= "block";
+                });
+            </script>
+            <div class = "item">
+                <button class = "large-button" id = "caddyAmazon2" data-cost="9.99"> Add Amazon Caddy to list </button>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById("caddyAmazon2").addEventListener("click", function(){
+            bathList.push("Amazon Caddy")
+            saveData();
+            bathC += 9.99
+        })
+
+        console.log(bathList)
+    </script>
+</div>
+
+<!--row2-->
+
+<button class="header-button" id="shampooHeader">Shampoo/Conditioner</button>
+<div class = "row" id="hide2" style="display: none;">
+    <script>
+        var button2 = document.getElementById("shampooHeader");
+        var div2 = document.getElementById("hide2");
+
+        button2.onclick = function(){
+            div2.style.display = "block";
+        };
+    </script>
+
+    <div class = "column">
+        <div class = "containerFour">
+            <img class ="one" src="https://target.scene7.com/is/image/Target/GUEST_44738892-dc75-47d8-9678-98ec98410991?wid=400&hei=400&qlt=80&fmt=webp"  alt="Click Me" id="scTarget">
+            <p id="text4" class ="words"><a href="https://www.target.com/p/dove-beauty-coconut-38-hydration-shampoo-38-conditioner-set-12-fl-oz-2ct/-/A-76307055"> Beauty Daily Moisture Shampoo and Conditioner Set (12 fl. oz, 2 ct.)/ $7.49</a> </p>
+            <script>
+                document.getElementById("scTarget").addEventListener("click", function() {
+                    var text4 = document.getElementById("text4");
+                    text4.style.display = "block"; // Show the text
+                });
+            </script>
+            <div class = "item">
+                <button class = "large-button" id = "scTarget2" data-cost="7.49"> Add Target Shampoo/Conditioner to list </button>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById("scTarget2").addEventListener("click", function(){
+            bathList.push("Target Shampoo/Conditioner")
+            saveData();
+            bathC+=7.49
+        })
+
+        console.log(bathList)
+    </script>
+    <div class = "column">
+        <div class = "containerFive">
+            <img class ="one" src="https://i5.walmartimages.com/seo/Suave-Professionals-Invigorating-Shampoo-and-Conditioner-Set-Rosemary-Mint-18-fl-oz-2-Pack_61eadb9c-e666-4ffe-9f1f-f9c875541035.5bf0067d6eb5e976a977f16a454e6cc2.jpeg?odnHeight=117&odnWidth=117&odnBg=FFFFFF"  alt="Click Me" id="scWalmart">
+            <p id="text5" class ="words"><a href="https://www.walmart.com/ip/Suave-Professionals-Invigorating-Shampoo-and-Conditioner-Set-Rosemary-Mint-18-fl-oz-2-Pack/352637706?classType=REGULAR&athbdg=L1600&adsRedirect=true">Suave Professionals Invigorating Shampoo and Conditioner Set, Rosemary and Mint (18 fl. oz, 2 pack)/ $5.98</a> </p>
+            <script>
+                document.getElementById("scWalmart").addEventListener("click", function() {
+                    var text5 = document.getElementById("text5");
+                    text5.style.display = "block"; // Show the text
+                });
+            </script>
+            <div class = "item">
+                <button class = "large-button" id = "scWalmart2" data-cost="5.98"> Add Walmart Shampoo/Conditioner to list </button>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById("scWalmart2").addEventListener("click", function(){
+            bathList.push("Walmart Shampoo/Conditioner")
+            saveData();
+            bathC+=5.98
+        })
+
+        console.log(bathList)
+    </script>
+    <div class = "column">
+        <div class = "containerSix">
+            <img class ="one" src="https://m.media-amazon.com/images/I/81knFBpK5TL._SY355_.jpg"  alt="Click Me" id="scAmazon">
+            <p id="text6" class ="words"><a href="https://www.amazon.com/TRESemm%C3%A9-Moisturizing-Conditioner-Professional-Salon-Healthy/dp/B076JK8PXX/ref=sr_1_5?crid=3KIL72QH6XLCL&dib=eyJ2IjoiMSJ9.Ggh0LaFgJDrN6cjyt7mqNm2jpPP52qJFiTdwaYayUEDOjSQsmAftUFqS_jAeLYN5mtG7pnHONIgfOl3hynurBLARZF3Esd0MglixPL_Aw96-Z_5Q9rryHWVU9IatSDhSwz0u7OVb0uDER3jrzS40aIsjdsIlSk6J26cejpw2_iKvRKpX7H3XQ9ecTQg2ncV0IOHFLhcsj5g-TF7ddOR45tiRD9BS55tCmnV7vm17E-gvlICnkKrHrPJ8jJp-XjxJqfP6bwm98T06rjBSbsUhkt816PGUbw5Ybq7a8JbJyc4xWyzzx7dnSak_9nh8ARE84SxSAlQkoezDaCbFssXGeyJZZnt3qVW5iQC9CxERU_R3nvIBFyaVgG3M7U5QDh5D5_usi0iaLSZbX0cIiUTRmr71Lu-9TFzDrJmZf5H8wVvDZ4E32-9MGc4-5_kv1zLk.Ue5rYqCU0XEv2llfBT44N-SwaX-hSVKUWP9WgoS1cHM&dib_tag=se&keywords=shampoo+and+conditioner+set&qid=1738159825&sprefix=shampoo+and+conditioner+set%2Caps%2C93&sr=8-5"> TRESemme Rich Moisture Shampoo and Conditioner, w/ Vitamin E and Biotin (28 oz, 2 ct) $9.99</a> </p>
+            <script>
+                document.getElementById("scAmazon").addEventListener("click", function() {
+                    var text6 = document.getElementById("text6");
+                    text6.style.display = "block"; // Show the text
+                });
+            </script>
+            <div class = "item">
+                <button class = "large-button" id = "scAmazon2" data-cost="9.99"> Add Amazon Shampoo/Conditioner to list </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("scAmazon2").addEventListener("click", function(){
+            bathList.push("Amazon Shampoo/Conditioner")
+            saveData();
+            bathC+=9.99
+        })
+        console.log(bathList)
+    </script>
+</div>
+
+<!---row3-->
+
+<button class="header-button" id="shoesHeader">Shower Shoes</button>
+<div class = "row" id="hidden3" style="display: none;">
+    <script>
+        var button3 = document.getElementById("shoesHeader");
+        var div3 = document.getElementById("hidden3");
+
+        button3.onclick = function(){
+            div3.style.display = "block";
+        };
+    </script>
+
+    <div class = "column">
+        <img class ="one" src="https://target.scene7.com/is/image/Target/GUEST_3cc7f9ae-9a99-4e68-85b2-f1f4ffe01668?wid=725&hei=725&qlt=80&fmt=webp"  alt="Click Me" id="shoesTarget">
+        <p id="text7" class ="words"> <a href="https://www.target.com/p/joybees-men-s-casual-flip-sandals/-/A-92030507?preselect=92030779#lnk=sametab"> Joybees Adult Casual Flip Sandals (Unisex, multiple colors and sizes available)/ $9.81 </a></p>
+        <script>
+            document.getElementById("shoesTarget").addEventListener("click", function() {
+                var text7 = document.getElementById("text7");
+                text7.style.display = "block"; // Show the text
+            });
+        </script>
+
+        <div class = "item">
+            <button class = "large-button" id = "shoesTarget2" data-cost="9.81"> Add Target Shower Shoes to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("shoesTarget2").addEventListener("click", function(){
+            bathList.push("Target Shower Shoes")
+            saveData();
+            bathC+=9.81
+        })
+
+        console.log(bathList)
+    </script>
+
+    <div class = "column">
+        <img class ="one" src="https://i5.walmartimages.com/seo/Litfun-Shower-Shoes-for-Women-Men-Quick-Drying-Non-Slip-Bath-Slippers-Shower-Sandals-with-Drain-Holes-Black_8c412de8-77c8-4570-b540-4e8484a4c731.c6702fb8a1f02d07690f95917099fe26.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF"  alt="Click Me" id="shoesWalmart">
+        <p id="text8" class ="words"><a href="https://www.walmart.com/ip/Litfun-Shower-Shoes-for-Women-Men-Quick-Drying-Non-Slip-Bath-Slippers-Shower-Sandals-with-Drain-Holes-Pink/1330648500"> Shower Shoes, Quick Drying with Drain Holes (Unisex, multiple colors and sizes available)/ $13.99 </a> </p>
+        <script>
+            document.getElementById("shoesWalmart").addEventListener("click", function() {
+                var text8 = document.getElementById("text8");
+                text8.style.display = "block"; // Show the text
+            });
+        </script>
+
+        <div class = "item">
+            <button class = "large-button" id = "shoesWalmart2" data-cost="13.99"> Add Walmart Shower Shoes to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("shoesWalmart2").addEventListener("click", function(){
+            bathList.push("Walmart Shower Shoes")
+            saveData();
+            bathC+=13.99
+        })
+
+        console.log(bathList)
+    </script>
+
+    <div class = "column">
+        <img class ="one" src="https://m.media-amazon.com/images/I/61HWzlBzleL._AC_SY395_.jpg"  alt="Click Me" id="shoesAmazon">
+        <p id="text9" class ="words"><a href="https://www.walmart.com/ip/Litfun-Shower-Shoes-for-Women-Men-Quick-Drying-Non-Slip-Bath-Slippers-Shower-Sandals-with-Drain-Holes-Pink/1330648500 ">Non Slip Shower Shoes, Open-toe - Frykun (Unisex, multiple colors and sizes available)/ $12.98 </a></p>
+        <script>
+            document.getElementById("shoesAmazon").addEventListener("click", function() {
+                var text9 = document.getElementById("text9");
+                text9.style.display = "block"; // Show the text
+            });
+        </script>
+
+        <div class = "item">
+            <button class = "large-button" id = "shoesAmazon2" data-cost="12.98"> Add Amazon Shower Shoes to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("shoesAmazon2").addEventListener("click", function(){
+            bathList.push("Amazon Shower Shoes")
+            saveData();
+            bathC+=12.98
+        })
+
+        console.log(bathList)
+    </script>
+</div>
+
+<!---row4-->
+<button class="header-button" id="linerHeader">Shower Curtain Liners</button>
+<div class = "row" id="hidden4" style="display: none;">
+    <script>
+        var button4 = document.getElementById("linerHeader");
+        var div4 = document.getElementById("hidden4");
+
+        button4.onclick = function(){
+            div4.style.display = "block";
+        };
+    </script>
+
+    <div class = "column">
+        <img class ="one" src="https://target.scene7.com/is/image/Target/GUEST_1d771415-b518-424b-afb4-089e2faed05a?wid=400&hei=400&qlt=80&fmt=webp"  alt="Click Me" id="linerTarget">
+        <p id="text10" class ="words"><a href="https://www.target.com/p/peva-medium-weight-shower-liner-clear-made-by-design/-/A-81484962?preselect=53088295#lnk=sametab"> Medium Weight Shower Liner (Clear) - Threshold/ $6.00 </a></p>
+        <script>
+            document.getElementById("linerTarget").addEventListener("click", function() {
+                var text10 = document.getElementById("text10");
+                text10.style.display = "block"; // Show the text
+            });
+        </script>
+        <div class = "item">
+            <button class = "large-button" id = "linerTarget2" data-cost="6"> Add Target Curtain Liner to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("linerTarget2").addEventListener("click", function(){
+            bathList.push("Target Curtain Liner")
+            saveData();
+            bathC+=6
+        })
+
+        console.log(bathList)
+    </script>
+
+    <div class = "column">
+        <img class ="one" src="https://i5.walmartimages.com/seo/Mainstays-Medium-Weight-PEVA-Shower-Liner-Clear_0199b4fb-0668-41ac-967d-a8161fefdbf8.7e5b141617f1b6a1caaf4224d9a9880d.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF"  alt="Click Me" id="linerWalmart">
+        <p id="text11" class ="words"><a href="https://www.walmart.com/ip/Mainstays-Medium-Weight-PEVA-Shower-Liner-Clear/939811926?classType=VARIANT&athbdg=L1600&from=/search">Mainstays Medium Weight PEVA Shower Liner Clear, "70" x "71" - Clear/ $5.48</a> </p>
+        <script>
+            document.getElementById("linerWalmart").addEventListener("click", function() {
+                var text11 = document.getElementById("text11");
+                text11.style.display = "block"; // Show the text
+            });
+        </script>
+        <div class = "item">
+            <button class = "large-button" id = "linerWalmart2" data-cost="5.48"> Add Walmart Curtain Liner to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("linerWalmart2").addEventListener("click", function(){
+            bathList.push("Walmart Curtain Liner")
+            saveData();
+            bathC+=5.48
+        })
+
+        console.log(bathList)
+    </script>
+
+    <div class = "column">
+        <img class ="one" src="https://m.media-amazon.com/images/I/51pDBULAO7L._AC_SL1500_.jpg"  alt="Click Me" id="linerAmazon">
+        <p id="text12" class ="words"><a href="https://www.amazon.com/Plastic-Shower-Liner-Clear-Chemical/dp/B0BVHW8ZFC/ref=sr_1_1_sspa?crid=2NKBHNKN46CP0&dib=eyJ2IjoiMSJ9.ynTQd1srpH3C53Qq50An2ycZzutGHrY6vXgcRckH0_fe2a5vQ8jp3dNeHNLgsCizrITXbqhsU4Bb-YlMofpAX1NKFaZNBFwl4sbPOXwWyBOj270FSqNG5FduTL7c2eEV7hxWhYAVJN87OaHPd-B_yhg0HvmD-MgThL6RLVaQGKZg5gM6X4F9PyRVWO1Ye0fjMFDsAY2XbRrNiXcY663CF0yLKrTARpqMAIQe2Dyp2hLfo-wGS5jymZCVglrYf5fG2B4kB2kBZm-rJ6Xut1MDgZK5qhCz_zLNOe3lijaeaoE.Sm-62k8KR1zh8B0YZ_unJQcfTRFTWX9dMMKzAKOp-A8&dib_tag=se&keywords=shower%2Bcurtain%2Bliner&qid=1738330090&sprefix=sho%2Caps%2C90&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1"> Barossa Design Shower Curtain Liner - Premium PEVA (Magnetic, Metal Grommets, multiple colors available)/ $9.99</a> </p>
+        <script>
+            document.getElementById("linerAmazon").addEventListener("click", function() {
+                var text12 = document.getElementById("text12");
+                text12.style.display = "block"; // Show the text
+            });
+        </script>
+        <div class = "item">
+            <button class = "large-button" id = "linerAmazon2" data-cost="9.99"> Add Amazon Curtain Liner to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("linerAmazon2").addEventListener("click", function(){
+            bathList.push("Amazon Curtain Liner")
+            saveData();
+            bathC+=9.99
+        })
+        console.log(bathList)
+    </script>
+</div>
+
+<!---row5-->
+<button class="header-button" id="curtainHeader">Shower Curtains</button>
+<div class = "row" id="hidden5" style="display: none;">
+    <script>
+        var button5 = document.getElementById("curtainHeader");
+        var div5 = document.getElementById("hidden5");
+
+        button5.onclick = function(){
+            div5.style.display = "block";
+        };
+    </script>
+
+    <div class = "column">
+        <img class ="one" src="https://target.scene7.com/is/image/Target/GUEST_d8d657d5-13dc-4e5b-9288-5be165dc9b25?wid=1200&hei=1200&qlt=80&fmt=webp"  alt="Click Me" id="curtainTarget">
+        <p id="text13" class ="words"> <a href="https://www.target.com/p/grid-shower-curtain-white-room-essentials-8482/-/A-16653102 "> Grid Shower Curtain White - Room Essentials (Waterproof, Chloride & PVC-free)/ $9.00</a> </p>
+        <script>
+            document.getElementById("curtainTarget").addEventListener("click", function() {
+                var text13 = document.getElementById("text13");
+                text13.style.display = "block"; // Show the text
+            });
+        </script>
+        <div class = "item">
+            <button class = "large-button" id = "curtainTarget2" data-cost="9"> Add Target Shower Curtain to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("curtainTarget2").addEventListener("click", function(){
+            bathList.push("Target Shower Curtain")
+            saveData();
+            bathC+=9
+        })
+
+        console.log(bathList)
+    </script>
+
+    <div class = "column">
+        <img class ="one" src="https://i5.walmartimages.com/seo/Mainstays-Treeline-Fabric-Shower-Curtain-72-x-72-Polyester-Green_c2a7bb9f-7470-4a61-a3d0-110adb56b453.ad6155cbd04932156e5198e4572fe46e.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF"  alt="Click Me" id="curtainWalmart">
+        <p id="text14" class ="words"> <a href="https://www.walmart.com/ip/Mainstays-Striped-Decorative-Fabric-Shower-Curtain-72-x-72-Arctic-White/824049834"> Mainstays Treeline Fabric Shower Curtain, 72" x 72", Polyester (Multiple colors available)/ $10.97 </a> </p>
+        <script>
+            document.getElementById("curtainWalmart").addEventListener("click", function() {
+                var text14 = document.getElementById("text14");
+                text14.style.display = "block"; // Show the text
+            });
+        </script>
+        <div class = "item">
+            <button class = "large-button" id = "curtainWalmart2" data-cost="10.97"> Add Walmart Shower Curtain to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("curtainWalmart2").addEventListener("click", function(){
+            bathList.push("Walmart Shower Curtain")
+            saveData();
+            bathC+=10.97
+        })
+
+        console.log(bathList)
+    </script>
+
+    <div class = "column">
+        <img class ="one" src="https://m.media-amazon.com/images/I/91lgg4oY8jL._AC_SL1500_.jpg"  alt="Click Me" id="curtainAmazon">
+        <p id="text15" class ="words"><a href="https://www.amazon.com/NEATERIZE-Shower-Curtain-Bathroom-White/dp/B0C9K7W8ZD/ref=sr_1_3_sspa?crid=221TFPVB05WT8&dib=eyJ2IjoiMSJ9.PasyL6DtfndGHSSzLcMmuwyK0jyZC4EVI5axjeKWVOf7eIdIvfCJBvr9EKy0JyY33jwnvACDvYqZ75MXvNvbyN5AMX-Pq4oxVES0ZF832Y92JqsBUq0KJ1QbCU6kJgROW7CDcAMTgi-21vqkaK4OD1H-suDQtIEgJeHNJD_wxVslgIifjse018PN11s653a1opsh2D7spb0FPLgeAH8grjy-5uqy37wpR0RCkvFlY7ejPq7D3fRQyKHfP8dD9diSrwmlYkJJ8f5eYTf5JQsA8kD-8qw_9RJKQv_uHnM-KxA.HrQvQ8k-RcRM9d5m9GUDdhrjvDCa2jWWMsyD1DOzJoE&dib_tag=se&keywords=shower%2Bcurtains&qid=1738762840&s=home-garden&sprefix=shower%2Bcurtains%2Cgarden%2C108&sr=1-3-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1">   NEATERIZE 72" x 72" Shower Curtain (Hotel-style w/ waffle design, available in multiple colors) / $5.96 </a> </p>
+        <script>
+            document.getElementById("curtainAmazon").addEventListener("click", function() {
+                var text15 = document.getElementById("text15");
+                text15.style.display = "block"; // Show the text
+            });
+        </script>
+        <div class = "item">
+            <button class = "large-button" id = "curtainAmazon2" data-cost="5.96"> Add Amazon Shower Curtain to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("curtainAmazon2").addEventListener("click", function(){
+            bathList.push("Amazon Shower Curtain")
+            saveData();
+            bathC+=5.96
+        })
+
+        console.log(bathList)
+    </script>
+</div>
+<!--row6-->
+<button class="header-button" id="towelHeader">Bathroom Towels</button>
+<div class = "row" id="hidden6" style="display: none;">
+    <script>
+        var button6 = document.getElementById("towelHeader");
+        var div6 = document.getElementById("hidden6");
+        button6.onclick = function(){
+            div6.style.display = "block";
+        };
+    </script>
+
+    <div class = "column">
+        <img class ="one" src="https://target.scene7.com/is/image/Target/GUEST_160e513e-371b-4b89-b35e-dd255da969d1?wid=400&hei=400&qlt=80&fmt=webp"  alt="Click Me" id="targetTowel">
+        <p id="text16" class ="words"> <a href=" https://www.target.com/p/spa-plush-hand-towel-light-blue-threshold-8482/-/A-88230126"> Spa Plush Towel - Threshold/ $11.00 </a> </p>
+        <script>
+            document.getElementById("targetTowel").addEventListener("click", function() {
+                var text16 = document.getElementById("text16");
+                text16.style.display = "block"; // Show the text
+            });
+        </script>
+        <div class = "item">
+            <button class = "large-button" id = "towelTarget2" data-cost="11"> Add Target Bathroom Towel to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("towelTarget2").addEventListener("click", function(){
+            bathList.push("Target Towel")
+            saveData();
+            bathC+=11
+        })
+
+        console.log(bathList)
+    </script>
+
+    <div class = "column">
+        <img class ="one" src="https://i5.walmartimages.com/seo/Mainstays-Solid-Bath-Towel-Rich-Black_cb7408e2-8d6e-4312-9f3c-89750146f3bf.d757820cf5db656b0da6420eb73b7884.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF"  alt="Click Me" id="walmartTowel">
+        <p id="text17" class ="words"> <a href="https://www.walmart.com/ip/Mainstays-Solid-Bath-Sheet-Rich-Black/723771440"></a> Mainstays 100% Cotton Bath Sheet, Super Soft and Highly Absorbent/ $4.94 </p>
+        <script>
+            document.getElementById("walmartTowel").addEventListener("click", function() {
+                var text17 = document.getElementById("text17");
+                text17.style.display = "block"; // Show the text
+            });
+        </script>
+        <div class = "item">
+            <button class = "large-button" id = "towelWalmart2" data-cost="4.94"> Add Walmart Bathroom Towel to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("towelWalmart2").addEventListener("click", function(){
+            bathList.push("Walmart Towel")
+            saveData();
+            bathC+=4.94
+        })
+        console.log(bathList)
+    </script>
+
+    <div class = "column">
+        <img class ="one" src="https://m.media-amazon.com/images/I/81JqWneZqpL._AC_SY450_.jpg"  alt="Click Me" id="amazonTowel">
+        <p id="text18" class ="words"><a href="https://www.amazon.com/GLAMBURG-Oversized-Absorbant-Quickdry-Lightweight/dp/B0BB282ZRV?th=1"> GLAMBURG 100% Cotton 2 Pack Oversized Bath Towel 28" x 55" (available in multiple colors)/ $11.04 </a> </p>
+        <script>
+            document.getElementById("amazonTowel").addEventListener("click", function() {
+                var text18 = document.getElementById("text18");
+                text18.style.display = "block"; // Show the text
+            });
+        </script>
+        <div class = "item">
+            <button class = "large-button" id = "towelAmazon2" data-cost="11.04"> Add Amazon Bathroom Towel to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("towelAmazon2").addEventListener("click", function(){
+            bathList.push("Amazon Towel")
+            saveData();
+            bathC+=11.04
+        })
+
+        console.log(bathList)
+    </script>
+</div>
+
+<button class="header-button" id="toiletPaper">Toilet Paper</button>
+<div class = "row" id="hidden7" style="display: none;">
+    <script>
+        var button7 = document.getElementById("toiletPaper");
+        var div7 = document.getElementById("hidden7");
+        button7.onclick = function(){
+            div7.style.display = "block";
+        };
+    </script>
+
+    <div class = "column">
+        <img class ="one" src="https://target.scene7.com/is/image/Target/GUEST_bc4c42c7-be50-4e36-a2b1-0891655b611c?wid=1200&hei=1200&qlt=80&fmt=webp"  alt="Click Me" id="tpTarget">
+        <p id="text19" class ="words"><a href="https://www.target.com/p/cottonelle-ultra-clean-strong-toilet-paper-12-mega-rolls/-/A-75665832"> Cottonelle Ultra Clean Strong Toilet Paper (12 pack)/ $12.99 </a> </p>
+        <script>
+            document.getElementById("tpTarget").addEventListener("click", function() {
+                var text19 = document.getElementById("text19");
+                text19.style.display = "block"; // Show the text
+            });
+        </script>
+        <div class = "item">
+            <button class = "large-button" id = "tpTarget2" data-cost="12.99"> Add Target Toilet Paper to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("tpTarget2").addEventListener("click", function(){
+            bathList.push("Target TP")
+            saveData();
+            bathC += 12.99
+        })
+
+        console.log(bathList)
+    </script>
+
+    <div class = "column">
+        <img class ="one" src="https://i5.walmartimages.com/seo/Great-Value-Ultra-Strong-Toilet-Paper-12-Mega-Rolls_dbd8a578-5d14-4547-8793-ad4d206d4eb6.26121f3a48682ae1c471b8b83f4760b9.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF"  alt="Click Me" id="tpWalmart">
+        <p id="text20" class ="words"><a href="https://www.walmart.com/ip/Great-Value-Ultra-Strong-Toilet-Paper-18-Mega-Rolls/2803206423"> Great Value Ultra Strong 2-Ply Toilet Paper, 18 Mega Rolls/ $12.48 </a> </p>
+        <script>
+            document.getElementById("tpWalmart").addEventListener("click", function() {
+                var text20 = document.getElementById("text20");
+                text20.style.display = "block"; // Show the text
+            });
+        </script>
+        <div class = "item">
+            <button class = "large-button" id = "tpWalmart2" data-cost="12.48"> Add Walmart Toilet Paper to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("tpWalmart2").addEventListener("click", function(){
+            bathList.push("Walmart TP")
+            saveData();
+            bathC+=12.48
+        })
+
+        console.log(bathList)
+    </script>
+
+    <div class = "column">
+        <img class ="one" src="https://m.media-amazon.com/images/I/81OjK1SWIfL._AC_SX425_.jpg"  alt="Click Me" id="tpAmazon">
+        <p id="text21" class ="words"><a href="https://www.amazon.com/Scott-Bath-Tissue-1-Ply-Rolls/dp/B000Q65224/ref=sr_1_9_f3_0o_fs?dib=eyJ2IjoiMSJ9.dFaBH9M1RRLaFns61LGDGCb982wPhZ3-niMYy__j46hjUee8Te4eFh6R4KCZlXPtMMRnEm686v608Oxex8fRXAlBfbeCZgTRnm9CidrJaXd8PxNgN5bgVEUqbct56U3Nt-51na0ea6tX9VN390esBERdZrv-dDSCEp3smHljsyY1RjCMimCHnJU_2quUIXFKWsW8LU08GAzMTZ0qb-k1zwNbJS0S9j8Qq38PXgEGmrN01q5td_veOMxiC_vLpiR-6dUKbRE8KQkIzn0mpJRpNd9mFZs0wHxpPxbEhfxLDDaJ4AYnuT1POX3cu7qC9z48MOt-0gL0vc_YvUCLOfKlMbggqAnxZ6LA3N7nTKKJsEhxwLKSOGAkVGGJ5Mst6b6yqSJiC7t7V7S9ypC0U3o7etdniJ4KyhqcEZgZUQCR5N9aWoo3OELxZtlMfKeX7f_S.s5eEmp6rpW6yrD5FqRNe_c9z82cZgzbRxVv3TFoI824&dib_tag=se&keywords=scott+12+count+toilet+paper&qid=1738764856&sr=8-9"></a> Scott 1000 Sheets/Roll (12 count)/ $13.79 </p>
+        <script>
+            document.getElementById("text16").addEventListener("click", function() {
+                var text16 = document.getElementById("text16");
+                text16.style.display = "block"; // Show the text
+            });
+        </script>
+        <div class = "item">
+            <button class = "large-button" id = "tpAmazon2" data-cost="13.79"> Add Amazon Toilet Paper to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("tpAmazon2").addEventListener("click", function(){
+            bathList.push("Amazon TP")
+            saveData();
+            bathC+=13.79
+        })
+
+        console.log(bathList)
+    </script>
+</div>
+
+<button class="header-button" id="soapDispenser">Soap Dispenser</button>
+<div class = "row" id="hidden8" style="display: none;">
+    <script>
+        var button8 = document.getElementById("soapDispenser");
+        var div8 = document.getElementById("hidden8");
+        button8.onclick = function(){
+            div8.style.display = "block";
+        };
+    </script>
+
+    <div class = "column">
+        <img class ="one" src="https://target.scene7.com/is/image/Target/GUEST_63dc4f5b-bce4-4f6d-825e-2568eaee4eb7?qlt=85&fmt=webp&hei=500&wid=500"  alt="Click Me" id="sdTarget">
+        <p id="text22" class ="words"><a href="https://www.target.com/p/fluted-glass-bathroom-soap-pump-light-green-hearth-38-hand-8482-with-magnolia/-/A-91127726"> Fluted Glass Bathroom Soap Pump Light Green - Hearth & Hand with Magnolia/ $9.99 </a> </p>
+        <script>
+            document.getElementById("sdTarget").addEventListener("click", function() {
+                var text22 = document.getElementById("text22");
+                text22.style.display = "block"; // Show the text
+            });
+        </script>
+        <div class = "item">
+            <button class = "large-button" id = "sdTarget2" data-cost="9.99"> Add Target Soap Dispenser to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("sdTarget2").addEventListener("click", function(){
+            bathList.push("Target SD")
+            saveData();
+            bathC+=9.99
+        })
+        console.log(bathList)
+    </script>
+
+    <div class = "column">
+        <img class ="one" src="https://i5.walmartimages.com/seo/Mainstays-Soft-Touch-Grey-Plastic-Lotion-Pump-1-Each_66bb13ac-7ef9-44af-b675-ad2b05421a4b_1.4fb2c8647cf807749f6ef53e349d2164.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF"  alt="Click Me" id="sdWalmart">
+        <p id="text23" class ="words"><a href="https://www.walmart.com/ip/Mainstays-Soft-Touch-Grey-Plastic-Lotion-Pump-1-Each/54308234"> Mainstays Soft Touch Grey Plastic Lotion/Soap Pump (available in multiple colors)/ $5.97 </a> </p>
+        <script>
+            document.getElementById("sdWalmart").addEventListener("click", function() {
+                var text23 = document.getElementById("text23");
+                text23.style.display = "block"; // Show the text
+            });
+        </script>
+        <div class = "item">
+            <button class = "large-button" id = "sdWalmart2" data-cost="5.97"> Add Walmart Soap Dispenser to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("sdWalmart2").addEventListener("click", function(){
+            bathList.push("Walmart SD")
+            saveData();
+            bathC+=5.97
+        })
+        console.log(bathList)
+    </script>
+
+    <div class = "c24">
+        <img class ="one" src="https://m.media-amazon.com/images/I/411VIB8rd1L._AC_SX679_.jpg"  alt="Click Me" id="sdAmazon" width="100" height="200">
+        <p id="text24" class ="words"><a href="https://www.amazon.com/Dispenser-Bathroom-Kitchen-Farmhouse-Striped/dp/B0C994176Z?th=1"> Small Soap Dispenser for Bathroom & Kitchen - Matte Black/ $6.99 </a> </p>
+        <script>
+            document.getElementById("sdAmazon").addEventListener("click", function() {
+                var text24 = document.getElementById("text24");
+                text24.style.display = "block"; // Show the text
+            });
+        </script>
+        <div class = "item">
+            <button class = "large-button" id = "sdAmazon2" data-cost="6.99"> Add Amazon Soap Dispenser to list </button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("sdAmazon2").addEventListener("click", function(){
+            bathList.push("Amazon SD")
+            saveData();
+            bathC+=6.99
+        })
+        console.log(bathList)
+        console.log(bathC)
+    </script>
+
+
+
+    <script>
+        // Temporary variable to hold the total cost
+        let totalCost = 0;
+
+        // Function to update the total cost when a button is clicked
+        function updateTotalCost(event) {
+            // Get the cost from the clicked button's data-cost attribute
+            const itemCost = parseFloat(event.target.getAttribute('data-cost'));
+
+            // Add the cost to the total
+            totalCost += itemCost;
+            totalCost.toFixed(2);
+
+            // Update the displayed total cost
+            document.getElementById('totalCost').innerText = totalCost;
+
+            sessionStorage.setItem('totalCost', totalCost);
+        }
+
+        // Add event listeners to the buttons
+        const buttons = document.querySelectorAll('.item button');
+        buttons.forEach(button => {
+            button.addEventListener('click', updateTotalCost);
+        });
+    </script>
+
+    <script>
+        // Wait until the page is fully loaded
+        document.addEventListener("DOMContentLoaded", () => {
+            const buttons = document.querySelectorAll(".large-button");
+
+            buttons.forEach(button => {
+                button.addEventListener("click", () => {
+                    button.textContent = "Added!";
+                });
+            });
+        });
+    </script>
+
+</div>
+</body>
+</html>
