@@ -18,7 +18,7 @@
             border: 2px solid black;
         }
         .large-button{
-            background-color: grey; /* Blue background */
+            background-color: black; /* Blue background */
             border: black; /* Remove borders */
             color: white; /* White text */
             margin-bottom: 20px; /* Some padding */
@@ -28,12 +28,19 @@
             cursor: pointer;
             border-radius: 10px;
         }
-        .words{
-
-            font-size: 12px;
-            color: black;
-            margin-top: 10px;
+        .out-button{
+            float: right;
+            background-color: black; /* Blue background */
+            border: black; /* Remove borders */
+            color: white; /* White text */
+            margin-bottom: 20px; /* Some padding */
+            padding-bottom: 10px;
+            padding-top: 5px;
+            font-size: 16px; /* Set a font size */
+            cursor: pointer;
+            border-radius: 10px;
         }
+
 
 
     </style>
@@ -66,18 +73,20 @@
     <img src="https://i.imgur.com/dIugFxk.png" alt="Dormify Logo">
     <h1 class ="header">DORMIFY</h1>
 
-
     <div class ="button">
-        <button class="large-button" id="Checklist" onclick="window.location.href ='Checklist.html'"> Checklist </button>
+        <button class="large-button" id="newbies" onclick="window.location.href ='Newbs.html'"> For Newbies </button>
+    </div>
+    <div class ="button">
+        <button class="large-button" id="Checklist" onclick="window.location.href ='Checklist.html'"> 📝 Checklist </button>
     </div>
     <div class =" button">
-        <button class="large-button" id="cart" onclick="window.location.href ='Cart.html'"> Cart </button>
+        <button class="large-button" id="cart" onclick="window.location.href ='Cart.html'"> 🛒 Cart </button>
     </div>
     <div >
-        <button class="large-button" id="pref-btn"> Preference </button>
+        <button class="large-button" id="pref-btn"> ❤️ Preference </button>
     </div>
     <div >
-        <button class="large-button" id="out-btn"> Sign Out </button>
+        <button class="out-button" id="out-btn"> ➡️ Sign Out </button>
     </div>
 
 </div>

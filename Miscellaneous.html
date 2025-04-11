@@ -5,16 +5,23 @@
     <title>Miscellaneous</title>
     <script src="https://kit.fontawesome.com/193ae4002d.js" crossorigin="anonymous"></script>
     <style>
-        .center-container{
-
-                display: flex;
-                justify-content: center; /* Horizontally center the row */
-                align-items: center;     /* Vertically center (optional) */
-                width: 100%;
-                margin-top: 30px;        /* Optional spacing from top */
-        }
-        .h1{
+        .box{
             text-align: center;
+            width: 700px;
+            height: 50px;
+            margin: 10px auto 20px; /* Horizontally center the box */
+            padding: 20px;
+            border: 5px solid black;
+            border-radius: 5px;
+            background-color: white;
+        }
+        .home-button{
+            background-color: black;
+            color: white;
+            border-radius: 10%;
+            padding: 12px 16px; /* Some padding */
+            cursor: pointer;
+            border: 2px solid black;
         }
         .header-button{
             background-color: black; /* Blue background */
@@ -25,15 +32,7 @@
             cursor: pointer;
             border-radius: 10%;
             border: 2px solid black;
-            margin: 10px;
-        }
-        .home-button{
-            background-color: black;
-            color: white;
-            border-radius: 10%;
-            padding: 12px 16px; /* Some padding */
-            cursor: pointer;
-            border: 2px solid black;
+            margin-top: 60px;
         }
         .large-button{
             background-color: black; /* Blue background */
@@ -46,30 +45,14 @@
             border: 2px solid black;
             margin: 10px;
         }
-        .column{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            /*float: left;
-            width: 15%;
-            padding: 2px;
-            text-align: center;*/
-        }
-        .column img,
-        .column .item{
-            display: block;
-            margin: 0 auto;
-        }
-        .item{
-            margin-top: 10px;
-        }
         .one {
             cursor: pointer;
             width: 200px;
             border-radius: 10%;
             border: 5px solid black;
-            margin-bottom: 10px;
+        }
+        .h1{
+            text-align: center;
         }
         .words{
             display: none; /* Initially hidden */
@@ -77,16 +60,19 @@
             color: #333;
             margin-top: 10px;
         }
-        .row{
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;         /* Allows it to wrap on smaller screens */
-            gap: 40px;
+        .column{
+            float: left;
+            width: 15%;
+            padding: 2px;
         }
         .row::after {
             content: "";
             clear: both;
             display: table;
+            visibility: hidden;
+        }
+        .row{
+            display: none;
         }
     </style>
     <script src="data2.js"></script>
@@ -130,12 +116,13 @@
         }
     </script>
 </div>
-
+<div class="box">
 <h1 class="h1"> <u> MISCELLANEOUS </u> ☂️</h1>
-<h2> Click on any of the boxes below to view our selection of miscellaneous items! Click on "Checklist" to return to your "Checklist" and "Home" to return to the main page.</h2>
 
+<h2> Click on any of the boxes below to view our selection of miscellaneous items! Click on "Checklist" to return to your "Checklist" and "Home" to return to the main page.</h2>
+</div>
 <button class="header-button" id="hangersHeader">Hangers</button>
-<div class="center-container">
+
 <div class="row" id="g1" style="display: none;">
 
 
@@ -217,7 +204,7 @@
         console.log(miscList)
     </script>
 </div>
-</div>
+
 <!--row2-->
 <button class="header-button" id="umbrellaHeader">Umbrellas</button>
 <div class="row" id="g2" style="display: none;">

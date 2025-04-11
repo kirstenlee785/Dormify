@@ -10,6 +10,16 @@
 
 
 <style>
+    .box{
+        text-align: center;
+        width: 700px;
+        height: 50px;
+        margin: 10px auto 60px; /* Horizontally center the box */
+        padding: 20px;
+        border: 5px solid black;
+        border-radius: 5px;
+        background-color: white;
+    }
     .cost-label {
         font-size: 1rem;
         font-weight: normal;
@@ -45,7 +55,7 @@
 </style>
 
 
-<body>
+<body style="background-color: lightsteelblue">
 <!--
 <script>
     const totalCostRoom = JSON.parse(localStorage.getItem("totalCostRoom"));
@@ -108,7 +118,7 @@
     </script>
 </div>
 
-
+<div class = "box">
 <h2 class="h1">Stored List</h2>
 
 
@@ -125,9 +135,12 @@
 <h1> ROOM ESSENTIALS <span id="totalCostRoom" class="cost-label"></span></h1>
 <ul id="displayList6" class ="list-container"></ul>
 
-<ul id="totalCost" class = "words"></ul>
+<ul id="totalCost"></ul>
+
 <div id="listContainer">
     <ul id="displayList"></ul>
+</div>
+
 </div>
 
 
