@@ -9,7 +9,7 @@
             text-align: center;
             width: 700px;
             height: 50px;
-            margin: 10px auto 20px; /* Horizontally center the box */
+            margin: 10px auto 90px; /* Horizontally center the box */
             padding: 20px;
             border: 5px solid black;
             border-radius: 5px;
@@ -32,7 +32,7 @@
             cursor: pointer;
             border-radius: 10%;
             border: 2px solid black;
-            margin-top: 85px;
+            margin: 10px;
         }
         .large-button{
             background-color: black; /* Blue background */
@@ -52,14 +52,21 @@
             border: 5px solid black;
         }
         .h1{
-            text-align: center;
+            text-align: center
         }
         .words{
-            display: none; /* Initially hidden */
-            font-size: 12px;
-            color: #333;
+            display: block; /* Initially hidden */
+            font-size: 15px;
+            color: black;
             margin-top: 10px;
         }
+        .words a,
+        .words a:visited {
+            color: black;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
         .column{
             float: left;
             width: 15%;
@@ -73,6 +80,9 @@
         }
         .row{
             display: none;
+        }
+        p{
+            font-size: 20px;
         }
     </style>
 </head>
@@ -147,7 +157,7 @@
 <div class="box">
 <h1 class="h1"> <u> ROOM ESSENTIALS </u> 🛋️ </h1>
 
-<h2> Click on any of the boxes below to view our selection of room essentials! Click on "Checklist" to return to your "Checklist" and "Home" to return to the main page.</h2>
+<p><b> Click on any of the boxes below to view our selection of room essentials! Click on "Checklist" to return to your "Checklist" and "Home" to return to the main page.</b></p>
 </div>
 <button class="header-button" id="micHeader">Microwaves</button>
 <div class="row" id="h1" style="display: none;">
@@ -161,7 +171,7 @@
     </script>
     <div class = "column">
         <img class = "one" src="https://target.scene7.com/is/image/Target/GUEST_6fc97b86-f830-4b19-990e-35a9601a1f64?wid=1200&hei=1200&qlt=80&fmt=webp" alt="Click Me" id="microwaveTarget">
-        <p id="text" class="words"><a href="https://www.target.com/p/kenmore-0-7-cu-ft-microwave-black/-/A-88156868#lnk=sametab"> Target Kenmore 0.7 cu-ft Microwave - Black $69.99</a></p>
+        <p id="text" class="words"><a href="https://www.target.com/p/kenmore-0-7-cu-ft-microwave-black/-/A-88156868#lnk=sametab"> Kenmore 0.7 cu-ft Microwave, Black - $69.99</a></p>
         <script>
             document.getElementById("microwaveTarget").addEventListener("click", function() {
                 var text = document.getElementById("text");
@@ -184,7 +194,7 @@
 
     <div class ="column">
         <img class = "one" src="https://i5.walmartimages.com/seo/Hamilton-Beach-0-9-Cu-ft-Countertop-Microwave-Oven-900-Watts-Stainless-Steel-New_1a5cbafb-ae12-41fb-ae77-8949adac6511.06793cf53bd59430d901cac965a376e2.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Click Me" id="microwaveWalmart">
-        <p id="text2" class="words"><a href="https://www.walmart.com/ip/Hamilton-Beach-0-9-Cu-ft-Countertop-Microwave-Oven-900-Watts-Stainless-Steel-New/1153749112?classType=VARIANT&athbdg=L1300&from=/search"> Walmart Hamilton Beach 0.9 Cu ft Countertop Microwave Oven, 900 Watts, Stainless Steel, New $65.56</a></p>
+        <p id="text2" class="words"><a href="https://www.walmart.com/ip/Hamilton-Beach-0-9-Cu-ft-Countertop-Microwave-Oven-900-Watts-Stainless-Steel-New/1153749112?classType=VARIANT&athbdg=L1300&from=/search"> Hamilton Beach 0.9 Cu ft Countertop Microwave Oven, 900 Watts, Stainless Steel, New - $65.56</a></p>
         <script>
             document.getElementById("microwaveWalmart").addEventListener("click", function() {
                 var text2 = document.getElementById("text2");
@@ -204,7 +214,7 @@
 
     <div class ="column">
         <img class = "one" src="https://m.media-amazon.com/images/I/71I1kb2hSlL._AC_SL1500_.jpg" alt="Click Me" id="microwaveAmazon">
-        <p id="text3" class="words"><a href="https://www.amazon.com/Comfee-EM720CPL-PMB-Countertop-Microwave-One-Touch/dp/B07GV36BLD/ref=sr_1_4?crid=3L724B3PS2J1P&dib=eyJ2IjoiMSJ9.0wjAIOy4uNXZICWpbyHeQqQven4CVCbQpTzcke6VLBJsooHAKzqbVikGT9Weu6Tb4SIEl17evTX8xOqPnEb60r2fmZfJGr_e-7juo-q9HdeOQ1cTrvFOpT7VZuKSsZYLc_QEfoSFqvwoLGPHWHtXUc4tTtwQylJy8ANZ6A6VzhwhDreHDhFLjUSOIjCpj89tY7J6wWT7lRHeY4OqZ1Gh_Mq8x-M7aEWhekB3ktpaZJY.u7TNjved9AL0WCFicss-YzOD3awfxFloAga8Z3P_Qak&dib_tag=se&keywords=microwave&qid=1738244403&sprefix=microwave%2Caps%2C97&sr=8-4&th=1">Amazon Comfee EM720CPL-PMB Countertop Microwave Oven with Sound On/Off, ECO Mode and Easy One-Touch Buttons, 0.7 Cu Ft, Black $80.00</a></p>
+        <p id="text3" class="words"><a href="https://www.amazon.com/Comfee-EM720CPL-PMB-Countertop-Microwave-One-Touch/dp/B07GV36BLD/ref=sr_1_4?crid=3L724B3PS2J1P&dib=eyJ2IjoiMSJ9.0wjAIOy4uNXZICWpbyHeQqQven4CVCbQpTzcke6VLBJsooHAKzqbVikGT9Weu6Tb4SIEl17evTX8xOqPnEb60r2fmZfJGr_e-7juo-q9HdeOQ1cTrvFOpT7VZuKSsZYLc_QEfoSFqvwoLGPHWHtXUc4tTtwQylJy8ANZ6A6VzhwhDreHDhFLjUSOIjCpj89tY7J6wWT7lRHeY4OqZ1Gh_Mq8x-M7aEWhekB3ktpaZJY.u7TNjved9AL0WCFicss-YzOD3awfxFloAga8Z3P_Qak&dib_tag=se&keywords=microwave&qid=1738244403&sprefix=microwave%2Caps%2C97&sr=8-4&th=1">Comfee EM720CPL-PMB Countertop Microwave Oven with Sound On/Off, ECO Mode and Easy One-Touch Buttons, 0.7 Cu Ft, Black - $80.00</a></p>
         <script>
             document.getElementById("microwaveAmazon").addEventListener("click", function() {
                 var text3 = document.getElementById("text3");
@@ -240,7 +250,7 @@
     <div class ="column">
         <div class = "containerFour">
             <img class = "one" src="https://target.scene7.com/is/image/Target/GUEST_c26aeeb0-137f-4125-bf78-1bb21e729eda?wid=1200&hei=1200&qlt=80&fmt=webp" alt="Click Me" id="targetFridge">
-            <p id="text4" class="words"><a href="https://www.target.com/p/whirlpool-2-7-cu-ft-mini-refrigerator-stainless-steel-wh27s1e/-/A-17304430#lnk=sametab">Target Whirlpool 2.7 cu ft Mini Refrigerator - Stainless Steel $149.99</a></p>
+            <p id="text4" class="words"><a href="https://www.target.com/p/whirlpool-2-7-cu-ft-mini-refrigerator-stainless-steel-wh27s1e/-/A-17304430#lnk=sametab">Whirlpool 2.7 cu ft Mini Refrigerator, Stainless Steel - $149.99</a></p>
             <script>
                 document.getElementById("targetFridge").addEventListener("click", function() {
                     var text4 = document.getElementById("text4");
@@ -263,7 +273,7 @@
     <div class = "column">
         <div class = "containerFive">
             <img class = "one" src="https://i5.walmartimages.com/seo/Galanz-1-7-Cu-ft-Single-Door-Mini-Fridge-GL17BK-Black-New_f5ff235b-e8a1-43b2-9bdb-8c732f9aaf1e_1.f209c79538c434a484f5847f039dcc06.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Click Me" id="WalmartFridge">
-            <p id="text5" class ="words"><a href="https://www.walmart.com/ip/Galanz-1-7-Cu-ft-Single-Door-Mini-Fridge-GL17BK-Black-New/40685158?classType=VARIANT&athbdg=L1300&from=/search">Walmart Galanz 1.7 Cu ft Single Door Mini Fridge GL17BK, Black $72.24</a></p>
+            <p id="text5" class ="words"><a href="https://www.walmart.com/ip/Galanz-1-7-Cu-ft-Single-Door-Mini-Fridge-GL17BK-Black-New/40685158?classType=VARIANT&athbdg=L1300&from=/search">Galanz 1.7 Cu ft Single Door Mini Fridge GL17BK, Black - $72.24</a></p>
             <script>
                 document.getElementById("WalmartFridge").addEventListener("click", function() {
                     var text5 = document.getElementById("text5");
@@ -287,7 +297,7 @@
     <div class ="column">
         <div class = "containerSix">
             <img class = "one" src="https://m.media-amazon.com/images/I/61Y4tbAP8zL._AC_SL1500_.jpg" alt="Click Me" id="amazonFridge">
-            <p id="text6" class="words"><a href="https://www.amazon.com/Upstreman-Adjustable-Thermostat-Refrigerator-Black-FR17/dp/B09W9KSQBL/ref=sr_1_2_sspa?crid=3FHF46BYBH2MY&dib=eyJ2IjoiMSJ9.wHD_oGzyxSy6onxWbpcHvlP0CqKljqlotOxQFuN-Z_-zxSO2tCzQBTQ4AardxBLwr_65Yeu2ghwSQg4w5HwDhQ6TgCogB4jELLvlfer5hGv0ArCE1jLuJ1-sOXlwvOyitFcBX1uAbilfrPFTsMCpCBUo-IcqUqhSXf0KXMYOp508qKzyUHTExWwGU4ZCIy6kIFjNajCcakryZJltZmBBGspGXEtq8msJlz60CuW83BY.2cqbgrxrrBRG9mIJYCkR36X143QtYn1ZlNqVjd0EKc0&dib_tag=se&keywords=mini%2Bfridge&qid=1738244576&sprefix=mini%2Bfridge%2Caps%2C97&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1">Amazon Upstreman 1.7 Cu.ft Mini Fridge with Freezer, Dorm Essentials, Adjustable Thermostat, Energy Saving, Low Noise $129.97</a></p>
+            <p id="text6" class="words"><a href="https://www.amazon.com/Upstreman-Adjustable-Thermostat-Refrigerator-Black-FR17/dp/B09W9KSQBL/ref=sr_1_2_sspa?crid=3FHF46BYBH2MY&dib=eyJ2IjoiMSJ9.wHD_oGzyxSy6onxWbpcHvlP0CqKljqlotOxQFuN-Z_-zxSO2tCzQBTQ4AardxBLwr_65Yeu2ghwSQg4w5HwDhQ6TgCogB4jELLvlfer5hGv0ArCE1jLuJ1-sOXlwvOyitFcBX1uAbilfrPFTsMCpCBUo-IcqUqhSXf0KXMYOp508qKzyUHTExWwGU4ZCIy6kIFjNajCcakryZJltZmBBGspGXEtq8msJlz60CuW83BY.2cqbgrxrrBRG9mIJYCkR36X143QtYn1ZlNqVjd0EKc0&dib_tag=se&keywords=mini%2Bfridge&qid=1738244576&sprefix=mini%2Bfridge%2Caps%2C97&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1">Upstreman 1.7 Cu.ft Mini Fridge with Freezer, Dorm Essentials, Adjustable Thermostat, Energy Saving, Low Noise - $129.97</a></p>
             <script>
                 document.getElementById("amazonFridge").addEventListener("click", function() {
                     var text6 = document.getElementById("text6");
@@ -324,7 +334,7 @@
     <div class ="column">
         <div class = "containerSeven">
             <img class = "one" src="https://target.scene7.com/is/image/Target/GUEST_3f3e523d-1f99-4b1b-9164-aaeea9b1174d?wid=1200&hei=1200&qlt=80&fmt=webp" alt="Click Me" id="targetTrash">
-            <p id="text7" class="words"><a href="https://www.target.com/p/13gal-swing-top-waste-basket-white-brightroom-8482/-/A-87299512#lnk=sametab">Target Essentials White Plastic Garbage Can $15</a></p>
+            <p id="text7" class="words"><a href="https://www.target.com/p/13gal-swing-top-waste-basket-white-brightroom-8482/-/A-87299512#lnk=sametab">Essentials White Plastic Garbage Can - $15</a></p>
             <script>
                 document.getElementById("targetTrash").addEventListener("click", function() {
                     var text7 = document.getElementById("text7");
@@ -347,7 +357,7 @@
     <div class = "column">
         <div class = "containerEight">
             <img class = "one" src="https://i5.walmartimages.com/seo/Mainstays-7-6-gallon-Kitchen-Plastic-Touch-Top-Lid-Trashcan-Black_76107c6e-a98f-4597-b684-b937b99f5438.021640a3be5b96c5bf69047f64078354.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Click Me" id="walmartTrash">
-            <p id="text8" class="words"><a href="https://www.walmart.com/ip/Mainstays-7-6-gallon-Kitchen-Plastic-Touch-Top-Lid-Trashcan-Black/3304304968?classType=VARIANT&adsRedirect=true">Walmart 6 Gallon Kitchen Plastic Touch Top $11.46</a></p>
+            <p id="text8" class="words"><a href="https://www.walmart.com/ip/Mainstays-7-6-gallon-Kitchen-Plastic-Touch-Top-Lid-Trashcan-Black/3304304968?classType=VARIANT&adsRedirect=true">6 Gallon Kitchen Plastic Touch Top - $11.46</a></p>
             <script>
                 document.getElementById("walmartTrash").addEventListener("click", function() {
                     var text8 = document.getElementById("text8");
@@ -371,7 +381,7 @@
     <div class = "column">
         <div class = "containerNine">
             <img class = "one" src="https://m.media-amazon.com/images/I/713b2hb9ScL._SL1500_.jpg " alt="Click Me" id="amazonTrash">
-            <p id="text9" class="words"><a href="https://www.amazon.com/Rubbermaid-Commercial-295700GY-Wastebasket-Rectangular/dp/B000U7QDKO/ref=sr_1_9?crid=UQDB2IW35R6G&dib=eyJ2IjoiMSJ9.ScQndywhoT2upE47rGWbJ1FVpgzN2l9IIxOPgDhcmx1H0KKulaxtndSRpmLYOiGTfQWms3153xFHwQdatNFWeTUy4mbzTkmhP7HyND_e6N8sK_zO86L797ALNkMIQHWJsz5fUZZPDh95Q0eb8o2wq205C8gIAd4-HYSLPabpHWU6lGzr2U3gesC6nDBxkMKTl3vq2CYGhKq-GftcU8kqXW51VCIfb5Da-xeUGcLmdFlmqqGRKAtIA42XKESWpGNelTkQNosHao8nX-r6O3VS3R78to2H5jawAV36ZkcTMNpfxKv6FSTxbAswp_9eNu1sx6bbr4TzZaLPMk6Bs6h5kFCOcfMYajJYxHWxqnxuhOhR4__ZuZpzjDgtfhY4Y0H6QGMD70vbp_imS9n84tbW7wA2bbZTG-PL4T3a1wy9Ycp5sdibr1VeBD5Am_G1-kBO.yjFXGYHNn-NVQFbHNVndlSgTiZoeWG05jRAR5ouYzDA&dib_tag=se&keywords=garbage%2Bcan&qid=1738936180&sprefix=garbage%2Bcan%2Caps%2C89&sr=8-9&th=1">Amazon Exclusivo Grey Garbage Can $10.97</a></p>
+            <p id="text9" class="words"><a href="https://www.amazon.com/Rubbermaid-Commercial-295700GY-Wastebasket-Rectangular/dp/B000U7QDKO/ref=sr_1_9?crid=UQDB2IW35R6G&dib=eyJ2IjoiMSJ9.ScQndywhoT2upE47rGWbJ1FVpgzN2l9IIxOPgDhcmx1H0KKulaxtndSRpmLYOiGTfQWms3153xFHwQdatNFWeTUy4mbzTkmhP7HyND_e6N8sK_zO86L797ALNkMIQHWJsz5fUZZPDh95Q0eb8o2wq205C8gIAd4-HYSLPabpHWU6lGzr2U3gesC6nDBxkMKTl3vq2CYGhKq-GftcU8kqXW51VCIfb5Da-xeUGcLmdFlmqqGRKAtIA42XKESWpGNelTkQNosHao8nX-r6O3VS3R78to2H5jawAV36ZkcTMNpfxKv6FSTxbAswp_9eNu1sx6bbr4TzZaLPMk6Bs6h5kFCOcfMYajJYxHWxqnxuhOhR4__ZuZpzjDgtfhY4Y0H6QGMD70vbp_imS9n84tbW7wA2bbZTG-PL4T3a1wy9Ycp5sdibr1VeBD5Am_G1-kBO.yjFXGYHNn-NVQFbHNVndlSgTiZoeWG05jRAR5ouYzDA&dib_tag=se&keywords=garbage%2Bcan&qid=1738936180&sprefix=garbage%2Bcan%2Caps%2C89&sr=8-9&th=1">Exclusivo Grey Garbage Can - $10.97</a></p>
             <script>
                 document.getElementById("amazonTrash").addEventListener("click", function() {
                     var text9 = document.getElementById("text9");
@@ -408,7 +418,7 @@
     <div class ="column">
         <div class = "containerTen">
             <img class = "one" src="https://target.scene7.com/is/image/Target/GUEST_59168580-2783-4e96-849a-143ff9dea14c?wid=1200&hei=1200&qlt=80&fmt=webp" alt="Click Me" id="targetLight">
-            <p id="text10" class="words"><a href="https://www.target.com/p/usb-desk-lamp-black-includes-led-light-bulb-trademark-global/-/A-17217970#lnk=sametab">Target Black Desk Light Moveable Head $13.99</a></p>
+            <p id="text10" class="words"><a href="https://www.target.com/p/usb-desk-lamp-black-includes-led-light-bulb-trademark-global/-/A-17217970#lnk=sametab">Black Desk Light Moveable Head - $13.99</a></p>
             <script>
                 document.getElementById("targetLight").addEventListener("click", function() {
                     var text10 = document.getElementById("text10");
@@ -432,7 +442,7 @@
     <div class = "column">
         <div class = "containerEleven">
             <img class = "one" src="https://i5.walmartimages.com/seo/LED-Desk-Lamp-Adjustable-Swing-Arm-Desk-Light-with-Clamp-3-Color-Modes-10-Brightness-Reading-Lamp-for-Home-Office-Black_6f103b21-3baf-49fb-8f58-08876c97ebe7.42242f0c79d7e93390d3a019d4fd2336.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Click Me" id="walmartLight">
-            <p id="text11" class="words"><a href="https://www.walmart.com/ip/LED-Desk-Lamp-Adjustable-Swing-Arm-Desk-Light-with-Clamp-3-Color-Modes-10-Brightness-Reading-Lamp-for-Home-Office-Black/852025375?classType=REGULAR&athbdg=L1600&from=/search">Walmart LED Desk Lamp Ajustable Swing Arm With Clamp $21.99</a></p>
+            <p id="text11" class="words"><a href="https://www.walmart.com/ip/LED-Desk-Lamp-Adjustable-Swing-Arm-Desk-Light-with-Clamp-3-Color-Modes-10-Brightness-Reading-Lamp-for-Home-Office-Black/852025375?classType=REGULAR&athbdg=L1600&from=/search">LED Desk Lamp Ajustable Swing Arm With Clamp - $21.99</a></p>
             <script>
                 document.getElementById("walmartLight").addEventListener("click", function() {
                     var text11 = document.getElementById("text11");
@@ -456,7 +466,7 @@
     <div class ="column">
         <div class = "containerTwelve">
             <img class = "one" src="https://m.media-amazon.com/images/I/61Or6TfwO9L._AC_SL1500_.jpg" alt="Click Me" id="amazonLight">
-            <p id="text12" class="words"><a href="https://www.amazon.com/LED-Dimmable-Brightness-Adjustable-Eye-Caring/dp/B09Q2RNM9Q/ref=sr_1_2_sspa?crid=3GH2UT8APG7RU&dib=eyJ2IjoiMSJ9.oclPoi4pedGfZO73vX5Y7cxV5MrsNmuMz93Sth6n-G418wcshDL8cKK2Pag4G5RbTCALMffAc90_3JTHSYPMYTo4upAk4BaFk7xrKoTxhx4i3Y9u0ILnRWdjYoNaqlP6OwKj7jh1WOYQbOkpdSBNFZhhAJymgUzydvyWhheBDWceCwdVMtUlbuYBTravLBPSuMpwd5fK3dmER2Bb8cozB3uzRuuz3XBi7azaJQqofz4QmMGbT7ARKqFRJBFNbASO67i99ul0NcYT_oep2n7FpyawX8_UAT-J_vL3HRkaeIE.SrLvnOgPIx43xqldJCPvCXeAH7ZTnk2CTYSqgXteg98&dib_tag=se&keywords=desk+light&qid=1738936345&sprefix=desk+light%2Caps%2C93&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1">Amazon LED Black Desk Lamp Retractable Arm $18.99</a></p>
+            <p id="text12" class="words"><a href="https://www.amazon.com/LED-Dimmable-Brightness-Adjustable-Eye-Caring/dp/B09Q2RNM9Q/ref=sr_1_2_sspa?crid=3GH2UT8APG7RU&dib=eyJ2IjoiMSJ9.oclPoi4pedGfZO73vX5Y7cxV5MrsNmuMz93Sth6n-G418wcshDL8cKK2Pag4G5RbTCALMffAc90_3JTHSYPMYTo4upAk4BaFk7xrKoTxhx4i3Y9u0ILnRWdjYoNaqlP6OwKj7jh1WOYQbOkpdSBNFZhhAJymgUzydvyWhheBDWceCwdVMtUlbuYBTravLBPSuMpwd5fK3dmER2Bb8cozB3uzRuuz3XBi7azaJQqofz4QmMGbT7ARKqFRJBFNbASO67i99ul0NcYT_oep2n7FpyawX8_UAT-J_vL3HRkaeIE.SrLvnOgPIx43xqldJCPvCXeAH7ZTnk2CTYSqgXteg98&dib_tag=se&keywords=desk+light&qid=1738936345&sprefix=desk+light%2Caps%2C93&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1">LED Black Desk Lamp Retractable Arm - $18.99</a></p>
             <script>
                 document.getElementById("amazonLight").addEventListener("click", function() {
                     var text12 = document.getElementById("text12");
@@ -516,7 +526,7 @@
     <div class = "column">
         <div class = "containerFourteen">
             <img class = "one" src="https://i5.walmartimages.com/seo/Swiffer-92814-Sweeper-Starter-Kit_d0b573eb-c85b-405d-9552-f8660675f470.9eac2f30700a2d1d83d5cf6858b97ce6.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Click Me" id="walmartMop">
-            <p id="text14" class="words"><a href = "https://www.walmart.com/ip/Swiffer-92814-Sweeper-Starter-Kit/47659681?classType=REGULAR&athbdg=L1200&adsRedirect=true"> Walmart Swiffer Sweep + Mop, Broom & Mop Alternative, Dry & Wet Floor Cleaner, Fresh Scent, Cleaning Set $12.94</a></p>
+            <p id="text14" class="words"><a href = "https://www.walmart.com/ip/Swiffer-92814-Sweeper-Starter-Kit/47659681?classType=REGULAR&athbdg=L1200&adsRedirect=true"> Swiffer Sweep + Mop, Broom & Mop Alternative, Dry & Wet Floor Cleaner, Fresh Scent, Cleaning Set - $12.94</a></p>
             <script>
                 document.getElementById("walmartMop").addEventListener("click", function() {
                     var text14 = document.getElementById("text14");
@@ -539,7 +549,7 @@
     <div class ="column">
         <div class = "containerFifteen">
             <img class = "one" src="https://m.media-amazon.com/images/I/81jS9xEtsIL._AC_SL1500_.jpg" alt="Click Me" id="amazonMop">
-            <p id="text15" class="words"><a href = "https://www.amazon.com/Swiffer-Hardwood-Mopping-Cleaner-Starter/dp/B07YQDD94M/ref=sr_1_1_sspa?crid=3EORM7TCALUEC&dib=eyJ2IjoiMSJ9.jDYmuk1KfUJ0X4KBdfJmbmmxbOtaML2rYJfWe62f0FxkGLdXCMsaGwBmFciYsS4RM5GXOt4JS5dxG5Kubv58-R2nRykdGBChnqjaxB9tsBeoDdFzUtr76LiJeSLegWIqDg6mg4OiWEstXpsidKO-mhjNOlsn6JwrjUHYVrJAYkPpDBsyjxth2H_VgWD9S-J1d0EJry4cP-MllYOYZAPS5mcLlGRPjRH7DqJ8B-5mI4BsyryIIMPTjAepqYs4qL5KnpKHZJTXdeAYpksRewk7ny8e3XUJi7GAR6vceR05E7c.0pCqbNj2EIapE4XE4yET8CAP8CGu7aFSkk8rds-gTIo&dib_tag=se&keywords=swiffer&qid=1738936661&sprefix=swiffer%2Caps%2C94&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1">Amazon Swiffer WetJet Hardwood and Floor Spray Mop Cleaner Starter Kit, Includes: 1 Power Mop, 10 Pads, Cleaning Solution, Batteries $24.99</a></p>
+            <p id="text15" class="words"><a href = "https://www.amazon.com/Swiffer-Hardwood-Mopping-Cleaner-Starter/dp/B07YQDD94M/ref=sr_1_1_sspa?crid=3EORM7TCALUEC&dib=eyJ2IjoiMSJ9.jDYmuk1KfUJ0X4KBdfJmbmmxbOtaML2rYJfWe62f0FxkGLdXCMsaGwBmFciYsS4RM5GXOt4JS5dxG5Kubv58-R2nRykdGBChnqjaxB9tsBeoDdFzUtr76LiJeSLegWIqDg6mg4OiWEstXpsidKO-mhjNOlsn6JwrjUHYVrJAYkPpDBsyjxth2H_VgWD9S-J1d0EJry4cP-MllYOYZAPS5mcLlGRPjRH7DqJ8B-5mI4BsyryIIMPTjAepqYs4qL5KnpKHZJTXdeAYpksRewk7ny8e3XUJi7GAR6vceR05E7c.0pCqbNj2EIapE4XE4yET8CAP8CGu7aFSkk8rds-gTIo&dib_tag=se&keywords=swiffer&qid=1738936661&sprefix=swiffer%2Caps%2C94&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1">Swiffer WetJet Hardwood and Floor Spray Mop Cleaner Starter Kit, Includes: 1 Power Mop, 10 Pads, Cleaning Solution, Batteries - $24.99</a></p>
             <script>
                 document.getElementById("amazonMop").addEventListener("click", function() {
                     var text15 = document.getElementById("text15");
@@ -574,7 +584,7 @@
     <div class="column">
         <div class = "containerSixteen">
             <img class = "one" src="https://target.scene7.com/is/image/Target/GUEST_07df4623-c9a4-4f6b-9984-442e30ce6540?wid=1200&hei=1200&qlt=80&fmt=webp" alt="Click Me" id="targetVacuum">
-            <p id="text16" class="words"><a href="https://www.target.com/p/black-decker-compact-lithium-handheld-vacuum-gray-hnvc220bcz01/-/A-14925638#lnk=sametab">Target BLACK+DECKER Compact Lithium Handheld Vacuum - Gray HNVC220BCZ01: Cordless Dustbuster, Portable Car Vacuum, Rechargeable $39.99</a></p>
+            <p id="text16" class="words"><a href="https://www.target.com/p/black-decker-compact-lithium-handheld-vacuum-gray-hnvc220bcz01/-/A-14925638#lnk=sametab">BLACK+DECKER Compact Lithium Handheld Vacuum - Gray HNVC220BCZ01: Cordless Dustbuster, Portable Car Vacuum, Rechargeable - $39.99</a></p>
             <script>
                 document.getElementById("targetVacuum").addEventListener("click", function() {
                     var text16 = document.getElementById("text16");
@@ -597,7 +607,7 @@
     <div class="column">
         <div class = "containerSeventeen">
             <img class = "one" src="https://i5.walmartimages.com/seo/BISSELL-PowerForce-Helix-Bagless-Upright-Vacuum-3313_b4d59d70-b5ea-4712-a4ce-37763ea7887d.96f446b511bbb59bb090205518f7b1b1.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Click Me" id="walmartVacuum">
-            <p id="text17" class="words"><a href = "https://www.walmart.com/ip/BISSELL-PowerForce-Helix-Bagless-Upright-Vacuum-3313/1107918809?classType=VARIANT&athbdg=L1200&adsRedirect=true"> Walmart BISSELL PowerForce Helix Bagless Upright Vacuum 3313 $59.00</a></p>
+            <p id="text17" class="words"><a href = "https://www.walmart.com/ip/BISSELL-PowerForce-Helix-Bagless-Upright-Vacuum-3313/1107918809?classType=VARIANT&athbdg=L1200&adsRedirect=true"> BISSELL PowerForce Helix Bagless Upright Vacuum 3313 - $59.00</a></p>
             <script>
                 document.getElementById("walmartVacuum").addEventListener("click", function() {
                     var text17 = document.getElementById("text17");
@@ -620,7 +630,7 @@
     <div class = "column">
         <div class = "containerEighteen">
             <img class = "one" src="https://m.media-amazon.com/images/I/610vTuOEr9L._AC_SL1500_.jpg" alt="Click Me" id="amazonVacuum">
-            <p id="text18" class="words"><a href = "https://www.amazon.com/Cleaner-Powerful-Suction-Handheld-Lightweight/dp/B08THQLQP3/ref=sr_1_1_sspa?crid=21NRE1X5QNMRM&dib=eyJ2IjoiMSJ9.Wt7Ks9KsgtEzpKJuMPS9dhCMu8CmZ-3D0eG8kpg_WcDp1wZ8ulVMko_mb664HnKbYUhIhhJO6h4iQO-c9ZiW_6t-N_erP-QmgRywnHwEZeJuTFNzg_2JvouHQYetmR5Z093XhDvLVP4nsPwLzzrQeSyStIjWnpa6Rk_Bg_TdbLY8sJyY7Lj39ia0tu6iA3WbLnstadM_WHtovzIDYfGVgpuTlZGUCRD1quNAHj-T2gw.AW8c-EY72VxKTp0WuUyW0AvXp4yBHWhXXtikEk-28A4&dib_tag=se&keywords=vacuum&qid=1738937575&sprefix=vacuum%2Caps%2C109&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1">Amazon Eureka Corded Stick Vacuum Cleaner for Home Pet Hair, Lightweight Stick Vacuum Cleaner with Powerful Suction for Carpet Tile and Hard Floor, Aqua Blue, 3-in-1 Handheld Vac NES100 $33.94</a></p>
+            <p id="text18" class="words"><a href = "https://www.amazon.com/Cleaner-Powerful-Suction-Handheld-Lightweight/dp/B08THQLQP3/ref=sr_1_1_sspa?crid=21NRE1X5QNMRM&dib=eyJ2IjoiMSJ9.Wt7Ks9KsgtEzpKJuMPS9dhCMu8CmZ-3D0eG8kpg_WcDp1wZ8ulVMko_mb664HnKbYUhIhhJO6h4iQO-c9ZiW_6t-N_erP-QmgRywnHwEZeJuTFNzg_2JvouHQYetmR5Z093XhDvLVP4nsPwLzzrQeSyStIjWnpa6Rk_Bg_TdbLY8sJyY7Lj39ia0tu6iA3WbLnstadM_WHtovzIDYfGVgpuTlZGUCRD1quNAHj-T2gw.AW8c-EY72VxKTp0WuUyW0AvXp4yBHWhXXtikEk-28A4&dib_tag=se&keywords=vacuum&qid=1738937575&sprefix=vacuum%2Caps%2C109&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1">Eureka Corded Stick Vacuum Cleaner for Home Pet Hair, Lightweight Stick Vacuum Cleaner with Powerful Suction for Carpet Tile and Hard Floor, Aqua Blue, 3-in-1 Handheld Vac NES100 - $33.94</a></p>
             <script>
                 document.getElementById("amazonVacuum").addEventListener("click", function() {
                     var text18 = document.getElementById("text18");
@@ -655,7 +665,7 @@
     <div class ="column">
         <div class = "containerNineteen">
             <img class = "one" src="https://target.scene7.com/is/image/Target/GUEST_4def2f34-4865-4507-abc1-f12991ca2921?wid=600&hei=600&qlt=80&fmt=webp" alt="Click Me" id="targetPlates">
-            <p id="text19" class="words"><a href="https://www.target.com/p/20pc-plastic-dinnerware-set-room-essentials/-/A-86172822#lnk=sametab">Target 20pc Plastic Dinnerware Set - Room Essentials $20.00</a></p>
+            <p id="text19" class="words"><a href="https://www.target.com/p/20pc-plastic-dinnerware-set-room-essentials/-/A-86172822#lnk=sametab">20pc Plastic Dinnerware Set - Room Essentials - $20.00</a></p>
             <script>
                 document.getElementById("targetPlates").addEventListener("click", function() {
                     var text19 = document.getElementById("text19");
@@ -678,7 +688,7 @@
     <div class = "column">
         <div class = "containerTwenty">
             <img class = "one" src="https://i5.walmartimages.com/seo/24Piece-Plastic-Plates-Bowls-Sets-Dinnerware-Set-Dishes-4-College-Dorm-Room-Essentials-Camping-Tumbler-Knives-Forks-Spoons-Mess-Kit-Microwave-Safe-BP_432615c8-d715-48cc-be31-3c6eca17ba0a.14bdafb1ecb314771e518610603d4e6f.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Click Me" id="walmartPlates">
-            <p id="text20" class="words"><a href = "https://www.walmart.com/ip/24Piece-Plastic-Plates-Bowls-Sets-Dinnerware-Set-Dishes-4-College-Dorm-Room-Essentials-Camping-Tumbler-Knives-Forks-Spoons-Mess-Kit-Microwave-Safe-BP/3465343864?classType=VARIANT&athbdg=L1600&adsRedirect=true"> Walmart Layron Plastic 24-piece Dinnerware Set (Service for 4) $17.99</a></p>
+            <p id="text20" class="words"><a href = "https://www.walmart.com/ip/24Piece-Plastic-Plates-Bowls-Sets-Dinnerware-Set-Dishes-4-College-Dorm-Room-Essentials-Camping-Tumbler-Knives-Forks-Spoons-Mess-Kit-Microwave-Safe-BP/3465343864?classType=VARIANT&athbdg=L1600&adsRedirect=true"> Layron Plastic 24-piece Dinnerware Set (Service for 4) - $17.99</a></p>
             <script>
                 document.getElementById("walmartPlates").addEventListener("click", function() {
                     var text20 = document.getElementById("text20");
