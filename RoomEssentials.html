@@ -812,9 +812,9 @@
 
         // Add the cost to the total
         totalCostRoom += itemCost;
-        totalCostRoom.toFixed(2);
+
         // Update the displayed total cost
-        document.getElementById('totalCostRoom').innerText = totalCostRoom;
+        document.getElementById('totalCostRoom').textContent = totalCostRoom.toFixed(2);
         sessionStorage.setItem('totalCostRoom', totalCostRoom);
         console.log(totalCostRoom)
     }

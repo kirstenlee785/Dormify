@@ -615,9 +615,10 @@
         // Add the cost to the total
         totalCostFem += itemCost;
         // Update the displayed total cost
-        document.getElementById('totalCostFem').innerText = totalCostFem;
+        document.getElementById('totalCostFem').textContent = totalCostFem.toFixed(2);
+
         sessionStorage.setItem('totalCostFem', totalCostFem);
-        console.log(totalCostFem)
+
 
     }
 

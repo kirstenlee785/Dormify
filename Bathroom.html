@@ -813,10 +813,9 @@
 
             // Add the cost to the total
             totalCost += itemCost;
-            totalCost.toFixed(2);
 
             // Update the displayed total cost
-            document.getElementById('totalCost').innerText = totalCost;
+            document.getElementById('totalCost').textContent = totalCost.toFixed(2);
 
             sessionStorage.setItem('totalCost', totalCost);
         }

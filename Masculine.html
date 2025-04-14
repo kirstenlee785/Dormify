@@ -552,9 +552,9 @@
 
         // Add the cost to the total
         totalCostMasc += itemCost;
-        totalCostMasc.toFixed(2);
+
         // Update the displayed total cost
-        document.getElementById('totalCostMasc').innerText = totalCostMasc;
+        document.getElementById('totalCostMasc').textContent = totalCostMasc.toFixed(2);
 
         sessionStorage.setItem('totalCostMasc', totalCostMasc);
     }

@@ -108,7 +108,7 @@
         }
     </script>
 
-    <button class ="home-button" id="checklistButton"> <i class="fa-solid fa-cart-shopping"></i></button>
+    <button class ="home-button" id="checklistButton"> <i class="fa-solid fa-list-check"></i></button>
     <script>
         var chbutton = document.getElementById("checklistButton");
         chbutton.onclick = function(){
@@ -618,9 +618,9 @@
 
         // Add the cost to the total
         totalCostMisc += itemCost;
-        totalCostMisc.toFixed(2);
+
         // Update the displayed total cost
-        document.getElementById('totalCostMisc').innerText = totalCostMisc;
+        document.getElementById('totalCostMisc').textContent = totalCostMisc.toFixed(2);
 
         sessionStorage.setItem('totalCostMisc', totalCostMisc);
     }
