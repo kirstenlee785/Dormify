@@ -9,17 +9,19 @@
             text-align: center;
             width: 700px;
             height: 50px;
-            margin: 10px auto 20px; /* Horizontally center the box */
+            margin: 10px auto 90px; /* Horizontally center the box */
             padding: 20px;
             border: 5px solid black;
             border-radius: 5px;
             background-color: white;
         }
-        h1{
-            text-align: center
-        }
-        h2{
-            text-wrap: wrap;
+        .home-button{
+            background-color: black;
+            color: white;
+            border-radius: 10%;
+            padding: 12px 16px; /* Some padding */
+            cursor: pointer;
+            border: 2px solid black;
         }
         .header-button{
             background-color: black; /* Blue background */
@@ -30,14 +32,7 @@
             cursor: pointer;
             border-radius: 10%;
             border: 2px solid black;
-        }
-        .home-button{
-            background-color: black;
-            color: white;
-            border-radius: 10%;
-            padding: 12px 16px; /* Some padding */
-            cursor: pointer;
-            border: 2px solid black;
+            margin: 10px;
         }
         .large-button{
             background-color: black; /* Blue background */
@@ -48,20 +43,30 @@
             cursor: pointer;
             border-radius: 10%;
             border: 2px solid black;
+            margin: 10px;
         }
-
         .one {
             cursor: pointer;
             width: 200px;
             border-radius: 10%;
             border: 5px solid black;
         }
+        .h1{
+            text-align: center
+        }
         .words{
-            display: none; /* Initially hidden */
-            font-size: 12px;
-            color: #333;
+            display: block; /* Initially hidden */
+            font-size: 15px;
+            color: black;
             margin-top: 10px;
         }
+        .words a,
+        .words a:visited {
+            color: black;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
         .column{
             float: left;
             width: 15%;
@@ -76,8 +81,9 @@
         .row{
             display: none;
         }
-
-
+        p{
+            font-size: 20px;
+        }
     </style>
 
 </head>
@@ -133,9 +139,8 @@
 </div>
 <div class ="box">
 <h1> <u>BATHROOM </u>🚿</h1>
+<p> <b> Click on any of the boxes below to view our selection of bedding items! Click on "Checklist" to return to your "Checklist" and "Home" to return to the main page.</b></p>
 </div>
-<h2> Click on any of the boxes below to view our selection of bedding items! Click on "Checklist" to return to your "Checklist" and "Home" to return to the main page.</h2>
-
     <!---row1-->
 <button class="header-button" id="caddyHeader">Shower Caddies</button>
 <div class = "row" id="hide1" style="display: none;">
@@ -599,7 +604,7 @@
 
     <div class = "column">
         <img class ="one" src="https://i5.walmartimages.com/seo/Mainstays-Solid-Bath-Towel-Rich-Black_cb7408e2-8d6e-4312-9f3c-89750146f3bf.d757820cf5db656b0da6420eb73b7884.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF"  alt="Click Me" id="walmartTowel">
-        <p id="text17" class ="words"> <a href="https://www.walmart.com/ip/Mainstays-Solid-Bath-Sheet-Rich-Black/723771440"></a> Mainstays 100% Cotton Bath Sheet, Super Soft and Highly Absorbent/ $4.94 </p>
+        <p id="text17" class ="words"> <a href="https://www.walmart.com/ip/Mainstays-Solid-Bath-Sheet-Rich-Black/723771440">Mainstays 100% Cotton Bath Sheet, Super Soft and Highly Absorbent/ $4.94</a></p>
         <script>
             document.getElementById("walmartTowel").addEventListener("click", function() {
                 var text17 = document.getElementById("text17");
@@ -701,7 +706,7 @@
 
     <div class = "column">
         <img class ="one" src="https://m.media-amazon.com/images/I/81OjK1SWIfL._AC_SX425_.jpg"  alt="Click Me" id="tpAmazon">
-        <p id="text21" class ="words"><a href="https://www.amazon.com/Scott-Bath-Tissue-1-Ply-Rolls/dp/B000Q65224/ref=sr_1_9_f3_0o_fs?dib=eyJ2IjoiMSJ9.dFaBH9M1RRLaFns61LGDGCb982wPhZ3-niMYy__j46hjUee8Te4eFh6R4KCZlXPtMMRnEm686v608Oxex8fRXAlBfbeCZgTRnm9CidrJaXd8PxNgN5bgVEUqbct56U3Nt-51na0ea6tX9VN390esBERdZrv-dDSCEp3smHljsyY1RjCMimCHnJU_2quUIXFKWsW8LU08GAzMTZ0qb-k1zwNbJS0S9j8Qq38PXgEGmrN01q5td_veOMxiC_vLpiR-6dUKbRE8KQkIzn0mpJRpNd9mFZs0wHxpPxbEhfxLDDaJ4AYnuT1POX3cu7qC9z48MOt-0gL0vc_YvUCLOfKlMbggqAnxZ6LA3N7nTKKJsEhxwLKSOGAkVGGJ5Mst6b6yqSJiC7t7V7S9ypC0U3o7etdniJ4KyhqcEZgZUQCR5N9aWoo3OELxZtlMfKeX7f_S.s5eEmp6rpW6yrD5FqRNe_c9z82cZgzbRxVv3TFoI824&dib_tag=se&keywords=scott+12+count+toilet+paper&qid=1738764856&sr=8-9"></a> Scott 1000 Sheets/Roll (12 count)/ $13.79 </p>
+        <p id="text21" class ="words"><a href="https://www.amazon.com/Scott-Bath-Tissue-1-Ply-Rolls/dp/B000Q65224/ref=sr_1_9_f3_0o_fs?dib=eyJ2IjoiMSJ9.dFaBH9M1RRLaFns61LGDGCb982wPhZ3-niMYy__j46hjUee8Te4eFh6R4KCZlXPtMMRnEm686v608Oxex8fRXAlBfbeCZgTRnm9CidrJaXd8PxNgN5bgVEUqbct56U3Nt-51na0ea6tX9VN390esBERdZrv-dDSCEp3smHljsyY1RjCMimCHnJU_2quUIXFKWsW8LU08GAzMTZ0qb-k1zwNbJS0S9j8Qq38PXgEGmrN01q5td_veOMxiC_vLpiR-6dUKbRE8KQkIzn0mpJRpNd9mFZs0wHxpPxbEhfxLDDaJ4AYnuT1POX3cu7qC9z48MOt-0gL0vc_YvUCLOfKlMbggqAnxZ6LA3N7nTKKJsEhxwLKSOGAkVGGJ5Mst6b6yqSJiC7t7V7S9ypC0U3o7etdniJ4KyhqcEZgZUQCR5N9aWoo3OELxZtlMfKeX7f_S.s5eEmp6rpW6yrD5FqRNe_c9z82cZgzbRxVv3TFoI824&dib_tag=se&keywords=scott+12+count+toilet+paper&qid=1738764856&sr=8-9">Scott 1000 Sheets/Roll (12 count)/ $13.79</a></p>
         <script>
             document.getElementById("text16").addEventListener("click", function() {
                 var text16 = document.getElementById("text16");
