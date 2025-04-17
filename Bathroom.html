@@ -88,7 +88,7 @@
 
 </head>
 
-<p><strong>Total Cost: $<span id="totalCost">0</span></strong></p>
+<p><strong>Total Cost: $<span id="totalCostBath">0</span></strong></p>
 
 
 <ul id="bathList"></ul>
@@ -809,7 +809,7 @@
 
     <script>
         // Temporary variable to hold the total cost
-        let totalCost = 0;
+        let totalCostBath = 0;
 
         // Function to update the total cost when a button is clicked
         function updateTotalCost(event) {
@@ -817,12 +817,12 @@
             const itemCost = parseFloat(event.target.getAttribute('data-cost'));
 
             // Add the cost to the total
-            totalCost += itemCost;
+            totalCostBath += itemCost;
 
             // Update the displayed total cost
-            document.getElementById('totalCost').textContent = totalCost.toFixed(2);
+            document.getElementById('totalCostBath').textContent = totalCostBath.toFixed(2);
 
-            sessionStorage.setItem('totalCost', totalCost);
+            sessionStorage.setItem('totalCostBath', totalCostBath);
         }
 
         // Add event listeners to the buttons

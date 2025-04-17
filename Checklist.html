@@ -148,56 +148,7 @@
     <ul id="checklist">
     </ul>
 
-
-    <script>
-        /*function addItem() {
-            // Get the input value
-            let input = document.getElementById("itemInput");
-            let itemText = input.value.trim();
-
-            // Check if input is not empty
-            if (itemText !== "") {
-                let itemContainer = document.createElement("div");
-
-                let checkbox = document.createElement("input");
-                checkbox.type = "checkbox";
-
-                const id = "item-" + Date.now();
-                checkbox.id = id;
-
-                let label = document.createElement("label");
-                label.setAttribute("for", id);
-                label.textContent = " " + itemText;
-
-                // Append checkbox and label to container
-                itemContainer.appendChild(checkbox);
-                itemContainer.appendChild(label);
-
-                // Append to the checklist
-                document.getElementById("checklist").appendChild(itemContainer);
-
-                // Clear input field
-                input.value = "";
-
-
-                // Create a new list item
-                /*let li = document.createElement("li");
-                li.textContent = itemText;
-
-                // Append to the list
-                document.getElementById("checklist").appendChild(li);
-
-                // Clear input field
-                input.value = "";
-            } else {
-                alert("Please enter an item!");
-            }
-        }*/
-    </script>
-
-
-
-
+    <button onclick="clearChecklist()">Clear Checklist</button>
 
 </div>
 <script>
@@ -233,6 +184,12 @@
         } else {
             alert("Please enter an item!");
         }
+    }
+    function clearChecklist() {
+        document.querySelectorAll("input[type='checkbox']").forEach(checkbox => {
+            checkbox.checked = false;
+            sessionStorage.removeItem(checkbox.id);
+        });
     }
 
     function createChecklistItem(id, text, checked) {
