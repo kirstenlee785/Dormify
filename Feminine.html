@@ -9,7 +9,7 @@
             text-align: center;
             width: 700px;
             height: 50px;
-            margin: 10px auto 20px; /* Horizontally center the box */
+            margin: 10px auto 90px; /* Horizontally center the box */
             padding: 20px;
             border: 5px solid black;
             border-radius: 5px;
@@ -32,7 +32,7 @@
             cursor: pointer;
             border-radius: 10%;
             border: 2px solid black;
-            margin-top: 90px;
+            margin: 10px;
         }
         .large-button{
             background-color: black; /* Blue background */
@@ -52,14 +52,21 @@
             border: 5px solid black;
         }
         .h1{
-            text-align: center;
+            text-align: center
         }
         .words{
-            display: none; /* Initially hidden */
-            font-size: 12px;
-            color: #333;
+            display: block; /* Initially hidden */
+            font-size: 15px;
+            color: black;
             margin-top: 10px;
         }
+        .words a,
+        .words a:visited {
+            color: black;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
         .column{
             float: left;
             width: 15%;
@@ -73,6 +80,9 @@
         }
         .row{
             display: none;
+        }
+        p{
+            font-size: 20px;
         }
     </style>
 </head>
@@ -118,9 +128,10 @@
 </div>
 <div class="box">
     <h1 class="h1"> <u> FEMININE DECOR </u> 💃 </h1>
-<h2> Click on any of the boxes below to view our selection of 'Feminine Decor' items! Click on "Checklist" to return to your "Checklist" and "Home" to return to the main page.</h2>
+<p> Click on any of the boxes below to view our selection of 'Feminine Decor' items! Click on "Checklist" to return to your "Checklist" and "Home" to return to the main page.</p>
 </div>
-    <div class = "button-row">
+
+
 <button class="header-button" id="ledHeader">LED Lights</button>
 <div class="row" id="j1" style="display: none;">
     <script>
@@ -601,8 +612,8 @@
 
     </script>
 </div>
-</div>
-</div>
+
+
 <script>
     // Temporary variable to hold the total cost
     let totalCostFem = 0;
