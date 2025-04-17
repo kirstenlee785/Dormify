@@ -1,6 +1,194 @@
 
-
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View List</title>
+    <script src="https://kit.fontawesome.com/193ae4002d.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: lightsteelblue;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .page-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 10px;
+        }
+
+        .home-button {
+            background-color: black;
+            color: white;
+            border-radius: 8px;
+            padding: 10px 16px;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .box {
+            width: 90%;
+            max-width: 800px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            border: 4px solid black;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .category {
+            background-color: #f8f8f8;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+
+        .category h1 {
+            font-size: 20px;
+            margin: 0 0 10px;
+        }
+
+        .cost-label {
+            font-weight: normal;
+            color: #555;
+            font-size: 16px;
+        }
+
+        ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+
+        .total-summary {
+            margin-top: 40px;
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+    <button class ="home-button" id="homeButton"> <i class="fa-solid fa-house"></i> Home </button>
+    <script>
+        var button = document.getElementById("homeButton");
+        button.onclick = function(){
+            window.location.href= "homePage.html";
+        }
+    </script>
+
+    <div class="box">
+        <h2>Stored List</h2>
+
+        <div class="category">
+            <h1>BATHROOM <span id="totalCostBath" class="cost-label"></span></h1>
+            <ul id="displayList1" class="list-container"></ul>
+        </div>
+
+        <div class="category">
+            <h1>BEDDING <span id="totalCostBed" class="cost-label"></span></h1>
+            <ul id="displayList2" class="list-container"></ul>
+        </div>
+
+        <div class="category">
+            <h1>FEM. DECOR <span id="totalCostFem" class="cost-label"></span></h1>
+            <ul id="displayList3" class="list-container"></ul>
+        </div>
+
+        <div class="category">
+            <h1>MASC. DECOR <span id="totalCostMasc" class="cost-label"></span></h1>
+            <ul id="displayList4" class="list-container"></ul>
+        </div>
+
+        <div class="category">
+            <h1>MISCELLANEOUS <span id="totalCostMisc" class="cost-label"></span></h1>
+            <ul id="displayList5" class="list-container"></ul>
+        </div>
+
+        <div class="category">
+            <h1>ROOM ESSENTIALS <span id="totalCostRoom" class="cost-label"></span></h1>
+            <ul id="displayList6" class="list-container"></ul>
+        </div>
+
+        <div class="total-summary" id="totalSummary"></div>
+    </div>
+</div>
+
+<script>
+    document.getElementById("homeButton").onclick = function () {
+        window.location.href = "homePage.html";
+    };
+
+    const storedLists = Array.from({length: 7}, (_, i) => JSON.parse(sessionStorage.getItem(`displayList${i + 1}`)));
+
+    storedLists.forEach((list, i) => {
+        if (!list) {
+            sessionStorage.setItem(`displayList${i + 1}`, JSON.stringify([]));
+        }
+    });
+
+    window.onload = function () {
+        const lists = document.querySelectorAll('.list-container');
+
+        lists.forEach((list, index) => {
+            list.innerHTML = '';
+            list.style.display = 'block';
+            const storedList = storedLists[index];
+            if (storedList) {
+                storedList.forEach(item => {
+                    const li = document.createElement('li');
+                    li.textContent = item;
+                    list.appendChild(li);
+                });
+            }
+        });
+
+        displayCosts();
+    };
+
+    function getCost(key) {
+        return parseFloat(sessionStorage.getItem(key)) || 0;
+    }
+
+    function displayCost(id, cost) {
+        const el = document.getElementById(id);
+        if (el) {
+            el.textContent = ` - $${cost.toFixed(2)}`;
+        }
+    }
+
+    function displayCosts() {
+        const categories = ["Room", "Masc", "Misc", "Bed", "Bath", "Fem"];
+        let total = 0;
+
+        categories.forEach(cat => {
+            const cost = getCost(`totalCost${cat}`);
+            displayCost(`totalCost${cat}`, cost);
+            total += cost;
+        });
+
+        const summary = document.getElementById("totalSummary");
+        summary.textContent = `TOTAL COST: $${total.toFixed(2)}`;
+    }
+</script>
+
+</body>
+</html>
+
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -56,57 +244,6 @@
 
 
 <body style="background-color: lightsteelblue">
-<!--
-<script>
-    const totalCostRoom = JSON.parse(localStorage.getItem("totalCostRoom"));
-    console.log("room essentials cost " + totalCostRoom)
-
-
-    const totalCostMasc = JSON.parse(localStorage.getItem("totalCostMasc"))
-    console.log("masc cost " + totalCostMasc)
-
-
-    const totalCostMisc = JSON.parse(localStorage.getItem("totalCostMasc"))
-    console.log("misc cost" + totalCostMisc)
-
-
-    const totalCostBed = JSON.parse(localStorage.getItem("totalCostBed"))
-    console.log("bed cost" + totalCostBed)
-
-
-    const totalCostBath = JSON.parse(localStorage.getItem("totalCost"))
-    console.log("bath cost" + totalCostBath)
-
-    const totalCostFem = JSON.parse(localStorage.getItem("totalCostFem"))
-    console.log("fem cost" + totalCostFem)
-
-    const totalCost = totalCostRoom + totalCostMasc + totalCostMisc + totalCostBed + totalCostBath + totalCostFem
-    console.log(totalCost)
-
-
-
-    if (totalCostRoom.length === 0){
-        totalCostRoom == 0
-    }
-    if(totalCostMasc.length === 0){
-        totalCostMasc ==0
-    }
-    if(totalCostMisc.length === 0){
-        totalCostMisc == 0
-    }
-    if(totalCostBed.length === 0){
-        totalCostBed == 0
-    }
-    if(totalCostBath.length === 0){
-        totalCostBath == 0
-    }
-    if(totalCostFem.length === 0){
-        totalCostFem == 0
-    }
-</script>
--->
-
-
 
 <div>
     <button class ="home-button" id="homeButton"> <i class="fa-solid fa-house"></i> Home </button>
@@ -144,26 +281,8 @@
 </div>
 
 
-<!--fix the cart-->
+
 <script>
-    /*const totalCostRoom = JSON.parse(sessionStorage.getItem("totalCostRoom"));
-    //console.log("room essentials cost " + totalCostRoom)
-    const totalCostMasc = JSON.parse(sessionStorage.getItem("totalCostMasc"))
-    //console.log("masc cost " + totalCostMasc)
-    const totalCostMisc = JSON.parse(sessionStorage.getItem("totalCostMasc"))
-    // console.log("misc cost" + totalCostMisc)
-    const totalCostBed = JSON.parse(sessionStorage.getItem("totalCostBed"))
-    // console.log("bed cost" + totalCostBed)
-    const totalCostBath = JSON.parse(sessionStorage.getItem("totalCostBath"))
-    //console.log("bath cost" + totalCostBath)
-    const totalCostFem = JSON.parse(sessionStorage.getItem("totalCostFem"))
-    //console.log("fem cost" + totalCostFem)
-    const totalCost = totalCostRoom + totalCostMasc + totalCostMisc + totalCostBed + totalCostBath + totalCostFem
-    //console.log(totalCost)
-
-*/
-    // Retrieve stored lists from localStorage
-
 
     const storedList1 = JSON.parse(sessionStorage.getItem('displayList1'));
     const storedList2 = JSON.parse(sessionStorage.getItem('displayList2'));
@@ -332,4 +451,4 @@
 
 </body>
 </html>
-
+-->
