@@ -17,6 +17,19 @@ export async function getUsername(userId) {
 }
 
  */
+document.addEventListener('DOMContentLoaded', async () => {
+    const { data: { session }, error } = await supabase.auth.getSession();
+    console.log("Initial session check on page load:", session);
+
+    if (error) {
+        console.error("Error getting session:", error);
+    }
+
+    supabase.auth.onAuthStateChange((event, session) => {
+        console.log("Auth state change:", event, session);
+    });
+
+});
 
 //Login //listening for login button in the index
     const loginBtn = document.getElementById("loginBtn");
@@ -24,6 +37,19 @@ export async function getUsername(userId) {
         const email = document.getElementById("email").value;
         console.log(email);
         const password = document.getElementById("password").value;
+
+        const { data, error } = await supabase.auth.signInWithPassword({
+            email,
+            password,
+        });
+
+        if (error) {
+            console.error("Login error:", error.message);
+            document.getElementById("error-msg").textContent = error.message;
+        } else {
+            console.log("User logged in:", data.user);
+            window.location.href = 'homePage.html'; // redirect on successful login
+        }
     });
 
 //Signup
@@ -139,38 +165,37 @@ async function getUserProfile() {
 
 const travelBtn = document.getElementById("pref-btn");
 travelBtn?.addEventListener('click', async () => {
-    // Assuming user is already authenticated
-    const { data: { user } } = await supabase.auth.getUser()
-
-    if (!user) {
-        alert('Please log in first.')
-        return
+    const { data: { session } } = await supabase.auth.getSession();
+    console.log("Session check on pref-btn click:", session);
+    if (!session) {
+        alert('Please log in first.');
+        return;
     }
 
-    // Fetch user preference from your table
+    const user = session.user;
+    console.log("User from session:", user);
+
     const { data, error } = await supabase
         .from('table3')
         .select('preference')
         .eq('id', user.id)
-        .single()
+        .single();
 
     if (error) {
-        console.error('Error fetching preference:', error)
-        alert('Could not fetch preference.')
-        return
+        console.error('Error fetching preference:', error);
+        alert('Could not fetch preference.');
+        return;
     }
 
-    // Redirect based on preference
     const preference = data.preference?.trim();
-    console.log('Redirecting based on preference:', preference)
-
+    console.log('Redirecting based on preference:', preference);
 
     if (preference === 'Masculine') {
-        window.location.href = 'Masculine.html'
+        window.location.href = 'Masculine.html';
     } else if (preference === 'Feminine') {
-        window.location.href = 'Feminine.html'
+        window.location.href = 'Feminine.html';
     } else {
-        alert('Preference not set.')
+        alert('Preference not set.');
     }
 })
 
