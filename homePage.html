@@ -44,30 +44,10 @@
             font-size: 14px;
         }
 
-
-
     </style>
     <link rel= "stylesheet" href="style.css">
     <!--fix the button-->
-    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
-    <script >
-        const {createClient} = supabase; //initialize supabase
-        const supabaseURL = "https://ghzfpwdivvezmbsfaonn.supabase.co";
-        const supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdoemZwd2RpdnZlem1ic2Zhb25uIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjQwNzEzMzcsImV4cCI6MjAzOTY0NzMzN30.B4drrT_iuBlP4X-V2s8CBUPEkhryRrOM9O51IVi3Uzg";
-        window.supabase = createClient(supabaseURL, supabaseAnonKey);
 
-       /* import { getUsername } from './supabase';
-
-        async function loadVar() {
-            const username = await getUsername();
-            console.log('myVar:', username);
-
-            // now you can use myVar as a const within this function
-        }
-
-        loadVar();*/
-
-    </script>
 
 </head>
 <body>
@@ -93,7 +73,7 @@
     </div>
 
 </div>
-<script src="auth2.js"></script>
+<script type ="module" src="auth2.js"></script>
 <script src="data2.js"></script>
 
 </body>
