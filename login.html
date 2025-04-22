@@ -34,13 +34,6 @@
 
     </style>
     <link rel= "stylesheet" href="style.css">
-    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
-    <script >
-        const {createClient} = supabase; //initialize supabase
-        const supabaseURL = "https://ghzfpwdivvezmbsfaonn.supabase.co";
-        const supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdoemZwd2RpdnZlem1ic2Zhb25uIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjQwNzEzMzcsImV4cCI6MjAzOTY0NzMzN30.B4drrT_iuBlP4X-V2s8CBUPEkhryRrOM9O51IVi3Uzg";
-        window.supabase = createClient(supabaseURL, supabaseAnonKey);
-    </script>
 
 </head>
 <body>
@@ -56,7 +49,7 @@
     <a href="SignUp.html">Don't have an account? Sign up</a> <!---the "signup.html takes us to the signup page-->
 </div>
 
-<script src="auth2.js"></script>
+<script type ="module" src="auth2.js"></script>
 
 </body>
 </html>

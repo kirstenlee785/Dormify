@@ -1,3 +1,4 @@
+import { supabase } from './supabaseClient.js';
 /*export function getCurrentUser() {
     return supabase.auth.username(); // returns the logged-in user
 }
@@ -17,6 +18,7 @@ export async function getUsername(userId) {
 }
 
  */
+
 document.addEventListener('DOMContentLoaded', async () => {
     const { data: { session }, error } = await supabase.auth.getSession();
     console.log("Initial session check on page load:", session);
