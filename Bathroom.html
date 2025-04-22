@@ -45,6 +45,17 @@
             border: 2px solid black;
             margin: 10px;
         }
+        .large-button1{
+            background-color: black; /* Blue background */
+            /* Remove borders */
+            color: white; /* White text */
+            padding: 12px 16px; /* Some padding */
+            font-size: 16px; /* Set a font size */
+            cursor: pointer;
+            border-radius: 10%;
+            border: 2px solid black;
+            margin: 10px;
+        }
         .one {
             cursor: pointer;
             width: 200px;
@@ -168,15 +179,22 @@
             <div class="item">
                 <button class = "large-button" id="caddyTarget2" data-cost="8">Add Target Caddy to list</button>
             </div>
+            <div>
+            <button class = "large-button1" id = removeCaddy1 data-cost="-8"> Remove Target Caddy from List</button>
+            </div>
+            <script>
+                document.getElementById("removeCaddy1").addEventListener("click", function (){
+                    removeFromBathList("Target Caddy");
 
+                })
+            </script>
         </div>
     </div>
     <script>
         document.getElementById("caddyTarget2").addEventListener("click", function(){
             bathList.push("Target Caddy")
             saveData();
-            //console.log(bathC+= 8)
-            bathC+=8
+
         })
 
         console.log(bathList)
@@ -197,12 +215,19 @@
                 <button class = "large-button" id = "caddyWalmart2" data-cost="5.98"> Add Walmart Caddy to list </button>
             </div>
         </div>
+        <button class = "large-button1" id = removeCaddy2 data-cost="-5.98"> Remove Walmart Caddy from List</button>
     </div>
+    <script>
+        document.getElementById("removeCaddy2").addEventListener("click", function (){
+            removeFromBathList("Walmart Caddy");
+
+        })
+    </script>
     <script>
         document.getElementById("caddyWalmart2").addEventListener("click", function(){
             bathList.push("Walmart Caddy")
             saveData();
-            bathC+=5.98
+
         })
 
         console.log(bathList)
@@ -221,7 +246,14 @@
                 <button class = "large-button" id = "caddyAmazon2" data-cost="9.99"> Add Amazon Caddy to list </button>
             </div>
         </div>
+        <button class = "large-button1" id = removeCaddy3 data-cost="-9.99"> Remove Amazon Caddy from List</button>
     </div>
+    <script>
+        document.getElementById("removeCaddy3").addEventListener("click", function (){
+            removeFromBathList("Amazon Caddy");
+
+        })
+    </script>
     <script>
         document.getElementById("caddyAmazon2").addEventListener("click", function(){
             bathList.push("Amazon Caddy")
@@ -260,7 +292,14 @@
                 <button class = "large-button" id = "scTarget2" data-cost="7.49"> Add Target Shampoo/Conditioner to list </button>
             </div>
         </div>
+        <button class = "large-button1" id = removesc data-cost="-7.49"> Remove Target Shampoo/Conditioner from List</button>
     </div>
+    <script>
+        document.getElementById("removesc").addEventListener("click", function (){
+            removeFromBathList("Target Shampoo/Conditioner");
+
+        })
+    </script>
     <script>
         document.getElementById("scTarget2").addEventListener("click", function(){
             bathList.push("Target Shampoo/Conditioner")
@@ -284,7 +323,14 @@
                 <button class = "large-button" id = "scWalmart2" data-cost="5.98"> Add Walmart Shampoo/Conditioner to list </button>
             </div>
         </div>
+        <button class = "large-button1" id = removesc1 data-cost="-5.98"> Remove Walmart Shampoo/Conditioner from List</button>
     </div>
+    <script>
+        document.getElementById("removesc1").addEventListener("click", function (){
+            removeFromBathList("Walmart Shampoo/Conditioner");
+
+        })
+    </script>
     <script>
         document.getElementById("scWalmart2").addEventListener("click", function(){
             bathList.push("Walmart Shampoo/Conditioner")
@@ -308,7 +354,14 @@
                 <button class = "large-button" id = "scAmazon2" data-cost="9.99"> Add Amazon Shampoo/Conditioner to list </button>
             </div>
         </div>
+        <button class = "large-button1" id = removesc2 data-cost="-9.99"> Remove Amazon Shampoo/Conditioner from List</button>
     </div>
+    <script>
+        document.getElementById("removesc2").addEventListener("click", function (){
+            removeFromBathList("Amazon Shampoo/Conditioner");
+
+        })
+    </script>
 
     <script>
         document.getElementById("scAmazon2").addEventListener("click", function(){
@@ -346,7 +399,15 @@
         <div class = "item">
             <button class = "large-button" id = "shoesTarget2" data-cost="9.81"> Add Target Shower Shoes to list </button>
         </div>
-    </div>
+</div>
+<button class = "large-button1" id = removeshoes data-cost="-9.81"> Remove Target Shower Shoes from List</button>
+</div>
+<script>
+    document.getElementById("removeshoes").addEventListener("click", function (){
+        removeFromBathList("Target Shower Shoes");
+
+    })
+</script>
     <script>
         document.getElementById("shoesTarget2").addEventListener("click", function(){
             bathList.push("Target Shower Shoes")
@@ -399,7 +460,7 @@
         document.getElementById("shoesAmazon2").addEventListener("click", function(){
             bathList.push("Amazon Shower Shoes")
             saveData();
-            bathC+=12.98
+
         })
 
         console.log(bathList)
@@ -844,7 +905,27 @@
             });
         });
     </script>
+    <script>
+        // Wait until the page is fully loaded
+        document.addEventListener("DOMContentLoaded", () => {
+            const buttons = document.querySelectorAll(".large-button1");
 
+            buttons.forEach(button => {
+                button.addEventListener("click", () => {
+                    button.textContent = "Removed!";
+                });
+            });
+        });
+    </script>
+<script>
+    function removeFromBathList(item) {
+    const index = bathList.indexOf(item);
+    if (index !== -1) {
+    bathList.splice(index, 1);
+    saveData(); // re-save the updated list
+    }
+    }
+</script>
 </div>
 </body>
 </html>
