@@ -1,23 +1,4 @@
 import { supabase } from './supabaseClient.js';
-/*export function getCurrentUser() {
-    return supabase.auth.username(); // returns the logged-in user
-}
-export async function getUsername(userId) {
-    const { data, error } = await supabase
-        .from('table3')
-        .select('username')
-        .eq('id', userId)  // Match with the user's ID (from supabase.auth.user())
-        .single();  // Get a single record
-
-    if (error) {
-        console.error('Error fetching username:', error);
-        return null;
-    }
-
-    return data.username;
-}
-
- */
 
 document.addEventListener('DOMContentLoaded', async () => {
     const { data: { session }, error } = await supabase.auth.getSession();
@@ -30,33 +11,32 @@ document.addEventListener('DOMContentLoaded', async () => {
     supabase.auth.onAuthStateChange((event, session) => {
         console.log("Auth state change:", event, session);
     });
-
 });
 
 //Login //listening for login button in the index
-    const loginBtn = document.getElementById("loginBtn");
-    loginBtn?.addEventListener("click",async()=> {
-        const email = document.getElementById("email").value;
-        console.log(email);
-        const password = document.getElementById("password").value;
+const loginBtn = document.getElementById("loginBtn");
+loginBtn?.addEventListener("click", async () => {
+    const email = document.getElementById("email").value;
+    console.log(email);
+    const password = document.getElementById("password").value;
 
-        const { data, error } = await supabase.auth.signInWithPassword({
-            email,
-            password,
-        });
-
-        if (error) {
-            console.error("Login error:", error.message);
-            document.getElementById("error-msg").textContent = error.message;
-        } else {
-            console.log("User logged in:", data.user);
-            window.location.href = 'homePage.html'; // redirect on successful login
-        }
+    const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
     });
+
+    if (error) {
+        console.error("Login error:", error.message);
+        document.getElementById("error-msg").textContent = error.message;
+    } else {
+        console.log("User logged in:", data.user);
+        window.location.href = 'homePage.html'; // redirect on successful login
+    }
+});
 
 //Signup
 const signupBtn = document.getElementById("signup-btn");
-signupBtn?.addEventListener('click',async()=> {
+signupBtn?.addEventListener('click', async () => {
     console.log("Signup button clicked!");
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
@@ -64,7 +44,6 @@ signupBtn?.addEventListener('click',async()=> {
     const username = document.getElementById("username").value;
     const date = document.getElementById("weekChoice").value;
     const pref = document.getElementById("decor").value;
-
 
     // Sign up the user
     const { data, error: signupError } = await supabase.auth.signUp({ email, password });
@@ -78,72 +57,45 @@ signupBtn?.addEventListener('click',async()=> {
 
     console.log("New User ID:", userId); // Debugging - Check if ID is captured
     console.log("Selected preference at signup:", pref);
+
     // Insert user data into table3
-    const { error: insertError } = await supabase.from('table3').insert([
-        {
-            id: userId,  // Ensuring auth.uid() is linked properly
-            user_name: username,
-            email: email,
-            date: date,
-            preference: pref,
-        }
-    ]);
+    const { error: insertError } = await supabase.from('table3').insert([{
+        id: userId,  // Ensuring auth.uid() is linked properly
+        user_name: username,
+        email: email,
+        date: date,
+        preference: pref,
+    }]);
 
     if (insertError) {
         document.getElementById("error-msg").textContent = insertError.message;
     } else {
         console.log("User data inserted successfully");
-        window.location.href ='homePage.html'
+        window.location.href = 'homePage.html';
     }
-
-
-/*
-    //const { error: signupError, data } = await supabase.auth.signUp({ email, password });
-    const {error: signupError, user} = await supabase.auth.signUp({email, password});
-    console.log(user);
-    if (signupError) {
-        document.getElementById("error-msg").textContent = signupError.message;
-    } else {
-
-        const {error: insertError} = await supabase.from('table3').insert([{
-            id: user.id, first_name: firstName, last_name: lastName, city: city, email: email, date: date,
-            preference: pref,
-            region: region
-        }]);
-
-
-        if (insertError) {
-            document.getElementById("error-msg").textContent = insertError.message;
-        } else {
-            console.log(user);
-            window.location.href = 'index.html';
-        }
-    } */
-
-
 });
 
-//adjust updatebtn
+// Update profile
 const updateBtn = document.getElementById("update-btn");
-updateBtn?.addEventListener("click",async()=>{
+updateBtn?.addEventListener("click", async () => {
     const username = document.getElementById("username").value;
 
-    let updated = {user_name: username}; //collects the data to update the different variables
-    const sessions = await supabase.auth.getSession(); // still need to get the session and collect user profile data
-    const userProfile = await getUserProfile(sessions);
-    const { error: updateError } =  await supabase
+    let updated = { user_name: username }; //collects the data to update the different variables
+    const { data: { user } } = await supabase.auth.getUser(); // Get user profile data
+    const { error: updateError } = await supabase
         .from('table3')
-        .update(updated) //what rows are we updating, and with what?
-        .eq('id', userProfile[userProfile.length-1].id) //this is what will change the info connected to the user's profile itself
-    if(updateError) {
+        .update(updated) // Update user profile
+        .eq('id', user.id); // Use the current user's ID
+
+    if (updateError) {
         document.getElementById("error-msg").textContent = updateError.message;
     } else {
-        window.location.href = 'homePage.html'; //will take me back to the display so I can see updated information
+        window.location.href = 'homePage.html'; // Redirect to homePage after successful update
     }
-})
+});
 
-
-
+/*
+// Fetch user profile
 async function getUserProfile() {
     const { data: { user }, error } = await supabase.auth.getUser();
     if (error || !user) {
@@ -165,6 +117,35 @@ async function getUserProfile() {
     return userProfile;
 }
 
+// Fetch user profile data to display
+document.addEventListener("DOMContentLoaded", async () => {
+    const profileDataDiv = document.getElementById("profile-data");
+
+    if (!profileDataDiv) {
+        console.error("❌ Error: Element with id 'profile-data' not found.");
+        return;
+    }
+
+    async function fetchProfile() {
+        const userProfile = await getUserProfile();
+        if (userProfile) {
+            console.log('User Profile:', userProfile);
+            profileDataDiv.innerHTML = `
+                <p><strong>Username:</strong> ${userProfile[0].user_name}</p>
+                <p><strong>Email:</strong> ${userProfile[0].email}</p>
+                <p><strong>Move-in Date:</strong> ${userProfile[0].date}</p>
+                <p><strong>Preference:</strong> ${userProfile[0].preference}</p>
+            `;
+        }
+    }
+
+    fetchProfile().catch((error) => {
+        console.log('Error:', error);
+    });
+});
+*/
+
+// Preference-based redirection
 const travelBtn = document.getElementById("pref-btn");
 travelBtn?.addEventListener('click', async () => {
     const { data: { session } } = await supabase.auth.getSession();
@@ -199,10 +180,10 @@ travelBtn?.addEventListener('click', async () => {
     } else {
         alert('Preference not set.');
     }
-})
+});
 
+// Sign out button
 const signOutBtn = document.getElementById("out-btn");
-
 signOutBtn?.addEventListener("click", async () => {
     const { error } = await supabase.auth.signOut();
 
@@ -211,7 +192,6 @@ signOutBtn?.addEventListener("click", async () => {
         alert("Sign out failed!");
     } else {
         console.log("User signed out successfully");
-        window.location.href = "login.html"; // Or wherever your login screen is
+        window.location.href = "login.html"; // Redirect to login page after sign out
     }
 });
-
