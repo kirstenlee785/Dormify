@@ -179,8 +179,8 @@
         <button class = "large-button1" id = removesheets> Remove Target Sheets From List</button>
         <script>
             document.getElementById("removesheets").addEventListener("click", function (){
-                removeFromBathList("Target Sheets");
-                totalCostBath += -11
+                removeFromBedList("Target Sheets");
+                totalCostBed += -11
             })
         </script>
         <script>
@@ -203,8 +203,8 @@
         <button class = "large-button1" id = removesheets1> Remove Walmart Sheets From List</button>
         <script>
             document.getElementById("removesheets1").addEventListener("click", function (){
-                removeFromBathList("Walmart Sheets");
-                totalCostBath += -25.49
+                removeFromBedList("Walmart Sheets");
+                totalCostBed+= -25.49
             })
         </script>
         <script>
@@ -226,8 +226,8 @@
         <button class = "large-button1" id = removesheets2> Remove Amazon Sheets From List</button>
         <script>
             document.getElementById("removesheets2").addEventListener("click", function (){
-                removeFromBathList("Amazon Sheets");
-                totalCostBath += -12.99
+                removeFromBedList("Amazon Sheets");
+                totalCostBed += -12.99
             })
         </script>
         <script>
@@ -266,8 +266,8 @@
         <button class = "large-button1" id = removepillows> Remove Target Pillows From List</button>
         <script>
             document.getElementById("removepillows").addEventListener("click", function (){
-                removeFromBathList("Target Pillows");
-                totalCostBath += -10
+                removeFromBedList("Target Pillows");
+                totalCostBed += -10
             })
         </script>
         <script>
@@ -291,8 +291,8 @@
         <button class = "large-button1" id = removepillows1> Remove Walmart Pillows From List</button>
         <script>
             document.getElementById("removepillows1").addEventListener("click", function (){
-                removeFromBathList("Walmart Pillows");
-                totalCostBath += -11
+                removeFromBedList("Walmart Pillows");
+                totalCostBed += -11
             })
         </script>
         <script>
@@ -316,8 +316,8 @@
         <button class = "large-button1" id = removepillows2> Remove Amazon Pillows From List</button>
         <script>
             document.getElementById("removepillows2").addEventListener("click", function (){
-                removeFromBathList("Amazon Pillows");
-                totalCostBath += -11
+                removeFromBedList("Amazon Pillows");
+                totalCostBed += -11
             })
         </script>
         <script>
@@ -354,8 +354,8 @@
         <button class = "large-button1" id = removeblanket> Remove Target Blanket From List</button>
         <script>
             document.getElementById("removeblanket").addEventListener("click", function (){
-                removeFromBathList("Target Blanket");
-                totalCostBath += -10
+                removeFromBedList("Target Blanket");
+                totalCostBed += -10
             })
         </script>
         <script>
@@ -379,8 +379,8 @@
         <button class = "large-button1" id = removeblanket1> Remove Walmart Pillows From List</button>
         <script>
             document.getElementById("removeblanket1").addEventListener("click", function (){
-                removeFromBathList("Walmart Blanket");
-                totalCostBath += -9.98
+                removeFromBedList("Walmart Blanket");
+                totalCostBed += -9.98
             })
         </script>
         <script>
@@ -404,8 +404,8 @@
         <button class = "large-button1" id = removeblanket2> Remove Amazon Blanket From List</button>
         <script>
             document.getElementById("removeblanket2").addEventListener("click", function (){
-                removeFromBathList("Amazon Blanket");
-                totalCostBath += -11.99
+                removeFromBedList("Amazon Blanket");
+                totalCostBed += -11.99
             })
         </script>
         <script>
@@ -465,6 +465,15 @@
                     });
                 });
             });
+        </script>
+        <script>
+            function removeFromBedList(item) {
+                const index = bedList.indexOf(item);
+                if (index !== -1) {
+                    bedList.splice(index, 1);
+                    saveData(); // re-save the updated list
+                }
+            }
         </script>
     </div>
 </body>

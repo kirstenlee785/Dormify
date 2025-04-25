@@ -170,6 +170,14 @@
             <button class = "large-button" id = "LEDTarget2" data-cost="19.99"> Add Target LED Lights to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removeled> Remove Target LED Lights From List</button>
+    <script>
+        document.getElementById("removeled").addEventListener("click", function (){
+            removeFromFemList("Target LED Lights");
+            totalCostFem += -19.99
+        })
+    </script>
+
     <script>
         document.getElementById("LEDTarget2").addEventListener("click", function(){
             shoppingList.push("Target LED Lights")
@@ -192,6 +200,13 @@
             <button class = "large-button" id = "LEDWalmart2" data-cost="9.98"> Add Walmart LED Lights to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removeled1> Remove Walmart LED Lights From List</button>
+    <script>
+        document.getElementById("removeled1").addEventListener("click", function (){
+            removeFromFemList("Walmart LED Lights");
+            totalCostFem += -9.98
+        })
+    </script>
 
     <script>
         document.getElementById("LEDWamart2").addEventListener("click", function(){
@@ -204,7 +219,7 @@
     <div class = "column">
         <div class = "containerThree">
             <img class = "one" src="https://m.media-amazon.com/images/I/71lntIT6FfL._AC_SL1500_.jpg" alt="Click Me" id="LEDAmazon">
-            <p id="text3" class="words"><a href="https://www.amazon.com/Changing-Control-Lighting-Flexible-Decoration/dp/B09V366BDY/ref=sr_1_1_sspa?crid=2CUPX979PXEIB&dib=eyJ2IjoiMSJ9.0-uX9fPg99wPKoH2iecJ_zwVTbgujTVyGXMGUOhocjAmCa8NwZgaMEYySQJ_esMmQ_bPo2YfEQ8oZkULQVCmqWvoKPZsOOyh7l1-G-7Na0X3ZAsKpNQwxWH164Q_62YbxsFzI524rvzX2DLu1jauSoXwzmgCUdPNsCoY2YLvotusSdGc9hIi1YIp7XCIWxbMDS4k8Jc05ejQxvpZwCWZicPyJ9tQb5-h-KSUhLz1gk9ziCzMbW0fniiG_FuKH7jo3zftGDCxazgsuP_5HRPGaEyVIXiwLRObLtlkpdPCaHw.l6Viw6RCS19cHZtYofUW460NEQSoPupAnipiBK3-UC4&dib_tag=se&keywords=led%2Blights&qid=1739198286&sprefix=led%2Blights%2Caps%2C111&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1">Amazon Comfee EM720CPL-PMB Countertop Microwave Oven with Sound On/Off, ECO Mode and Easy One-Touch Buttons, 0.7 Cu Ft, Black $80.00</a></p>
+            <p id="text3" class="words"><a href="https://www.amazon.com/Changing-Control-Lighting-Flexible-Decoration/dp/B09V366BDY/ref=sr_1_1_sspa?crid=2CUPX979PXEIB&dib=eyJ2IjoiMSJ9.0-uX9fPg99wPKoH2iecJ_zwVTbgujTVyGXMGUOhocjAmCa8NwZgaMEYySQJ_esMmQ_bPo2YfEQ8oZkULQVCmqWvoKPZsOOyh7l1-G-7Na0X3ZAsKpNQwxWH164Q_62YbxsFzI524rvzX2DLu1jauSoXwzmgCUdPNsCoY2YLvotusSdGc9hIi1YIp7XCIWxbMDS4k8Jc05ejQxvpZwCWZicPyJ9tQb5-h-KSUhLz1gk9ziCzMbW0fniiG_FuKH7jo3zftGDCxazgsuP_5HRPGaEyVIXiwLRObLtlkpdPCaHw.l6Viw6RCS19cHZtYofUW460NEQSoPupAnipiBK3-UC4&dib_tag=se&keywords=led%2Blights&qid=1739198286&sprefix=led%2Blights%2Caps%2C111&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1">Amazon KSIPZE 100ft Led Strip Lights RGB Music Sync Color Changing Bluetooth Led Lights with Smart App Control Remote Led Lights for Bedroom Room Lighting Flexible Home Décor  $11.98</a></p>
             <script>
                 document.getElementById("LEDAmazon").addEventListener("click", function() {
                     var text3 = document.getElementById("text3");
@@ -213,9 +228,17 @@
             </script>
         </div>
         <div class = "item">
-            <button class = "large-button" id = "LEDAmazon2" data-cost="80"> Add Amazon LED Lights to list </button>
+            <button class = "large-button" id = "LEDAmazon2" data-cost="11.98"> Add Amazon LED Lights to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removeled2> Remove Amazon LED Lights From List</button>
+    <script>
+        document.getElementById("removeled2").addEventListener("click", function (){
+            removeFromFemList("Amazon LED Lights");
+            totalCostFem += -11.98
+        })
+    </script>
+
     <script>
         document.getElementById("LEDAmazon2").addEventListener("click", function(){
             femList.push("Amazon LED Lights")
@@ -253,6 +276,14 @@
             <button class = "large-button" id = "rugTarget2" data-cost="30"> Add Target Rug to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removerug> Remove Target Rug From List</button>
+    <script>
+        document.getElementById("removerug").addEventListener("click", function (){
+            removeFromFemList("Target Rug");
+            totalCostFem += -30
+        })
+    </script>
+
     <script>
         document.getElementById("rugTarget2").addEventListener("click", function(){
             femList.push("Target Rug (Feminine)")
@@ -275,6 +306,14 @@
             <button class = "large-button" id = "rugWalmart2" data-cost="4.13"> Add Walmart Rug to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removerug1> Remove Walmart Rug From List</button>
+    <script>
+        document.getElementById("removerug1").addEventListener("click", function (){
+            removeFromFemList("Walmart Rug (Feminine)");
+            totalCostFem += -11
+        })
+    </script>
+
     <script>
         document.getElementById("rugWalmart2").addEventListener("click", function(){
             femList.push("Walmart Rug (Feminine)")
@@ -297,6 +336,14 @@
             <button class = "large-button" id = "rugAmazon2" data-cost="13"> Add Amazon Rug to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removerug2> Remove Amazon Rug From List</button>
+    <script>
+        document.getElementById("removerug2").addEventListener("click", function (){
+            removeFromFemList("Amazon Rug (Feminine)");
+            totalCostFem += -11
+        })
+    </script>
+
     <script>
         document.getElementById("rugAmazon2").addEventListener("click", function(){
             femList.push("Amazon Rug (Feminine)")
@@ -334,6 +381,14 @@
             <button class = "large-button" id = "mirrorTarget2" data-cost="12.49"> Add Target Mirror to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removemirror> Remove Target Mirror From List</button>
+    <script>
+        document.getElementById("removemirror").addEventListener("click", function (){
+            removeFromFemList("Target Mirror");
+            totalCostFem += -12.49
+        })
+    </script>
+
     <script>
         document.getElementById("mirrorTarget2").addEventListener("click", function(){
             femList.push("Target Mirror (Feminine)")
@@ -356,6 +411,13 @@
             <button class = "large-button" id = "mirrorWalmart2" data-cost="16.68"> Add Target Walmart to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removemirror1> Remove Walmart Mirror From List</button>
+    <script>
+        document.getElementById("removemirror1").addEventListener("click", function (){
+            removeFromFemList("Walmart Mirror");
+            totalCostFem += -16.68
+        })
+    </script>
     <script>
         document.getElementById("mirrorWalmart2").addEventListener("click", function(){
             femList.push("Walmart Mirror (Feminine)")
@@ -378,6 +440,13 @@
             <button class = "large-button" id = "mirrorAmazon2" data-cost="11.69"> Add Amazon Mirror to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removemirror2> Remove Amazon Mirror From List</button>
+    <script>
+        document.getElementById("removemirror2").addEventListener("click", function (){
+            removeFromFemList("Amazon Mirror (Feminine)");
+            totalCostFem += -11.69
+        })
+    </script>
     <script>
         document.getElementById("mirrorAmazon2").addEventListener("click", function(){
             femList.push("Amazon Mirror (Feminine)")
@@ -414,6 +483,13 @@
             <button class = "large-button" id = "throwTarget2" data-cost="10"> Add Target Throw Pillows to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removethrow> Remove Target Throw Pillows From List</button>
+    <script>
+        document.getElementById("removethrow").addEventListener("click", function (){
+            removeFromFemList("Target Throw Pillow (Feminine)");
+            totalCostFem += -12.49
+        })
+    </script>
     <script>
         document.getElementById("throwTarget2").addEventListener("click", function(){
             femList.push("Target Throw Pillow (Feminine)")
@@ -436,6 +512,13 @@
             <button class = "large-button" id = "throwWalmart2" data-cost="8.89"> Add Walmart Throw Pillows to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removethrow1> Remove Walmart Throw Pillows From List</button>
+    <script>
+        document.getElementById("removethrow1").addEventListener("click", function (){
+            removeFromFemList("Walmart Throw Pillow (Feminine)");
+            totalCostFem += -12.49
+        })
+    </script>
     <script>
         document.getElementById("throwWalmartt2").addEventListener("click", function(){
             femList.push("Walmart Throw Pillow (Feminine)")
@@ -458,6 +541,13 @@
             <button class = "large-button" id = "throwAmazon2" data-cost="7.29"> Add Amazon Throw Pillows to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removethrow2> Remove Amazon Throw Pillows From List</button>
+    <script>
+        document.getElementById("removethrow2").addEventListener("click", function (){
+            removeFromFemList("Amazon Throw Pillows (Feminine)");
+            totalCostFem += -7.29
+        })
+    </script>
     <script>
         document.getElementById("throwAmazon2").addEventListener("click", function(){
             femList.push("Amazon Throw Pillow (Feminine)")
@@ -493,6 +583,13 @@
             <button class = "large-button" id = "posterTarget2" data-cost="16"> Add Target Poster to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removeposter> Remove Target Poster From List</button>
+    <script>
+        document.getElementById("removeposter").addEventListener("click", function (){
+            removeFromFemList("Target Poster (Feminine)");
+            totalCostFem += -16
+        })
+    </script>
     <script>
         document.getElementById("posterTarget2").addEventListener("click", function(){
             femList.push("Target Poster (Feminine)")
@@ -515,6 +612,13 @@
             <button class = "large-button" id = "posterWalmart2" data-cost="19.99"> Add Walmart Poster to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removeposter1> Remove Walmart Poster From List</button>
+    <script>
+        document.getElementById("removeposter1").addEventListener("click", function (){
+            removeFromFemList("Walmart Poster (Feminine)");
+            totalCostFem += -19.99
+        })
+    </script>
     <script>
         document.getElementById("posterWalmart2").addEventListener("click", function(){
             femList.push("Walmart Poster (Feminine)")
@@ -537,6 +641,13 @@
             <button class = "large-button" id = "posterAmazon2" data-cost="7.99"> Add Amazon Poster to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removeposter2> Remove Target Poster From List</button>
+    <script>
+        document.getElementById("removeposter2").addEventListener("click", function (){
+            removeFromFemList("Amazon Poster (Feminine)");
+            totalCostFem += -12.49
+        })
+    </script>
     <script>
         document.getElementById("posterAmazon2").addEventListener("click", function(){
             femList.push("Amazon Poster (Feminine)")
@@ -572,6 +683,13 @@
             <button class = "large-button" id = "ottomanTarget2" data-cost="36.99"> Add Target Ottoman to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removeottoman> Remove Target Ottoman From List</button>
+    <script>
+        document.getElementById("removeottoman").addEventListener("click", function (){
+            removeFromFemList("Target Ottoman (Feminine)");
+            totalCostFem += -36.99
+        })
+    </script>
     <script>
         document.getElementById("ottomanTarget2").addEventListener("click", function(){
             femList.push("Target Ottoman (Feminine)")
@@ -594,6 +712,13 @@
             <button class = "large-button" id = "ottomanWalmart2" data-cost="36.34"> Add Walmart Ottoman to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removeottoman1> Remove Walmart Ottoman From List</button>
+    <script>
+        document.getElementById("removeottoman1").addEventListener("click", function (){
+            removeFromFemList("Walmart Ottoman (Feminine)");
+            totalCostFem += -36.34
+        })
+    </script>
     <script>
         document.getElementById("ottomanWalmart2").addEventListener("click", function(){
             femList.push("Walmart Ottoman (Feminine)")
@@ -616,6 +741,13 @@
             <button class = "large-button" id = "ottomanAmazon2" data-cost="19.99"> Add Amazon Ottoman to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removeottoman2> Remove Amazon Ottoman From List</button>
+    <script>
+        document.getElementById("removeottoman2").addEventListener("click", function (){
+            removeFromFemList("Amazon Ottoman (Feminine)");
+            totalCostFem += -19.99
+        })
+    </script>
     <script>
         document.getElementById("ottomanAmazon2").addEventListener("click", function(){
             femList.push("Amazon Ottoman (Feminine)")
@@ -664,6 +796,28 @@
             });
         });
     });
+</script>
+<script>
+    // Wait until the page is fully loaded
+    document.addEventListener("DOMContentLoaded", () => {
+        const buttons = document.querySelectorAll(".large-button1");
+
+
+        buttons.forEach(button => {
+            button.addEventListener("click", () => {
+                button.textContent = "Removed!";
+            });
+        });
+    });
+</script>
+<script>
+    function removeFromFemList(item) {
+        const index = femList.indexOf(item);
+        if (index !== -1) {
+            femList.splice(index, 1);
+            saveData(); // re-save the updated list
+        }
+    }
 </script>
 <script>
     // Wait until the page is fully loaded
