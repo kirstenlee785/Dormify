@@ -505,6 +505,13 @@
             <button class = "large-button" id = "apTarget2" data-cost="89.99"> Add Target Air Purifier to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removeap> Remove Target Air Purifier From List</button>
+    <script>
+        document.getElementById("removeap").addEventListener("click", function (){
+            removeFromMiscList("Target Air Purifier");
+            totalCostMisc += -89.99
+        })
+    </script>
     <script>
         document.getElementById("apTarget2").addEventListener("click", function(){
             miscList.push("Target Air Purifier")
@@ -521,6 +528,13 @@
             <button class = "large-button" id = "apWalmart2" data-cost="39.99"> Add Walmart Air Purifier to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removeap1> Remove Walmart Air Purifier From List</button>
+    <script>
+        document.getElementById("removeap1").addEventListener("click", function (){
+            removeFromMiscList("Walmart Air Purifier");
+            totalCostMisc += -39.99
+        })
+    </script>
     <script>
         document.getElementById("apWalmart2").addEventListener("click", function(){
             miscList.push("Walmart Air Purifier")
@@ -534,9 +548,16 @@
             <p id="text15" class ="words"><a href="https://www.amazon.com/Honeyuan-HEPA-Home-Large-white/dp/B0B9678Z4L?th=1"> Honeyuan Bedroom Air Purifier (Large Room, 600 sq.ft), 3-Stage Filtration / $38.99</a></p>
         </div>
         <div class = "item">
-            <button class = "large-button" id = "apAmazon2" data-cost="38.99"> Add Target Amazon to list </button>
+            <button class = "large-button" id = "apAmazon2" data-cost="38.99"> Add Amazon Air Purifier to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removeap2> Remove Amazon Air Purifier From List</button>
+    <script>
+        document.getElementById("removeap2").addEventListener("click", function (){
+            removeFromMiscList("Amazon Air Purifier");
+            totalCostMisc += -38.99
+        })
+    </script>
     <script>
         document.getElementById("apAmazon2").addEventListener("click", function(){
             miscList.push("Amazon Air Purifier")
@@ -566,6 +587,13 @@
             <button class = "large-button" id = "csTarget2" data-cost="3.89"> Add Target Command Strips to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removecs> Remove Target Command Strips From List</button>
+    <script>
+        document.getElementById("removecs").addEventListener("click", function (){
+            removeFromMiscList("Target Command Strips");
+            totalCostMisc += -3.89
+        })
+    </script>
     <script>
         document.getElementById("csTarget2").addEventListener("click", function(){
             miscList.push("Target Command Strips")
@@ -582,6 +610,13 @@
             <button class = "large-button" id = "csWalmart2" data-cost="11.97"> Add Walmart Command Strips to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removecs1> Remove Walmart Command Strips From List</button>
+    <script>
+        document.getElementById("removecs1").addEventListener("click", function (){
+            removeFromMiscList("Walmart Command Strips");
+            totalCostMisc += -11.97
+        })
+    </script>
     <script>
         document.getElementById("csWalmart2").addEventListener("click", function(){
             miscList.push("Walmart Command Strips")
@@ -598,6 +633,13 @@
             <button class = "large-button" id = "csAmazon2" data-cost="12.83"> Add Amazon Command Strips to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removecs2> Remove Amazon Command Strips From List</button>
+    <script>
+        document.getElementById("removecs2").addEventListener("click", function (){
+            removeFromMiscList("Amazon Command Strips");
+            totalCostMisc += -12.83
+        })
+    </script>
     <script>
         document.getElementById("csAmazon2").addEventListener("click", function(){
             miscList.push("Amazon Command Strips")
