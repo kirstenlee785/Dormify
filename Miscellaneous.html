@@ -45,18 +45,6 @@
             border: 2px solid black;
             margin: 10px;
         }
-        .large-button1{
-            background-color: black; /* Blue background */
-            /* Remove borders */
-            color: white; /* White text */
-            padding: 12px 16px; /* Some padding */
-            font-size: 16px; /* Set a font size */
-            cursor: pointer;
-            border-radius: 10%;
-            border: 2px solid black;
-            margin: 10px;
-        }
-
         .one {
             cursor: pointer;
             width: 200px;
@@ -110,6 +98,8 @@
         const cartList5 = JSON.stringify(miscList)
         // Sctore the list in localStorage (convert it to a JSON string)
         sessionStorage.setItem('displayList5', cartList5);
+        sessionStorage.setItem('items', JSON.stringify(shoppingList));
+        sessionStorage.setItem('totalCostMisc', totalCostMisc.toFixed(2));
     }
 </script>
 <body style = "background-image: url(https://img.freepik.com/premium-vector/seamless-pattern-with-chamomiles_656070-178.jpg?semt=ais_hybrid&w=740)">
@@ -163,72 +153,30 @@
             <p id="text" class ="words"><a href="https://www.target.com/p/18pk-plastic-hangers-black-room-essentials-8482/-/A-17153482"> 18pk Plastic Hangers - Room Essentials/ $3.00 </a></p>
         </div>
         <div class = "item">
-            <button class = "large-button" id = "hangersTarget2" data-cost="3"> Add Target Hangers to list </button>
+            <button class = "large-button add-btn" data-cost="3" data-name="Target Hangers (Misc.)"> Add Target Hangers to list </button>
+            <button class = "large-button remove-btn" data-cost="3" data-name="Target Hangers (Misc.)"> Remove Target Hangers from list </button>
         </div>
     </div>
-    <button class = "large-button1" id = removehangers> Remove Target Hangers From List</button>
-    <script>
-        document.getElementById("removehangers").addEventListener("click", function (){
-            removeFromMiscList("Target Hangers");
-            totalCostMisc += -3
-        })
-    </script>
-
-    <script>
-        document.getElementById("hangersTarget2").addEventListener("click", function(){
-            miscList.push("Target Hangers")
-            saveData();
-        })
-        console.log(miscList)
-    </script>
-
     <div class ="column">
         <div class = "c2">
             <img class ="one" src="https://i5.walmartimages.com/seo/Mainstays-Adult-Teen-Clothing-Hangers-18-Pack-Black-Durable-Plastic_45ea02eb-f88d-4419-bc70-77836354eb3a.df10eb5407c6cf9d76071480b6e91b0e.jpeg?odnHeight=640&odnWidth=640&odnBg=FFFFFF"  alt="Click Me" id="hangersWalmart">
             <p id="text2" class ="words"><a href="https://www.walmart.com/ip/Mainstays-Clothing-Hangers-18-Pack-Black-Durable-PlasticM/1852333481"> Mainstays Clothing Hangers, 18 Pack, Durable Plastic/ $9.45 </a></p>
         </div>
         <div class = "item">
-            <button class = "large-button" id = "hangersWalmart2" data-cost="9.45"> Add Walmart Hangers to list </button>
+            <button class = "large-button add-button" data-cost="9.45" data-name="Walmart Hangers (Misc.)"> Add Walmart Hangers to list </button>
+            <button class = "large-button remove-button" data-cost="9.45" data-name="Walmart Hangers (Misc.)"> Remove Walmart Hangers from list </button>
         </div>
     </div>
-    <button class = "large-button1" id = removehangers1> Remove Walmart Hangers From List</button>
-    <script>
-        document.getElementById("removehangers1").addEventListener("click", function (){
-            removeFromMiscList("Walmart Hangers");
-            totalCostMisc += -9.45
-        })
-    </script>
-    <script>
-        document.getElementById("hangersWalmart2").addEventListener("click", function(){
-            miscList.push("Walmart Hangers")
-            saveData();
-        })
-        console.log(miscList)
-    </script>
-
     <div class="column">
         <div class = "c3">
             <img class ="one" src="https://m.media-amazon.com/images/I/71-z700tbrL._AC_SX679_.jpg"  alt="Click Me" id="hangersAmazon">
             <p id="text3" class ="words"><a href="https://www.amazon.com/Clothes-Hangers-Plastic-Pack-Adults/dp/B0CFWGCW3K?th=1"> NEATERIZE Clothes Hangers Plastic 16 pack for Adults/ $9.96 </a></p>
         </div>
         <div class = "item">
-            <button class = "large-button" id = "hangersAmazon2" data-cost="9.96"> Add Amazon Hangers to list </button>
+            <button class = "large-button add-button" data-cost="9.96"> Add Amazon Hangers to list </button>
+            <button class = "large-button remove-button" data-cost="9.96"> Remove Amazon Hangers from list </button>
         </div>
     </div>
-    <button class = "large-button1" id = removehangers2> Remove Amazon Hangers From List</button>
-    <script>
-        document.getElementById("removehangers2").addEventListener("click", function (){
-            removeFromMiscList("Amazon Hangers");
-            totalCostMisc += -9.96
-        })
-    </script>
-    <script>
-        document.getElementById("hangersAmazon2").addEventListener("click", function(){
-            miscList.push("Amazon Hangers")
-            saveData();
-        })
-        console.log(miscList)
-    </script>
 </div>
 
 <!--row2-->
@@ -244,77 +192,36 @@
             udiv.style.display = "block";
         };
     </script>
-
     <div class = "column">
         <div class = "c4">
             <img class ="one" src="https://target.scene7.com/is/image/Target/GUEST_6204a7b4-a27d-4679-92a3-e009572dba00?wid=1200&hei=1200&qlt=80&fmt=webp"  alt="Click Me" id="umbrellaTarget">
             <p id="text4" class ="words"><a href="https://www.target.com/p/totes-super-mini-manual-eco-compact-umbrella-black/-/A-53136783"> Totes Super Mini Manual ECO Compact Umbrella - Black/ $9.99 </a></p>
         </div>
         <div class = "item">
-            <button class = "large-button" id = "umbrellaTarget2" data-cost="9.99"> Add Target Umbrella to list </button>
+            <button class = "large-button add-button" data-cost="9.99" data-name="Target Umbrella (Misc.)"> Add Target Umbrella to list </button>
+            <button class = "large-button remove-button" data-cost="9.99" data-name="Target Umbrella (Misc.)"> Remove Target Umbrella from list </button>
         </div>
     </div>
-    <button class = "large-button1" id = removeumbrella> Remove Target Umbrella From List</button>
-    <script>
-        document.getElementById("removeumbrella").addEventListener("click", function (){
-            removeFromMiscList("Target Umbrella");
-            totalCostMisc += -9.99
-        })
-    </script>
-    <script>
-        document.getElementById("umbrellaTarget2").addEventListener("click", function(){
-            miscList.push("Target Umbrella")
-            saveData();
-        })
-        console.log(miscList)
-    </script>
-
     <div class ="column">
         <div class = "c5">
             <img class ="one" src="https://i5.walmartimages.com/seo/Chakipee-Automatic-Folding-Umbrella-Auto-Reverse-Windproof-Compact-Umbrella-with-Teflon-Coated-47-10Ribs-Black_bfb87179-d02e-455b-95e7-24d807907fe7.4b056df238cdaaa7f9087695c114110f.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF"  alt="Click Me" id="umbrellaWalmart">
             <p id="text5" class ="words"><a href="https://www.walmart.com/ip/Chakipee-Automatic-Folding-Umbrella-Auto-Reverse-Windproof-Compact-Umbrella-with-Teflon-Coated-47-10Ribs-Black/2731343246"> Chakipee Automatic Folding Umbrella, Auto Reverse Windproof / $12.99 (multiple colors available)  </a></p>
         </div>
         <div class = "item">
-            <button class = "large-button" id = "umbrellaWalmart2" data-cost="12.99"> Add Walmart Umbrella to list </button>
+            <button class = "large-button add-button" data-cost="12.99" data-name="Walmart Umbrella (Misc.)"> Add Walmart Umbrella to list </button>
+            <button class = "large-button remove-button" data-cost="12.99" data-name="Walmart Umbrella (Misc.)"> Remove Walmart Umbrella from list </button>
         </div>
     </div>
-    <button class = "large-button1" id = removeumbrella1> Remove Walmart Umbrella From List</button>
-    <script>
-        document.getElementById("removeumbrella1").addEventListener("click", function (){
-            removeFromMiscList("Walmart Umbrella");
-            totalCostMisc += -12.99
-        })
-    </script>
-    <script>
-        document.getElementById("umbrellaWalmart2").addEventListener("click", function(){
-            miscList.push("Walmart Umbrella")
-            saveData();
-        })
-        console.log(shoppingList)
-    </script>
 <div class ="column">
     <div class = "c6">
         <img class ="one" src="https://m.media-amazon.com/images/I/71eFkF8OrpL._AC_SX679_.jpg"  alt="Click Me" id="umbrellaAmazon">
         <p id="text6" class ="words"><a href="https://www.amazon.com/MRTLLOA-Inverted-Umbrellas-Windproof-Protection/dp/B07FR8XJ9M"> MRTLLOA 42/49 Inch Compact Windproof Travel Umbrella for Rain (available in multiple Colors) / $9.99  </a></p>
     </div>
     <div class = "item">
-        <button class = "large-button" id = "umbrellaAmazon2" data-cost="9.99"> Add Amazon Umbrella to list </button>
+        <button class = "large-button add-button" data-cost="9.99" data-name="Amazon Umbrella (Misc.) "> Add Amazon Umbrella to list </button>
+        <button class = "large-button remove-button" data-cost="9.99" data-name="Amazon Umbrella (Misc.) "> Add Amazon Umbrella to list </button>
     </div>
 </div>
-    <button class = "large-button1" id = removeumbrella2> Remove Amazon Umbrella From List</button>
-    <script>
-        document.getElementById("removeumbrella2").addEventListener("click", function (){
-            removeFromMiscList("Amazon Umbrella");
-            totalCostMisc += -9.99
-        })
-    </script>
-    <script>
-        document.getElementById("umbrellaAmazon2").addEventListener("click", function(){
-            miscList.push("Amazon Umbrella")
-            saveData();
-        })
-        console.log(miscList)
-    </script>
 </div>
 
 <!--row3-->
@@ -334,17 +241,11 @@
             <img class ="one" src="https://target.scene7.com/is/image/Target/GUEST_6f30c110-b8ed-492e-9e70-4eddad2070ea?wid=1200&hei=1200&qlt=80&fmt=webp"  alt="Click Me" id="fanTarget">
             <p id="text7" class ="words"><a href="https://www.target.com/p/lasko-3733-box-fan-white/-/A-84195090"> Lasko 3733 Box Fan White: 20" Portable Floor Fan - Multi-purpose / $23.49  </a></p>
         </div>
-        <div data-cost="">
-            <button class = "large-button" id = "fanTarget2" data-cost="23.49"> Add Target Fan to list </button>
+        <div class="item">
+            <button class = "large-button add-button" data-cost="23.49" data-name="Target Fan (Misc.)"> Add Target Fan to list </button>
+            <button class = "large-button remove-button" data-cost="23.49" data-name="Target Fan (Misc.)"> Add Target Fan to list </button>
         </div>
     </div>
-    <button class = "large-button1" id = removefan> Remove Target Fan From List</button>
-    <script>
-        document.getElementById("removefan").addEventListener("click", function (){
-            removeFromMiscList("Target Fan");
-            totalCostMisc += -23.49
-        })
-    </script>
     <script>
         document.getElementById("fanTarget2").addEventListener("click", function(){
             miscList.push("Target Fan")
@@ -361,13 +262,6 @@
             <button class = "large-button" id = "fanWalmart2" data-cost="25.97"> Add Walmart Fan to list </button>
         </div>
     </div>
-    <button class = "large-button1" id = removefan1> Remove Walmart Fan From List</button>
-    <script>
-        document.getElementById("removefan1").addEventListener("click", function (){
-            removeFromMiscList("Walmart Fan");
-            totalCostMisc += -25.97
-        })
-    </script>
     <script>
         document.getElementById("fanWalmart2").addEventListener("click", function(){
             miscList.push("Walmart Fan")
@@ -384,13 +278,6 @@
             <button class = "large-button" id = "fanAmazon2" data-cost="21.99"> Add Amazon Fan to list </button>
         </div>
     </div>
-    <button class = "large-button1" id = removefan2> Remove Amazon Fan From List</button>
-    <script>
-        document.getElementById("removefan2").addEventListener("click", function (){
-            removeFromMiscList("Amazon Fan");
-            totalCostMisc += -21.99
-        })
-    </script>
     <script>
         document.getElementById("fanAmazon2").addEventListener("click", function(){
             miscList.push("Amazon Fan")
@@ -421,13 +308,6 @@
             <button class = "large-button" id = "ecTarget2" data-cost="6.99"> Add Target Extension Cable to list </button>
         </div>
     </div>
-    <button class = "large-button1" id = removeec> Remove Target Extension Cable From List</button>
-    <script>
-        document.getElementById("removeec").addEventListener("click", function (){
-            removeFromMiscList("Target Extension Cable");
-            totalCostMisc += -6.99
-        })
-    </script>
     <script>
         document.getElementById("ecTarget2").addEventListener("click", function(){
             miscList.push("Target Extension Cable")
@@ -444,13 +324,6 @@
             <button class = "large-button" id = "ecWalmart2" data-cost="13.99"> Add Walmart Extension Cable to list </button>
         </div>
     </div>
-    <button class = "large-button1" id = removeec1> Remove Walmart Extension Cable From List</button>
-    <script>
-        document.getElementById("removeec1").addEventListener("click", function (){
-            removeFromMiscList("Walmart Extension Cable");
-            totalCostMisc += -13.99
-        })
-    </script>
     <script>
         document.getElementById("ecWalmart2").addEventListener("click", function(){
             miscList.push("Walmart Extension Cable")
@@ -467,13 +340,6 @@
             <button class = "large-button" id = "ecAmazon2" data-cost="11.99"> Add Amazon Extension Cable to list </button>
         </div>
     </div>
-    <button class = "large-button1" id = removeec2> Remove Amazon Extension Cable From List</button>
-    <script>
-        document.getElementById("removeec2").addEventListener("click", function (){
-            removeFromMiscList("Amazon Extension Cable");
-            totalCostMisc += -11.99
-        })
-    </script>
     <script>
         document.getElementById("ecAmazon2").addEventListener("click", function(){
             miscList.push("Amazon Extension Cable")
@@ -505,13 +371,6 @@
             <button class = "large-button" id = "apTarget2" data-cost="89.99"> Add Target Air Purifier to list </button>
         </div>
     </div>
-    <button class = "large-button1" id = removeap> Remove Target Air Purifier From List</button>
-    <script>
-        document.getElementById("removeap").addEventListener("click", function (){
-            removeFromMiscList("Target Air Purifier");
-            totalCostMisc += -89.99
-        })
-    </script>
     <script>
         document.getElementById("apTarget2").addEventListener("click", function(){
             miscList.push("Target Air Purifier")
@@ -528,13 +387,6 @@
             <button class = "large-button" id = "apWalmart2" data-cost="39.99"> Add Walmart Air Purifier to list </button>
         </div>
     </div>
-    <button class = "large-button1" id = removeap1> Remove Walmart Air Purifier From List</button>
-    <script>
-        document.getElementById("removeap1").addEventListener("click", function (){
-            removeFromMiscList("Walmart Air Purifier");
-            totalCostMisc += -39.99
-        })
-    </script>
     <script>
         document.getElementById("apWalmart2").addEventListener("click", function(){
             miscList.push("Walmart Air Purifier")
@@ -548,16 +400,9 @@
             <p id="text15" class ="words"><a href="https://www.amazon.com/Honeyuan-HEPA-Home-Large-white/dp/B0B9678Z4L?th=1"> Honeyuan Bedroom Air Purifier (Large Room, 600 sq.ft), 3-Stage Filtration / $38.99</a></p>
         </div>
         <div class = "item">
-            <button class = "large-button" id = "apAmazon2" data-cost="38.99"> Add Amazon Air Purifier to list </button>
+            <button class = "large-button" id = "apAmazon2" data-cost="38.99"> Add Target Amazon to list </button>
         </div>
     </div>
-    <button class = "large-button1" id = removeap2> Remove Amazon Air Purifier From List</button>
-    <script>
-        document.getElementById("removeap2").addEventListener("click", function (){
-            removeFromMiscList("Amazon Air Purifier");
-            totalCostMisc += -38.99
-        })
-    </script>
     <script>
         document.getElementById("apAmazon2").addEventListener("click", function(){
             miscList.push("Amazon Air Purifier")
@@ -587,13 +432,6 @@
             <button class = "large-button" id = "csTarget2" data-cost="3.89"> Add Target Command Strips to list </button>
         </div>
     </div>
-    <button class = "large-button1" id = removecs> Remove Target Command Strips From List</button>
-    <script>
-        document.getElementById("removecs").addEventListener("click", function (){
-            removeFromMiscList("Target Command Strips");
-            totalCostMisc += -3.89
-        })
-    </script>
     <script>
         document.getElementById("csTarget2").addEventListener("click", function(){
             miscList.push("Target Command Strips")
@@ -610,13 +448,6 @@
             <button class = "large-button" id = "csWalmart2" data-cost="11.97"> Add Walmart Command Strips to list </button>
         </div>
     </div>
-    <button class = "large-button1" id = removecs1> Remove Walmart Command Strips From List</button>
-    <script>
-        document.getElementById("removecs1").addEventListener("click", function (){
-            removeFromMiscList("Walmart Command Strips");
-            totalCostMisc += -11.97
-        })
-    </script>
     <script>
         document.getElementById("csWalmart2").addEventListener("click", function(){
             miscList.push("Walmart Command Strips")
@@ -633,13 +464,6 @@
             <button class = "large-button" id = "csAmazon2" data-cost="12.83"> Add Amazon Command Strips to list </button>
         </div>
     </div>
-    <button class = "large-button1" id = removecs2> Remove Amazon Command Strips From List</button>
-    <script>
-        document.getElementById("removecs2").addEventListener("click", function (){
-            removeFromMiscList("Amazon Command Strips");
-            totalCostMisc += -12.83
-        })
-    </script>
     <script>
         document.getElementById("csAmazon2").addEventListener("click", function(){
             miscList.push("Amazon Command Strips")
@@ -648,63 +472,52 @@
         console.log(miscList)
     </script>
 </div>
+
 <script>
-    // Temporary variable to hold the total cost
-    let totalCostMisc = 0;
+    let totalCostMisc = parseFloat(sessionStorage.getItem('totalCostMisc')) || 0;
+    document.getElementById('totalCostMisc').textContent = totalCostMisc.toFixed(2);
 
-    // Function to update the total cost when a button is clicked
-    function updateTotalCost(event) {
-        // Get the cost from the clicked button's data-cost attribute
-        const itemCost = parseFloat(event.target.getAttribute('data-cost'));
+    function addItem(event) {
+        const button = event.target;
+        const itemName = button.getAttribute('data-name');
+        const itemCost = parseFloat(button.getAttribute('data-cost'));
 
-        // Add the cost to the total
+        shoppingList.push(itemName);
         totalCostMisc += itemCost;
 
-        // Update the displayed total cost
         document.getElementById('totalCostMisc').textContent = totalCostMisc.toFixed(2);
+        saveData();
 
-        sessionStorage.setItem('totalCostMisc', totalCostMisc);
+        button.textContent = "Added!";
     }
 
-    // Add event listeners to the buttons
-    const buttons = document.querySelectorAll('.item button');
-    buttons.forEach(button => {
-        button.addEventListener('click', updateTotalCost);
-    });
-</script>
+    function removeItem(event) {
+        const button = event.target;
+        const itemName = button.getAttribute('data-name');
+        const itemCost = parseFloat(button.getAttribute('data-cost'));
 
-<script>
-    // Wait until the page is fully loaded
-    document.addEventListener("DOMContentLoaded", () => {
-        const buttons = document.querySelectorAll(".large-button");
+        const index = shoppingList.indexOf(itemName);
+        if (index > -1) {
+            shoppingList.splice(index, 1);
+            totalCostMasc -= itemCost;
 
-        buttons.forEach(button => {
-            button.addEventListener("click", () => {
-                button.textContent = "Added!";
-            });
-        });
-    });
-</script>
-<script>
-    function removeFromMiscList(item) {
-        const index = miscList.indexOf(item);
-        if (index !== -1) {
-            miscList.splice(index, 1);
-            saveData(); // re-save the updated list
+            document.getElementById('totalCostMisc').textContent = totalCostMisc.toFixed(2);
+            saveData();
+
+            button.textContent = "Removed!";
+        } else {
+            button.textContent = "Not in List!";
         }
     }
-</script>
-<script>
-    // Wait until the page is fully loaded
+
     document.addEventListener("DOMContentLoaded", () => {
-        const buttons = document.querySelectorAll(".large-button1");
+        document.querySelectorAll(".add-btn").forEach(button =>
+            button.addEventListener("click", addItem)
+        );
 
-
-        buttons.forEach(button => {
-            button.addEventListener("click", () => {
-                button.textContent = "Removed!";
-            });
-        });
+        document.querySelectorAll(".remove-btn").forEach(button =>
+            button.addEventListener("click", removeItem)
+        );
     });
 </script>
 

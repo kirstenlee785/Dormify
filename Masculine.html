@@ -45,18 +45,6 @@
             border: 2px solid black;
             margin: 10px;
         }
-        .large-button1{
-            background-color: black; /* Blue background */
-            /* Remove borders */
-            color: white; /* White text */
-            padding: 12px 16px; /* Some padding */
-            font-size: 16px; /* Set a font size */
-            cursor: pointer;
-            border-radius: 10%;
-            border: 2px solid black;
-            margin: 10px;
-        }
-
         .one {
             cursor: pointer;
             width: 200px;
@@ -109,6 +97,8 @@
             const cartList4 = JSON.stringify(shoppingList)
             // Sctore the list in localStorage (convert it to a JSON string)
             sessionStorage.setItem('displayList4', cartList4);
+            sessionStorage.setItem('items', JSON.stringify(shoppingList));
+            sessionStorage.setItem('totalCostMasc', totalCostMasc.toFixed(2));
         }
     </script>
 
@@ -139,6 +129,7 @@
         }
     </script>
 </div>
+<!--class="large-button add/remove-btn" data-cost="" data-name=""-->
 <div class="box">
 <h1 class="h1"> <u> MASCULINE DECOR </u> 🕺</h1>
 <p> <b>Click on any of the boxes below to view our selection of Masculine Decor items! Click on "Checklist" to return to your "Checklist" and "Home" to return to the main page.</b></p>
@@ -169,25 +160,10 @@
             </script>
         </div>
         <div class = 'item'>
-            <button class = "large-button" id = "mrugTarget2" data-cost="35"> Add Target Rug to List </button>
+            <button class="large-button add-btn" data-cost="35" data-name="Target Rug (Masculine)"> Add Target Rug from List</button>
+            <button class="large-button remove-btn" data-cost="35" data-name="Target Rug (Masculine)"> Remove Target Rug from List</button>
         </div>
     </div>
-    <button class = "large-button1" id = removerug> Remove Target Rug From List</button>
-    <script>
-        document.getElementById("removerug").addEventListener("click", function (){
-            removeFromMascList("Target Rug (Masculine)");
-            totalCostMasc += -35
-        })
-    </script>
-
-    <script>
-        document.getElementById("mrugTarget2").addEventListener("click", function(){
-            shoppingList.push("Target Rug (Masculine)")
-            saveData();
-        })
-
-        console.log(shoppingList)
-    </script>
 
     <div class ="column">
         <div class = "c2">
@@ -201,26 +177,10 @@
             </script>
         </div>
         <div class = 'item'>
-            <button class = "large-button" id = "mrugWalmart2" data-cost="26.99"> Add Walmart Rug to List </button>
+            <button class = "large-button add-btn" data-cost="26.99" data-name="Walmart Rug (Masculine)"> Add Walmart Rug to List </button>
+            <button class = "large-button remove-btn" data-cost="26.99" data-name="Walmart Rug (Masculine)"> Remove Walmart Rug from List </button>
         </div>
     </div>
-    <button class = "large-button1" id = removerug1> Remove Walmart Rug From List</button>
-    <script>
-        document.getElementById("removerug1").addEventListener("click", function (){
-            removeFromMascList("Walmart Rug (Masculine)");
-            totalCostMasc += -26.99
-        })
-    </script>
-
-    <script>
-        document.getElementById("mrugWalmart2").addEventListener("click", function(){
-            shoppingList.push("Walmart Rug (Masculine)")
-            saveData();
-        })
-
-        console.log(shoppingList)
-    </script>
-
     <div class ="column">
         <div class = "c3">
             <img class = "one" src="https://m.media-amazon.com/images/I/81iQs1ELCkL._AC_SX425_.jpg" alt="Click Me" id="mrugAmazon">
@@ -233,24 +193,10 @@
             </script>
         </div>
         <div class = 'item'>
-            <button class = "large-button" id = "mrugAmazon2" data-cost="30.87"> Add Amazon Rug to List </button>
+            <button class = "large-button add-btn" data-cost="30.87" data-name="Amazon Rug (Masculine)"> Add Amazon Rug to List </button>
+            <button class = "large-button remove-btn" data-cost="30.87" data-name="Amazon Rug (Masculine)"> Remove Amazon Rug from List </button>
         </div>
     </div>
-    <button class = "large-button1" id = removerug2> Remove Amazon Rug From List</button>
-    <script>
-        document.getElementById("removerug2").addEventListener("click", function (){
-            removeFromMascList("Amazon Rug (Masculine)");
-            totalCostMasc += -30.87
-        })
-    </script>
-
-    <script>
-        document.getElementById("mrugAmazon2").addEventListener("click", function(){
-            shoppingList.push("Amazon Rug (Masculine)")
-            saveData();
-        })
-        console.log(shoppingList)
-    </script>
 </div>
 <!--row2-->
 <button class="header-button" id="mirrorHeader">Full-Length Mirrors</button>
@@ -276,24 +222,11 @@
             </script>
         </div>
         <div class = 'item'>
-            <button class = "large-button" id = "mirrorTarget2" data-cost="7"> Add Target Mirror to List </button>
+
+            <button class="large-button add-btn" data-cost="7" data-name="Target Mirror (Masculine)"> Add Target Mirror to List </button>
+            <button class="large-button remove-btn" data-cost="7" data-name="Target Mirror (Masculine)"> Remove Target Mirror from List </button>
         </div>
     </div>
-    <button class = "large-button1" id = removemirror> Remove Target Mirror From List</button>
-    <script>
-        document.getElementById("removemirror").addEventListener("click", function (){
-            removeFromMascList("Target Mirror (Masculine)");
-            totalCostMasc += -7
-        })
-    </script>
-
-    <script>
-        document.getElementById("mirrorTarget2").addEventListener("click", function(){
-            shoppingList.push("Target Mirror (Masculine)")
-            saveData();
-        })
-        console.log(shoppingList)
-    </script>
     <div class = "column">
         <div class = "c5">
             <img class = "one" src="https://i5.walmartimages.com/seo/AnyRose-Full-Length-Mirror-14-x-48-Over-The-Door-Mirror-Aluminum-Alloy-Large-Hanging-Mirrors-Wall-Mounted-Body-Black_256dccf0-806b-43c4-b9b6-a32d499c0640.25e6103d078d6dd9c4bbc46d6ddd088b.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Click Me" id="flmirrorWalmart">
@@ -306,25 +239,10 @@
             </script>
         </div>
         <div class = 'item'>
-            <button class = "large-button" id = "mirrorWalmart2" data-cost="29.99"> Add Walmart Mirror to List </button>
+            <button class = "large-button add-btn" data-cost="29.99" data-name="Walmart Mirror (Masculine)"> Add Walmart Mirror to List </button>
+            <button class = "large-button remove-btn" data-cost="29.99" data-name="Walmart Mirror (Masculine)"> Remove Walmart Mirror from List </button>
         </div>
     </div>
-    <button class = "large-button1" id = removemirror2> Remove Walmart Mirror From List</button>
-    <script>
-        document.getElementById("removemirror2").addEventListener("click", function (){
-            removeFromMascList("Walmart Mirror (Masculine)");
-            totalCostMasc += -29.99
-        })
-    </script>
-
-    <script>
-        document.getElementById("mirrorWalmart2").addEventListener("click", function(){
-            shoppingList.push("Walmart Mirror (Masculine)")
-            saveData();
-        })
-        console.log(shoppingList)
-    </script>
-
     <div class = "column">
         <div class = "c6">
             <img class = "one" src="https://m.media-amazon.com/images/I/61q5aV8jLUL._AC_SL1500_.jpg" alt="Click Me" id="flmirrorAmazon">
@@ -337,30 +255,15 @@
             </script>
         </div>
         <div class = 'item'>
-            <button class = "large-button" id = "mirrorAmazon2" data-cost="16.99"> Add Amazon Mirror to List </button>
+            <button class = "large-button add-btn" data-cost="16.99" data-name="Amazon Mirror (Masculine)"> Add Amazon Mirror to List </button>
+            <button class = "large-button remove-btn" data-cost="16.99" data-name="Amazon Mirror (Masculine)"> Remove Amazon Mirror from List </button>
         </div>
     </div>
-    <button class = "large-button1" id = removemirror1> Remove Amazon Mirror From List</button>
-    <script>
-        document.getElementById("removemirror1").addEventListener("click", function (){
-            removeFromMascList("Amazon Mirror(Masculine)");
-            totalCostMasc += -16.99
-        })
-    </script>
-
-    <script>
-        document.getElementById("mirrorAmazon2").addEventListener("click", function(){
-            shoppingList.push("Amazon Mirror (Masculine)")
-            saveData();
-        })
-        console.log(shoppingList)
-    </script>
 </div>
 
 <!--row3-->
 <button class="header-button" id="pillowHeader">Throw Pillows</button>
 <div class="row" id="i3" style="display: none;">
-
 
     <script>
         var pbutton = document.getElementById("pillowHeader");
@@ -382,24 +285,10 @@
             </script>
         </div>
         <div class = 'item'>
-            <button class = "large-button" id = "mtpTarget2" data-cost="20"> Add Target Throw Pillow to List </button>
+            <button class = "large-button add-btn" data-cost="20" data-name="Target Throw Pillow (Masculine)"> Add Target Throw Pillow to List </button>
+            <button class = "large-button remove-btn" data-cost="20" data-name="Target Throw Pillow (Masculine)"> Remove Target Throw Pillow from List </button>
         </div>
     </div>
-    <button class = "large-button1" id = removetp> Remove Target Rug From List</button>
-    <script>
-        document.getElementById("removerug").addEventListener("click", function (){
-            removeFromMascList("Target Rug (Masculine)");
-            totalCostMasc += -35
-        })
-    </script>
-
-    <script>
-        document.getElementById("mtpTarget2").addEventListener("click", function(){
-            shoppingList.push("Target Throw Pillow (Masculine)")
-            saveData();
-        })
-        console.log(shoppingList)
-    </script>
     <div class = "column">
         <div class = "c8">
             <img class = "one" src="https://i5.walmartimages.com/seo/Phantoscope-Soft-Corduroy-Corn-Striped-Velvet-Series-Decorative-Throw-Pillow-18-x-18-Gray-2-Pack_7fc78306-1dab-4f53-bb68-7bb6b12c8259.a8c91b44124bb80f36a065abfd7e15b6.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Click Me" id="mtpWalmart">
@@ -412,23 +301,10 @@
             </script>
         </div>
         <div class = 'item'>
-            <button class = "large-button" id = "mtpWalmart2" data-cost="23.99"> Add Walmart Throw Pillows to List </button>
+            <button class = "large-button add-btn" data-cost="23.99" data-name="Walmart Mirror (Masculine)"> Add Walmart Mirror to List </button>
+            <button class = "large-button remove-btn" data-cost="23.99" data-name="Walmart Mirror (Masculine)"> Remove Walmart Mirror from List </button>
         </div>
     </div>
-    <button class = "large-button1" id = removetp1> Remove Walmart Throw Pillows From List</button>
-    <script>
-        document.getElementById("removetp1").addEventListener("click", function (){
-            removeFromMascList("Walmart Throw Pillows (Masculine)");
-            totalCostMasc += -23.99
-        })
-    </script>
-    <script>
-        document.getElementById("mtpWalmart2").addEventListener("click", function(){
-            shoppingList.push("Walmart Throw Pillow (Masculine)")
-            saveData();
-        })
-        console.log(shoppingList)
-    </script>
 
     <div class = "column">
         <div class = "c9">
@@ -443,23 +319,10 @@
         </div>
 
         <div class = 'item'>
-            <button class = "large-button" id = "mtpAmazon2" data-cost="14.99"> Add Amazon Throw Pillow to List </button>
+            <button class = "large-button add-btn" data-cost="14.99" data-name="Amazon Throw Pillow (Masculine)"> Add Amazon Throw Pillow to List </button>
+            <button class = "large-button remove-btn" data-cost="14.99" data-name="Amazon Throw Pillow (Masculine)"> Remove Amazon Throw Pillow from List </button>
         </div>
     </div>
-    <button class = "large-button1" id = removetp2> Remove Amazon Throw Pillows From List</button>
-    <script>
-        document.getElementById("removertp2").addEventListener("click", function (){
-            removeFromMascList("Amazon Throw Pillow (Masculine)");
-            totalCostMasc += -14.99
-        })
-    </script>
-    <script>
-        document.getElementById("mtpAmazon2").addEventListener("click", function(){
-            shoppingList.push("Amazon Throw Pillow (Masculine)")
-            saveData();
-        })
-        console.log(shoppingList)
-    </script>
 </div>
 
 <!--row4-->
@@ -488,23 +351,10 @@
             </script>
         </div>
         <div class = 'item'>
-            <button class = "large-button" id = "mposterTarget2" data-cost="52.79"> Add Target Poster to List </button>
+            <button class = "large-button add-btn" data-cost="52.79" data-name="Target Poster (Masculine)"> Add Target Poster to List </button>
+            <button class = "large-button remove-btn" data-cost="52.79" data-name="Target Poster (Masculine)"> Remove Target Poster from List </button>
         </div>
     </div>
-    <button class = "large-button1" id = removeposter> Remove Target Poster From List</button>
-    <script>
-        document.getElementById("removeposter").addEventListener("click", function (){
-            removeFromMascList("Target Poster (Masculine)");
-            totalCostMasc += -52.79
-        })
-    </script>
-    <script>
-        document.getElementById("mposterTarget2").addEventListener("click", function(){
-            shoppingList.push("Target Poster (Masculine)")
-            saveData();
-        })
-        console.log(shoppingList)
-    </script>
 
     <div class = "column">
         <div class = "c11">
@@ -518,23 +368,10 @@
             </script>
         </div>
         <div class = 'item'>
-            <button class = "large-button" id = "mposterWalmart2" data-cost="16.99"> Add Walmart Poster to List </button>
+            <button class = "large-button add-btn" data-cost="16.99" data-name="Walmart Poster (Masculine)"> Add Walmart Poster to List </button>
+            <button class = "large-button remove-btn" data-cost="16.99" data-name="Walmart Poster (Masculine)"> Remove Walmart Poster from List </button>
         </div>
     </div>
-    <button class = "large-button1" id = removeposter1> Remove Walmart Poster From List</button>
-    <script>
-        document.getElementById("removeposter1").addEventListener("click", function (){
-            removeFromMascList("Walmart Poster (Masculine)");
-            totalCostMasc += -16.99
-        })
-    </script>
-    <script>
-        document.getElementById("mposterWalmart2").addEventListener("click", function(){
-            shoppingList.push("Walmart Poster (Masculine)")
-            saveData();
-        })
-        console.log(shoppingList)
-    </script>
 
     <div class = "column">
         <div class = "c12">
@@ -549,23 +386,10 @@
         </div>
 
         <div class = 'item'>
-            <button class = "large-button" id = "mposterAmazon2" data-cost="8.99"> Add Amazon Poster to List </button>
+            <button class = "large-button add-btn" data-cost="8.99" data-name="Amazon Poster (Masculine)"> Add Amazon Poster to List </button>
+            <button class = "large-button remove-btn" data-cost="8.99" data-name="Amazon Poster (Masculine)"> Remove Amazon Poster from List </button>
         </div>
     </div>
-    <button class = "large-button1" id = removeposter2> Remove Amazon Poster From List</button>
-    <script>
-        document.getElementById("removeposter2").addEventListener("click", function (){
-            removeFromMascList("Amazon Poster (Masculine)");
-            totalCostMasc += -8.99
-        })
-    </script>
-    <script>
-        document.getElementById("mposterAmazon2").addEventListener("click", function(){
-            shoppingList.push("Amazon Poster (Masculine)")
-            saveData();
-        })
-        console.log(shoppingList)
-    </script>
 </div>
 
 <!--row5-->
@@ -594,23 +418,10 @@
             </script>
         </div>
         <div class = 'item'>
-            <button class = "large-button" id = "mottomanTarget2" data-cost="10"> Add Target Ottoman to List </button>
+            <button class = "large-button add-btn" data-cost="10" data-name="Target Ottoman (Masculine) "> Add Target Ottoman to List </button>
+            <button class = "large-button remove-btn" data-cost="10" data-name="Target Ottoman (Masculine) "> Remove Target Ottoman from List </button>
         </div>
     </div>
-    <button class = "large-button1" id = removeottoman> Remove Target Ottoman From List</button>
-    <script>
-        document.getElementById("removeottoman").addEventListener("click", function (){
-            removeFromMascList("Target Ottoman (Masculine)");
-            totalCostMasc += -10
-        })
-    </script>
-    <script>
-        document.getElementById("mottomanTarget2").addEventListener("click", function(){
-            shoppingList.push("Target Ottoman (Masculine)")
-            saveData();
-        })
-        console.log(shoppingList)
-    </script>
 
     <div class = "column">
         <div class = "c14">
@@ -624,23 +435,11 @@
             </script>
         </div>
         <div class = 'item'>
-            <button class = "large-button" id = "mottomanWalmart2" data-cost="17.88"> Add Walmart Ottoman to List </button>
+            <button class = "large-button add-btn" data-cost="17.88" data-name="Walmart Ottoman (Masculine)"> Add Walmart Ottoman to List </button>
+            <button class = "large-button remove-btn" data-cost="17.88" data-name="Walmart Ottoman (Masculine)"> Remove Walmart Ottoman from List </button>
         </div>
     </div>
-    <button class = "large-button1" id = removeottoman1> Remove Target Ottoman From List</button>
-    <script>
-        document.getElementById("removeottoman1").addEventListener("click", function (){
-            removeFromMascList("Target Ottoman (Masculine)");
-            totalCostMasc += -17.88
-        })
-    </script>
-    <script>
-        document.getElementById("mottomanWalmart2").addEventListener("click", function(){
-            shoppingList.push("Walmart Ottoman (Masculine)")
-            saveData();
-        })
-        console.log(shoppingList)
-    </script>
+
 
     <div class = "column">
         <div class = "c15">
@@ -654,26 +453,61 @@
             </script>
         </div>
         <div class = 'item'>
-            <button class = "large-button" id = "mottomanAmazon2" data-cost="15.91"> Add Amazon Ottoman to List </button>
+            <button class = "large-button add-btn" data-cost="15.91" data-name="Amazon Ottoman (Masculine)"> Add Amazon Ottoman to List </button>
+            <button class = "large-button remove-btn" data-cost="15.91" data-name="Amazon Ottoman (Masculine)"> Remove Amazon Ottoman from List </button>
         </div>
     </div>
-    <button class = "large-button1" id = removeottoman2> Remove Amazon Ottoman From List</button>
-    <script>
-        document.getElementById("removeottoman2").addEventListener("click", function (){
-            removeFromMascList("Amazon Ottoman (Masculine)");
-            totalCostMasc += -15.91
-        })
-    </script>
-    <script>
-        document.getElementById("mottomanAmazon2").addEventListener("click", function(){
-            shoppingList.push("Amazon Ottoman (Masculine)")
-            saveData();
-        })
-        console.log(shoppingList)
-    </script>
 </div>
 
+<script>
+    let totalCostMasc = parseFloat(sessionStorage.getItem('totalCostMasc')) || 0;
+    document.getElementById('totalCostMasc').textContent = totalCostMasc.toFixed(2);
 
+    function addItem(event) {
+        const button = event.target;
+        const itemName = button.getAttribute('data-name');
+        const itemCost = parseFloat(button.getAttribute('data-cost'));
+
+        shoppingList.push(itemName);
+        totalCostMasc += itemCost;
+
+        document.getElementById('totalCostMasc').textContent = totalCostMasc.toFixed(2);
+        saveData();
+
+        button.textContent = "Added!";
+    }
+
+    function removeItem(event) {
+        const button = event.target;
+        const itemName = button.getAttribute('data-name');
+        const itemCost = parseFloat(button.getAttribute('data-cost'));
+
+        const index = shoppingList.indexOf(itemName);
+        if (index > -1) {
+            shoppingList.splice(index, 1);
+            totalCostMasc -= itemCost;
+
+            document.getElementById('totalCostMasc').textContent = totalCostMasc.toFixed(2);
+            saveData();
+
+            button.textContent = "Removed!";
+        } else {
+            button.textContent = "Not in List!";
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".add-btn").forEach(button =>
+            button.addEventListener("click", addItem)
+        );
+
+        document.querySelectorAll(".remove-btn").forEach(button =>
+            button.addEventListener("click", removeItem)
+        );
+    });
+</script>
+
+<!--
 <script>
     // Temporary variable to hold the total cost
     let totalCostMasc = 0;
@@ -710,29 +544,7 @@
             });
         });
     });
-</script>
-<script>
-    function removeFromMascList(item) {
-        const index = shoppingList.indexOf(item);
-        if (index !== -1) {
-            shoppingList.splice(index, 1);
-            saveData(); // re-save the updated list
-        }
-    }
-</script>
-<script>
-    // Wait until the page is fully loaded
-    document.addEventListener("DOMContentLoaded", () => {
-        const buttons = document.querySelectorAll(".large-button1");
-
-
-        buttons.forEach(button => {
-            button.addEventListener("click", () => {
-                button.textContent = "Removed!";
-            });
-        });
-    });
-</script>
+</script>-->
 
 </body>
 </html>
