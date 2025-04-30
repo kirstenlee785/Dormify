@@ -98,6 +98,8 @@
         const cartList5 = JSON.stringify(miscList)
         // Sctore the list in localStorage (convert it to a JSON string)
         sessionStorage.setItem('displayList5', cartList5);
+        sessionStorage.setItem('items', JSON.stringify(shoppingList));
+        sessionStorage.setItem('totalCostMisc', totalCostMisc.toFixed(2));
     }
 </script>
 <body style = "background-image: url(https://img.freepik.com/premium-vector/seamless-pattern-with-chamomiles_656070-178.jpg?semt=ais_hybrid&w=740)">
@@ -151,50 +153,30 @@
             <p id="text" class ="words"><a href="https://www.target.com/p/18pk-plastic-hangers-black-room-essentials-8482/-/A-17153482"> 18pk Plastic Hangers - Room Essentials/ $3.00 </a></p>
         </div>
         <div class = "item">
-            <button class = "large-button" id = "hangersTarget2" data-cost="3"> Add Target Hangers to list </button>
+            <button class = "large-button add-btn" data-cost="3" data-name="Target Hangers (Misc.)"> Add Target Hangers to list </button>
+            <button class = "large-button remove-btn" data-cost="3" data-name="Target Hangers (Misc.)"> Remove Target Hangers from list </button>
         </div>
     </div>
-    <script>
-        document.getElementById("hangersTarget2").addEventListener("click", function(){
-            miscList.push("Target Hangers")
-            saveData();
-        })
-        console.log(miscList)
-    </script>
-
     <div class ="column">
         <div class = "c2">
             <img class ="one" src="https://i5.walmartimages.com/seo/Mainstays-Adult-Teen-Clothing-Hangers-18-Pack-Black-Durable-Plastic_45ea02eb-f88d-4419-bc70-77836354eb3a.df10eb5407c6cf9d76071480b6e91b0e.jpeg?odnHeight=640&odnWidth=640&odnBg=FFFFFF"  alt="Click Me" id="hangersWalmart">
             <p id="text2" class ="words"><a href="https://www.walmart.com/ip/Mainstays-Clothing-Hangers-18-Pack-Black-Durable-PlasticM/1852333481"> Mainstays Clothing Hangers, 18 Pack, Durable Plastic/ $9.45 </a></p>
         </div>
         <div class = "item">
-            <button class = "large-button" id = "hangersWalmart2" data-cost="9.45"> Add Walmart Hangers to list </button>
+            <button class = "large-button add-button" data-cost="9.45" data-name="Walmart Hangers (Misc.)"> Add Walmart Hangers to list </button>
+            <button class = "large-button remove-button" data-cost="9.45" data-name="Walmart Hangers (Misc.)"> Remove Walmart Hangers from list </button>
         </div>
     </div>
-    <script>
-        document.getElementById("hangersWalmart2").addEventListener("click", function(){
-            miscList.push("Walmart Hangers")
-            saveData();
-        })
-        console.log(miscList)
-    </script>
-
     <div class="column">
         <div class = "c3">
             <img class ="one" src="https://m.media-amazon.com/images/I/71-z700tbrL._AC_SX679_.jpg"  alt="Click Me" id="hangersAmazon">
             <p id="text3" class ="words"><a href="https://www.amazon.com/Clothes-Hangers-Plastic-Pack-Adults/dp/B0CFWGCW3K?th=1"> NEATERIZE Clothes Hangers Plastic 16 pack for Adults/ $9.96 </a></p>
         </div>
         <div class = "item">
-            <button class = "large-button" id = "hangersAmazon2" data-cost="9.96"> Add Amazon Hangers to list </button>
+            <button class = "large-button add-button" data-cost="9.96"> Add Amazon Hangers to list </button>
+            <button class = "large-button remove-button" data-cost="9.96"> Remove Amazon Hangers from list </button>
         </div>
     </div>
-    <script>
-        document.getElementById("hangersAmazon2").addEventListener("click", function(){
-            miscList.push("Amazon Hangers")
-            saveData();
-        })
-        console.log(miscList)
-    </script>
 </div>
 
 <!--row2-->
@@ -210,57 +192,36 @@
             udiv.style.display = "block";
         };
     </script>
-
     <div class = "column">
         <div class = "c4">
             <img class ="one" src="https://target.scene7.com/is/image/Target/GUEST_6204a7b4-a27d-4679-92a3-e009572dba00?wid=1200&hei=1200&qlt=80&fmt=webp"  alt="Click Me" id="umbrellaTarget">
             <p id="text4" class ="words"><a href="https://www.target.com/p/totes-super-mini-manual-eco-compact-umbrella-black/-/A-53136783"> Totes Super Mini Manual ECO Compact Umbrella - Black/ $9.99 </a></p>
         </div>
         <div class = "item">
-            <button class = "large-button" id = "umbrellaTarget2" data-cost="9.99"> Add Target Umbrella to list </button>
+            <button class = "large-button add-button" data-cost="9.99" data-name="Target Umbrella (Misc.)"> Add Target Umbrella to list </button>
+            <button class = "large-button remove-button" data-cost="9.99" data-name="Target Umbrella (Misc.)"> Remove Target Umbrella from list </button>
         </div>
     </div>
-    <script>
-        document.getElementById("umbrellaTarget2").addEventListener("click", function(){
-            miscList.push("Target Umbrella")
-            saveData();
-        })
-        console.log(miscList)
-    </script>
-
     <div class ="column">
         <div class = "c5">
             <img class ="one" src="https://i5.walmartimages.com/seo/Chakipee-Automatic-Folding-Umbrella-Auto-Reverse-Windproof-Compact-Umbrella-with-Teflon-Coated-47-10Ribs-Black_bfb87179-d02e-455b-95e7-24d807907fe7.4b056df238cdaaa7f9087695c114110f.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF"  alt="Click Me" id="umbrellaWalmart">
             <p id="text5" class ="words"><a href="https://www.walmart.com/ip/Chakipee-Automatic-Folding-Umbrella-Auto-Reverse-Windproof-Compact-Umbrella-with-Teflon-Coated-47-10Ribs-Black/2731343246"> Chakipee Automatic Folding Umbrella, Auto Reverse Windproof / $12.99 (multiple colors available)  </a></p>
         </div>
         <div class = "item">
-            <button class = "large-button" id = "umbrellaWalmart2" data-cost="12.99"> Add Walmart Umbrella to list </button>
+            <button class = "large-button add-button" data-cost="12.99" data-name="Walmart Umbrella (Misc.)"> Add Walmart Umbrella to list </button>
+            <button class = "large-button remove-button" data-cost="12.99" data-name="Walmart Umbrella (Misc.)"> Remove Walmart Umbrella from list </button>
         </div>
     </div>
-
-    <script>
-        document.getElementById("umbrellaWalmart2").addEventListener("click", function(){
-            miscList.push("Walmart Umbrella")
-            saveData();
-        })
-        console.log(shoppingList)
-    </script>
 <div class ="column">
     <div class = "c6">
         <img class ="one" src="https://m.media-amazon.com/images/I/71eFkF8OrpL._AC_SX679_.jpg"  alt="Click Me" id="umbrellaAmazon">
         <p id="text6" class ="words"><a href="https://www.amazon.com/MRTLLOA-Inverted-Umbrellas-Windproof-Protection/dp/B07FR8XJ9M"> MRTLLOA 42/49 Inch Compact Windproof Travel Umbrella for Rain (available in multiple Colors) / $9.99  </a></p>
     </div>
     <div class = "item">
-        <button class = "large-button" id = "umbrellaAmazon2" data-cost="9.99"> Add Amazon Umbrella to list </button>
+        <button class = "large-button add-button" data-cost="9.99" data-name="Amazon Umbrella (Misc.) "> Add Amazon Umbrella to list </button>
+        <button class = "large-button remove-button" data-cost="9.99" data-name="Amazon Umbrella (Misc.) "> Add Amazon Umbrella to list </button>
     </div>
 </div>
-    <script>
-        document.getElementById("umbrellaAmazon2").addEventListener("click", function(){
-            miscList.push("Amazon Umbrella")
-            saveData();
-        })
-        console.log(miscList)
-    </script>
 </div>
 
 <!--row3-->
@@ -280,8 +241,9 @@
             <img class ="one" src="https://target.scene7.com/is/image/Target/GUEST_6f30c110-b8ed-492e-9e70-4eddad2070ea?wid=1200&hei=1200&qlt=80&fmt=webp"  alt="Click Me" id="fanTarget">
             <p id="text7" class ="words"><a href="https://www.target.com/p/lasko-3733-box-fan-white/-/A-84195090"> Lasko 3733 Box Fan White: 20" Portable Floor Fan - Multi-purpose / $23.49  </a></p>
         </div>
-        <div data-cost="">
-            <button class = "large-button" id = "fanTarget2" data-cost="23.49"> Add Target Fan to list </button>
+        <div class="item">
+            <button class = "large-button add-button" data-cost="23.49" data-name="Target Fan (Misc.)"> Add Target Fan to list </button>
+            <button class = "large-button remove-button" data-cost="23.49" data-name="Target Fan (Misc.)"> Add Target Fan to list </button>
         </div>
     </div>
     <script>
@@ -510,41 +472,52 @@
         console.log(miscList)
     </script>
 </div>
+
 <script>
-    // Temporary variable to hold the total cost
-    let totalCostMisc = 0;
+    let totalCostMisc = parseFloat(sessionStorage.getItem('totalCostMisc')) || 0;
+    document.getElementById('totalCostMisc').textContent = totalCostMisc.toFixed(2);
 
-    // Function to update the total cost when a button is clicked
-    function updateTotalCost(event) {
-        // Get the cost from the clicked button's data-cost attribute
-        const itemCost = parseFloat(event.target.getAttribute('data-cost'));
+    function addItem(event) {
+        const button = event.target;
+        const itemName = button.getAttribute('data-name');
+        const itemCost = parseFloat(button.getAttribute('data-cost'));
 
-        // Add the cost to the total
+        shoppingList.push(itemName);
         totalCostMisc += itemCost;
 
-        // Update the displayed total cost
         document.getElementById('totalCostMisc').textContent = totalCostMisc.toFixed(2);
+        saveData();
 
-        sessionStorage.setItem('totalCostMisc', totalCostMisc);
+        button.textContent = "Added!";
     }
 
-    // Add event listeners to the buttons
-    const buttons = document.querySelectorAll('.item button');
-    buttons.forEach(button => {
-        button.addEventListener('click', updateTotalCost);
-    });
-</script>
+    function removeItem(event) {
+        const button = event.target;
+        const itemName = button.getAttribute('data-name');
+        const itemCost = parseFloat(button.getAttribute('data-cost'));
 
-<script>
-    // Wait until the page is fully loaded
+        const index = shoppingList.indexOf(itemName);
+        if (index > -1) {
+            shoppingList.splice(index, 1);
+            totalCostMasc -= itemCost;
+
+            document.getElementById('totalCostMisc').textContent = totalCostMisc.toFixed(2);
+            saveData();
+
+            button.textContent = "Removed!";
+        } else {
+            button.textContent = "Not in List!";
+        }
+    }
+
     document.addEventListener("DOMContentLoaded", () => {
-        const buttons = document.querySelectorAll(".large-button");
+        document.querySelectorAll(".add-btn").forEach(button =>
+            button.addEventListener("click", addItem)
+        );
 
-        buttons.forEach(button => {
-            button.addEventListener("click", () => {
-                button.textContent = "Added!";
-            });
-        });
+        document.querySelectorAll(".remove-btn").forEach(button =>
+            button.addEventListener("click", removeItem)
+        );
     });
 </script>
 
