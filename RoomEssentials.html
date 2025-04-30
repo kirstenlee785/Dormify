@@ -181,7 +181,10 @@
             mdiv.style.display = "block";
         };
     </script>
+
+
     <div class = "column">
+        <div class = "containerOne">
         <img class = "one" src="https://target.scene7.com/is/image/Target/GUEST_6fc97b86-f830-4b19-990e-35a9601a1f64?wid=1200&hei=1200&qlt=80&fmt=webp" alt="Click Me" id="microwaveTarget">
         <p id="text" class="words"><a href="https://www.target.com/p/kenmore-0-7-cu-ft-microwave-black/-/A-88156868#lnk=sametab"> Kenmore 0.7 cu-ft Microwave, Black - $69.99</a></p>
         <script>
@@ -193,15 +196,15 @@
         <div class = "item">
             <button class = "large-button" id = "microwaveTarget2" data-cost="69.99"> Add Target Microwave to list </button>
         </div>
-    </div>
     <button class = "large-button1" id = removetm> Remove Target Microwave From List</button>
+        </div>
     <script>
         document.getElementById("removetm").addEventListener("click", function (){
             removeFromRoomList("Target Microwave");
             totalCostRoom+= -69.99
         })
     </script>
-
+</div>
     <script>
         document.getElementById("microwaveTarget2").addEventListener("click", function(){
             roomEssentialsList.push("Target Microwave ")
@@ -210,9 +213,8 @@
         });
         console.log(roomEssentialsList)
     </script>
-
-
     <div class ="column">
+        <div class = "containerOne">
         <img class = "one" src="https://i5.walmartimages.com/seo/Hamilton-Beach-0-9-Cu-ft-Countertop-Microwave-Oven-900-Watts-Stainless-Steel-New_1a5cbafb-ae12-41fb-ae77-8949adac6511.06793cf53bd59430d901cac965a376e2.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Click Me" id="microwaveWalmart">
         <p id="text2" class="words"><a href="https://www.walmart.com/ip/Hamilton-Beach-0-9-Cu-ft-Countertop-Microwave-Oven-900-Watts-Stainless-Steel-New/1153749112?classType=VARIANT&athbdg=L1300&from=/search"> Hamilton Beach 0.9 Cu ft Countertop Microwave Oven, 900 Watts, Stainless Steel, New - $65.56</a></p>
         <script>
@@ -224,14 +226,17 @@
         <div class = "item">
             <button class = "large-button" id = "microwaveWalmart2" data-cost="65.56"> Add Walmart Microwave to list </button>
         </div>
-    </div>
+        <div>
     <button class = "large-button1" id = removetm1> Remove Walmart Microwave From List</button>
+        </div>
     <script>
         document.getElementById("removetm1").addEventListener("click", function (){
             removeFromRoomList("Walmart Microwave");
             totalCostRoom+= -65.56
         })
     </script>
+</div>
+</div>
     <script>
         document.getElementById("microwaveWalmart2").addEventListener("click", function(){
             roomEssentialsList.push("Walmart Microwave")
@@ -239,7 +244,9 @@
         })
     </script>
 
+
     <div class ="column">
+        <div class = "containerOne">
         <img class = "one" src="https://m.media-amazon.com/images/I/71I1kb2hSlL._AC_SL1500_.jpg" alt="Click Me" id="microwaveAmazon">
         <p id="text3" class="words"><a href="https://www.amazon.com/Comfee-EM720CPL-PMB-Countertop-Microwave-One-Touch/dp/B07GV36BLD/ref=sr_1_4?crid=3L724B3PS2J1P&dib=eyJ2IjoiMSJ9.0wjAIOy4uNXZICWpbyHeQqQven4CVCbQpTzcke6VLBJsooHAKzqbVikGT9Weu6Tb4SIEl17evTX8xOqPnEb60r2fmZfJGr_e-7juo-q9HdeOQ1cTrvFOpT7VZuKSsZYLc_QEfoSFqvwoLGPHWHtXUc4tTtwQylJy8ANZ6A6VzhwhDreHDhFLjUSOIjCpj89tY7J6wWT7lRHeY4OqZ1Gh_Mq8x-M7aEWhekB3ktpaZJY.u7TNjved9AL0WCFicss-YzOD3awfxFloAga8Z3P_Qak&dib_tag=se&keywords=microwave&qid=1738244403&sprefix=microwave%2Caps%2C97&sr=8-4&th=1">Comfee EM720CPL-PMB Countertop Microwave Oven with Sound On/Off, ECO Mode and Easy One-Touch Buttons, 0.7 Cu Ft, Black - $80.00</a></p>
         <script>
@@ -251,14 +258,17 @@
         <div class = "item">
             <button class = "large-button" id = "microwaveAmazon2" data-cost="80"> Add Amazon Microwave to list </button>
         </div>
-    </div>
+<div>
     <button class = "large-button1" id = removetm2> Remove Amazon Microwave From List</button>
+    </div>
     <script>
         document.getElementById("removetm2").addEventListener("click", function (){
             removeFromRoomList("Amazon Microwave");
             totalCostRoom+= -80
         })
     </script>
+</div>
+
     <script>
         document.getElementById("microwaveAmazon2").addEventListener("click", function(){
             roomEssentialsList.push("Amazon Microwave")
@@ -267,6 +277,7 @@
 
         console.log(roomEssentialsList)
     </script>
+</div>
 </div>
 <!--row2-->
 
@@ -291,18 +302,20 @@
                     text4.style.display = "block"; // Show the text
                 });
             </script>
-        </div>
         <div class = "item">
             <button class = "large-button" id = "targetFridge2" data-cost="149.99"> Add Target Fridge to list </button>
         </div>
     </div>
     <button class = "large-button1" id = removetf> Remove Target Fridge From List</button>
+        </div>
     <script>
         document.getElementById("removetf").addEventListener("click", function (){
             removeFromRoomList("Target Fridge");
             totalCostRoom+= -149.99
         })
     </script>
+    </div>
+</div>
     <script>
         document.getElementById("targetFridge2").addEventListener("click", function(){
             roomEssentialsList.push("Target Fridge")
@@ -310,9 +323,8 @@
         })
         console.log(roomEssentialsList)
     </script>
-
     <div class = "column">
-        <div class = "containerFive">
+        <div class = "containerFour">
             <img class = "one" src="https://i5.walmartimages.com/seo/Galanz-1-7-Cu-ft-Single-Door-Mini-Fridge-GL17BK-Black-New_f5ff235b-e8a1-43b2-9bdb-8c732f9aaf1e_1.f209c79538c434a484f5847f039dcc06.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Click Me" id="WalmartFridge">
             <p id="text5" class ="words"><a href="https://www.walmart.com/ip/Galanz-1-7-Cu-ft-Single-Door-Mini-Fridge-GL17BK-Black-New/40685158?classType=VARIANT&athbdg=L1300&from=/search">Galanz 1.7 Cu ft Single Door Mini Fridge GL17BK, Black - $72.24</a></p>
             <script>
@@ -321,18 +333,20 @@
                     text5.style.display = "block"; // Show the text
                 });
             </script>
-        </div>
         <div class = "item">
             <button class = "large-button" id = "walmartFridge2" data-cost="72.24"> Add Walmart Fridge to list </button>
         </div>
     </div>
     <button class = "large-button1" id = removetf1> Remove Walmart Fridge From List</button>
+        </div>
     <script>
         document.getElementById("removetf1").addEventListener("click", function (){
             removeFromRoomList("Walmart Fridge");
             totalCostRoom+= -72.24
         })
     </script>
+</div
+        </div>
     <script>
         document.getElementById("walmartFridge2").addEventListener("click", function(){
             roomEssentialsList.push("Walmart Fridge")
@@ -875,6 +889,13 @@
             <button class = "large-button" id = "amazonPlates2" data-cost="22.99"> Add Amazon Plates to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removeplates2> Remove Amazon Plates From List</button>
+    <script>
+        document.getElementById("removeplates2").addEventListener("click", function (){
+            removeFromRoomList("Amazon Plates");
+            totalCostRoom+= -22.99
+        })
+    </script>
     <script>
         document.getElementById("amazonPlates2").addEventListener("click", function(){
             roomEssentialsList.push("Amazon Plates")
@@ -910,6 +931,13 @@
             <button class = "large-button" id = "targetCutlery2" data-cost="4.29"> Add Target Cutlery to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removecutlery> Remove Target Cutlery From List</button>
+    <script>
+        document.getElementById("removecutlery").addEventListener("click", function (){
+            removeFromRoomList("Target Cutlery");
+            totalCostRoom+= -4.29
+        })
+    </script>
     <script>
         document.getElementById("targetCutlery2").addEventListener("click", function(){
             roomEssentialsList.push("Target Cutlery")
@@ -932,6 +960,13 @@
             <button class = "large-button" id = "walmartCutlery2" data-cost="3.58"> Add Walmart Cutlery to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removecutlery1> Remove Walmart Cutlery From List</button>
+    <script>
+        document.getElementById("removecutlery1").addEventListener("click", function (){
+            removeFromRoomList("Walmart Plates");
+            totalCostRoom+= -3.58
+        })
+    </script>
     <script>
         document.getElementById("walmartCutlery2").addEventListener("click", function(){
             roomEssentialsList.push("Walmart Cutlery")
@@ -955,6 +990,13 @@
             <button class = "large-button" id = "amazonCutlery2" data-cost="14.99"> Add Amazon Cutlery to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removecutlery2> Remove Amazon Cutlery From List</button>
+    <script>
+        document.getElementById("removecutlery2").addEventListener("click", function (){
+            removeFromRoomList("Amazon Cutlery");
+            totalCostRoom+= -14.99
+        })
+    </script>
     <script>
         document.getElementById("amazonCutlery2").addEventListener("click", function(){
             roomEssentialsList.push("Amazon Cutlery")
