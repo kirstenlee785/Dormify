@@ -87,7 +87,7 @@
     </style>
     <script src="data2.js"></script>
 </head>
-
+<!--issue with getting buttons to respond-->
 <p><strong>Total Cost: $<span id="totalCostMisc">0</span></strong></p>
 <ul id="miscList"></ul>
 <ul id="displayList5"></ul>
@@ -98,7 +98,7 @@
         const cartList5 = JSON.stringify(miscList)
         // Sctore the list in localStorage (convert it to a JSON string)
         sessionStorage.setItem('displayList5', cartList5);
-        sessionStorage.setItem('items', JSON.stringify(shoppingList));
+        sessionStorage.setItem('items', JSON.stringify(miscList));
         sessionStorage.setItem('totalCostMisc', totalCostMisc.toFixed(2));
     }
 </script>
@@ -243,48 +243,29 @@
         </div>
         <div class="item">
             <button class = "large-button add-button" data-cost="23.49" data-name="Target Fan (Misc.)"> Add Target Fan to list </button>
-            <button class = "large-button remove-button" data-cost="23.49" data-name="Target Fan (Misc.)"> Add Target Fan to list </button>
+            <button class = "large-button remove-button" data-cost="23.49" data-name="Target Fan (Misc.)"> Remove Target Fan from list </button>
         </div>
     </div>
-    <script>
-        document.getElementById("fanTarget2").addEventListener("click", function(){
-            miscList.push("Target Fan")
-            saveData();
-        })
-        console.log(miscList)
-    </script>
     <div class = "column">
         <div class = "c8">
             <img class ="one" src="https://i5.walmartimages.com/seo/Lasko-20-Cool-Colors-3-Speed-Box-Fan-with-Weather-Resistant-Motor-Blue-22-5-High-B20310-New_fd3223d3-6325-4fb7-9040-76dbeff539e1.8ecb30a355a6cfb950951c4f8a0ca3c8.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF"  alt="Click Me" id="fanWalmart">
             <p id="text8" class ="words"><a href="https://www.walmart.com/ip/Lasko-20-Cool-Colors-3-Speed-Box-Fan-with-Weather-Resistant-Motor-Blue-22-5-High-B20310-New/3782136206"> Lasko 20" Cool Colors 3-Speed Box Fan with Weather Resistant Motor (Available in multiple colors) / $25.97  </a></p>
         </div>
         <div class = "item">
-            <button class = "large-button" id = "fanWalmart2" data-cost="25.97"> Add Walmart Fan to list </button>
+            <button class = "large-button add-button" data-cost="25.97" data-name="Walmart Fan (Misc.) "> Add Walmart Fan to list </button>
+            <button class = "large-button remove-button" data-cost="25.97" data-name="Walmart Fan (Misc.) "> Remove Walmart Fan from list </button>
         </div>
     </div>
-    <script>
-        document.getElementById("fanWalmart2").addEventListener("click", function(){
-            miscList.push("Walmart Fan")
-            saveData();
-        })
-        console.log(miscList)
-    </script>
     <div class = "column">
         <div class = "c9">
             <img class ="one" src="https://m.media-amazon.com/images/I/711bUTpkGvL._AC_SL1500_.jpg"  alt="Click Me" id="fanAmazon">
             <p id="text9" class ="words"><a href="https://www.amazon.com/BEYOND-BREEZE-Portable-Tabletop-Bathroom/dp/B0CBMHYJG4?th=1"> Box Fan, 9", 2 Speeds Table Fan w/ Strong Airflow - Beyond Breeze/ $21.99  </a></p>
         </div>
         <div class = "item">
-            <button class = "large-button" id = "fanAmazon2" data-cost="21.99"> Add Amazon Fan to list </button>
+            <button class = "large-button add-button" data-cost="21.99" data-name="Amazon Fan (Misc.) "> Add Amazon Fan to list </button>
+            <button class = "large-button remove-button" data-cost="21.99" data-name="Amazon Fan (Misc.) "> Remove Amazon Fan from list </button>
         </div>
     </div>
-    <script>
-        document.getElementById("fanAmazon2").addEventListener("click", function(){
-            miscList.push("Amazon Fan")
-            saveData();
-        })
-        console.log(miscList)
-    </script>
 </div>
 
 <!--row4-->
@@ -305,48 +286,30 @@
             <p id="text10" class ="words"><a href="https://www.target.com/p/dealworthy-indoor-cord-2-12-39-white/-/A-89825662">12' 3 Outlet Indoor Extension Cord White - Dealworthy: 16 AWG, 13 Amps, 1 Yr. Warranty, 2 Conductors/ $6.99</a></p>
         </div>
         <div class = "item">
-            <button class = "large-button" id = "ecTarget2" data-cost="6.99"> Add Target Extension Cable to list </button>
+            <button class = "large-button add-button" data-cost="6.99" data-name="Target Ext. Cord (Misc.) "> Add Target Extension Cable to list </button>
+            <button class = "large-button remove-button" data-cost="6.99" data-name="Target Ext. Cord (Misc.) "> Remove Target Extension Cable from list </button>
         </div>
     </div>
-    <script>
-        document.getElementById("ecTarget2").addEventListener("click", function(){
-            miscList.push("Target Extension Cable")
-            saveData();
-        })
-        console.log(miscList)
-    </script>
     <div class = "column">
         <div class = "c11">
             <img class ="one" src="https://i5.walmartimages.com/seo/Hyper-Tough-12FT-16AWG-2-Prong-White-Indoor-Household-Extension-Cord-13-amps_957a09d0-627a-4d71-ab8a-931dad17e6b5.f388d0da94fbaa2a283ffb24d6e6efaf.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF"  alt="Click Me" id="ecWalmart">
             <p id="text11" class ="words"><a href="https://www.walmart.com/ip/Hyper-Tough-12FT-16AWG-2-Prong-White-Indoor-Household-Extension-Cord-13-amps/694456393?athcpid=694456393&athpgid=AthenaItempage&athcgid=null&athznid=oos&athieid=v0&athstid=CS020&athguid=qG6vrjWOs4q9zbHgpt2Y2oLxDK9lpX_rMWFV&athancid=779668830&athena=true&athbdg=L1600"> Hyper Tough 12FT 16AWG 2 Prong White Indoor Household Extension Cord, 13 amps $13.99</a></p>
         </div>
         <div class = "item">
-            <button class = "large-button" id = "ecWalmart2" data-cost="13.99"> Add Walmart Extension Cable to list </button>
+            <button class = "large-button add-button" data-cost="13.99" data-name=" Walmart Ext. Cord (Misc.)"> Add Walmart Extension Cable to list </button>
+            <button class = "large-button remove-button" data-cost="13.99" data-name=" Walmart Ext. Cord (Misc.)"> Remove Walmart Extension Cable from list </button>
         </div>
     </div>
-    <script>
-        document.getElementById("ecWalmart2").addEventListener("click", function(){
-            miscList.push("Walmart Extension Cable")
-            saveData();
-        })
-        console.log(miscList)
-    </script>
     <div class = "column">
         <div class = "c12">
             <img class ="one" src="https://m.media-amazon.com/images/I/61NGPmmMAIL._AC_SY355_.jpg"  alt="Click Me" id="ecAmazon">
             <p id="text12" class ="words"><a href="https://www.amazon.com/Surge-Protector-Power-Strip-Extension/dp/B09PDLBFKY?th=1"> 6 Ft Surge Protector Power Strip - 8 Widely Outlets w/ 4 USB Ports...Wall Mount, Desk USB Charging Station (available in multiple colors/ lengths)/ $11.99 </a></p>
         </div>
         <div class = "item">
-            <button class = "large-button" id = "ecAmazon2" data-cost="11.99"> Add Amazon Extension Cable to list </button>
+            <button class = "large-button add-button" data-cost="11.99" data-name="Amazon Ext. Cable (Misc.) "> Add Amazon Extension Cable to list </button>
+            <button class = "large-button remove-button" data-cost="11.99" data-name="Amazon Ext. Cable (Misc.) "> Remove Amazon Extension Cable from list </button>
         </div>
     </div>
-    <script>
-        document.getElementById("ecAmazon2").addEventListener("click", function(){
-            miscList.push("Amazon Extension Cable")
-            saveData();
-        })
-        console.log(miscList)
-    </script>
 </div>
 
 <!--row5-->
@@ -368,48 +331,30 @@
             <p id="text13" class ="words"><a href="https://www.target.com/p/levoit-core-200s-smart-true-hepa-air-purifier-gray/-/A-82174242"> Levoit Core 200s Smart Air Purifier Gray: 1 yr. warranty, 4 settings...100-300 sq.ft. / $89.99 </a></p>
         </div>
         <div class = "item">
-            <button class = "large-button" id = "apTarget2" data-cost="89.99"> Add Target Air Purifier to list </button>
+            <button class = "large-button add-button" data-cost="89.99" data-name="Target Air Purifier (Misc.)"> Add Target Air Purifier to list </button>
+            <button class = "large-button remove-button" data-cost="89.99" data-name="Target Air Purifier (Misc.)"> Remove Target Air Purifier from list </button>
         </div>
     </div>
-    <script>
-        document.getElementById("apTarget2").addEventListener("click", function(){
-            miscList.push("Target Air Purifier")
-            saveData();
-        })
-        console.log(miscList)
-    </script>
     <div class = "column">
         <div class = "c14">
             <img class ="one" src="https://i5.walmartimages.com/seo/ALROCKET-HEPA-Air-Purifier-with-Light-Extra-Large-Room-350-Sq-Ft-White_5fcb37a7-847b-422a-88ed-67740c4e369c.dda3f55ccaeb9e2069d62c7a65edb9f4.jpeg?odnHeight=640&odnWidth=640&odnBg=FFFFFF"  alt="Click Me" id="apurifierWalmart">
             <p id="text14" class ="words"><a href="https://www.walmart.com/ip/ALROCKET-HEPA-Air-Purifier-with-Light-Extra-Large-Room-350-Sq-Ft-White/840726233"> ALROCKET HEPA Air Purifier w/ Light, Extra Large Room (350 Sq. Ft), White / $39.99  </a></p>
         </div>
         <div class = "item">
-            <button class = "large-button" id = "apWalmart2" data-cost="39.99"> Add Walmart Air Purifier to list </button>
+            <button class = "large-button add-button" data-cost="39.99" data-name="Walmart Air Purifier (Misc.)"> Add Walmart Air Purifier to list </button>
+            <button class = "large-button remove-button" data-cost="39.99" data-name="Walmart Air Purifier (Misc.)"> Remove Walmart Air Purifier from list </button>
         </div>
     </div>
-    <script>
-        document.getElementById("apWalmart2").addEventListener("click", function(){
-            miscList.push("Walmart Air Purifier")
-            saveData();
-        })
-        console.log(miscList)
-    </script>
     <div class = "column">
         <div class = "c15">
             <img class ="one" src="https://m.media-amazon.com/images/I/71TgWPcvFbL._AC_SL1439_.jpg"  alt="Click Me" id="apAmazon">
             <p id="text15" class ="words"><a href="https://www.amazon.com/Honeyuan-HEPA-Home-Large-white/dp/B0B9678Z4L?th=1"> Honeyuan Bedroom Air Purifier (Large Room, 600 sq.ft), 3-Stage Filtration / $38.99</a></p>
         </div>
         <div class = "item">
-            <button class = "large-button" id = "apAmazon2" data-cost="38.99"> Add Target Amazon to list </button>
+            <button class = "large-button add-button" data-cost="38.99" data-name="Amazon Air Purifier (Misc.) "> Add Amazon Air Purifier to list </button>
+            <button class = "large-button remove-button" data-cost="38.99" data-name="Amazon Air Purifier (Misc.) "> Remove Amazon Air Purifier from list </button>
         </div>
     </div>
-    <script>
-        document.getElementById("apAmazon2").addEventListener("click", function(){
-            miscList.push("Amazon Air Purifier")
-            saveData();
-        })
-        console.log(miscList)
-    </script>
 </div>
 <!--row6-->
 
@@ -429,48 +374,31 @@
             <p id="text16" class ="words"><a href=""> Command 4 Sets Large Sized Picture Hanging Strips, White, Adhesive / $3.89 </a></p>
         </div>
         <div class = "item">
-            <button class = "large-button" id = "csTarget2" data-cost="3.89"> Add Target Command Strips to list </button>
+            <button class = "large-button add-button" data-cost="3.89" data-name="Target Command Strips (Misc.) "> Add Target Command Strips to list </button>
+            <button class = "large-button remove-button" data-cost="3.89" data-name="Target Command Strips (Misc.) "> Remove Target Command Strips from list </button>
         </div>
     </div>
-    <script>
-        document.getElementById("csTarget2").addEventListener("click", function(){
-            miscList.push("Target Command Strips")
-            saveData();
-        })
-        console.log(miscList)
-    </script>
     <div class = "column">
         <div class = "c17">
             <img class ="one" src="https://i5.walmartimages.com/seo/Command-4-lb-White-Picture-Hanging-Strips-17202AO-6ESF-6-Pairs_4188bf27-2760-4832-a633-cbc1109480f3.b65d9b9679afa4db8fb3402bc583abed.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF"  alt="Click Me" id="apWalmart">
             <p id="text17" class ="words"><a href="https://www.walmart.com/ip/Command-4-lb-White-Picture-Hanging-Strips-17202AO-6ESF-6-Pairs/5373842326?wmlspartner=wlpa&selectedSellerId=1219"> Command 4 lb White Picture Hanging Strips, 6 pairs/ $11.97 </a></p>
         </div>
         <div class = "item">
-            <button class = "large-button" id = "csWalmart2" data-cost="11.97"> Add Walmart Command Strips to list </button>
+            <button class = "large-button add-button"  data-cost="11.97" data-name="Walmart Command Strips (Misc.) "> Add Walmart Command Strips to list </button>
+            <button class = "large-button remove-button"  data-cost="11.97" data-name="Walmart Command Strips (Misc.) "> Remove Walmart Command Strips from list </button>
         </div>
     </div>
-    <script>
-        document.getElementById("csWalmart2").addEventListener("click", function(){
-            miscList.push("Walmart Command Strips")
-            saveData();
-        })
-        console.log(miscList)
-    </script>
+
     <div class = "column">
         <div class = "c18">
             <img class ="one" src="https://m.media-amazon.com/images/I/51RI3ZL9IXL._SY445_SX342_QL70_FMwebp_.jpg"  alt="Click Me" id="csAmazon">
             <p id="text18" class ="words"><a href="https://www.amazon.com/Command-Picture-Decorate-Damage-Free-PH206-14NA/dp/B073XR4X72?th=1"> Command 15 lb Large Picture Hanging Strips 14 Pairs...Damage Free/ $12.83 </a></p>
         </div>
-        <div class = "item">
-            <button class = "large-button" id = "csAmazon2" data-cost="12.83"> Add Amazon Command Strips to list </button>
+        <div class ="item">
+            <button class = "large-button add-button" data-cost="12.83" data-name="Amazon Command Strips (Misc.) "> Add Amazon Command Strips to list </button>
+            <button class = "large-button remove-button" data-cost="12.83" data-name="Amazon Command Strips (Misc.) "> Remove Amazon Command Strips from list </button>
         </div>
     </div>
-    <script>
-        document.getElementById("csAmazon2").addEventListener("click", function(){
-            miscList.push("Amazon Command Strips")
-            saveData();
-        })
-        console.log(miscList)
-    </script>
 </div>
 
 <script>
@@ -482,7 +410,7 @@
         const itemName = button.getAttribute('data-name');
         const itemCost = parseFloat(button.getAttribute('data-cost'));
 
-        shoppingList.push(itemName);
+        miscList.push(itemName);
         totalCostMisc += itemCost;
 
         document.getElementById('totalCostMisc').textContent = totalCostMisc.toFixed(2);
@@ -498,8 +426,8 @@
 
         const index = shoppingList.indexOf(itemName);
         if (index > -1) {
-            shoppingList.splice(index, 1);
-            totalCostMasc -= itemCost;
+            miscList.splice(index, 1);
+            totalCostMisc -= itemCost;
 
             document.getElementById('totalCostMisc').textContent = totalCostMisc.toFixed(2);
             saveData();
@@ -511,11 +439,11 @@
     }
 
     document.addEventListener("DOMContentLoaded", () => {
-        document.querySelectorAll(".add-btn").forEach(button =>
+        document.querySelectorAll(".add-button").forEach(button =>
             button.addEventListener("click", addItem)
         );
 
-        document.querySelectorAll(".remove-btn").forEach(button =>
+        document.querySelectorAll(".remove-button").forEach(button =>
             button.addEventListener("click", removeItem)
         );
     });
