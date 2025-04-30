@@ -45,6 +45,18 @@
             border: 2px solid black;
             margin: 10px;
         }
+        .large-button1{
+            background-color: black; /* Blue background */
+            /* Remove borders */
+            color: white; /* White text */
+            padding: 12px 16px; /* Some padding */
+            font-size: 16px; /* Set a font size */
+            cursor: pointer;
+            border-radius: 10%;
+            border: 2px solid black;
+            margin: 10px;
+        }
+
         .one {
             cursor: pointer;
             width: 200px;
@@ -182,6 +194,14 @@
             <button class = "large-button" id = "microwaveTarget2" data-cost="69.99"> Add Target Microwave to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removetm> Remove Target Microwave From List</button>
+    <script>
+        document.getElementById("removetm").addEventListener("click", function (){
+            removeFromRoomList("Target Microwave");
+            totalCostRoom+= -69.99
+        })
+    </script>
+
     <script>
         document.getElementById("microwaveTarget2").addEventListener("click", function(){
             roomEssentialsList.push("Target Microwave ")
@@ -205,6 +225,13 @@
             <button class = "large-button" id = "microwaveWalmart2" data-cost="65.56"> Add Walmart Microwave to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removetm1> Remove Walmart Microwave From List</button>
+    <script>
+        document.getElementById("removetm1").addEventListener("click", function (){
+            removeFromRoomList("Walmart Microwave");
+            totalCostRoom+= -65.56
+        })
+    </script>
     <script>
         document.getElementById("microwaveWalmart2").addEventListener("click", function(){
             roomEssentialsList.push("Walmart Microwave")
@@ -225,6 +252,13 @@
             <button class = "large-button" id = "microwaveAmazon2" data-cost="80"> Add Amazon Microwave to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removetm2> Remove Amazon Microwave From List</button>
+    <script>
+        document.getElementById("removetm2").addEventListener("click", function (){
+            removeFromRoomList("Amazon Microwave");
+            totalCostRoom+= -80
+        })
+    </script>
     <script>
         document.getElementById("microwaveAmazon2").addEventListener("click", function(){
             roomEssentialsList.push("Amazon Microwave")
@@ -262,6 +296,13 @@
             <button class = "large-button" id = "targetFridge2" data-cost="149.99"> Add Target Fridge to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removetf> Remove Target Fridge From List</button>
+    <script>
+        document.getElementById("removetf").addEventListener("click", function (){
+            removeFromRoomList("Target Fridge");
+            totalCostRoom+= -149.99
+        })
+    </script>
     <script>
         document.getElementById("targetFridge2").addEventListener("click", function(){
             roomEssentialsList.push("Target Fridge")
@@ -285,6 +326,13 @@
             <button class = "large-button" id = "walmartFridge2" data-cost="72.24"> Add Walmart Fridge to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removetf1> Remove Walmart Fridge From List</button>
+    <script>
+        document.getElementById("removetf1").addEventListener("click", function (){
+            removeFromRoomList("Walmart Fridge");
+            totalCostRoom+= -72.24
+        })
+    </script>
     <script>
         document.getElementById("walmartFridge2").addEventListener("click", function(){
             roomEssentialsList.push("Walmart Fridge")
@@ -309,6 +357,13 @@
             <button class = "large-button" id = "amazonFridge2" data-cost="129.97"> Add Amazon Fridge to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removetf2> Remove Amazon Fridge From List</button>
+    <script>
+        document.getElementById("removetf2").addEventListener("click", function (){
+            removeFromRoomList("Amazon Microwave");
+            totalCostRoom+= -80
+        })
+    </script>
     <script>
         document.getElementById("amazonFridge2").addEventListener("click", function(){
             roomEssentialsList.push("Amazon Fridge")
@@ -346,6 +401,13 @@
             <button class = "large-button" id = "targetTrash2" data-cost="15"> Add Target Trash Can to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removett> Remove Target Trash Can From List</button>
+    <script>
+        document.getElementById("removett").addEventListener("click", function (){
+            removeFromRoomList("Target Trash Can");
+            totalCostRoom+= -15
+        })
+    </script>
     <script>
         document.getElementById("targetTrash2").addEventListener("click", function(){
             roomEssentialsList.push("Target Trash Can")
@@ -369,6 +431,13 @@
             <button class = "large-button" id = "walmartTrash2" data-cost = "11.46"> Add Walmart Trash Can to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removett1> Remove Walmart Trash Can From List</button>
+    <script>
+        document.getElementById("removett1").addEventListener("click", function (){
+            removeFromRoomList("Walmart Trash Can");
+            totalCostRoom+= -11.46
+        })
+    </script>
     <script>
         document.getElementById("walmartTrash2").addEventListener("click", function(){
             roomEssentialsList.push("Walmart Trash Can")
@@ -393,6 +462,13 @@
             <button class = "large-button" id = "amazonTrash2" data-cost="10.97"> Add Amazon Trash Can to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removett2> Remove Amazon Trash Can From List</button>
+    <script>
+        document.getElementById("removett2").addEventListener("click", function (){
+            removeFromRoomList("Amazon Trash Can);
+            totalCostRoom+= -10.97
+        })
+    </script>
     <script>
         document.getElementById("amazonTrash2").addEventListener("click", function(){
             roomEssentialsList.push("Amazon Trash Can")
@@ -430,6 +506,13 @@
             <button class = "large-button" id = "targetLight2" data-cost="13.99"> Add Target Desk Lamp to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removetl> Remove Target Desk Lamp From List</button>
+    <script>
+        document.getElementById("removetl").addEventListener("click", function (){
+            removeFromRoomList("Target Desk Lamp");
+            totalCostRoom+= -13.99
+        })
+    </script>
     <script>
         document.getElementById("targetLight2").addEventListener("click", function(){
             roomEssentialsList.push("Target Desk Lamp")
@@ -454,6 +537,13 @@
             <button class = "large-button" id = "walmartLight2" data-cost="21.99"> Add Walmart Desk Lamp to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removetl1> Remove Walmart Desk Lamp From List</button>
+    <script>
+        document.getElementById("removetl1").addEventListener("click", function (){
+            removeFromRoomList("Walmart Desk Lamp");
+            totalCostRoom+= -21.99
+        })
+    </script>
     <script>
         document.getElementById("walmartLight2").addEventListener("click", function(){
             roomEssentialsList.push("Walmart Desk Lamp")
@@ -478,6 +568,13 @@
             <button class = "large-button" id = "amazonLight2" data-cost="18.99"> Add Amazon Desk Lamp to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removetl2> Remove Amazon Desk Lamp From List</button>
+    <script>
+        document.getElementById("removetl2").addEventListener("click", function (){
+            removeFromRoomList("Amazon Desk Lamp");
+            totalCostRoom+= -18.99
+        })
+    </script>
     <script>
         document.getElementById("amazonLight2").addEventListener("click", function(){
             roomEssentialsList.push("Amazon Desk Lamp")
@@ -515,6 +612,13 @@
             <button class = "large-button" id = "targetMop2" data-cost="14.49"> Add Target Mop to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removemop> Remove Target Mop From List</button>
+    <script>
+        document.getElementById("removetmop").addEventListener("click", function (){
+            removeFromRoomList("Target Mop");
+            totalCostRoom+= -14.49
+        })
+    </script>
     <script>
         document.getElementById("targetMop2").addEventListener("click", function(){
             roomEssentialsList.push("Target Mop")
@@ -538,6 +642,13 @@
             <button class = "large-button" id = "walmartMop2" data-cost="12.94"> Add Walmart Mop to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removemop1> Remove Walmart Mop From List</button>
+    <script>
+        document.getElementById("removemop1").addEventListener("click", function (){
+            removeFromRoomList("Walmart Mop");
+            totalCostRoom+= -12.94
+        })
+    </script>
     <script>
         document.getElementById("walmartMop2").addEventListener("click", function(){
             roomEssentialsList.push("Walmart Mop")
@@ -561,6 +672,13 @@
             <button class = "large-button" id = "amazonMop2" data-cost="24.99"> Add Amazon Mop to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removemop2> Remove Amazon Mop From List</button>
+    <script>
+        document.getElementById("removetmop2").addEventListener("click", function (){
+            removeFromRoomList("Amazon Mop");
+            totalCostRoom+= -24.99
+        })
+    </script>
     <script>
         document.getElementById("amazonMop2").addEventListener("click", function(){
             roomEssentialsList.push("Amazon Mop")
@@ -596,6 +714,13 @@
             <button class = "large-button" id = "targetVacuum2" data-cost="39.99"> Add Target Vacuum to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removetv> Remove Target Vacuum From List</button>
+    <script>
+        document.getElementById("removetv").addEventListener("click", function (){
+            removeFromRoomList("Amazon Microwave");
+            totalCostRoom+= -39.99
+        })
+    </script>
     <script>
         document.getElementById("targetVacuum2").addEventListener("click", function(){
             roomEssentialsList.push("Target Vacuum")
@@ -619,6 +744,13 @@
             <button class = "large-button" id = "walmartVacuum2" data-cost="59.00"> Add Walmart Vacuum to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removetv1> Remove Walmart Vacuum From List</button>
+    <script>
+        document.getElementById("removetv1").addEventListener("click", function (){
+            removeFromRoomList("Walmart Vacuum");
+            totalCostRoom+= -59
+        })
+    </script>
     <script>
         document.getElementById("walmartVacuum2").addEventListener("click", function(){
             roomEssentialsList.push("Walmart Vacuum")
@@ -642,6 +774,13 @@
             <button class = "large-button" id = "amazonVacuum2" data-cost="33.95"> Add Amazon Vacuum to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removetv2> Remove Amazon Vacuum From List</button>
+    <script>
+        document.getElementById("removetv2").addEventListener("click", function (){
+            removeFromRoomList("Amazon Vacuum");
+            totalCostRoom+= -33.95
+        })
+    </script>
     <script>
         document.getElementById("amazonVacuum2").addEventListener("click", function(){
             roomEssentialsList.push("Amazon Vacuum")
@@ -677,6 +816,13 @@
             <button class = "large-button" id = "targetPlates2" data-cost="20.00"> Add Target Plates to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removeplate1> Remove Target Plates From List</button>
+    <script>
+        document.getElementById("removeplate1").addEventListener("click", function (){
+            removeFromRoomList("Target Plates");
+            totalCostRoom+= -20
+        })
+    </script>
     <script>
         document.getElementById("targetPlates2").addEventListener("click", function(){
             roomEssentialsList.push("Target Plates")
@@ -700,6 +846,13 @@
             <button class = "large-button" id = "walmartPlates2" data-cost="17.99"> Add Walmart Plates to list </button>
         </div>
     </div>
+    <button class = "large-button1" id = removeplates1> Remove Walmart Plates From List</button>
+    <script>
+        document.getElementById("removeplates1").addEventListener("click", function (){
+            removeFromRoomList("Walmart Plates");
+            totalCostRoom+= -17.99
+        })
+    </script>
     <script>
         document.getElementById("walmartPlates2").addEventListener("click", function(){
             roomEssentialsList.push("Walmart Plates")
@@ -844,6 +997,28 @@
         buttons.forEach(button => {
             button.addEventListener("click", () => {
                 button.textContent = "Added!";
+            });
+        });
+    });
+</script>
+<script>
+    function removeFromRoomList(item) {
+        const index = roomEssentialsList.indexOf(item);
+        if (index !== -1) {
+            roomEssentialsList.splice(index, 1);
+            saveData(); // re-save the updated list
+        }
+    }
+</script>
+<script>
+    // Wait until the page is fully loaded
+    document.addEventListener("DOMContentLoaded", () => {
+        const buttons = document.querySelectorAll(".large-button1");
+
+
+        buttons.forEach(button => {
+            button.addEventListener("click", () => {
+                button.textContent = "Removed!";
             });
         });
     });
