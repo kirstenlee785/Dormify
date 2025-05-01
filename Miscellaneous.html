@@ -85,7 +85,7 @@
             font-size: 20px;
         }
     </style>
-    <script src="data2.js"></script>
+
 </head>
 <!--issue with getting buttons to respond-->
 <p><strong>Total Cost: $<span id="totalCostMisc">0</span></strong></p>
@@ -153,8 +153,8 @@
             <p id="text" class ="words"><a href="https://www.target.com/p/18pk-plastic-hangers-black-room-essentials-8482/-/A-17153482"> 18pk Plastic Hangers - Room Essentials/ $3.00 </a></p>
         </div>
         <div class = "item">
-            <button class = "large-button add-btn" data-cost="3" data-name="Target Hangers (Misc.)"> Add Target Hangers to list </button>
-            <button class = "large-button remove-btn" data-cost="3" data-name="Target Hangers (Misc.)"> Remove Target Hangers from list </button>
+            <button class = "large-button add-button" data-cost="3" data-name="Target Hangers (Misc.)"> Add Target Hangers to list </button>
+            <button class = "large-button remove-button" data-cost="3" data-name="Target Hangers (Misc.)"> Remove Target Hangers from list </button>
         </div>
     </div>
     <div class ="column">
@@ -424,7 +424,7 @@
         const itemName = button.getAttribute('data-name');
         const itemCost = parseFloat(button.getAttribute('data-cost'));
 
-        const index = shoppingList.indexOf(itemName);
+        const index = miscList.indexOf(itemName);
         if (index > -1) {
             miscList.splice(index, 1);
             totalCostMisc -= itemCost;
