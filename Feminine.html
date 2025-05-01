@@ -109,6 +109,8 @@
         const cartList3 = JSON.stringify(femList)
         // Sctore the list in localStorage (convert it to a JSON string)
         sessionStorage.setItem('displayList3', cartList3);
+        sessionStorage.setItem('items', JSON.stringify(femList));
+        sessionStorage.setItem('totalCostFem', totalCostFem.toFixed(2));
     }
 </script>
 
@@ -167,24 +169,10 @@
             </script>
         </div>
         <div class = "item">
-            <button class = "large-button" id = "LEDTarget2" data-cost="19.99"> Add Target LED Lights to list </button>
+            <button class = "large-button add-button" data-name = "LED Target (Fem.)" data-cost="19.99"> Add Target LED Lights to list </button>
+            <button class = "large-button remove-button" data-name="LED Target (Fem.)" data-cost="19.99"> Remove Target LED Lights From List</button>
         </div>
     </div>
-    <button class = "large-button1" id = removeled> Remove Target LED Lights From List</button>
-    <script>
-        document.getElementById("removeled").addEventListener("click", function (){
-            removeFromFemList("Target LED Lights");
-            totalCostFem += -19.99
-        })
-    </script>
-
-    <script>
-        document.getElementById("LEDTarget2").addEventListener("click", function(){
-            shoppingList.push("Target LED Lights")
-            saveData();
-        })
-        console.log(femList)
-    </script>
     <div class = "column">
         <div class = "containerTwo">
             <img class = "one" src="https://i5.walmartimages.com/seo/DAYBETTER-Led-Strip-Lights-100ft-Light-Strips-App-Control-Remote-5050-RGB-Lights-Bedroom-Music-Sync-Color-Changing-Room-Party_fd6a71ff-80d2-4f06-b5fe-b9d590c271f6.31e6954ca633df4afbd30027ecd758cd.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Click Me" id="LEDWalmart">
@@ -198,23 +186,9 @@
         </div>
         <div class = "item">
             <button class = "large-button" id = "LEDWalmart2" data-cost="9.98"> Add Walmart LED Lights to list </button>
-        </div>
+            <button class = "large-button1" id = removeled1> Remove Walmart LED Lights From List</button>
     </div>
-    <button class = "large-button1" id = removeled1> Remove Walmart LED Lights From List</button>
-    <script>
-        document.getElementById("removeled1").addEventListener("click", function (){
-            removeFromFemList("Walmart LED Lights");
-            totalCostFem += -9.98
-        })
-    </script>
-
-    <script>
-        document.getElementById("LEDWamart2").addEventListener("click", function(){
-            femList.push("Walmart LED Lights")
-            saveData();
-        })
-        console.log(femList)
-    </script>
+        </div>
 
     <div class = "column">
         <div class = "containerThree">
@@ -229,29 +203,14 @@
         </div>
         <div class = "item">
             <button class = "large-button" id = "LEDAmazon2" data-cost="11.98"> Add Amazon LED Lights to list </button>
+            <button class = "large-button1" id = removeled2> Remove Amazon LED Lights From List</button>
         </div>
     </div>
-    <button class = "large-button1" id = removeled2> Remove Amazon LED Lights From List</button>
-    <script>
-        document.getElementById("removeled2").addEventListener("click", function (){
-            removeFromFemList("Amazon LED Lights");
-            totalCostFem += -11.98
-        })
-    </script>
-
-    <script>
-        document.getElementById("LEDAmazon2").addEventListener("click", function(){
-            femList.push("Amazon LED Lights")
-            saveData();
-        })
-        console.log(femList)
-    </script>
 </div>
 <!--row2-->
 
 <button class="header-button" id="rug2Header">Rugs</button>
 <div class="row" id="j2" style="display: none;">
-
 
     <script>
         var r2button = document.getElementById("rug2Header");
@@ -274,24 +233,11 @@
         </div>
         <div class = "item">
             <button class = "large-button" id = "rugTarget2" data-cost="30"> Add Target Rug to list </button>
+           <button class = "large-button1" id = removerug> Remove Target Rug From List</button>
         </div>
     </div>
-    <button class = "large-button1" id = removerug> Remove Target Rug From List</button>
-    <script>
-        document.getElementById("removerug").addEventListener("click", function (){
-            removeFromFemList("Target Rug");
-            totalCostFem += -30
-        })
-    </script>
 
-    <script>
-        document.getElementById("rugTarget2").addEventListener("click", function(){
-            femList.push("Target Rug (Feminine)")
-            saveData();
-        })
-        console.log(femList)
-    </script>
-    <div class = "column">
+            <div class = "column">
         <div class = "containerFive">
             <img class = "one" src="https://i5.walmartimages.com/seo/Pink-Rug-Bedside-Preppy-Dorm-Area-College-Essentials-Non-Slip-Small-Carpets-Bedroom-Anti-Fluffy-Living-Room-Rugs-Home-Decor-Aesthetic-Nursery-Purple_599c07c9-3d12-4b17-8ec2-77aed3f3e59f.03571690800cbdbc861064b88fbf7bc7.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Click Me" id="WalmartRug">
             <p id="text5" class="words"><a href="https://www.walmart.com/ip/Pink-Rug-Bedside-Preppy-Dorm-Area-College-Essentials-Non-Slip-Small-Carpets-Bedroom-Anti-Fluffy-Living-Room-Rugs-Home-Decor-Aesthetic-Nursery-Purple/14866113563?classType=VARIANT&from=/search">Bedside Preppy Dorm Area Rug, College Essentials, Non Slip (available in multiple colors) / $4.13 </a></p>
@@ -304,23 +250,10 @@
         </div>
         <div class = "item">
             <button class = "large-button" id = "rugWalmart2" data-cost="4.13"> Add Walmart Rug to list </button>
+            <button class = "large-button1" id = removerug1> Remove Walmart Rug From List</button>
         </div>
-    </div>
-    <button class = "large-button1" id = removerug1> Remove Walmart Rug From List</button>
-    <script>
-        document.getElementById("removerug1").addEventListener("click", function (){
-            removeFromFemList("Walmart Rug (Feminine)");
-            totalCostFem += -11
-        })
-    </script>
+            </div>
 
-    <script>
-        document.getElementById("rugWalmart2").addEventListener("click", function(){
-            femList.push("Walmart Rug (Feminine)")
-            saveData();
-        })
-        console.log(femList)
-    </script>
     <div class = "column">
         <div class = "containerSix">
             <img class = "one" src="https://m.media-amazon.com/images/I/91Hr6Blv60L._AC_SL1500_.jpg" alt="Click Me" id="amazonRug">
@@ -334,23 +267,9 @@
         </div>
         <div class="item">
             <button class = "large-button" id = "rugAmazon2" data-cost="13"> Add Amazon Rug to list </button>
+            <button class = "large-button1" id = removerug2> Remove Amazon Rug From List</button>
         </div>
     </div>
-    <button class = "large-button1" id = removerug2> Remove Amazon Rug From List</button>
-    <script>
-        document.getElementById("removerug2").addEventListener("click", function (){
-            removeFromFemList("Amazon Rug (Feminine)");
-            totalCostFem += -11
-        })
-    </script>
-
-    <script>
-        document.getElementById("rugAmazon2").addEventListener("click", function(){
-            femList.push("Amazon Rug (Feminine)")
-            saveData();
-        })
-        console.log(femList)
-    </script>
 </div>
 
 <!--row3-->
@@ -379,23 +298,9 @@
         </div>
         <div class = "item">
             <button class = "large-button" id = "mirrorTarget2" data-cost="12.49"> Add Target Mirror to list </button>
-        </div>
-    </div>
-    <button class = "large-button1" id = removemirror> Remove Target Mirror From List</button>
-    <script>
-        document.getElementById("removemirror").addEventListener("click", function (){
-            removeFromFemList("Target Mirror");
-            totalCostFem += -12.49
-        })
-    </script>
-
-    <script>
-        document.getElementById("mirrorTarget2").addEventListener("click", function(){
-            femList.push("Target Mirror (Feminine)")
-            saveData();
-        })
-        console.log(femList)
-    </script>
+           <button class = "large-button1" id = removemirror> Remove Target Mirror From List</button>
+           </div>
+       </div>
     <div class = "column">
         <div class = "c8">
             <img class = "one" src="https://i5.walmartimages.com/seo/10x-Magnifying-Lighted-Makeup-Mirror-360-Rotation-Touch-Sensor-Control-Natural-Daylight-LED-Light-Powerful-Locking-Suction-Cup-Cosmetic-Home-Bathroom_a4ff9a4e-ebb2-493c-9275-1a9b0f8a78ba.412cf251bd80c29b48f3285c1cde4384.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Click Me" id="walmartMirror">
@@ -409,22 +314,9 @@
         </div>
         <div class = "item">
             <button class = "large-button" id = "mirrorWalmart2" data-cost="16.68"> Add Target Walmart to list </button>
+            <button class = "large-button1" id = removemirror1> Remove Walmart Mirror From List</button>
         </div>
     </div>
-    <button class = "large-button1" id = removemirror1> Remove Walmart Mirror From List</button>
-    <script>
-        document.getElementById("removemirror1").addEventListener("click", function (){
-            removeFromFemList("Walmart Mirror");
-            totalCostFem += -16.68
-        })
-    </script>
-    <script>
-        document.getElementById("mirrorWalmart2").addEventListener("click", function(){
-            femList.push("Walmart Mirror (Feminine)")
-            saveData();
-        })
-        console.log(femList)
-    </script>
     <div class = "column">
         <div class = "c9">
             <img class = "one" src="https://m.media-amazon.com/images/I/51g-9-6swNL._SL1000_.jpg" alt="Click Me" id="amazonMirror">
@@ -438,22 +330,9 @@
         </div>
         <div class = "item">
             <button class = "large-button" id = "mirrorAmazon2" data-cost="11.69"> Add Amazon Mirror to list </button>
+           <button class = "large-button1" id = removemirror2> Remove Amazon Mirror From List</button>
         </div>
     </div>
-    <button class = "large-button1" id = removemirror2> Remove Amazon Mirror From List</button>
-    <script>
-        document.getElementById("removemirror2").addEventListener("click", function (){
-            removeFromFemList("Amazon Mirror (Feminine)");
-            totalCostFem += -11.69
-        })
-    </script>
-    <script>
-        document.getElementById("mirrorAmazon2").addEventListener("click", function(){
-            femList.push("Amazon Mirror (Feminine)")
-            saveData();
-        })
-        console.log(femList)
-    </script>
 </div>
 <!--row4-->
 <button class="header-button" id="trHeader">Throw Pillows</button>
@@ -481,22 +360,10 @@
         </div>
         <div class ="item">
             <button class = "large-button" id = "throwTarget2" data-cost="10"> Add Target Throw Pillows to list </button>
+           <button class = "large-button1" id = removethrow> Remove Target Throw Pillows From List</button>
         </div>
     </div>
-    <button class = "large-button1" id = removethrow> Remove Target Throw Pillows From List</button>
-    <script>
-        document.getElementById("removethrow").addEventListener("click", function (){
-            removeFromFemList("Target Throw Pillow (Feminine)");
-            totalCostFem += -12.49
-        })
-    </script>
-    <script>
-        document.getElementById("throwTarget2").addEventListener("click", function(){
-            femList.push("Target Throw Pillow (Feminine)")
-            saveData();
-        })
-        console.log(femList)
-    </script>
+
     <div class = "column">
         <div class = "c11">
             <img class = "one" src="https://i5.walmartimages.com/seo/Fiaya-Women-Plush-Flower-Shaped-Pillow-1pc-Valentine-s-Soft-Cushion-11-81inch-Fluffy-Cute-Throw-Pillow-Decorative-Back-Cushions-Bed-Sofa-Day-Gifts-Bl_1954d8cd-a718-424a-b85b-fa87589ad051.934cfdffefff0127348a48e0c01632da.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Click Me" id="tpWalmart">
@@ -510,22 +377,9 @@
         </div>
         <div class = "item">
             <button class = "large-button" id = "throwWalmart2" data-cost="8.89"> Add Walmart Throw Pillows to list </button>
+           <button class = "large-button1" id = removethrow1> Remove Walmart Throw Pillows From List</button>
         </div>
     </div>
-    <button class = "large-button1" id = removethrow1> Remove Walmart Throw Pillows From List</button>
-    <script>
-        document.getElementById("removethrow1").addEventListener("click", function (){
-            removeFromFemList("Walmart Throw Pillow (Feminine)");
-            totalCostFem += -12.49
-        })
-    </script>
-    <script>
-        document.getElementById("throwWalmartt2").addEventListener("click", function(){
-            femList.push("Walmart Throw Pillow (Feminine)")
-            saveData();
-        })
-        console.log(femList)
-    </script>
     <div class = "column">
         <div class = "c12">
             <img class = "one" src="https://m.media-amazon.com/images/I/71ZsKoRn9kL._AC_SY450_.jpg" alt="Click Me" id="tpAmazon">
@@ -539,22 +393,9 @@
         </div>
         <div class = "item">
             <button class = "large-button" id = "throwAmazon2" data-cost="7.29"> Add Amazon Throw Pillows to list </button>
+           <button class = "large-button1" id = removethrow2> Remove Amazon Throw Pillows From List</button>
         </div>
     </div>
-    <button class = "large-button1" id = removethrow2> Remove Amazon Throw Pillows From List</button>
-    <script>
-        document.getElementById("removethrow2").addEventListener("click", function (){
-            removeFromFemList("Amazon Throw Pillows (Feminine)");
-            totalCostFem += -7.29
-        })
-    </script>
-    <script>
-        document.getElementById("throwAmazon2").addEventListener("click", function(){
-            femList.push("Amazon Throw Pillow (Feminine)")
-            saveData();
-        })
-        console.log(femList)
-    </script>
 </div>
 
 <button class="header-button" id="poster2Header">Posters</button>
@@ -581,22 +422,10 @@
         </div>
         <div class = "item">
             <button class = "large-button" id = "posterTarget2" data-cost="16"> Add Target Poster to list </button>
+    <button class = "large-button1" id = removeposter> Remove Target Poster From List</button>
         </div>
     </div>
-    <button class = "large-button1" id = removeposter> Remove Target Poster From List</button>
-    <script>
-        document.getElementById("removeposter").addEventListener("click", function (){
-            removeFromFemList("Target Poster (Feminine)");
-            totalCostFem += -16
-        })
-    </script>
-    <script>
-        document.getElementById("posterTarget2").addEventListener("click", function(){
-            femList.push("Target Poster (Feminine)")
-            saveData();
-        })
-        console.log(femList)
-    </script>
+
     <div class = "column">
         <div class = "c14">
             <img class = "one" src="https://i5.walmartimages.com/seo/Blue-Bow-Canvas-Wall-Art-Watercolor-Light-Prints-Painting-Balletcore-Girl-Posters-Preppy-Aesthetic-Decor-For-Bedroom-Living-Room-Poster-Unframed_95fb5a25-3abd-45e5-b907-6b1e3bbe2ecf.56a209c3c4d69d4a8c49ffe207b5c677.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Click Me" id="pWalmart">
@@ -610,22 +439,9 @@
         </div>
         <div class = "item">
             <button class = "large-button" id = "posterWalmart2" data-cost="19.99"> Add Walmart Poster to list </button>
+           <button class = "large-button1" id = removeposter1> Remove Walmart Poster From List</button>
         </div>
     </div>
-    <button class = "large-button1" id = removeposter1> Remove Walmart Poster From List</button>
-    <script>
-        document.getElementById("removeposter1").addEventListener("click", function (){
-            removeFromFemList("Walmart Poster (Feminine)");
-            totalCostFem += -19.99
-        })
-    </script>
-    <script>
-        document.getElementById("posterWalmart2").addEventListener("click", function(){
-            femList.push("Walmart Poster (Feminine)")
-            saveData();
-        })
-        console.log(femList)
-    </script>
     <div class = "column">
         <div class = "c15">
             <img class = "one" src="https://m.media-amazon.com/images/I/811HudFz34L._AC_SL1500_.jpg" alt="Click Me" id="pAmazon">
@@ -639,22 +455,9 @@
         </div>
         <div class="item">
             <button class = "large-button" id = "posterAmazon2" data-cost="7.99"> Add Amazon Poster to list </button>
+          <button class = "large-button1" id = removeposter2> Remove Target Poster From List</button>
         </div>
     </div>
-    <button class = "large-button1" id = removeposter2> Remove Target Poster From List</button>
-    <script>
-        document.getElementById("removeposter2").addEventListener("click", function (){
-            removeFromFemList("Amazon Poster (Feminine)");
-            totalCostFem += -12.49
-        })
-    </script>
-    <script>
-        document.getElementById("posterAmazon2").addEventListener("click", function(){
-            femList.push("Amazon Poster (Feminine)")
-            saveData();
-        })
-        console.log(femList)
-    </script>
 </div>
 
 <button class="header-button" id="ot2Header">Ottomans</button>
@@ -681,22 +484,9 @@
         </div>
         <div class ="item">
             <button class = "large-button" id = "ottomanTarget2" data-cost="36.99"> Add Target Ottoman to list </button>
+          <button class = "large-button1" id = removeottoman> Remove Target Ottoman From List</button>
         </div>
     </div>
-    <button class = "large-button1" id = removeottoman> Remove Target Ottoman From List</button>
-    <script>
-        document.getElementById("removeottoman").addEventListener("click", function (){
-            removeFromFemList("Target Ottoman (Feminine)");
-            totalCostFem += -36.99
-        })
-    </script>
-    <script>
-        document.getElementById("ottomanTarget2").addEventListener("click", function(){
-            femList.push("Target Ottoman (Feminine)")
-            saveData();
-        })
-        console.log(femList)
-    </script>
     <div class = "column">
         <div class = "c17">
             <img class = "one" src="https://i5.walmartimages.com/seo/MiaHltTia-Teddy-Fabric-Storage-Ottoman-15-Inch-Foldable-Cube-Multipurpose-Cozy-Ottoman-Foot-Rest-Sofa-Storage-Stool-Living-Room-Bedroom-Dorm-Small-Ot_6354aa7f-5df6-476b-9653-c1016add8480.ab41feb199a681e1e7330f98cdc512b1.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Click Me" id="otWalmart">
@@ -710,22 +500,9 @@
         </div>
         <div class="item">
             <button class = "large-button" id = "ottomanWalmart2" data-cost="36.34"> Add Walmart Ottoman to list </button>
+           <button class = "large-button1" id = removeottoman1> Remove Walmart Ottoman From List</button>
         </div>
     </div>
-    <button class = "large-button1" id = removeottoman1> Remove Walmart Ottoman From List</button>
-    <script>
-        document.getElementById("removeottoman1").addEventListener("click", function (){
-            removeFromFemList("Walmart Ottoman (Feminine)");
-            totalCostFem += -36.34
-        })
-    </script>
-    <script>
-        document.getElementById("ottomanWalmart2").addEventListener("click", function(){
-            femList.push("Walmart Ottoman (Feminine)")
-            saveData();
-        })
-        console.log(femList)
-    </script>
     <div class = "column">
         <div class = "c18">
             <img class = "one" src="https://m.media-amazon.com/images/I/610zpXht1ZL._AC_SY450_.jpg" alt="Click Me" id="otAmazon">
@@ -739,97 +516,57 @@
         </div>
         <div class="item">
             <button class = "large-button" id = "ottomanAmazon2" data-cost="19.99"> Add Amazon Ottoman to list </button>
+          <button class = "large-button1" id = removeottoman2> Remove Amazon Ottoman From List</button>
         </div>
     </div>
-    <button class = "large-button1" id = removeottoman2> Remove Amazon Ottoman From List</button>
-    <script>
-        document.getElementById("removeottoman2").addEventListener("click", function (){
-            removeFromFemList("Amazon Ottoman (Feminine)");
-            totalCostFem += -19.99
-        })
-    </script>
-    <script>
-        document.getElementById("ottomanAmazon2").addEventListener("click", function(){
-            femList.push("Amazon Ottoman (Feminine)")
-            saveData();
-        })
-        console.log(femList)
-
-    </script>
 </div>
 
 
 <script>
-    // Temporary variable to hold the total cost
-    let totalCostFem = 0;
+    let totalCostFem = parseFloat(sessionStorage.getItem('totalCostFem')) || 0;
+    document.getElementById('totalCostMasc').textContent = totalCostFem.toFixed(2);
 
-    // Function to update the total cost when a button is clicked
-    function updateTotalCost(event) {
-        // Get the cost from the clicked button's data-cost attribute
-        const itemCost = parseFloat(event.target.getAttribute('data-cost'));
+    function addItem(event) {
+        const button = event.target;
+        const itemName = button.getAttribute('data-name');
+        const itemCost = parseFloat(button.getAttribute('data-cost'));
 
-        // Add the cost to the total
+        femList.push(itemName);
         totalCostFem += itemCost;
-        // Update the displayed total cost
+
         document.getElementById('totalCostFem').textContent = totalCostFem.toFixed(2);
+        saveData();
 
-        sessionStorage.setItem('totalCostFem', totalCostFem);
-
-
+        button.textContent = "Added!";
     }
 
-    // Add event listeners to the buttons
-    const buttons = document.querySelectorAll('.item button');
-    buttons.forEach(button => {
-        button.addEventListener('click', updateTotalCost);
-    });
-</script>
+    function removeItem(event) {
+        const button = event.target;
+        const itemName = button.getAttribute('data-name');
+        const itemCost = parseFloat(button.getAttribute('data-cost'));
 
-<script>
-    // Wait until the page is fully loaded
-    document.addEventListener("DOMContentLoaded", () => {
-        const buttons = document.querySelectorAll(".large-button");
-
-        buttons.forEach(button => {
-            button.addEventListener("click", () => {
-                button.textContent = "Added!";
-            });
-        });
-    });
-</script>
-<script>
-    // Wait until the page is fully loaded
-    document.addEventListener("DOMContentLoaded", () => {
-        const buttons = document.querySelectorAll(".large-button1");
-
-
-        buttons.forEach(button => {
-            button.addEventListener("click", () => {
-                button.textContent = "Removed!";
-            });
-        });
-    });
-</script>
-<script>
-    function removeFromFemList(item) {
-        const index = femList.indexOf(item);
-        if (index !== -1) {
+        const index = femList.indexOf(itemName);
+        if (index > -1) {
             femList.splice(index, 1);
-            saveData(); // re-save the updated list
+            totalCostFem -= itemCost;
+
+            document.getElementById('totalCostFem').textContent = totalCostFem.toFixed(2);
+            saveData();
+
+            button.textContent = "Removed!";
+        } else {
+            button.textContent = "Not in List!";
         }
     }
-</script>
-<script>
-    // Wait until the page is fully loaded
+
     document.addEventListener("DOMContentLoaded", () => {
-        const buttons = document.querySelectorAll(".large-button1");
+        document.querySelectorAll(".add-btn").forEach(button =>
+            button.addEventListener("click", addItem)
+        );
 
-
-        buttons.forEach(button => {
-            button.addEventListener("click", () => {
-                button.textContent = "Removed!";
-            });
-        });
+        document.querySelectorAll(".remove-btn").forEach(button =>
+            button.addEventListener("click", removeItem)
+        );
     });
 </script>
 
