@@ -116,19 +116,7 @@
        // localStorage.setItem('displayList1', cartList);
     }
 //</script>-->
-<script>
-    let counter = sessionStorage.getItem("totalCostRoom") ? Number(sessionStorage.getItem("totalCostRoom")) : 0;
 
-    // Function to increment and save the counter
-    function incrementCounter() {
-        counter++; // Increase counter
-        sessionStorage.setItem("totalCostRoom", counter); // Save to localStorage
-        console.log(counter);
-    }
-
-    // Call this function whenever you want to update the counter
-
-</script>
 <script>
     // Declare an empty list (array)
     let roomEssentialsList = JSON.parse(sessionStorage.getItem("items")) || [];
@@ -136,6 +124,8 @@
         const cartList6 = JSON.stringify(roomEssentialsList)
         // Sctore the list in localStorage (convert it to a JSON string)
         sessionStorage.setItem('displayList6', cartList6);
+        sessionStorage.setItem('items', JSON.stringify(roomEssentialsList));
+        sessionStorage.setItem('totalCostRoom', totalCostRoom.toFixed(2));
     }
 </script>
 
@@ -194,25 +184,12 @@
             });
         </script>
         <div class = "item">
-            <button class = "large-button" id = "microwaveTarget2" data-cost="69.99"> Add Target Microwave to list </button>
+            <button class = "large-button" data-name="microwaveTarget2" data-cost="69.99"> Add Target Microwave to list </button>
+            <button class = "large-button1" data-name="microwaveTarget2" data-cost="69.99"> Remove Target Microwave From List</button>
         </div>
-    <button class = "large-button1" id = removetm> Remove Target Microwave From List</button>
-        </div>
-    <script>
-        document.getElementById("removetm").addEventListener("click", function (){
-            removeFromRoomList("Target Microwave");
-            totalCostRoom+= -69.99
-        })
-    </script>
+
 </div>
-    <script>
-        document.getElementById("microwaveTarget2").addEventListener("click", function(){
-            roomEssentialsList.push("Target Microwave ")
-            saveData();
-            incrementCounter();
-        });
-        console.log(roomEssentialsList)
-    </script>
+
     <div class ="column">
         <div class = "containerOne">
         <img class = "one" src="https://i5.walmartimages.com/seo/Hamilton-Beach-0-9-Cu-ft-Countertop-Microwave-Oven-900-Watts-Stainless-Steel-New_1a5cbafb-ae12-41fb-ae77-8949adac6511.06793cf53bd59430d901cac965a376e2.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Click Me" id="microwaveWalmart">
@@ -229,20 +206,10 @@
         <div>
     <button class = "large-button1" id = removetm1> Remove Walmart Microwave From List</button>
         </div>
-    <script>
-        document.getElementById("removetm1").addEventListener("click", function (){
-            removeFromRoomList("Walmart Microwave");
-            totalCostRoom+= -65.56
-        })
-    </script>
+
 </div>
 </div>
-    <script>
-        document.getElementById("microwaveWalmart2").addEventListener("click", function(){
-            roomEssentialsList.push("Walmart Microwave")
-            saveData();
-        })
-    </script>
+
 
 
     <div class ="column">
@@ -261,22 +228,10 @@
 <div>
     <button class = "large-button1" id = removetm2> Remove Amazon Microwave From List</button>
     </div>
-    <script>
-        document.getElementById("removetm2").addEventListener("click", function (){
-            removeFromRoomList("Amazon Microwave");
-            totalCostRoom+= -80
-        })
-    </script>
+
 </div>
 
-    <script>
-        document.getElementById("microwaveAmazon2").addEventListener("click", function(){
-            roomEssentialsList.push("Amazon Microwave")
-            saveData();
-        })
 
-        console.log(roomEssentialsList)
-    </script>
 </div>
 </div>
 <!--row2-->
@@ -308,20 +263,10 @@
     </div>
     <button class = "large-button1" id = removetf> Remove Target Fridge From List</button>
         </div>
-    <script>
-        document.getElementById("removetf").addEventListener("click", function (){
-            removeFromRoomList("Target Fridge");
-            totalCostRoom+= -149.99
-        })
-    </script>
+
     </div>
 </div>
-    <script>
-        document.getElementById("targetFridge2").addEventListener("click", function(){
-            roomEssentialsList.push("Target Fridge")
-            saveData();
-        })
-        console.log(roomEssentialsList)
+
     </script>
     <div class = "column">
         <div class = "containerFour">
@@ -339,22 +284,10 @@
     </div>
     <button class = "large-button1" id = removetf1> Remove Walmart Fridge From List</button>
         </div>
-    <script>
-        document.getElementById("removetf1").addEventListener("click", function (){
-            removeFromRoomList("Walmart Fridge");
-            totalCostRoom+= -72.24
-        })
-    </script>
+
 </div
         </div>
-    <script>
-        document.getElementById("walmartFridge2").addEventListener("click", function(){
-            roomEssentialsList.push("Walmart Fridge")
-            saveData();
-        })
 
-        console.log(roomEssentialsList)
-    </script>
 
     <div class ="column">
         <div class = "containerSix">
@@ -372,20 +305,7 @@
         </div>
     </div>
     <button class = "large-button1" id = removetf2> Remove Amazon Fridge From List</button>
-    <script>
-        document.getElementById("removetf2").addEventListener("click", function (){
-            removeFromRoomList("Amazon Microwave");
-            totalCostRoom+= -80
-        })
-    </script>
-    <script>
-        document.getElementById("amazonFridge2").addEventListener("click", function(){
-            roomEssentialsList.push("Amazon Fridge")
-            saveData();
-        })
 
-        console.log(roomEssentialsList)
-    </script>
 </div>
 <!--row3-->
 <button class="header-button" id="trashHeader">Trash Cans</button>
@@ -416,20 +336,6 @@
         </div>
     </div>
     <button class = "large-button1" id = removett> Remove Target Trash Can From List</button>
-    <script>
-        document.getElementById("removett").addEventListener("click", function (){
-            removeFromRoomList("Target Trash Can");
-            totalCostRoom+= -15
-        })
-    </script>
-    <script>
-        document.getElementById("targetTrash2").addEventListener("click", function(){
-            roomEssentialsList.push("Target Trash Can")
-            saveData();
-        })
-
-        console.log(roomEssentialsList)
-    </script>
     <div class = "column">
         <div class = "containerEight">
             <img class = "one" src="https://i5.walmartimages.com/seo/Mainstays-7-6-gallon-Kitchen-Plastic-Touch-Top-Lid-Trashcan-Black_76107c6e-a98f-4597-b684-b937b99f5438.021640a3be5b96c5bf69047f64078354.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Click Me" id="walmartTrash">
@@ -446,20 +352,6 @@
         </div>
     </div>
     <button class = "large-button1" id = removett1> Remove Walmart Trash Can From List</button>
-    <script>
-        document.getElementById("removett1").addEventListener("click", function (){
-            removeFromRoomList("Walmart Trash Can");
-            totalCostRoom+= -11.46
-        })
-    </script>
-    <script>
-        document.getElementById("walmartTrash2").addEventListener("click", function(){
-            roomEssentialsList.push("Walmart Trash Can")
-            saveData();
-        })
-
-        console.log(roomEssentialsList)
-    </script>
 
     <div class = "column">
         <div class = "containerNine">
@@ -477,20 +369,6 @@
         </div>
     </div>
     <button class = "large-button1" id = removett2> Remove Amazon Trash Can From List</button>
-    <script>
-        document.getElementById("removett2").addEventListener("click", function (){
-            removeFromRoomList("Amazon Trash Can);
-            totalCostRoom+= -10.97
-        })
-    </script>
-    <script>
-        document.getElementById("amazonTrash2").addEventListener("click", function(){
-            roomEssentialsList.push("Amazon Trash Can")
-            saveData();
-        })
-
-        console.log(roomEssentialsList)
-    </script>
 </div>
 
 <!---row4-->
@@ -521,20 +399,6 @@
         </div>
     </div>
     <button class = "large-button1" id = removetl> Remove Target Desk Lamp From List</button>
-    <script>
-        document.getElementById("removetl").addEventListener("click", function (){
-            removeFromRoomList("Target Desk Lamp");
-            totalCostRoom+= -13.99
-        })
-    </script>
-    <script>
-        document.getElementById("targetLight2").addEventListener("click", function(){
-            roomEssentialsList.push("Target Desk Lamp")
-            saveData();
-        })
-
-        console.log(roomEssentialsList)
-    </script>
 
     <div class = "column">
         <div class = "containerEleven">
@@ -552,20 +416,6 @@
         </div>
     </div>
     <button class = "large-button1" id = removetl1> Remove Walmart Desk Lamp From List</button>
-    <script>
-        document.getElementById("removetl1").addEventListener("click", function (){
-            removeFromRoomList("Walmart Desk Lamp");
-            totalCostRoom+= -21.99
-        })
-    </script>
-    <script>
-        document.getElementById("walmartLight2").addEventListener("click", function(){
-            roomEssentialsList.push("Walmart Desk Lamp")
-            saveData();
-        })
-
-        console.log(roomEssentialsList)
-    </script>
 
     <div class ="column">
         <div class = "containerTwelve">
@@ -583,20 +433,6 @@
         </div>
     </div>
     <button class = "large-button1" id = removetl2> Remove Amazon Desk Lamp From List</button>
-    <script>
-        document.getElementById("removetl2").addEventListener("click", function (){
-            removeFromRoomList("Amazon Desk Lamp");
-            totalCostRoom+= -18.99
-        })
-    </script>
-    <script>
-        document.getElementById("amazonLight2").addEventListener("click", function(){
-            roomEssentialsList.push("Amazon Desk Lamp")
-            saveData();
-        })
-
-        console.log(roomEssentialsList)
-    </script>
 </div>
 
 <!--row5-->
@@ -627,19 +463,6 @@
         </div>
     </div>
     <button class = "large-button1" id = removemop> Remove Target Mop From List</button>
-    <script>
-        document.getElementById("removetmop").addEventListener("click", function (){
-            removeFromRoomList("Target Mop");
-            totalCostRoom+= -14.49
-        })
-    </script>
-    <script>
-        document.getElementById("targetMop2").addEventListener("click", function(){
-            roomEssentialsList.push("Target Mop")
-            saveData();
-        })
-        console.log(roomEssentialsList)
-    </script>
 
     <div class = "column">
         <div class = "containerFourteen">
@@ -657,19 +480,6 @@
         </div>
     </div>
     <button class = "large-button1" id = removemop1> Remove Walmart Mop From List</button>
-    <script>
-        document.getElementById("removemop1").addEventListener("click", function (){
-            removeFromRoomList("Walmart Mop");
-            totalCostRoom+= -12.94
-        })
-    </script>
-    <script>
-        document.getElementById("walmartMop2").addEventListener("click", function(){
-            roomEssentialsList.push("Walmart Mop")
-            saveData();
-        })
-        console.log(roomEssentialsList)
-    </script>
 
     <div class ="column">
         <div class = "containerFifteen">
@@ -687,19 +497,6 @@
         </div>
     </div>
     <button class = "large-button1" id = removemop2> Remove Amazon Mop From List</button>
-    <script>
-        document.getElementById("removetmop2").addEventListener("click", function (){
-            removeFromRoomList("Amazon Mop");
-            totalCostRoom+= -24.99
-        })
-    </script>
-    <script>
-        document.getElementById("amazonMop2").addEventListener("click", function(){
-            roomEssentialsList.push("Amazon Mop")
-            saveData();
-        })
-        console.log(roomEssentialsList)
-    </script>
 </div>
 
 <!---row6-->
@@ -729,19 +526,6 @@
         </div>
     </div>
     <button class = "large-button1" id = removetv> Remove Target Vacuum From List</button>
-    <script>
-        document.getElementById("removetv").addEventListener("click", function (){
-            removeFromRoomList("Amazon Microwave");
-            totalCostRoom+= -39.99
-        })
-    </script>
-    <script>
-        document.getElementById("targetVacuum2").addEventListener("click", function(){
-            roomEssentialsList.push("Target Vacuum")
-            saveData();
-        })
-        console.log(roomEssentialsList)
-    </script>
 
     <div class="column">
         <div class = "containerSeventeen">
@@ -759,19 +543,6 @@
         </div>
     </div>
     <button class = "large-button1" id = removetv1> Remove Walmart Vacuum From List</button>
-    <script>
-        document.getElementById("removetv1").addEventListener("click", function (){
-            removeFromRoomList("Walmart Vacuum");
-            totalCostRoom+= -59
-        })
-    </script>
-    <script>
-        document.getElementById("walmartVacuum2").addEventListener("click", function(){
-            roomEssentialsList.push("Walmart Vacuum")
-            saveData();
-        })
-        console.log(roomEssentialsList)
-    </script>
 
     <div class = "column">
         <div class = "containerEighteen">
@@ -789,19 +560,7 @@
         </div>
     </div>
     <button class = "large-button1" id = removetv2> Remove Amazon Vacuum From List</button>
-    <script>
-        document.getElementById("removetv2").addEventListener("click", function (){
-            removeFromRoomList("Amazon Vacuum");
-            totalCostRoom+= -33.95
-        })
-    </script>
-    <script>
-        document.getElementById("amazonVacuum2").addEventListener("click", function(){
-            roomEssentialsList.push("Amazon Vacuum")
-            saveData();
-        })
-        console.log(roomEssentialsList)
-    </script>
+
 </div>
 
 <!--row7-->
@@ -831,19 +590,7 @@
         </div>
     </div>
     <button class = "large-button1" id = removeplate1> Remove Target Plates From List</button>
-    <script>
-        document.getElementById("removeplate1").addEventListener("click", function (){
-            removeFromRoomList("Target Plates");
-            totalCostRoom+= -20
-        })
-    </script>
-    <script>
-        document.getElementById("targetPlates2").addEventListener("click", function(){
-            roomEssentialsList.push("Target Plates")
-            saveData();
-        })
-        console.log(roomEssentialsList)
-    </script>
+
 
     <div class = "column">
         <div class = "containerTwenty">
@@ -861,19 +608,7 @@
         </div>
     </div>
     <button class = "large-button1" id = removeplates1> Remove Walmart Plates From List</button>
-    <script>
-        document.getElementById("removeplates1").addEventListener("click", function (){
-            removeFromRoomList("Walmart Plates");
-            totalCostRoom+= -17.99
-        })
-    </script>
-    <script>
-        document.getElementById("walmartPlates2").addEventListener("click", function(){
-            roomEssentialsList.push("Walmart Plates")
-            saveData();
-        })
-        console.log(roomEssentialsList)
-    </script>
+
     <div class ="column">
         <div class = "containerTwentyone">
             <img class = "one" src="https://m.media-amazon.com/images/I/619IKE1MScL._AC_SX679_.jpg" alt="Click Me" id="amazonPlates">
@@ -890,19 +625,6 @@
         </div>
     </div>
     <button class = "large-button1" id = removeplates2> Remove Amazon Plates From List</button>
-    <script>
-        document.getElementById("removeplates2").addEventListener("click", function (){
-            removeFromRoomList("Amazon Plates");
-            totalCostRoom+= -22.99
-        })
-    </script>
-    <script>
-        document.getElementById("amazonPlates2").addEventListener("click", function(){
-            roomEssentialsList.push("Amazon Plates")
-            saveData();
-        })
-        console.log(roomEssentialsList)
-    </script>
 </div>
 <!--row8-->
 <button class="header-button" id="cutleryHeader">Cutlery</button>
@@ -932,19 +654,7 @@
         </div>
     </div>
     <button class = "large-button1" id = removecutlery> Remove Target Cutlery From List</button>
-    <script>
-        document.getElementById("removecutlery").addEventListener("click", function (){
-            removeFromRoomList("Target Cutlery");
-            totalCostRoom+= -4.29
-        })
-    </script>
-    <script>
-        document.getElementById("targetCutlery2").addEventListener("click", function(){
-            roomEssentialsList.push("Target Cutlery")
-            saveData();
-        })
-        console.log(roomEssentialsList)
-    </script>
+
     <div class = "column">
         <div class = "containerTwentythree">
             <img class = "one" src="https://i5.walmartimages.com/seo/Great-Value-Premium-Assorted-Cutlery-48-ct_c4b1cf89-8070-492b-b5f2-24fbd265ff65.4ba219fc8c54c5a45b6d94666ac102a7.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Click Me" id="walmartCutlery">
@@ -961,19 +671,7 @@
         </div>
     </div>
     <button class = "large-button1" id = removecutlery1> Remove Walmart Cutlery From List</button>
-    <script>
-        document.getElementById("removecutlery1").addEventListener("click", function (){
-            removeFromRoomList("Walmart Plates");
-            totalCostRoom+= -3.58
-        })
-    </script>
-    <script>
-        document.getElementById("walmartCutlery2").addEventListener("click", function(){
-            roomEssentialsList.push("Walmart Cutlery")
-            saveData();
-        })
-        console.log(roomEssentialsList)
-    </script>
+
 
     <div class = "column">
         <div class = "containerTwentyfour">
@@ -991,80 +689,56 @@
         </div>
     </div>
     <button class = "large-button1" id = removecutlery2> Remove Amazon Cutlery From List</button>
-    <script>
-        document.getElementById("removecutlery2").addEventListener("click", function (){
-            removeFromRoomList("Amazon Cutlery");
-            totalCostRoom+= -14.99
-        })
-    </script>
-    <script>
-        document.getElementById("amazonCutlery2").addEventListener("click", function(){
-            roomEssentialsList.push("Amazon Cutlery")
-            saveData();
-        })
-        console.log(roomEssentialsList)
-    </script>
 </div>
 
 <script>
-    // Temporary variable to hold the total cost
-    let totalCostRoom = 0;
+    let totalCostRoom = parseFloat(sessionStorage.getItem('totalCostRoom')) || 0;
+    document.getElementById('totalCostRoom').textContent = totalCostRoom.toFixed(2);
 
-    // Function to update the total cost when a button is clicked
-    function updateTotalCost(event) {
-        // Get the cost from the clicked button's data-cost attribute
-        const itemCost = parseFloat(event.target.getAttribute('data-cost'));
+    function addItem(event) {
+        const button = event.target;
+        const itemName = button.getAttribute('data-name');
+        const itemCost = parseFloat(button.getAttribute('data-cost'));
 
-        // Add the cost to the total
+        roomEssentialsList.push(itemName);
         totalCostRoom += itemCost;
 
-        // Update the displayed total cost
         document.getElementById('totalCostRoom').textContent = totalCostRoom.toFixed(2);
-        sessionStorage.setItem('totalCostRoom', totalCostRoom);
-        console.log(totalCostRoom)
+        saveData();
+
+        button.textContent = "Added!";
     }
 
-    // Add event listeners to the buttons
-    const buttons = document.querySelectorAll('.item button');
-    buttons.forEach(button => {
-        button.addEventListener('click', updateTotalCost);
-    });
-</script>
+    function removeItem(event) {
+        const button = event.target;
+        const itemName = button.getAttribute('data-name');
+        const itemCost = parseFloat(button.getAttribute('data-cost'));
 
-<script>
-    // Wait until the page is fully loaded
-    document.addEventListener("DOMContentLoaded", () => {
-        const buttons = document.querySelectorAll(".large-button");
-
-        buttons.forEach(button => {
-            button.addEventListener("click", () => {
-                button.textContent = "Added!";
-            });
-        });
-    });
-</script>
-<script>
-    function removeFromRoomList(item) {
-        const index = roomEssentialsList.indexOf(item);
-        if (index !== -1) {
+        const index = roomEssentialsList.indexOf(itemName);
+        if (index > -1) {
             roomEssentialsList.splice(index, 1);
-            saveData(); // re-save the updated list
+            totalCostRoom -= itemCost;
+
+            document.getElementById('totalCostRoom').textContent = totalCostRoom.toFixed(2);
+            saveData();
+
+            button.textContent = "Removed!";
+        } else {
+            button.textContent = "Not in List!";
         }
     }
-</script>
-<script>
-    // Wait until the page is fully loaded
+
     document.addEventListener("DOMContentLoaded", () => {
-        const buttons = document.querySelectorAll(".large-button1");
+        document.querySelectorAll(".add-btn").forEach(button =>
+            button.addEventListener("click", addItem)
+        );
 
-
-        buttons.forEach(button => {
-            button.addEventListener("click", () => {
-                button.textContent = "Removed!";
-            });
-        });
+        document.querySelectorAll(".remove-btn").forEach(button =>
+            button.addEventListener("click", removeItem)
+        );
     });
 </script>
+
 
 </body>
 </html>
