@@ -156,11 +156,13 @@
         }
     </script>
 </div>
-<div class="box">
-<h1 class="h1"> <u> ROOM ESSENTIALS </u> 🛋️ </h1>
 
-<p><b> Click on any of the boxes below to view our selection of room essentials! Click on "Checklist" to return to your "Checklist" and "Home" to return to the main page.</b></p>
+<div class="box">
+    <h1 class="h1"> <u> ROOM ESSENTIALS </u> 🛋️ </h1>
+
+    <p><b> Click on any of the boxes below to view our selection of room essentials! Click on "Checklist" to return to your "Checklist" and "Home" to return to the main page.</b></p>
 </div>
+
 <button class="header-button" id="micHeader">Microwaves</button>
 <div class="row" id="h1" style="display: none;">
     <script>
@@ -175,136 +177,127 @@
 
     <div class = "column">
         <div class = "containerOne">
-        <img class = "one" src="https://target.scene7.com/is/image/Target/GUEST_6fc97b86-f830-4b19-990e-35a9601a1f64?wid=1200&hei=1200&qlt=80&fmt=webp" alt="Click Me" id="microwaveTarget">
-        <p id="text" class="words"><a href="https://www.target.com/p/kenmore-0-7-cu-ft-microwave-black/-/A-88156868#lnk=sametab"> Kenmore 0.7 cu-ft Microwave, Black - $69.99</a></p>
+            <img class = "one" src="https://target.scene7.com/is/image/Target/GUEST_6fc97b86-f830-4b19-990e-35a9601a1f64?wid=1200&hei=1200&qlt=80&fmt=webp" alt="Click Me" id="microwaveTarget">
+            <p id="text" class="words"><a href="https://www.target.com/p/kenmore-0-7-cu-ft-microwave-black/-/A-88156868#lnk=sametab"> Kenmore 0.7 cu-ft Microwave, Black - $69.99</a></p>
+            <script>
+                document.getElementById("microwaveTarget").addEventListener("click", function() {
+                    var text = document.getElementById("text");
+                    text.style.display = "block"; // Show the text
+                });
+            </script>
+            </div>
+            <div class = "item">
+                <button class = "large-button" data-name="microwaveTarget2" data-cost="69.99"> Add Target Microwave to list </button>
+                <button class = "large-button1" data-name="microwaveTarget2" data-cost="69.99"> Remove Target Microwave From List</button>
+            </div>
+      </div>
+
+        <div class ="column">
+            <div class = "containerTwo">
+                <img class = "one" src="https://i5.walmartimages.com/seo/Hamilton-Beach-0-9-Cu-ft-Countertop-Microwave-Oven-900-Watts-Stainless-Steel-New_1a5cbafb-ae12-41fb-ae77-8949adac6511.06793cf53bd59430d901cac965a376e2.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Click Me" id="microwaveWalmart">
+                <p id="text2" class="words"><a href="https://www.walmart.com/ip/Hamilton-Beach-0-9-Cu-ft-Countertop-Microwave-Oven-900-Watts-Stainless-Steel-New/1153749112?classType=VARIANT&athbdg=L1300&from=/search"> Hamilton Beach 0.9 Cu ft Countertop Microwave Oven, 900 Watts, Stainless Steel, New - $65.56</a></p>
+                <script>
+                    document.getElementById("microwaveWalmart").addEventListener("click", function() {
+                        var text2 = document.getElementById("text2");
+                        text2.style.display = "block"; // Show the text
+                    });
+                </script>
+                <div class = "item">
+                    <button class = "large-button" data-name = "microwaveWalmart2" data-cost="65.56"> Add Walmart Microwave to list </button>
+                    <button class = "large-button1" data-name = "microwaveWalmart2" data-cost="65.56"> Remove Walmart Microwave From List</button>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class ="column">
+            <div class = "containerThree">
+                <img class = "one" src="https://m.media-amazon.com/images/I/71I1kb2hSlL._AC_SL1500_.jpg" alt="Click Me" id="microwaveAmazon">
+                <p id="text3" class="words"><a href="https://www.amazon.com/Comfee-EM720CPL-PMB-Countertop-Microwave-One-Touch/dp/B07GV36BLD/ref=sr_1_4?crid=3L724B3PS2J1P&dib=eyJ2IjoiMSJ9.0wjAIOy4uNXZICWpbyHeQqQven4CVCbQpTzcke6VLBJsooHAKzqbVikGT9Weu6Tb4SIEl17evTX8xOqPnEb60r2fmZfJGr_e-7juo-q9HdeOQ1cTrvFOpT7VZuKSsZYLc_QEfoSFqvwoLGPHWHtXUc4tTtwQylJy8ANZ6A6VzhwhDreHDhFLjUSOIjCpj89tY7J6wWT7lRHeY4OqZ1Gh_Mq8x-M7aEWhekB3ktpaZJY.u7TNjved9AL0WCFicss-YzOD3awfxFloAga8Z3P_Qak&dib_tag=se&keywords=microwave&qid=1738244403&sprefix=microwave%2Caps%2C97&sr=8-4&th=1">Comfee EM720CPL-PMB Countertop Microwave Oven with Sound On/Off, ECO Mode and Easy One-Touch Buttons, 0.7 Cu Ft, Black - $80.00</a></p>
+                <script>
+                    document.getElementById("microwaveAmazon").addEventListener("click", function() {
+                        var text3 = document.getElementById("text3");
+                        text3.style.display = "block"; // Show the text
+                    });
+                </script>
+                <div class = "item">
+                    <button class = "large-button" data-name = "microwaveAmazon2" data-cost="80"> Add Amazon Microwave to list </button>
+                    <button class = "large-button1" data-name = "microwaveAmazon2" data-cost="80"> Remove Amazon Microwave From List</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--row2-->
+
+    <button class="header-button" id="fridgeHeader">Mini Fridges</button>
+    <div class="row" id="h2" style="display: none;">
+
         <script>
-            document.getElementById("microwaveTarget").addEventListener("click", function() {
-                var text = document.getElementById("text");
-                text.style.display = "block"; // Show the text
+            var fbutton = document.getElementById("fridgeHeader");
+            var fdiv = document.getElementById("h2");
+
+            fbutton.onclick = function(){
+                fdiv.style.display = "block";
+            };
+        </script>
+        <div class ="column">
+            <div class = "containerFour">
+                <img class = "one" src="https://target.scene7.com/is/image/Target/GUEST_c26aeeb0-137f-4125-bf78-1bb21e729eda?wid=1200&hei=1200&qlt=80&fmt=webp" alt="Click Me" id="targetFridge">
+                <p id="text4" class="words"><a href="https://www.target.com/p/whirlpool-2-7-cu-ft-mini-refrigerator-stainless-steel-wh27s1e/-/A-17304430#lnk=sametab">Whirlpool 2.7 cu ft Mini Refrigerator, Stainless Steel - $149.99</a></p>
+                <script>
+                    document.getElementById("targetFridge").addEventListener("click", function() {
+                        var text4 = document.getElementById("text4");
+                        text4.style.display = "block"; // Show the text
+                    });
+                </script>
+                <div class = "item">
+                    <button class = "large-button" data-name= "targetFridge2" data-cost="149.99"> Add Target Fridge to list </button>
+                    <button class = "large-button1" data-name= "targetFridge2" data-cost="149.99"> Remove Target Fridge From List</button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+<div class = "column">
+    <div class = "containerFive">
+        <img class = "one" src="https://i5.walmartimages.com/seo/Galanz-1-7-Cu-ft-Single-Door-Mini-Fridge-GL17BK-Black-New_f5ff235b-e8a1-43b2-9bdb-8c732f9aaf1e_1.f209c79538c434a484f5847f039dcc06.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Click Me" id="WalmartFridge">
+        <p id="text5" class ="words"><a href="https://www.walmart.com/ip/Galanz-1-7-Cu-ft-Single-Door-Mini-Fridge-GL17BK-Black-New/40685158?classType=VARIANT&athbdg=L1300&from=/search">Galanz 1.7 Cu ft Single Door Mini Fridge GL17BK, Black - $72.24</a></p>
+        <script>
+            document.getElementById("WalmartFridge").addEventListener("click", function() {
+                var text5 = document.getElementById("text5");
+                text5.style.display = "block"; // Show the text
             });
         </script>
         <div class = "item">
-            <button class = "large-button" data-name="microwaveTarget2" data-cost="69.99"> Add Target Microwave to list </button>
-            <button class = "large-button1" data-name="microwaveTarget2" data-cost="69.99"> Remove Target Microwave From List</button>
+            <button class = "large-button" data-name= "walmartFridge2" data-cost="72.24"> Add Walmart Fridge to list </button>
+            <button class = "large-button1" data-name= "walmartFridge2" data-cost="72.24"> Remove Walmart Fridge From List</button>
         </div>
+    </div>
 
 </div>
 
-    <div class ="column">
-        <div class = "containerOne">
-        <img class = "one" src="https://i5.walmartimages.com/seo/Hamilton-Beach-0-9-Cu-ft-Countertop-Microwave-Oven-900-Watts-Stainless-Steel-New_1a5cbafb-ae12-41fb-ae77-8949adac6511.06793cf53bd59430d901cac965a376e2.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Click Me" id="microwaveWalmart">
-        <p id="text2" class="words"><a href="https://www.walmart.com/ip/Hamilton-Beach-0-9-Cu-ft-Countertop-Microwave-Oven-900-Watts-Stainless-Steel-New/1153749112?classType=VARIANT&athbdg=L1300&from=/search"> Hamilton Beach 0.9 Cu ft Countertop Microwave Oven, 900 Watts, Stainless Steel, New - $65.56</a></p>
+
+
+
+<div class ="column">
+    <div class = "containerSix">
+        <img class = "one" src="https://m.media-amazon.com/images/I/61Y4tbAP8zL._AC_SL1500_.jpg" alt="Click Me" id="amazonFridge">
+        <p id="text6" class="words"><a href="https://www.amazon.com/Upstreman-Adjustable-Thermostat-Refrigerator-Black-FR17/dp/B09W9KSQBL/ref=sr_1_2_sspa?crid=3FHF46BYBH2MY&dib=eyJ2IjoiMSJ9.wHD_oGzyxSy6onxWbpcHvlP0CqKljqlotOxQFuN-Z_-zxSO2tCzQBTQ4AardxBLwr_65Yeu2ghwSQg4w5HwDhQ6TgCogB4jELLvlfer5hGv0ArCE1jLuJ1-sOXlwvOyitFcBX1uAbilfrPFTsMCpCBUo-IcqUqhSXf0KXMYOp508qKzyUHTExWwGU4ZCIy6kIFjNajCcakryZJltZmBBGspGXEtq8msJlz60CuW83BY.2cqbgrxrrBRG9mIJYCkR36X143QtYn1ZlNqVjd0EKc0&dib_tag=se&keywords=mini%2Bfridge&qid=1738244576&sprefix=mini%2Bfridge%2Caps%2C97&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1">Upstreman 1.7 Cu.ft Mini Fridge with Freezer, Dorm Essentials, Adjustable Thermostat, Energy Saving, Low Noise - $129.97</a></p>
         <script>
-            document.getElementById("microwaveWalmart").addEventListener("click", function() {
-                var text2 = document.getElementById("text2");
-                text2.style.display = "block"; // Show the text
+            document.getElementById("amazonFridge").addEventListener("click", function() {
+                var text6 = document.getElementById("text6");
+                text6.style.display = "block"; // Show the text
             });
         </script>
-        <div class = "item">
-            <button class = "large-button" id = "microwaveWalmart2" data-cost="65.56"> Add Walmart Microwave to list </button>
-        </div>
-        <div>
-    <button class = "large-button1" id = removetm1> Remove Walmart Microwave From List</button>
-        </div>
-
-</div>
-</div>
-
-
-
-    <div class ="column">
-        <div class = "containerOne">
-        <img class = "one" src="https://m.media-amazon.com/images/I/71I1kb2hSlL._AC_SL1500_.jpg" alt="Click Me" id="microwaveAmazon">
-        <p id="text3" class="words"><a href="https://www.amazon.com/Comfee-EM720CPL-PMB-Countertop-Microwave-One-Touch/dp/B07GV36BLD/ref=sr_1_4?crid=3L724B3PS2J1P&dib=eyJ2IjoiMSJ9.0wjAIOy4uNXZICWpbyHeQqQven4CVCbQpTzcke6VLBJsooHAKzqbVikGT9Weu6Tb4SIEl17evTX8xOqPnEb60r2fmZfJGr_e-7juo-q9HdeOQ1cTrvFOpT7VZuKSsZYLc_QEfoSFqvwoLGPHWHtXUc4tTtwQylJy8ANZ6A6VzhwhDreHDhFLjUSOIjCpj89tY7J6wWT7lRHeY4OqZ1Gh_Mq8x-M7aEWhekB3ktpaZJY.u7TNjved9AL0WCFicss-YzOD3awfxFloAga8Z3P_Qak&dib_tag=se&keywords=microwave&qid=1738244403&sprefix=microwave%2Caps%2C97&sr=8-4&th=1">Comfee EM720CPL-PMB Countertop Microwave Oven with Sound On/Off, ECO Mode and Easy One-Touch Buttons, 0.7 Cu Ft, Black - $80.00</a></p>
-        <script>
-            document.getElementById("microwaveAmazon").addEventListener("click", function() {
-                var text3 = document.getElementById("text3");
-                text3.style.display = "block"; // Show the text
-            });
-        </script>
-        <div class = "item">
-            <button class = "large-button" id = "microwaveAmazon2" data-cost="80"> Add Amazon Microwave to list </button>
-        </div>
-<div>
-    <button class = "large-button1" id = removetm2> Remove Amazon Microwave From List</button>
     </div>
-
-</div>
-
-
-</div>
-</div>
-<!--row2-->
-
-<button class="header-button" id="fridgeHeader">Mini Fridges</button>
-<div class="row" id="h2" style="display: none;">
-
-    <script>
-        var fbutton = document.getElementById("fridgeHeader");
-        var fdiv = document.getElementById("h2");
-
-        fbutton.onclick = function(){
-            fdiv.style.display = "block";
-        };
-    </script>
-    <div class ="column">
-        <div class = "containerFour">
-            <img class = "one" src="https://target.scene7.com/is/image/Target/GUEST_c26aeeb0-137f-4125-bf78-1bb21e729eda?wid=1200&hei=1200&qlt=80&fmt=webp" alt="Click Me" id="targetFridge">
-            <p id="text4" class="words"><a href="https://www.target.com/p/whirlpool-2-7-cu-ft-mini-refrigerator-stainless-steel-wh27s1e/-/A-17304430#lnk=sametab">Whirlpool 2.7 cu ft Mini Refrigerator, Stainless Steel - $149.99</a></p>
-            <script>
-                document.getElementById("targetFridge").addEventListener("click", function() {
-                    var text4 = document.getElementById("text4");
-                    text4.style.display = "block"; // Show the text
-                });
-            </script>
-        <div class = "item">
-            <button class = "large-button" id = "targetFridge2" data-cost="149.99"> Add Target Fridge to list </button>
-        </div>
-    </div>
-    <button class = "large-button1" id = removetf> Remove Target Fridge From List</button>
-        </div>
-
+    <div class = "item">
+        <button class = "large-button" data-name = "amazonFridge2" data-cost="129.97"> Add Amazon Fridge to list </button>
+        <button class = "large-button1" data-name = "amazonFridge2" data-cost="129.97"> Remove Amazon Fridge From List</button>
     </div>
 </div>
-
-    </script>
-    <div class = "column">
-        <div class = "containerFour">
-            <img class = "one" src="https://i5.walmartimages.com/seo/Galanz-1-7-Cu-ft-Single-Door-Mini-Fridge-GL17BK-Black-New_f5ff235b-e8a1-43b2-9bdb-8c732f9aaf1e_1.f209c79538c434a484f5847f039dcc06.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Click Me" id="WalmartFridge">
-            <p id="text5" class ="words"><a href="https://www.walmart.com/ip/Galanz-1-7-Cu-ft-Single-Door-Mini-Fridge-GL17BK-Black-New/40685158?classType=VARIANT&athbdg=L1300&from=/search">Galanz 1.7 Cu ft Single Door Mini Fridge GL17BK, Black - $72.24</a></p>
-            <script>
-                document.getElementById("WalmartFridge").addEventListener("click", function() {
-                    var text5 = document.getElementById("text5");
-                    text5.style.display = "block"; // Show the text
-                });
-            </script>
-        <div class = "item">
-            <button class = "large-button" id = "walmartFridge2" data-cost="72.24"> Add Walmart Fridge to list </button>
-        </div>
-    </div>
-    <button class = "large-button1" id = removetf1> Remove Walmart Fridge From List</button>
-        </div>
-
-</div
-        </div>
-
-
-    <div class ="column">
-        <div class = "containerSix">
-            <img class = "one" src="https://m.media-amazon.com/images/I/61Y4tbAP8zL._AC_SL1500_.jpg" alt="Click Me" id="amazonFridge">
-            <p id="text6" class="words"><a href="https://www.amazon.com/Upstreman-Adjustable-Thermostat-Refrigerator-Black-FR17/dp/B09W9KSQBL/ref=sr_1_2_sspa?crid=3FHF46BYBH2MY&dib=eyJ2IjoiMSJ9.wHD_oGzyxSy6onxWbpcHvlP0CqKljqlotOxQFuN-Z_-zxSO2tCzQBTQ4AardxBLwr_65Yeu2ghwSQg4w5HwDhQ6TgCogB4jELLvlfer5hGv0ArCE1jLuJ1-sOXlwvOyitFcBX1uAbilfrPFTsMCpCBUo-IcqUqhSXf0KXMYOp508qKzyUHTExWwGU4ZCIy6kIFjNajCcakryZJltZmBBGspGXEtq8msJlz60CuW83BY.2cqbgrxrrBRG9mIJYCkR36X143QtYn1ZlNqVjd0EKc0&dib_tag=se&keywords=mini%2Bfridge&qid=1738244576&sprefix=mini%2Bfridge%2Caps%2C97&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1">Upstreman 1.7 Cu.ft Mini Fridge with Freezer, Dorm Essentials, Adjustable Thermostat, Energy Saving, Low Noise - $129.97</a></p>
-            <script>
-                document.getElementById("amazonFridge").addEventListener("click", function() {
-                    var text6 = document.getElementById("text6");
-                    text6.style.display = "block"; // Show the text
-                });
-            </script>
-        </div>
-        <div class = "item">
-            <button class = "large-button" id = "amazonFridge2" data-cost="129.97"> Add Amazon Fridge to list </button>
-        </div>
-    </div>
-    <button class = "large-button1" id = removetf2> Remove Amazon Fridge From List</button>
 
 </div>
 <!--row3-->
@@ -332,10 +325,11 @@
             </script>
         </div>
         <div class = "item">
-            <button class = "large-button" id = "targetTrash2" data-cost="15"> Add Target Trash Can to list </button>
+            <button class = "large-button" data-name = "targetTrash2" data-cost="15"> Add Target Trash Can to list </button>
+            <button class = "large-button1" data-name = "targetTrash2" data-cost="15"> Remove Target Trash Can From List</button>
         </div>
     </div>
-    <button class = "large-button1" id = removett> Remove Target Trash Can From List</button>
+
     <div class = "column">
         <div class = "containerEight">
             <img class = "one" src="https://i5.walmartimages.com/seo/Mainstays-7-6-gallon-Kitchen-Plastic-Touch-Top-Lid-Trashcan-Black_76107c6e-a98f-4597-b684-b937b99f5438.021640a3be5b96c5bf69047f64078354.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF" alt="Click Me" id="walmartTrash">
@@ -348,10 +342,10 @@
             </script>
         </div>
         <div class ="item">
-            <button class = "large-button" id = "walmartTrash2" data-cost = "11.46"> Add Walmart Trash Can to list </button>
+            <button class = "large-button" data-name = "walmartTrash2" data-cost = "11.46"> Add Walmart Trash Can to list </button>
+            <button class = "large-button1"  data-name = "walmartTrash2" data-cost = "11.46"> Remove Walmart Trash Can From List</button>
         </div>
     </div>
-    <button class = "large-button1" id = removett1> Remove Walmart Trash Can From List</button>
 
     <div class = "column">
         <div class = "containerNine">
@@ -365,10 +359,10 @@
             </script>
         </div>
         <div class = "item">
-            <button class = "large-button" id = "amazonTrash2" data-cost="10.97"> Add Amazon Trash Can to list </button>
+            <button class = "large-button" data-name= "amazonTrash2" data-cost="10.97"> Add Amazon Trash Can to list </button>
+            <button class = "large-button1" data-name= "amazonTrash2" data-cost="10.97"> Remove Amazon Trash Can From List</button>
         </div>
     </div>
-    <button class = "large-button1" id = removett2> Remove Amazon Trash Can From List</button>
 </div>
 
 <!---row4-->
@@ -395,10 +389,10 @@
             </script>
         </div>
         <div class = "item">
-            <button class = "large-button" id = "targetLight2" data-cost="13.99"> Add Target Desk Lamp to list </button>
+            <button class = "large-button" data-name= "targetLight2" data-cost="13.99"> Add Target Desk Lamp to list </button>
+            <button class = "large-button1" data-name= "targetLight2" data-cost="13.99"> Remove Target Desk Lamp From List</button>
         </div>
     </div>
-    <button class = "large-button1" id = removetl> Remove Target Desk Lamp From List</button>
 
     <div class = "column">
         <div class = "containerEleven">
@@ -412,10 +406,10 @@
             </script>
         </div>
         <div class = "item">
-            <button class = "large-button" id = "walmartLight2" data-cost="21.99"> Add Walmart Desk Lamp to list </button>
+            <button class = "large-button" data-name = "walmartLight2" data-cost="21.99"> Add Walmart Desk Lamp to list </button>
+            <button class = "large-button1" data-name = "walmartLight2" data-cost="21.99"> Remove Walmart Desk Lamp From List</button>
         </div>
     </div>
-    <button class = "large-button1" id = removetl1> Remove Walmart Desk Lamp From List</button>
 
     <div class ="column">
         <div class = "containerTwelve">
@@ -429,10 +423,10 @@
             </script>
         </div>
         <div class = "item">
-            <button class = "large-button" id = "amazonLight2" data-cost="18.99"> Add Amazon Desk Lamp to list </button>
+            <button class = "large-button" data-name = "amazonLight2" data-cost="18.99"> Add Amazon Desk Lamp to list </button>
+            <button class = "large-button1" data-name = "amazonLight2" data-cost="18.99"> Remove Amazon Desk Lamp From List</button>
         </div>
     </div>
-    <button class = "large-button1" id = removetl2> Remove Amazon Desk Lamp From List</button>
 </div>
 
 <!--row5-->
@@ -459,10 +453,10 @@
             </script>
         </div>
         <div class = "item">
-            <button class = "large-button" id = "targetMop2" data-cost="14.49"> Add Target Mop to list </button>
+            <button class = "large-button" data-name= "targetMop2" data-cost="14.49"> Add Target Mop to list </button>
+            <button class = "large-button1" data-name= "targetMop2" data-cost="14.49"> Remove Target Mop From List</button>
         </div>
     </div>
-    <button class = "large-button1" id = removemop> Remove Target Mop From List</button>
 
     <div class = "column">
         <div class = "containerFourteen">
@@ -476,10 +470,10 @@
             </script>
         </div>
         <div class = "item">
-            <button class = "large-button" id = "walmartMop2" data-cost="12.94"> Add Walmart Mop to list </button>
+            <button class = "large-button" data-name= "walmartMop2" data-cost="12.94"> Add Walmart Mop to list </button>
+            <button class = "large-button1" data-name= "walmartMop2" data-cost="12.94"> Remove Walmart Mop From List</button>
         </div>
     </div>
-    <button class = "large-button1" id = removemop1> Remove Walmart Mop From List</button>
 
     <div class ="column">
         <div class = "containerFifteen">
@@ -493,10 +487,10 @@
             </script>
         </div>
         <div class = "item">
-            <button class = "large-button" id = "amazonMop2" data-cost="24.99"> Add Amazon Mop to list </button>
+            <button class = "large-button" data-name= "amazonMop2" data-cost="24.99"> Add Amazon Mop to list </button>
+            <button class = "large-button1" data-name= "amazonMop2" data-cost="24.99"> Remove Amazon Mop From List</button>
         </div>
     </div>
-    <button class = "large-button1" id = removemop2> Remove Amazon Mop From List</button>
 </div>
 
 <!---row6-->
@@ -522,10 +516,10 @@
             </script>
         </div>
         <div class = "item">
-            <button class = "large-button" id = "targetVacuum2" data-cost="39.99"> Add Target Vacuum to list </button>
+            <button class = "large-button" data-name= "targetVacuum2" data-cost="39.99"> Add Target Vacuum to list </button>
+            <button class = "large-button1" data-name= "targetVacuum2" data-cost="39.99"> Remove Target Vacuum From List</button>
         </div>
     </div>
-    <button class = "large-button1" id = removetv> Remove Target Vacuum From List</button>
 
     <div class="column">
         <div class = "containerSeventeen">
@@ -539,10 +533,10 @@
             </script>
         </div>
         <div class = "item">
-            <button class = "large-button" id = "walmartVacuum2" data-cost="59.00"> Add Walmart Vacuum to list </button>
+            <button class = "large-button" data-name= "walmartVacuum2" data-cost="59.00"> Add Walmart Vacuum to list </button>
+            <button class = "large-button1" data-name= "walmartVacuum2" data-cost="59.00"> Remove Walmart Vacuum From List</button>
         </div>
     </div>
-    <button class = "large-button1" id = removetv1> Remove Walmart Vacuum From List</button>
 
     <div class = "column">
         <div class = "containerEighteen">
@@ -556,10 +550,10 @@
             </script>
         </div>
         <div class = "item">
-            <button class = "large-button" id = "amazonVacuum2" data-cost="33.95"> Add Amazon Vacuum to list </button>
+            <button class = "large-button" data-name= "amazonVacuum2" data-cost="33.95"> Add Amazon Vacuum to list </button>
+            <button class = "large-button1" data-name= "amazonVacuum2" data-cost="33.95"> Remove Amazon Vacuum From List</button>
         </div>
     </div>
-    <button class = "large-button1" id = removetv2> Remove Amazon Vacuum From List</button>
 
 </div>
 
@@ -586,10 +580,10 @@
             </script>
         </div>
         <div class = "item">
-            <button class = "large-button" id = "targetPlates2" data-cost="20.00"> Add Target Plates to list </button>
+            <button class = "large-button" data-name= "targetPlates2" data-cost="20.00"> Add Target Plates to list </button>
+            <button class = "large-button1" data-name= "targetPlates2" data-cost="20.00"> Remove Target Plates From List</button>
         </div>
     </div>
-    <button class = "large-button1" id = removeplate1> Remove Target Plates From List</button>
 
 
     <div class = "column">
@@ -604,10 +598,11 @@
             </script>
         </div>
         <div class = "item">
-            <button class = "large-button" id = "walmartPlates2" data-cost="17.99"> Add Walmart Plates to list </button>
+            <button class = "large-button" data-name= "walmartPlates2" data-cost="17.99"> Add Walmart Plates to list </button>
+            <button class = "large-button1" data-name= "walmartPlates2" data-cost="17.99"> Remove Walmart Plates From List</button>
         </div>
     </div>
-    <button class = "large-button1" id = removeplates1> Remove Walmart Plates From List</button>
+
 
     <div class ="column">
         <div class = "containerTwentyone">
@@ -621,10 +616,10 @@
             </script>
         </div>
         <div class = "item">
-            <button class = "large-button" id = "amazonPlates2" data-cost="22.99"> Add Amazon Plates to list </button>
+            <button class = "large-button" data-name= "amazonPlates2" data-cost="22.99"> Add Amazon Plates to list </button>
+            <button class = "large-button1" data-name= "amazonPlates2" data-cost="22.99"> Remove Amazon Plates From List</button>
         </div>
     </div>
-    <button class = "large-button1" id = removeplates2> Remove Amazon Plates From List</button>
 </div>
 <!--row8-->
 <button class="header-button" id="cutleryHeader">Cutlery</button>
@@ -650,10 +645,11 @@
             </script>
         </div>
         <div class = "item">
-            <button class = "large-button" id = "targetCutlery2" data-cost="4.29"> Add Target Cutlery to list </button>
+            <button class = "large-button" data-name= "targetCutlery2" data-cost="4.29"> Add Target Cutlery to list </button>
+            <button class = "large-button1" data-name= "targetCutlery2" data-cost="4.29"> Remove Target Cutlery From List</button>
         </div>
     </div>
-    <button class = "large-button1" id = removecutlery> Remove Target Cutlery From List</button>
+
 
     <div class = "column">
         <div class = "containerTwentythree">
@@ -667,10 +663,11 @@
             </script>
         </div>
         <div class = "item">
-            <button class = "large-button" id = "walmartCutlery2" data-cost="3.58"> Add Walmart Cutlery to list </button>
+            <button class = "large-button" data-name= "walmartCutlery2" data-cost="3.58"> Add Walmart Cutlery to list </button>
+            <button class = "large-button1" data-name= "walmartCutlery2" data-cost="3.58"> Remove Walmart Cutlery From List</button>
         </div>
     </div>
-    <button class = "large-button1" id = removecutlery1> Remove Walmart Cutlery From List</button>
+
 
 
     <div class = "column">
@@ -685,10 +682,9 @@
             </script>
         </div>
         <div class = "item">
-            <button class = "large-button" id = "amazonCutlery2" data-cost="14.99"> Add Amazon Cutlery to list </button>
-        </div>
-    </div>
-    <button class = "large-button1" id = removecutlery2> Remove Amazon Cutlery From List</button>
+            <button class = "large-button" data-name= "amazonCutlery2" data-cost="14.99"> Add Amazon Cutlery to list </button>
+            <button class = "large-button1" data-name= "amazonCutlery2" data-cost="14.99"> Remove Amazon Cutlery From List</button>
+            </div>
 </div>
 
 <script>
@@ -729,11 +725,11 @@
     }
 
     document.addEventListener("DOMContentLoaded", () => {
-        document.querySelectorAll(".add-btn").forEach(button =>
+        document.querySelectorAll(".large-button").forEach(button =>
             button.addEventListener("click", addItem)
         );
 
-        document.querySelectorAll(".remove-btn").forEach(button =>
+        document.querySelectorAll(".large-button1").forEach(button =>
             button.addEventListener("click", removeItem)
         );
     });
